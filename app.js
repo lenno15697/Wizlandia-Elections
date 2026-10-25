@@ -8,6 +8,7 @@ let state={economic:0,cultural:0,variance:1,spread:D.spread,parties:D.parties.ma
 let current=E.evaluate(),history=[],nextRun=1,selected=new Set(),mode='manual',activeTab='overview',rng=new E.Mulberry32(20261014),batchStats=null,busy=false;
 let noticeTimer,frame,compassDots=[],view='combined';
 const displayOrder=D.displayOrder;
+const largestPartiesFirst=(indices,seats)=>indices.slice().sort((a,b)=>seats[b]-seats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b));
 const shown=(result=current)=>E.component(result,view);
 function notice(message){$('notice').textContent=message;$('notice').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').hidden=true,4000);}
 function syncControls(){
@@ -64,8 +65,8 @@ function renderParliament(){
     const p=current.parties[assignment[i]],opacity=selected.size&&!selected.has(assignment[i])?.17:1;
     return`<circle data-party="${p.code}" cx="${dot.x.toFixed(2)}" cy="${dot.y.toFixed(2)}" r="${v.total>400?4.6:6.1}" fill="${p.color}" opacity="${opacity}"><title>${esc(p.name)} · ${seats[assignment[i]]} ${v.noun} seats</title></circle>`;
   }).join('');
-  const coalition=displayOrder.filter(i=>selected.has(i)).reduce((s,i)=>s+seats[i],0);
-  $('coalition-label').textContent=selected.size?`${displayOrder.filter(i=>selected.has(i)).map(i=>current.parties[i].code).join(' + ')} · ${coalition} ${v.noun} seats${isCombined?` · ${coalition>=v.majority?`${coalition-v.majority} above the majority threshold`:`${v.majority-coalition} short of a majority`}`:''}`:'Select parties below to build a coalition.';
+  const selectedMembers=largestPartiesFirst(displayOrder.filter(i=>selected.has(i)),seats),coalition=selectedMembers.reduce((s,i)=>s+seats[i],0);
+  $('coalition-label').textContent=selected.size?`${selectedMembers.map(i=>current.parties[i].code).join(' + ')} · ${coalition} ${v.noun} seats${isCombined?` · ${coalition>=v.majority?`${coalition-v.majority} above the majority threshold`:`${v.majority-coalition} short of a majority`}`:''}`:'Select parties below to build a coalition.';
   $('clear-coalition').hidden=!selected.size;
   const ink=getComputedStyle(document.body).getPropertyValue('--text').trim();
   const muted=getComputedStyle(document.body).getPropertyValue('--muted').trim();
@@ -84,7 +85,7 @@ function renderCoalitions(){
   if(view!=='combined'){$('coalition-options').innerHTML='';return;}
   const v=shown(),seats=v.seats,combos=[];
   for(let mask=1;mask<(1<<9);mask++){
-    const members=displayOrder.filter(i=>mask&(1<<i)),total=members.reduce((s,i)=>s+seats[i],0);
+    const members=largestPartiesFirst(displayOrder.filter(i=>mask&(1<<i)),seats),total=members.reduce((s,i)=>s+seats[i],0);
     if(total>=v.majority&&members.every(i=>total-seats[i]<v.majority))combos.push({members,total});
   }
   combos.sort((a,b)=>b.total-a.total||a.members.length-b.members.length);
