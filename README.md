@@ -178,3 +178,21 @@ Run `node tests/diagrams.test.js` for layout checks and
 layouts, component views, coalition selection, and party ordering. The cloud
 browser did not expose a completed download event during the SVG export check;
 rendered SVG content was checked separately.
+
+
+## Linked party selection
+
+Click a Seat Distribution card or a party in the left sidebar to add or remove
+it from the selection. Selected cards lift with a party-coloured ring and glow;
+unselected cards fade. Sidebar rows reflect the same selection. Clearing the
+selection restores all cards and the largest-party summary.
+
+The result box beside the Assembly diagram follows a selected party or
+coalition, including a coloured badge, seat total, vote share, and seat meter.
+Combined also shows the majority threshold and up to four clickable ways to
+complete a majority from the current selection. These are arithmetic examples,
+without political compatibility assumptions. The Electoral Districts and PR
+List boxes show party totals without majority claims or thresholds.
+
+Run `node tests/selection.test.js` to check the summary and coalition suggestions,
+including zero-seat parties and all three seat views.
