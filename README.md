@@ -190,7 +190,7 @@ selection restores all cards and the largest-party summary.
 The result box beside the Assembly diagram follows a selected party or
 coalition, including a coloured badge, seat total, vote share, and seat meter.
 Combined also shows the majority threshold and up to four clickable ways to
-complete a majority from the current selection. These suggestions follow the coalition preference tiers below and exclude
+form a majority across all eligible parties. These suggestions follow the coalition preference tiers below and exclude
 NF, UPL, and SWP. The separate Minimal winning coalitions tab remains an
 arithmetic list of all coalitions. The Electoral Districts and PR
 List boxes show party totals without majority claims or thresholds.
@@ -201,9 +201,9 @@ including zero-seat parties and all three seat views.
 
 ## Ways to reach 401: coalition priority
 
-The summary box shows at most four qualifying majority completions that include
-the current selection (or the largest party when nothing is selected). Every
-coalition containing NF, UPL, or SWP is excluded from this box, including when
+The summary box shows at most four qualifying minimal winning coalitions across
+all eligible parties, independently of the largest party and the current selection.
+Every coalition containing NF, UPL, or SWP is excluded from this box, including when
 there are fewer than four permitted suggestions. If none qualifies, the box
 shows an empty-state message. Direct manual selections remain available.
 
@@ -215,11 +215,13 @@ shows an empty-state message. Direct manual selections remain available.
 6. Any combination involving a cordon sanitaire party; classified but excluded
    from these suggestions.
 
-Priority exists only between tiers. Within a tier, fixed enumeration order gives
-a reproducible display without a preference for larger seat totals, fewer
-parties, or the order of parties in the tier descriptions. A party or selection
-that already holds a majority is reported in the summary without completion
-suggestions. Party names inside each suggestion remain largest first.
+The heading is “Ways to reach 401 (sorted by coalition viability)”. Suggestions
+are ordered by tier first, then by total coalition seats in descending order
+within each tier. Equal tiers and seat totals retain a reproducible enumeration
+order. Suggestions remain
+available when the current selection already holds a majority. A single-party
+majority appears as a tier 1 option. Party names inside each suggestion remain
+largest first.
 
 Run `node tests/coalition-priority.test.js` to check all tiers, the cordon,
 ranking, the four-suggestion limit, and the empty state.

@@ -78,18 +78,19 @@ function renderSummary(){
   $('track-majority').textContent=`majority ${v.majority}`;$('track-total').textContent=v.total;
   $('summary-clear').hidden=!selected.size;
   $('summary-clear').textContent=members.length>1?'× Clear selection':'× Back to the largest party';
-  $('summary-paths-label').textContent=`Ways to reach ${v.majority}`;
-  $('summary-paths-section').hidden=!isCombined||majority;
-  if(!isCombined||majority){$('summary-paths').innerHTML='';$('summary-paths-empty').hidden=true;return;}
-  const required=members.reduce((mask,i)=>mask|(1<<i),0),paths=[];
+  $('summary-paths-label').textContent=`Ways to reach ${v.majority} (sorted by coalition viability)`;
+  $('summary-paths-section').hidden=!isCombined;
+  if(!isCombined){$('summary-paths').innerHTML='';$('summary-paths-empty').hidden=true;return;}
+  // Majority options are global; the summary's selected or largest party
+  // does not constrain which coalitions may appear here.
+  const paths=[];
   for(let mask=1;mask<(1<<current.parties.length);mask++){
-    if((mask&required)!==required)continue;
     const group=largestPartiesFirst(displayOrder.filter(i=>mask&(1<<i)),seats),sum=group.reduce((n,i)=>n+seats[i],0),tier=coalitionTier(group.map(i=>current.parties[i].code));
-    if(tier<6&&sum>=v.majority&&group.filter(i=>!(required&(1<<i))).every(i=>sum-seats[i]<v.majority))paths.push({members:group,total:sum,tier});
+    if(tier<6&&sum>=v.majority&&group.every(i=>sum-seats[i]<v.majority))paths.push({members:group,total:sum,tier});
   }
-  // Stable mask enumeration breaks display ties without imposing a preference
-  // for seat totals or coalition size within the user's priority tiers.
-  paths.sort((a,b)=>a.tier-b.tier);
+  // Prefer the user's viability tiers, then larger seat totals within each tier.
+  // Stable mask enumeration breaks ties with equal tiers and equal totals.
+  paths.sort((a,b)=>a.tier-b.tier||b.total-a.total);
   $('summary-paths-empty').hidden=paths.length>0;
   $('summary-paths').innerHTML=paths.slice(0,4).map(c=>`<button class="summary-path" data-coalition="${c.members.join(',')}" data-tier="${c.tier}" aria-label="Select ${c.members.map(i=>current.parties[i].name).join(' plus ')}, ${c.total} seats"><span class="path-swatches" aria-hidden="true">${c.members.map(i=>swatch(current.parties[i])).join('')}</span><span>${c.members.map(i=>current.parties[i].code).join(' + ')}</span><strong>${c.total}</strong></button>`).join('');
 }
