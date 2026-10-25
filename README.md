@@ -190,9 +190,36 @@ selection restores all cards and the largest-party summary.
 The result box beside the Assembly diagram follows a selected party or
 coalition, including a coloured badge, seat total, vote share, and seat meter.
 Combined also shows the majority threshold and up to four clickable ways to
-complete a majority from the current selection. These are arithmetic examples,
-without political compatibility assumptions. The Electoral Districts and PR
+complete a majority from the current selection. These suggestions follow the coalition preference tiers below and exclude
+NF, UPL, and SWP. The separate Minimal winning coalitions tab remains an
+arithmetic list of all coalitions. The Electoral Districts and PR
 List boxes show party totals without majority claims or thresholds.
 
 Run `node tests/selection.test.js` to check the summary and coalition suggestions,
 including zero-seat parties and all three seat views.
+
+
+## Ways to reach 401: coalition priority
+
+The summary box shows at most four qualifying majority completions that include
+the current selection (or the largest party when nothing is selected). Every
+coalition containing NF, UPL, or SWP is excluded from this box, including when
+there are fewer than four permitted suggestions. If none qualifies, the box
+shows an empty-state message. Direct manual selections remain available.
+
+1. Single-party majorities.
+2. LDP–Conservative; LDP–Green; LDP–Libertarian; CA–SDP; CA–Green; CA–Conservative.
+3. LDP–Conservative–Libertarian; LDP–Green–Libertarian; CA–SDP–Green; CA–SDP–Conservative.
+4. LDP–CA; LDP–Conservative–Green; CA–Conservative–Green.
+5. Any other combination of mainstream parties.
+6. Any combination involving a cordon sanitaire party; classified but excluded
+   from these suggestions.
+
+Priority exists only between tiers. Within a tier, fixed enumeration order gives
+a reproducible display without a preference for larger seat totals, fewer
+parties, or the order of parties in the tier descriptions. A party or selection
+that already holds a majority is reported in the summary without completion
+suggestions. Party names inside each suggestion remain largest first.
+
+Run `node tests/coalition-priority.test.js` to check all tiers, the cordon,
+ranking, the four-suggestion limit, and the empty state.

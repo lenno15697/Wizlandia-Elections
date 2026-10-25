@@ -3,6 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const D=require('../data.js'),E=require('../engine.js'),fixture=require('./python-reference.json');
 const source=fs.readFileSync(require.resolve('../app.js'),'utf8');
 const helper=source.match(/^const largestPartiesFirst=.*$/m)[0];
+const priority=source.slice(source.indexOf('function coalitionTier('),source.indexOf('function renderSummary('));
 const summary=source.slice(source.indexOf('function renderSummary(){'),source.indexOf('\nfunction renderParliament(){'));
 const selections=[[],[0],[1],[2],[0,1],[0,2],[5,6],D.displayOrder];
 let checked=0;
@@ -11,7 +12,7 @@ for(const scenario of fixture.scenarios){
   for(const view of ['combined','district','pr'])for(const members of selections){
     const nodes=new Map(),$=id=>{if(!nodes.has(id))nodes.set(id,{style:{setProperty(){}},classList:{toggle(){}},setAttribute(){}});return nodes.get(id)};
     const v=E.component(current,view),c={shown:()=>v,current,view,selected:new Set(members),displayOrder:D.displayOrder,$,esc:String,pct:n=>(n*100).toFixed(1)+'%',swatch:()=>''};
-    vm.runInNewContext(helper+'\n'+summary+'\nrenderSummary();',c);
+    vm.runInNewContext(helper+'\n'+priority+'\n'+summary+'\nrenderSummary();',c);
     const count=members.length?members.reduce((n,i)=>n+v.seats[i],0):Math.max(...v.seats);
     assert.equal($('summary-clear').hidden,!members.length);
     assert.ok(!/NaN|Infinity/.test($('summary-badge-face').style.background));
@@ -23,12 +24,19 @@ for(const scenario of fixture.scenarios){
     }else if(count<v.majority){
       assert.ok($('verdict-title').textContent.includes(`${v.majority-count} seats short`));
       assert.equal($('summary-paths-section').hidden,false);
-      const paths=[...$('summary-paths').innerHTML.matchAll(/data-coalition="([\d,]+)"[\s\S]*?<strong>(\d+)<\/strong>/g)];
-      assert.ok(paths.length>0&&paths.length<=4);
+      const paths=[...$('summary-paths').innerHTML.matchAll(/data-coalition="([\d,]+)" data-tier="(\d)"[\s\S]*?<strong>(\d+)<\/strong>/g)];
+      const cordon=new Set(['NF','UPL','SWP']),required=members.length?members:[D.parties.findIndex(p=>p.code===$('summary-badge-code').textContent)];
+      const permittedTotal=D.parties.reduce((n,p,i)=>n+(cordon.has(p.code)?0:v.seats[i]),0);
+      const canComplete=required.every(i=>!cordon.has(D.parties[i].code))&&permittedTotal>=v.majority;
+      assert.equal(paths.length>0,canComplete);assert.ok(paths.length<=4);
+      assert.equal($('summary-paths-empty').hidden,paths.length>0);
+      let previousTier=0;
       for(const match of paths){
         const group=match[1].split(',').map(Number),total=group.reduce((n,i)=>n+v.seats[i],0);
         members.forEach(i=>assert.ok(group.includes(i)));
-        assert.equal(total,Number(match[2]));assert.ok(total>=v.majority);
+        assert.equal(total,Number(match[3]));assert.ok(total>=v.majority);
+        assert.ok(group.every(i=>!cordon.has(D.parties[i].code)));
+        const tier=Number(match[2]);assert.ok(tier>=previousTier&&tier<6);previousTier=tier;
         group.forEach((i,j)=>{if(j)assert.ok(v.seats[group[j-1]]>=v.seats[i]);});
       }
     }else{

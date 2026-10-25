@@ -40,6 +40,19 @@ function render(){
   renderSummary();renderParliament();renderHistory();
   if(activeTab==='districts')renderDistricts();if(activeTab==='compass')drawCompass();if(activeTab==='coalitions')renderCoalitions();
 }
+function coalitionTier(codes){
+  const mainstream=['LDP','CA','SDP','CON','GRN','LIB'];
+  if(!codes.length||codes.some(code=>!mainstream.includes(code)))return 6;
+  if(codes.length===1)return 1;
+  const key=codes.slice().sort().join('+');
+  const tiers={
+    2:['CON+LDP','GRN+LDP','LDP+LIB','CA+SDP','CA+GRN','CA+CON'],
+    3:['CON+LDP+LIB','GRN+LDP+LIB','CA+GRN+SDP','CA+CON+SDP'],
+    4:['CA+LDP','CON+GRN+LDP','CA+CON+GRN']
+  };
+  for(const tier of [2,3,4])if(tiers[tier].includes(key))return tier;
+  return 5;
+}
 function renderSummary(){
   const v=shown(),seats=v.seats,isCombined=view==='combined';
   const ranked=largestPartiesFirst(displayOrder,seats),members=selected.size?largestPartiesFirst([...selected],seats):[ranked[0]],multi=members.length>1;
@@ -67,15 +80,18 @@ function renderSummary(){
   $('summary-clear').textContent=members.length>1?'× Clear selection':'× Back to the largest party';
   $('summary-paths-label').textContent=`Ways to reach ${v.majority}`;
   $('summary-paths-section').hidden=!isCombined||majority;
-  if(!isCombined||majority){$('summary-paths').innerHTML='';return;}
+  if(!isCombined||majority){$('summary-paths').innerHTML='';$('summary-paths-empty').hidden=true;return;}
   const required=members.reduce((mask,i)=>mask|(1<<i),0),paths=[];
   for(let mask=1;mask<(1<<current.parties.length);mask++){
     if((mask&required)!==required)continue;
-    const group=largestPartiesFirst(displayOrder.filter(i=>mask&(1<<i)),seats),sum=group.reduce((n,i)=>n+seats[i],0);
-    if(sum>=v.majority&&group.filter(i=>!(required&(1<<i))).every(i=>sum-seats[i]<v.majority))paths.push({members:group,total:sum});
+    const group=largestPartiesFirst(displayOrder.filter(i=>mask&(1<<i)),seats),sum=group.reduce((n,i)=>n+seats[i],0),tier=coalitionTier(group.map(i=>current.parties[i].code));
+    if(tier<6&&sum>=v.majority&&group.filter(i=>!(required&(1<<i))).every(i=>sum-seats[i]<v.majority))paths.push({members:group,total:sum,tier});
   }
-  paths.sort((a,b)=>a.members.length-b.members.length||b.total-a.total);
-  $('summary-paths').innerHTML=paths.slice(0,4).map(c=>`<button class="summary-path" data-coalition="${c.members.join(',')}" aria-label="Select ${c.members.map(i=>current.parties[i].name).join(' plus ')}, ${c.total} seats"><span class="path-swatches" aria-hidden="true">${c.members.map(i=>swatch(current.parties[i])).join('')}</span><span>${c.members.map(i=>current.parties[i].code).join(' + ')}</span><strong>${c.total}</strong></button>`).join('');
+  // Stable mask enumeration breaks display ties without imposing a preference
+  // for seat totals or coalition size within the user's priority tiers.
+  paths.sort((a,b)=>a.tier-b.tier);
+  $('summary-paths-empty').hidden=paths.length>0;
+  $('summary-paths').innerHTML=paths.slice(0,4).map(c=>`<button class="summary-path" data-coalition="${c.members.join(',')}" data-tier="${c.tier}" aria-label="Select ${c.members.map(i=>current.parties[i].name).join(' plus ')}, ${c.total} seats"><span class="path-swatches" aria-hidden="true">${c.members.map(i=>swatch(current.parties[i])).join('')}</span><span>${c.members.map(i=>current.parties[i].code).join(' + ')}</span><strong>${c.total}</strong></button>`).join('');
 }
 
 function renderParliament(){
