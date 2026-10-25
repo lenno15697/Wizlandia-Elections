@@ -108,8 +108,8 @@ function allocatePR(votes,total=D.prSeatCount){
   return seats;
 }
 const components={
-  district:{key:'district',label:'District',noun:'district',total:400,majority:201,baseline:D.baseline,description:'400 single-member districts · Ranked Pairs model'},
-  pr:{key:'pr',label:'PR',noun:'PR',total:D.prSeatCount,majority:Math.floor(D.prSeatCount/2)+1,baseline:D.baselinePr,description:'400 nationwide PR seats · largest remainder'},
+  district:{key:'district',label:'Electoral Districts',noun:'district',total:400,majority:201,baseline:D.baseline,description:'400 single-member districts · Ranked Pairs model'},
+  pr:{key:'pr',label:'PR List',noun:'PR',total:D.prSeatCount,majority:Math.floor(D.prSeatCount/2)+1,baseline:D.baselinePr,description:'400 nationwide PR seats · largest remainder'},
   combined:{key:'combined',label:'Combined',noun:'combined',total:400+D.prSeatCount,majority:Math.floor((400+D.prSeatCount)/2)+1,baseline:D.baselineCombined,description:'400 district + 400 parallel PR seats'}
 };
 function component(result,key='combined'){

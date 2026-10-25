@@ -23,7 +23,7 @@ function render(){
   for(const button of document.querySelectorAll('[data-component]')){const active=button.dataset.component===view;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));}
   $('component-note').textContent=v.description;
   $('verdict-kicker').textContent=`${v.label} · ${majority?'Overall majority':'Largest party'}`;
-  $('verdict-title').textContent=majority?`${p.name} wins a majority.`:`${p.code} leads. ${v.majority-lead.n} seats short.`;
+  $('verdict-title').textContent=majority?`${p.name} wins a majority.`:`${p.name} leads. ${v.majority-lead.n} seats short.`;
   $('verdict-detail').textContent=`${p.code} takes ${lead.n} of ${v.total} ${v.noun} seats on ${pct(current.votes[lead.i])} of the national vote. ${current.parties[second.i].code} follows with ${second.n} seats.`;
   $('median').textContent=`(${current.median[0].toFixed(2)}, ${current.median[1].toFixed(2)})`;
   $('ticker').textContent=`${v.label} · ${p.code} ${lead.n} · ${current.parties[second.i].code} ${second.n} · ${majority?'Majority':'No overall majority'}`;
@@ -31,7 +31,6 @@ function render(){
   $('majority-track').style.setProperty('--majority-position',`${v.majority/v.total*100}%`);
   $('majority-track').innerHTML=displayOrder.filter(i=>seats[i]).map(i=>`<span style="width:${seats[i]/v.total*100}%;background:${current.parties[i].color}" title="${current.parties[i].code}: ${seats[i]}"></span>`).join('');
   $('track-majority').textContent=`${v.majority} · majority`;$('track-total').textContent=v.total;
-  $('chamber-title').textContent=`${v.total} ${v.noun} seats. One majority.`;
   $('party-list').innerHTML=displayOrder.map(i=>{const p=current.parties[i];return`<div class="party-line" title="${esc(p.name)}: ${esc(p.description)}">${swatch(p)}<strong>${p.code}</strong><span class="line-name">${esc(p.name)}</span><span class="line-vote">${pct(current.votes[i])}</span></div>`;}).join('');
   $('party-cards').innerHTML=displayOrder.map(i=>{const p=current.parties[i];return`<button class="party-card" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" aria-label="${esc(p.name)}, ${seats[i]} ${v.noun} seats; ${current.districtSeats[i]} district plus ${current.prSeats[i]} PR equals ${current.combinedSeats[i]} combined. ${pct(current.votes[i])} votes. Select for coalition."><span class="code">${p.code}</span><span class="seat">${seats[i]}</span><span class="vote">${pct(current.votes[i])} vote</span><span class="seat-share">${(seats[i]/v.total*100).toFixed(1)}% seats</span><span class="seat-breakdown">${view==='combined'?`${current.districtSeats[i]} D + ${current.prSeats[i]} PR`:`${current.combinedSeats[i]} combined`}</span></button>`;}).join('');
   $('share-header').textContent=`${v.label} share`;$('change-header').textContent=`${v.label} Δ`;
@@ -82,7 +81,7 @@ function renderCoalitions(){
     const members=displayOrder.filter(i=>mask&(1<<i)),total=members.reduce((s,i)=>s+seats[i],0);
     if(total>=v.majority&&members.every(i=>total-seats[i]<v.majority))combos.push({members,total});
   }
-  combos.sort((a,b)=>a.members.length-b.members.length||a.total-b.total);
+  combos.sort((a,b)=>b.total-a.total||a.members.length-b.members.length);
   $('coalition-options').innerHTML=combos.map(c=>`<button class="coalition-option" data-coalition="${c.members.join(',')}"><span>${c.members.map(i=>`${swatch(current.parties[i])} ${current.parties[i].code}`).join(' + ')}<span class="hint">${c.total-v.majority} above ${v.majority} · Select coalition</span></span><strong>${c.total}</strong></button>`).join('');
 }
 function renderHistory(){

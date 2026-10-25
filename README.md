@@ -72,7 +72,7 @@ The Assembly combines **400 district seats and 400 nationwide PR seats**, for a 
 
 PR uses **Hare quota / largest remainder** on the simulated national vote shares, with **no electoral threshold**. Multiply each party's normalized vote share by 400, assign the integer part, then award remaining seats by descending fractional remainder. Exact remainder ties follow canonical model code order (LDP, CA, SDP, CON, GRN, NF, LIB, UPL, SWP). This tie rule is separate from the requested visual display order.
 
-The Combined view opens by default. Switching views updates the parliament, seat totals, majority indicator, party cards, coalition tools, representation comparisons and history summaries. The overview table always shows all three seat columns. CSV exports contain all three components, and the SVG export uses the selected view. Editing party compass positions does not reorder the fixed left-to-right display.
+The view buttons appear as Combined, Electoral Districts, and PR List. The Combined view opens by default. Switching views updates the parliament, seat totals, majority indicator, party cards, coalition tools, representation comparisons and history summaries. The overview table always shows all three seat columns. CSV exports contain all three components, and the SVG export uses the selected view. Editing party compass positions does not reorder the fixed left-to-right display.
 
 Baseline seat allocation:
 
