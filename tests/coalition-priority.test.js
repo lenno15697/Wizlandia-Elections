@@ -17,12 +17,17 @@ const specified=[
 const expected=new Map(specified.map(([tier,codes])=>[codes.slice().sort().join('+'),tier]));
 for(let mask=1;mask<(1<<mainstream.length);mask++){
   const codes=mainstream.filter((_,i)=>mask&(1<<i));
-  const tier=codes.length===1?1:expected.get(codes.slice().sort().join('+'))||5;
+  const hasTension=(codes.includes('LDP')&&codes.includes('SDP'))||(codes.includes('LIB')&&codes.includes('SDP'))||(codes.includes('CA')&&codes.includes('LIB'));
+  const tier=codes.length===1?1:expected.get(codes.slice().sort().join('+'))||(hasTension?6:5);
   assert.equal(policy.coalitionTier(codes),tier);assert.equal(policy.coalitionTier(codes.slice().reverse()),tier);
 }
 for(const code of ['NF','UPL','SWP']){
-  assert.equal(policy.coalitionTier([code]),6);
-  for(let mask=0;mask<(1<<mainstream.length);mask++)assert.equal(policy.coalitionTier([code,...mainstream.filter((_,i)=>mask&(1<<i))]),6);
+  assert.equal(policy.coalitionTier([code]),7);
+  for(let mask=0;mask<(1<<mainstream.length);mask++)assert.equal(policy.coalitionTier([code,...mainstream.filter((_,i)=>mask&(1<<i))]),7);
+}
+for(let mask=1;mask<(1<<D.parties.length);mask++){
+  const codes=D.parties.filter((_,i)=>mask&(1<<i)).map(p=>p.code);
+  if(codes.some(code=>!mainstream.includes(code)))assert.equal(policy.coalitionTier(codes),7);
 }
 const baselineResult=E.evaluate();
 function suggestions(seats,selection=[]){
@@ -35,10 +40,13 @@ function suggestions(seats,selection=[]){
   return{paths,empty:$('summary-paths-empty').hidden===false,sectionHidden:$('summary-paths-section').hidden};
 }
 const baseline=baselineResult.combinedSeats;
-assert.deepEqual(suggestions(baseline).paths.map(p=>p.tier),[4,4,5,5]);
+const baselinePaths=suggestions(baseline).paths;
+assert.deepEqual(baselinePaths.map(p=>p.tier),[4,4,5,6]);
+assert.deepEqual(baselinePaths[2],{codes:['CA','SDP','CON','GRN'],tier:5,total:430});
+assert.deepEqual(baselinePaths[3],{codes:['LDP','SDP','CON'],tier:6,total:432});
 // The largest party is LDP, but the two highest-priority ways are CA coalitions.
 const alternate=[250,240,150,70,40,10,20,10,10],global=suggestions(alternate);
-assert.deepEqual(global.paths.map(p=>p.tier),[3,3,4,5]);
+assert.deepEqual(global.paths.map(p=>p.tier),[3,3,4,6]);
 assert.deepEqual(new Set(global.paths.slice(0,2).map(p=>p.codes.slice().sort().join('+'))),new Set(['CA+GRN+SDP','CA+CON+SDP']));
 assert.ok(global.paths.slice(0,2).every(p=>!p.codes.includes('LDP')));
 // All 512 manual selections, including cordoned parties and an existing
@@ -47,9 +55,9 @@ for(let mask=0;mask<(1<<D.parties.length);mask++){
   const selection=D.parties.map((_,i)=>i).filter(i=>mask&(1<<i));
   assert.deepEqual(suggestions(alternate,selection),global);
 }
-assert.deepEqual(suggestions([350,190,100,55,50,5,40,5,5],[0]).paths.map(p=>p.tier),[2,3,4,5]);
+assert.deepEqual(suggestions([350,190,100,55,50,5,40,5,5],[0]).paths.map(p=>p.tier),[2,3,4,6]);
 const ties=suggestions([300,70,70,110,115,5,120,5,5],[0]).paths;
-assert.deepEqual(ties.map(p=>p.tier),[2,2,2,5]);
+assert.deepEqual(ties.map(p=>p.tier),[2,2,2,6]);
 assert.deepEqual(ties.slice(0,3).map(p=>p.codes.slice().sort().join('+')),['LDP+LIB','GRN+LDP','CON+LDP']);
 // Screenshot regression: the two tier 3 options precede tier 4 even when
 // the grand coalition has more seats; within each tier, seats descend.
@@ -60,17 +68,25 @@ assert.deepEqual(screenshot,[
   {codes:['LDP','CA'],tier:4,total:511},
   {codes:['LDP','GRN','CON'],tier:4,total:445}
 ]);
+// Within tier 4, the two-party option precedes a three-party option even
+// though the latter has more seats. Equal party counts still use seats.
+const partyCounts=suggestions([250,160,80,90,100,50,10,30,30]).paths;
+assert.deepEqual(partyCounts.slice(0,2),[
+  {codes:['LDP','CA'],tier:4,total:410},
+  {codes:['LDP','GRN','CON'],tier:4,total:440}
+]);
 for(const selected of [[5],[7],[8],[0,5]]){
   assert.deepEqual(suggestions(baseline,selected),suggestions(baseline));
 }
 // A cordoned party can be the largest without suppressing mainstream options.
 const cordonedLeader=suggestions([160,140,80,60,40,300,20,0,0]);
 assert.equal(cordonedLeader.paths.length,3);
+assert.ok(cordonedLeader.paths.every(p=>p.tier===6));
 assert.ok(cordonedLeader.paths.every(p=>p.codes.every(code=>mainstream.includes(code))));
-// Even with no permitted majority, tier 6 cannot fill the four suggestion slots.
+// Even with no permitted majority, tier 7 cannot fill the four suggestion slots.
 const none=suggestions([100,80,60,50,40,300,30,70,70],[0]);
 assert.equal(none.paths.length,0);assert.ok(none.empty);
 const solo=suggestions([410,190,80,50,20,20,10,10,10]);
 assert.equal(solo.sectionHidden,false);
 assert.deepEqual(solo.paths,[{codes:['LDP'],tier:1,total:410}]);
-console.log('Coalition priorities passed: tiers followed by descending coalition seats, screenshot ordering, global options independent of all 512 selections, cordon exclusion, single-party majorities, top four, and empty state.');
+console.log('Coalition priorities passed: all seven tiers and tension pairs, tier 6 suggestions with tier 7 excluded, fewer parties then descending seats, independence of all 512 selections, single-party majorities, top four, and empty state.');

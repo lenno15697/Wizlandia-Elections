@@ -34,15 +34,18 @@ for(const scenario of fixture.scenarios){
       const permittedTotal=D.parties.reduce((n,p,i)=>n+(cordon.has(p.code)?0:v.seats[i]),0);
       assert.equal(paths.length>0,permittedTotal>=v.majority);assert.ok(paths.length<=4);
       assert.equal($('summary-paths-empty').hidden,paths.length>0);
-      let previousTier=0,previousTotal=Infinity;
+      let previousTier=0,previousCount=0,previousTotal=Infinity;
       for(const match of paths){
         const group=match[1].split(',').map(Number),total=group.reduce((n,i)=>n+v.seats[i],0);
         assert.equal(total,Number(match[3]));assert.ok(total>=v.majority);
         assert.ok(group.every(i=>total-v.seats[i]<v.majority));
         assert.ok(group.every(i=>!cordon.has(D.parties[i].code)));
-        const tier=Number(match[2]);assert.ok(tier>=previousTier&&tier<6);
-        if(tier===previousTier)assert.ok(total<=previousTotal,'Seat totals must descend within each tier');
-        previousTier=tier;previousTotal=total;
+        const tier=Number(match[2]);assert.ok(tier>=previousTier&&tier<7);
+        if(tier===previousTier){
+          assert.ok(group.length>=previousCount,'Party counts must ascend within each tier');
+          if(group.length===previousCount)assert.ok(total<=previousTotal,'Seat totals must descend when tier and party count match');
+        }
+        previousTier=tier;previousCount=group.length;previousTotal=total;
         group.forEach((i,j)=>{if(j)assert.ok(v.seats[group[j-1]]>=v.seats[i]);});
       }
     }

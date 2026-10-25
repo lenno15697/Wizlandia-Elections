@@ -211,14 +211,17 @@ shows an empty-state message. Direct manual selections remain available.
 2. LDP–Conservative; LDP–Green; LDP–Libertarian; CA–SDP; CA–Green; CA–Conservative.
 3. LDP–Conservative–Libertarian; LDP–Green–Libertarian; CA–SDP–Green; CA–SDP–Conservative.
 4. LDP–CA; LDP–Conservative–Green; CA–Conservative–Green.
-5. Any other combination of mainstream parties.
-6. Any combination involving a cordon sanitaire party; classified but excluded
+5. Any other combination of mainstream parties that contains none of the pairs
+   LDP–SDP, Libertarian–SDP, or CA–Libertarian.
+6. Any other combination of mainstream parties, including combinations with
+   those tension pairs.
+7. Any combination involving a cordon sanitaire party; classified but excluded
    from these suggestions.
 
 The heading is “Ways to reach 401 (sorted by coalition viability)”. Suggestions
-are ordered by tier first, then by total coalition seats in descending order
-within each tier. Equal tiers and seat totals retain a reproducible enumeration
-order. Suggestions remain
+are ordered by tier first. Within each tier, fewer parties come first, then
+total coalition seats in descending order. Ties across all three criteria retain
+a reproducible enumeration order. Suggestions remain
 available when the current selection already holds a majority. A single-party
 majority appears as a tier 1 option. Party names inside each suggestion remain
 largest first.

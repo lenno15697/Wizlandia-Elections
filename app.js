@@ -42,7 +42,7 @@ function render(){
 }
 function coalitionTier(codes){
   const mainstream=['LDP','CA','SDP','CON','GRN','LIB'];
-  if(!codes.length||codes.some(code=>!mainstream.includes(code)))return 6;
+  if(!codes.length||codes.some(code=>!mainstream.includes(code)))return 7;
   if(codes.length===1)return 1;
   const key=codes.slice().sort().join('+');
   const tiers={
@@ -51,7 +51,8 @@ function coalitionTier(codes){
     4:['CA+LDP','CON+GRN+LDP','CA+CON+GRN']
   };
   for(const tier of [2,3,4])if(tiers[tier].includes(key))return tier;
-  return 5;
+  const tensions=[['LDP','SDP'],['LIB','SDP'],['CA','LIB']];
+  return tensions.some(pair=>pair.every(code=>codes.includes(code)))?6:5;
 }
 function renderSummary(){
   const v=shown(),seats=v.seats,isCombined=view==='combined';
@@ -86,11 +87,11 @@ function renderSummary(){
   const paths=[];
   for(let mask=1;mask<(1<<current.parties.length);mask++){
     const group=largestPartiesFirst(displayOrder.filter(i=>mask&(1<<i)),seats),sum=group.reduce((n,i)=>n+seats[i],0),tier=coalitionTier(group.map(i=>current.parties[i].code));
-    if(tier<6&&sum>=v.majority&&group.every(i=>sum-seats[i]<v.majority))paths.push({members:group,total:sum,tier});
+    if(tier<7&&sum>=v.majority&&group.every(i=>sum-seats[i]<v.majority))paths.push({members:group,total:sum,tier});
   }
-  // Prefer the user's viability tiers, then larger seat totals within each tier.
-  // Stable mask enumeration breaks ties with equal tiers and equal totals.
-  paths.sort((a,b)=>a.tier-b.tier||b.total-a.total);
+  // Prefer viability tiers, then fewer parties, then larger seat totals.
+  // Stable mask enumeration breaks ties when all three criteria are equal.
+  paths.sort((a,b)=>a.tier-b.tier||a.members.length-b.members.length||b.total-a.total);
   $('summary-paths-empty').hidden=paths.length>0;
   $('summary-paths').innerHTML=paths.slice(0,4).map(c=>`<button class="summary-path" data-coalition="${c.members.join(',')}" data-tier="${c.tier}" aria-label="Select ${c.members.map(i=>current.parties[i].name).join(' plus ')}, ${c.total} seats"><span class="path-swatches" aria-hidden="true">${c.members.map(i=>swatch(current.parties[i])).join('')}</span><span>${c.members.map(i=>current.parties[i].code).join(' + ')}</span><strong>${c.total}</strong></button>`).join('');
 }
