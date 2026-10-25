@@ -149,3 +149,31 @@ Checks cover the calibrated district, PR and combined baselines; 400/400/800 sea
 The revised Python district CSV now contains one row for each of the 400 individual districts rather than one row per type.
 
 The Python GUI also opens with Combined seats and has District, PR and Combined buttons. To start a different view from the command line, use `--component district` or `--component pr`. The election CSV includes separate `*_district_seats`, `*_pr_seats` and `*_combined_seats` columns. For compatibility with earlier Python code, `ElectionResult.seats` continues to mean district seats; explicit `district_seats`, `pr_seats` and `combined_seats` properties are available.
+
+
+## Assembly diagrams and seat cards
+
+The Layout control offers Hemicycle and Westminster in all three seat views.
+Hemicycle orders seats by angle, with a consistent inner-to-outer order on
+shared rays, including both bottom endpoints. This prevents floating-point
+rounding from splitting party colour blocks.
+
+Westminster uses two facing benches. Selecting party cards moves those parties
+to the government bench; clearing the selection moves them back. The component
+views use neutral Selected parties / Other parties labels and show no majority
+threshold. Seat order applies within each bench. Layout and seat-order choices
+are included in configuration saves. SVG export uses the displayed diagram.
+
+Seat Distribution uses cards with a coloured left border, a large coloured seat
+total, seat share above vote share, and a proportional share bar. Hover over a
+card for the district/PR breakdown.
+
+To install this update on GitHub Pages, replace `index.html`, `app.js`, and
+`styles.css`, and upload the new `diagrams.js` beside them at repository root.
+Keep `data.js`, `engine.js`, and `favicon.svg` in the same directory.
+
+Run `node tests/diagrams.test.js` for layout checks and
+`node tests/model.test.js` for election-model checks. Browser QA covered both
+layouts, component views, coalition selection, and party ordering. The cloud
+browser did not expose a completed download event during the SVG export check;
+rendered SVG content was checked separately.

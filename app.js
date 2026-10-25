@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-const D=window.WizlandiaData,E=window.WizlandiaEngine,$=id=>document.getElementById(id);
+const D=window.WizlandiaData,E=window.WizlandiaEngine,G=window.WizlandiaDiagrams,$=id=>document.getElementById(id);
 const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const signed=(v,n=2)=>(v>=0?'+':'')+v.toFixed(n),pct=v=>(100*v).toFixed(1)+'%';
 const swatch=p=>`<span class="swatch" style="background:${p.color}"></span>`;
@@ -36,7 +36,7 @@ function render(){
   $('majority-track').innerHTML=displayOrder.filter(i=>seats[i]).map(i=>`<span style="width:${seats[i]/v.total*100}%;background:${current.parties[i].color}" title="${current.parties[i].code}: ${seats[i]}"></span>`).join('');
   $('track-majority').textContent=`${v.majority} · majority`;$('track-total').textContent=v.total;
   $('party-list').innerHTML=displayOrder.map(i=>{const p=current.parties[i];return`<div class="party-line" title="${esc(p.name)}: ${esc(p.description)}">${swatch(p)}<strong>${p.code}</strong><span class="line-name">${esc(p.name)}</span><span class="line-vote">${pct(current.votes[i])}</span></div>`;}).join('');
-  $('party-cards').innerHTML=displayOrder.map(i=>{const p=current.parties[i];return`<button class="party-card" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" aria-label="${esc(p.name)}, ${seats[i]} ${v.noun} seats; ${current.districtSeats[i]} district plus ${current.prSeats[i]} PR equals ${current.combinedSeats[i]} combined. ${pct(current.votes[i])} votes. Select for coalition."><span class="code">${p.code}</span><span class="seat">${seats[i]}</span><span class="vote">${pct(current.votes[i])} vote</span><span class="seat-share">${(seats[i]/v.total*100).toFixed(1)}% seats</span><span class="seat-breakdown">${view==='combined'?`${current.districtSeats[i]} D + ${current.prSeats[i]} PR`:`${current.combinedSeats[i]} combined`}</span></button>`;}).join('');
+  $('party-cards').innerHTML=displayOrder.map(i=>{const p=current.parties[i],share=seats[i]/v.total*100;return`<button class="party-card" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" title="${esc(p.name)} · ${current.districtSeats[i]} district + ${current.prSeats[i]} PR = ${current.combinedSeats[i]} combined seats. Click to select." aria-label="${esc(p.name)}, ${seats[i]} ${v.noun} seats; ${current.districtSeats[i]} district plus ${current.prSeats[i]} PR equals ${current.combinedSeats[i]} combined. ${pct(current.votes[i])} votes. Select for coalition."><span class="code">${p.code}</span><span class="seat">${seats[i]}</span><span class="seat-share">${share.toFixed(1)}% seats</span><span class="vote">${pct(current.votes[i])} vote</span><span class="card-bar" aria-hidden="true"><span style="width:${share}%;background:${p.color}"></span></span></button>`;}).join('');
   $('share-header').textContent=`${v.label} share`;$('change-header').textContent=`${v.label} Δ`;
   $('overview-body').innerHTML=displayOrder.map(i=>{
     const p=current.parties[i],n=seats[i],change=n-v.baseline[i],share=n/v.total*100;
@@ -49,29 +49,45 @@ function render(){
   if(activeTab==='districts')renderDistricts();if(activeTab==='compass')drawCompass();if(activeTab==='coalitions')renderCoalitions();
 }
 function renderParliament(){
-  const v=shown(),seats=v.seats,isCombined=view==='combined';
+  const v=shown(),seats=v.seats,isCombined=view==='combined',westminster=$('diagram-layout').value==='westminster';
   let order=displayOrder.slice();
-  if($('seat-order').value==='size')order.sort((a,b)=>seats[b]-seats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b));
-  const radii=Array.from({length:v.total>400?14:10},(_,i)=>v.total>400?136+i*14:145+i*18),sum=radii.reduce((a,b)=>a+b,0);
-  const allocations=radii.map(r=>v.total*r/sum),counts=allocations.map(Math.floor);
-  const remainder=v.total-counts.reduce((a,b)=>a+b,0);
-  allocations.map((n,i)=>({i,r:n-counts[i]})).sort((a,b)=>b.r-a.r).slice(0,remainder).forEach(x=>counts[x.i]++);
-  const dots=[];
-  radii.forEach((r,row)=>{for(let i=0;i<counts[row];i++){const angle=Math.PI-i*Math.PI/(counts[row]-1);dots.push({x:450+r*Math.cos(angle),y:342-r*Math.sin(angle),angle,row});}});
-  dots.sort((a,b)=>b.angle-a.angle||a.row-b.row);
-  const assignment=order.flatMap(i=>Array(seats[i]).fill(i));
-  const circles=dots.map((dot,i)=>{
-    const p=current.parties[assignment[i]],opacity=selected.size&&!selected.has(assignment[i])?.17:1;
-    return`<circle data-party="${p.code}" cx="${dot.x.toFixed(2)}" cy="${dot.y.toFixed(2)}" r="${v.total>400?4.6:6.1}" fill="${p.color}" opacity="${opacity}"><title>${esc(p.name)} · ${seats[assignment[i]]} ${v.noun} seats</title></circle>`;
-  }).join('');
+  if($('seat-order').value==='size')order=largestPartiesFirst(order,seats);
   const selectedMembers=largestPartiesFirst(displayOrder.filter(i=>selected.has(i)),seats),coalition=selectedMembers.reduce((s,i)=>s+seats[i],0);
   $('coalition-label').textContent=selected.size?`${selectedMembers.map(i=>current.parties[i].code).join(' + ')} · ${coalition} ${v.noun} seats${isCombined?` · ${coalition>=v.majority?`${coalition-v.majority} above the majority threshold`:`${v.majority-coalition} short of a majority`}`:''}`:'Select parties below to build a coalition.';
   $('clear-coalition').hidden=!selected.size;
-  const ink=getComputedStyle(document.body).getPropertyValue('--text').trim();
-  const muted=getComputedStyle(document.body).getPropertyValue('--muted').trim();
-  const centre=selected.size||isCombined?`<text x="450" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="46" fill="${ink}">${selected.size?coalition:v.majority}</text><text x="450" y="298" text-anchor="middle" font-family="sans-serif" font-size="11" letter-spacing="2" fill="${muted}">${selected.size?'COALITION SEATS':'SEATS FOR A MAJORITY'}</text>`:'';
-  const caption=selected.size?(isCombined?(coalition>=v.majority?'Majority reached':'Majority not reached'):'Selected parties'):v.description;
-  $('hemicycle').innerHTML=`<svg id="parliament-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 365" role="img" aria-label="${v.label} parliament with ${v.total} seats"><title>Wizlandia ${v.noun} parliament · ${order.map(i=>`${current.parties[i].code} ${seats[i]}`).join(', ')}</title>${circles}${centre}<text x="450" y="325" text-anchor="middle" font-family="sans-serif" font-size="10" fill="${muted}">${caption}</text></svg>`;
+  const style=getComputedStyle(document.body),ink=style.getPropertyValue('--text').trim(),muted=style.getPropertyValue('--muted').trim(),border=style.getPropertyValue('--border').trim(),accent=style.getPropertyValue('--accent').trim();
+  const text=(x,y,label,size=12,color=muted,anchor='middle')=>`<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="sans-serif" font-size="${size}" fill="${color}">${esc(label)}</text>`;
+  const circle=(dot,i,radius)=>{const p=current.parties[i],opacity=!westminster&&selected.size&&!selected.has(i)?.17:1;return`<circle data-party="${p.code}" cx="${dot.x.toFixed(2)}" cy="${dot.y.toFixed(2)}" r="${radius.toFixed(2)}" fill="${p.color}" opacity="${opacity}"><title>${esc(p.name)} · ${seats[i]} ${v.noun} seats</title></circle>`;};
+  let geometry,artwork='';
+  if(westminster){
+    const upper=order.filter(i=>!selected.has(i)),lower=order.filter(i=>selected.has(i)),otherSeats=v.total-coalition;
+    geometry=G.westminster(v.total,otherSeats,coalition);
+    const upperParties=upper.flatMap(i=>Array(seats[i]).fill(i)),lowerParties=lower.flatMap(i=>Array(seats[i]).fill(i));
+    artwork+=text(450,22,isCombined?`Government ${coalition} · Opposition ${otherSeats} · Majority ${v.majority}`:`Selected parties ${coalition} · Other parties ${otherSeats}`,13,ink);
+    artwork+=`<rect x="30" y="181" width="24" height="28" rx="4" fill="${accent}"><title>Speaker</title></rect><rect x="76" y="188" width="90" height="14" rx="3" fill="${border}"/>`;
+    artwork+=text(42,226,'SPEAKER',8);
+    artwork+=geometry.upper.map((dot,i)=>circle(dot,upperParties[i],geometry.radius)).join('');
+    artwork+=geometry.lower.map((dot,i)=>circle(dot,lowerParties[i],geometry.radius)).join('');
+    artwork+=text(geometry.left,geometry.topLabel,`${isCombined?'OPPOSITION':'OTHER PARTIES'} · ${otherSeats}`,11,muted,'start');
+    artwork+=text(geometry.left,geometry.bottomLabel,`${isCombined?'GOVERNMENT':'SELECTED PARTIES'} · ${coalition}`,11,muted,'start');
+    if(!coalition)artwork+=text(470,270,isCombined?'Select parties below to fill the government benches.':'Select parties below to move seats across the aisle.',13);
+    const status=isCombined&&selected.size?(coalition>=v.majority?'Majority reached':'Majority not reached'):v.description;
+    artwork+=text(450,392,status,11);
+    $('diagram-hint').textContent=isCombined?'Two facing benches. Select party cards to move parties between government and opposition.':'Two facing benches. Select party cards to move parties across the aisle.';
+  }else{
+    geometry=G.hemicycle(v.total);
+    const assignment=order.flatMap(i=>Array(seats[i]).fill(i));
+    artwork+=geometry.dots.map((dot,i)=>circle(dot,assignment[i],geometry.radius)).join('');
+    if(selected.size||isCombined){
+      artwork+=`<text x="450" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="46" fill="${ink}">${selected.size?coalition:v.majority}</text>`;
+      artwork+=text(450,298,selected.size?'COALITION SEATS':'SEATS FOR A MAJORITY',11);
+    }
+    const caption=selected.size?(isCombined?(coalition>=v.majority?'Majority reached':'Majority not reached'):'Selected parties'):v.description;
+    artwork+=text(450,325,caption,10);
+    $('diagram-hint').textContent='Each dot represents one seat. Parties follow the selected seat order; select party cards to highlight a coalition.';
+  }
+  const layout=westminster?'Westminster':'Hemicycle';
+  $('hemicycle').innerHTML=`<svg id="parliament-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${geometry.width} ${geometry.height}" role="img" aria-label="${v.label} ${layout} Assembly diagram with ${v.total} seats" aria-describedby="diagram-hint"><title>Wizlandia ${v.label} Assembly · ${layout} · ${order.map(i=>`${current.parties[i].code} ${seats[i]}`).join(', ')}</title>${artwork}</svg>`;
 }
 function renderDistricts(){
   const q=$('district-search').value.toLowerCase().trim(),party=$('district-party').value;
@@ -171,7 +187,7 @@ function recompute(){try{current=E.evaluate(state.economic,state.cultural,state.
 function restore(result){state={economic:result.economic,cultural:result.cultural,variance:result.variance,spread:result.spread,parties:result.parties.map(p=>({...p}))};current=result;render();}
 function getSeed(){const n=Number($('seed').value);if(!Number.isInteger(n)||n<0||n>4294967295)throw new Error('Enter an integer seed between 0 and 4294967295.');return n;}
 function setMode(value){mode=value;$('manual-mode').classList.toggle('active',value==='manual');$('random-mode').classList.toggle('active',value==='random');$('run').textContent=value==='manual'?'▶ Run election':'⚄ Draw election';$('mode-hint').textContent=value==='manual'?'Sliders update the preview. Run saves it to history.':'Draw a new seeded shock around the same baseline.';}
-function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);}
+function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.hidden=true;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);}
 function csv(rows){return rows.map(row=>row.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\r\n')+'\r\n';}
 function resultRows(results){return [['run','economic_shift','cultural_shift','variance_multiplier','district_spread',...D.parties.map(p=>p.code+'_district_seats'),...D.parties.map(p=>p.code+'_pr_seats'),...D.parties.map(p=>p.code+'_combined_seats'),...D.parties.map(p=>p.code+'_vote_percent')],...results.map((h,i)=>{const r=h.result||h;return[h.label||i+1,r.economic,r.cultural,r.variance,r.spread,...r.districtSeats,...r.prSeats,...r.combinedSeats,...r.votes.map(v=>v*100)];})];}
 for(const button of document.querySelectorAll('[data-component]'))button.onclick=()=>{view=button.dataset.component;render();};
@@ -198,7 +214,7 @@ $('batch').onclick=async()=>{
   }catch(e){notice(e.message);}finally{busy=false;$('batch').disabled=$('run').disabled=false;$('batch').textContent=`Draw ${n} elections`;}
 };
 $('party-cards').onclick=event=>{const card=event.target.closest('[data-party]');if(!card)return;const i=Number(card.dataset.party);selected.has(i)?selected.delete(i):selected.add(i);render();};
-$('clear-coalition').onclick=()=>{selected.clear();render();};$('seat-order').onchange=renderParliament;
+$('clear-coalition').onclick=()=>{selected.clear();render();};$('seat-order').onchange=renderParliament;$('diagram-layout').onchange=renderParliament;
 for(const button of document.querySelectorAll('[data-tab]')){
   button.onclick=()=>showTab(button.dataset.tab);
   button.onkeydown=event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const tabs=[...document.querySelectorAll('[data-tab]')].filter(tab=>!tab.hidden),i=tabs.indexOf(button);const j=event.key==='Home'?0:event.key==='End'?tabs.length-1:(i+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;showTab(tabs[j].dataset.tab);tabs[j].focus();};
@@ -216,11 +232,11 @@ $('compass').addEventListener('mousemove',event=>{
   const d=best.d;tip.textContent=`${d.id} · ${d.name} · ${current.parties[d.winner].code} · (${d.x.toFixed(3)}, ${d.y.toFixed(3)})`;tip.hidden=false;
   tip.style.left=Math.max(0,Math.min(event.clientX-rect.left+12,rect.width-245))+'px';tip.style.top=Math.max(0,event.clientY-rect.top-65)+'px';
 });$('compass').onmouseleave=()=>$('tooltip').hidden=true;
-$('export-svg').onclick=()=>download(`wizlandia-${view}-parliament.svg`,new XMLSerializer().serializeToString($('parliament-svg')),'image/svg+xml');
+$('export-svg').onclick=()=>download(`wizlandia-${view}-${$('diagram-layout').value}.svg`,new XMLSerializer().serializeToString($('parliament-svg')),'image/svg+xml');
 $('export-results').onclick=()=>download('wizlandia-results.csv',csv(resultRows([current])),'text/csv;charset=utf-8');
 $('export-history').onclick=()=>download('wizlandia-election-history.csv',csv(resultRows(history)),'text/csv;charset=utf-8');
 $('export-districts').onclick=()=>download('wizlandia-districts.csv',csv([['district_id','type_id','district_type','economic_x','cultural_y','winner','runner_up','distance_gap'],...current.rows.map(d=>[d.id,d.type,d.name,d.x,d.y,current.parties[d.winner].code,current.parties[d.runner].code,d.distanceGap])]),'text/csv;charset=utf-8');
-$('save-config').onclick=()=>{try{download('wizlandia-config.json',JSON.stringify({version:1,view,economic:state.economic,cultural:state.cultural,variance:state.variance,spread:state.spread,seed:getSeed(),runs:Number($('runs').value),parties:state.parties.map(({code,x,y})=>({code,x,y}))},null,2),'application/json');}catch(e){notice(e.message);}};
+$('save-config').onclick=()=>{try{download('wizlandia-config.json',JSON.stringify({version:1,view,diagramLayout:$('diagram-layout').value,seatOrder:$('seat-order').value,economic:state.economic,cultural:state.cultural,variance:state.variance,spread:state.spread,seed:getSeed(),runs:Number($('runs').value),parties:state.parties.map(({code,x,y})=>({code,x,y}))},null,2),'application/json');}catch(e){notice(e.message);}};
 $('load-config-button').onclick=()=>$('load-config').click();
 $('load-config').onchange=async event=>{
   const file=event.target.files[0];if(!file)return;
@@ -230,7 +246,10 @@ $('load-config').onchange=async event=>{
     if(!Number.isInteger(c.seed)||c.seed<0||c.seed>4294967295||!Number.isInteger(c.runs)||c.runs<1||c.runs>100)throw new Error('Invalid seed or batch size.');
     const parties=D.parties.map((p,i)=>{const q=c.parties[i];if(q.code!==p.code)throw new Error('Party codes must match the Wizlandia model.');return{...p,x:q.x,y:q.y};});
     if(c.view!==undefined&&!Object.hasOwn(E.components,c.view))throw new Error('Invalid seat view.');
+    if(c.diagramLayout!==undefined&&!['hemicycle','westminster'].includes(c.diagramLayout))throw new Error('Invalid diagram layout.');
+    if(c.seatOrder!==undefined&&!['political','size'].includes(c.seatOrder))throw new Error('Invalid seat order.');
     const result=E.evaluate(c.economic,c.cultural,c.variance,c.spread,parties);
+    $('diagram-layout').value=c.diagramLayout||'hemicycle';$('seat-order').value=c.seatOrder||'political';
     $('seed').value=c.seed;$('runs').value=c.runs;$('batch').textContent=`Draw ${c.runs} elections`;rng=new E.Mulberry32(c.seed);view=c.view||'combined';setMode('manual');restore(result);notice('Configuration loaded.');
   }catch(e){notice('Could not load configuration: '+e.message);}finally{event.target.value='';}
 };

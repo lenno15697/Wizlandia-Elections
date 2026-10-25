@@ -9,3 +9,25 @@
 @media(max-width:1150px){.component-selector{align-items:flex-start;flex-direction:column;gap:7px}.component-selector .hint{text-align:left}.component-selector .segmented{min-width:0;width:100%}}
 
 [data-combined-only][hidden]{display:none!important}.majority-track.without-majority:after{display:none}
+
+/* Assembly layouts and the seat-distribution cards. */
+.parliament .panel-heading{flex-wrap:wrap;align-items:center}
+.parliament .small-controls{flex-wrap:wrap;row-gap:8px}
+#hemicycle svg{max-height:430px}
+.diagram-hint{margin:9px 0 12px}
+.seat-distribution-heading{display:flex;align-items:center;gap:13px;margin:24px 0 13px;color:var(--navy);font-size:11px;font-weight:750;letter-spacing:1.8px;text-transform:uppercase}
+.seat-distribution-heading:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--gold),transparent)}
+.party-cards{grid-template-columns:repeat(auto-fit,minmax(116px,1fr));gap:10px;margin:0 0 27px}
+.party-card{min-height:154px;padding:15px 12px 13px 14px;overflow:hidden;isolation:isolate;text-align:left;border:1px solid var(--border);border-left:5px solid var(--party);border-radius:9px;background:var(--surface);box-shadow:0 1px 3px #20253504;transition:transform .15s,box-shadow .15s,background .15s}
+.party-card:after{content:"";position:absolute;z-index:-1;width:75px;height:112px;right:-9px;bottom:-20px;background:var(--party);opacity:.06;clip-path:polygon(50% 0,100% 24%,100% 100%,0 100%,0 24%);pointer-events:none}
+.party-card:hover{transform:translateY(-2px);background:var(--surface);box-shadow:0 5px 15px #2025350a}
+.party-card[aria-pressed=true]{box-shadow:0 0 0 2px var(--party);background:var(--surface)}
+.party-card[aria-pressed=true]:after{opacity:.13}
+.party-card .code{display:block;margin:0 0 8px;font:650 11px/1.3 ui-monospace,SFMono-Regular,monospace;letter-spacing:1.2px;color:var(--muted)}
+.party-card .seat{display:block;margin:0 0 6px;font:750 43px/1.05 ui-monospace,SFMono-Regular,monospace;letter-spacing:-2px;color:var(--party)}
+.party-card .seat-share{display:block;font-size:11px;font-weight:600;color:var(--muted);line-height:1.5}
+.party-card .vote{display:block;font-size:10px;font-weight:500;color:var(--muted);line-height:1.5;white-space:nowrap}
+.party-card .card-bar{display:block;width:100%;height:4px;margin-top:12px;background:var(--track);border-radius:3px;overflow:hidden}
+.party-card .card-bar>span{display:block;height:100%;border-radius:3px}
+body.dark .party-card .seat{color:color-mix(in srgb,var(--party) 70%,white)}
+@media(max-width:480px){.parliament{padding-left:15px;padding-right:15px}.parliament .panel-heading{gap:12px}.parliament .small-controls{justify-content:flex-start}.parliament .small-controls select{padding-left:7px;padding-right:7px;font-size:10px}.party-cards{gap:9px}.party-card{min-height:148px}.party-card .seat{font-size:40px}.component-selector .segmented button{white-space:normal}}
