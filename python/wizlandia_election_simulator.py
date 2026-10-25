@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Interactive Wizlandia election simulator: latest 186--170 district baseline.
+"""Interactive Wizlandia election simulator: 400 district + 400 parallel PR seats.
 
 Install:
     python -m pip install numpy scipy matplotlib
@@ -28,7 +28,9 @@ centres. Nearest-party district winners have the intended Condorcet/Ranked
 Pairs interpretation under Euclidean preferences and centrally symmetric
 within-district electorates.
 
-Baseline seats: LDP 186, CA 170, SDP 18, CON 20, GRN 6, all others zero.
+District baseline seats: LDP 186, CA 170, SDP 18, CON 20, GRN 6, all others zero.
+PR seats use nationwide largest remainder (Hare quota), without a threshold.
+They are added to district seats: 800 total seats and a majority of 401.
 National baseline votes: 31%, 25%, 11%, 10%, 8%, 7%, 4%, 3%, 1%.
 Each district has its own fixed, tiny offset from its type centre (at most
 0.10 compass units). Antithetic offsets preserve each type mean. The radius
@@ -61,6 +63,8 @@ from scipy.special import ndtr
 
 
 CODES = ["LDP", "CA", "SDP", "CON", "GRN", "NF", "LIB", "UPL", "SWP"]
+DISPLAY_ORDER = [8, 7, 2, 4, 1, 0, 3, 6, 5]  # SWP, UPL, SDP, GRN, CA, LDP, CON, LIB, NF
+PR_SEAT_COUNT = 400
 NAMES = [
     "Liberal Democratic Party", "Civic Alliance", "Social Democratic Party",
     "Conservative Party", "Green Party", "National Front", "Libertarian Party",
@@ -315,6 +319,26 @@ INDIVIDUAL_IDS = [f"{row[0]:02d}-{i + 1:02d}"
 
 
 
+def allocate_pr(votes, total=PR_SEAT_COUNT):
+    """Hare/largest remainder, no threshold; ties use canonical CODES order."""
+    shares = np.asarray(votes, dtype=float)
+    if shares.ndim != 1 or not len(shares) or not np.all(np.isfinite(shares)) or np.any(shares < 0) or shares.sum() <= 0:
+        raise ValueError("Votes must be finite, nonnegative and have positive total.")
+    if not isinstance(total, (int, np.integer)) or total < 1:
+        raise ValueError("The number of PR seats must be a positive integer.")
+    quotas = shares / shares.sum() * total
+    seats = np.floor(quotas).astype(int)
+    remaining = int(total - seats.sum())
+    order = sorted(range(len(shares)), key=lambda i: (-(quotas[i] - seats[i]), i))
+    for i in order[:remaining]:
+        seats[i] += 1
+    return seats
+
+
+BASELINE_PR_SEATS = allocate_pr(TARGETS)
+BASELINE_COMBINED_SEATS = BASELINE_SEATS + BASELINE_PR_SEATS
+
+
 @dataclass
 class ElectionResult:
     economic: float
@@ -325,6 +349,27 @@ class ElectionResult:
     votes: np.ndarray
     winners: tuple
     tied_districts: int
+
+    @property
+    def district_seats(self):
+        return self.seats  # Backwards-compatible district-seat field.
+
+    @property
+    def pr_seats(self):
+        return allocate_pr(self.votes)
+
+    @property
+    def combined_seats(self):
+        return self.district_seats + self.pr_seats
+
+    def component_seats(self, component="combined"):
+        if component == "district":
+            return self.district_seats
+        if component == "pr":
+            return self.pr_seats
+        if component == "combined":
+            return self.combined_seats
+        raise ValueError("Component must be district, pr or combined.")
 
     @property
     def national_median(self):
@@ -410,14 +455,16 @@ def save_elections_csv(path, history):
         writer.writerow([
             "election", "economic_shift", "cultural_shift", "variance_multiplier",
             "national_median_x", "national_median_y", "tied_districts",
-            *[f"{code}_seats" for code in CODES],
+            *[f"{code}_district_seats" for code in CODES],
+            *[f"{code}_pr_seats" for code in CODES],
+            *[f"{code}_combined_seats" for code in CODES],
             *[f"{code}_vote_percent" for code in CODES],
         ])
         for index, election in enumerate(history):
             writer.writerow([
                 index, election.economic, election.cultural, election.variance,
                 *election.national_median, election.tied_districts,
-                *election.seats, *(100 * election.votes),
+                *election.district_seats, *election.pr_seats, *election.combined_seats, *(100 * election.votes),
             ])
 
 
@@ -477,11 +524,12 @@ def plot_domains():
 class ElectionExplorer:
     """Matplotlib UI. Keep the instance alive while its figure is open."""
 
-    def __init__(self, seed=20261014, elections=30):
+    def __init__(self, seed=20261014, elections=30, component="combined"):
         import matplotlib.pyplot as plt
         from matplotlib.widgets import Button, Slider
 
         self.plt = plt
+        self.component = component
         self.seed = int(seed)
         self.n = elections
         self.history = simulate_elections(self.n, self.seed)
@@ -492,7 +540,7 @@ class ElectionExplorer:
         self.grid_x, self.grid_y = np.meshgrid(
             np.linspace(*self.xlim, 180), np.linspace(*self.ylim, 180))
         self.fig = plt.figure(figsize=(14, 10.5))
-        self.fig.suptitle("Wizlandia election shocks - broader LDP districts", y=.98, fontsize=16)
+        self.fig.suptitle("Wizlandia election shocks - districts + nationwide PR", y=.98, fontsize=16)
         self.ax_compass = self.fig.add_axes([.07, .44, .43, .39])
         self.ax_seats = self.fig.add_axes([.62, .43, .29, .385])
         self.ax_history = self.fig.add_axes([.07, .105, .88, .18])
@@ -525,9 +573,19 @@ class ElectionExplorer:
             button = Button(self.fig.add_axes([x, .321, width, .032]), label)
             button.on_clicked(callback)
             self.buttons.append(button)
+        for index, component_name in enumerate(["district", "pr", "combined"]):
+            button = Button(self.fig.add_axes([.62 + index * .10, .878, .09, .025]),
+                            ("PR" if component_name == "pr" else component_name.title()))
+            button.on_clicked(lambda _, name=component_name: self.set_component(name))
+            self.buttons.append(button)
         self.sequence_label = self.fig.text(.81, .337, "", fontsize=9, ha="left", va="center")
         self.fig.canvas.mpl_connect("button_press_event", self._clicked)
         self.fig.canvas.mpl_connect("motion_notify_event", self._hover)
+        self._draw_history()
+        self._draw_current()
+
+    def set_component(self, component):
+        self.component = component
         self._draw_history()
         self._draw_current()
 
@@ -601,15 +659,19 @@ class ElectionExplorer:
         ax = self.ax_seats
         ax.clear()
         positions = np.arange(len(CODES))
-        ax.barh(positions, self.current.seats, color=COLORS, height=.68)
-        ax.vlines(self.base.seats, positions - .4, positions + .4,
+        seats = self.current.component_seats(self.component)
+        baseline = self.base.component_seats(self.component)
+        order = DISPLAY_ORDER
+        total = int(seats.sum())
+        ax.barh(positions, seats[order], color=[COLORS[i] for i in order], height=.68)
+        ax.vlines(baseline[order], positions - .4, positions + .4,
                   color=".4", linewidth=1.1, linestyles="-")
-        for i, seats in enumerate(self.current.seats):
-            ax.text(1.025, i, str(seats), transform=ax.get_yaxis_transform(),
+        for position, i in enumerate(order):
+            ax.text(1.025, position, str(seats[i]), transform=ax.get_yaxis_transform(),
                     va="center", fontsize=10)
-        ax.set(yticks=positions, yticklabels=CODES, xlim=(0, 400),
-               ylim=(len(CODES) - .4, -.65), xlabel="Seats out of 400",
-               ylabel="Party", title="District seats")
+        ax.set(yticks=positions, yticklabels=[CODES[i] for i in order], xlim=(0, total),
+               ylim=(len(CODES) - .4, -.65), xlabel=f"Seats out of {total}",
+               ylabel="Party", title=f"{self.component.upper() if self.component == 'pr' else self.component.title()} seats (majority {total // 2 + 1})")
         ax.grid(axis="x", color=".88", linewidth=.5, linestyle="-")
         ax.set_axisbelow(True)
 
@@ -618,14 +680,15 @@ class ElectionExplorer:
         ax.clear()
         indices = np.arange(len(self.history))
         bottom = np.zeros(len(self.history))
-        seats = np.array([e.seats for e in self.history])
-        for j, (code, color) in enumerate(zip(CODES, COLORS)):
-            ax.bar(indices, seats[:, j], bottom=bottom, color=color, width=.86,
-                   edgecolor="none", label=code)
+        seats = np.array([e.component_seats(self.component) for e in self.history])
+        for j in DISPLAY_ORDER:
+            ax.bar(indices, seats[:, j], bottom=bottom, color=COLORS[j], width=.86,
+                   edgecolor="none", label=CODES[j])
             bottom += seats[:, j]
-        ax.set(xlim=(-.6, self.n + .6), ylim=(0, 400),
+        total = int(seats[0].sum())
+        ax.set(xlim=(-.6, self.n + .6), ylim=(0, total),
                xticks=np.unique(np.linspace(0, self.n, 7, dtype=int)),
-               xlabel="Election (0 = baseline)", ylabel="District seats")
+               xlabel="Election (0 = baseline)", ylabel=f"{self.component.title()} seats")
         ax.grid(axis="y", color=".88", linewidth=.5, linestyle="-")
         ax.set_axisbelow(True)
         self.history_marker, = ax.plot([], [], marker="v", color=".2", markersize=7,
@@ -646,7 +709,7 @@ class ElectionExplorer:
         self.sequence_label.set_text(
             "Custom" if self.active < 0 else f"Election {self.active}/{self.n}")
         self.history_marker.set_data([self.active] if self.active >= 0 else [],
-                                     [411] if self.active >= 0 else [])
+                                     [int(self.current.component_seats(self.component).sum()) * 1.0275] if self.active >= 0 else [])
         self.detail.set_text("Hover over a district dot or a seat bar for details.")
         self.fig.canvas.draw_idle()
 
@@ -667,17 +730,19 @@ class ElectionExplorer:
                 text = (f"{INDIVIDUAL_IDS[i]}: {DISTRICT_NAMES[type_index]} | "
                         f"({x:.3f}, {y:.3f}) | {names}")
         elif event.inaxes is self.ax_seats and event.ydata is not None:
-            i = int(math.floor(event.ydata + .5))
-            if 0 <= i < len(CODES):
-                change = self.current.seats[i] - self.base.seats[i]
-                text = (f"{NAMES[i]} | {self.current.seats[i]} district seats ({change:+d})"
+            position = int(math.floor(event.ydata + .5))
+            if 0 <= position < len(CODES):
+                i = DISPLAY_ORDER[position]
+                seats = self.current.component_seats(self.component)
+                change = seats[i] - self.base.component_seats(self.component)[i]
+                text = (f"{NAMES[i]} | {seats[i]} {self.component} seats ({change:+d})"
                         f" | national vote {100 * self.current.votes[i]:.2f}%")
         elif event.inaxes is self.ax_history and event.xdata is not None:
             i = int(np.clip(math.floor(event.xdata + .5), 0, self.n))
             election = self.history[i]
             text = (f"Election {i} | economic {election.economic:+.2f}, "
                     f"cultural {election.cultural:+.2f}, variance {election.variance:.2f}x | "
-                    + " | ".join(f"{code} {n}" for code, n in zip(CODES, election.seats) if n))
+                    + " | ".join(f"{code} {n}" for code, n in zip(CODES, election.component_seats(self.component)) if n))
         if text != self.detail.get_text():
             self.detail.set_text(text)
             self.fig.canvas.draw_idle()
@@ -692,6 +757,10 @@ def self_test():
 
     assert TOTAL_DISTRICTS == 400
     assert len(DISTRICT_ROWS) == 50
+    assert np.array_equal(evaluate().pr_seats, [124, 100, 44, 40, 32, 28, 16, 12, 4])
+    assert np.array_equal(evaluate().combined_seats, [310, 270, 62, 60, 38, 28, 16, 12, 4])
+    assert np.array_equal(allocate_pr([.4, .35, .25], 7), [3, 2, 2])
+    assert [CODES[i] for i in DISPLAY_ORDER] == ["SWP", "UPL", "SDP", "GRN", "CA", "LDP", "CON", "LIB", "NF"]
     assert np.array_equal(evaluate().seats, BASELINE_SEATS)
     assert len(INDIVIDUAL_CENTRES) == 400
     assert len(np.unique(INDIVIDUAL_CENTRES, axis=0)) == 400
@@ -720,13 +789,17 @@ def self_test():
     unnormalized_pdf = lambda x: np.exp(-.5 * ((np.log(x) - .20**2) / .20)**2) / x
     assert np.allclose(unnormalized_pdf(v), unnormalized_pdf(1 / v), rtol=1e-13, atol=0)
     for election in sequence:
-        assert election.seats.sum() == 400
+        assert election.district_seats.sum() == 400
+        assert election.pr_seats.sum() == 400
+        assert election.combined_seats.sum() == 800
         assert abs(election.votes.sum() - 1) < 1e-8
     for economic in [-1, 0, 1]:
         for cultural in [-1, 0, 1]:
             for variance in [.5, 1, 2]:
                 election = evaluate(economic, cultural, variance)
-                assert election.seats.sum() == 400
+                assert election.district_seats.sum() == 400
+                assert election.pr_seats.sum() == 400
+                assert election.combined_seats.sum() == 800
                 assert np.min(election.votes) > -1e-10
                 assert abs(election.votes.sum() - 1) < 1e-8
     print("All checks passed.")
@@ -742,9 +815,10 @@ def main():
     parser.add_argument("--economic", type=float, default=None, help="Initial economic shift [-1,1]")
     parser.add_argument("--cultural", type=float, default=None, help="Initial cultural shift [-1,1]")
     parser.add_argument("--variance", type=float, default=None, help="Initial variance multiplier [.5,2]")
+    parser.add_argument("--component", choices=["district", "pr", "combined"], default="combined")
     parser.add_argument("--output", type=Path, help="Save initial figure, e.g. election.png")
     parser.add_argument("--csv", type=Path, help="Export baseline + election sequence")
-    parser.add_argument("--district-csv", type=Path, help="Export district types for initial scenario")
+    parser.add_argument("--district-csv", type=Path, help="Export individual districts for initial scenario")
     parser.add_argument("--no-show", action="store_true", help="Headless output; no GUI window")
     parser.add_argument("--self-test", action="store_true", help="Run numerical checks and exit")
     args = parser.parse_args()
@@ -763,7 +837,7 @@ def main():
     if args.no_show:
         import matplotlib
         matplotlib.use("Agg")
-    explorer = ElectionExplorer(seed=args.seed, elections=args.elections)
+    explorer = ElectionExplorer(seed=args.seed, elections=args.elections, component=args.component)
     if any(value is not None for value in (args.economic, args.cultural, args.variance)):
         explorer.active = -1
         explorer.current = evaluate(*initial)
@@ -778,7 +852,8 @@ def main():
         explorer.save_csv(args.csv)
     if args.district_csv:
         save_districts_csv(args.district_csv, explorer.current)
-    print("Current seats:", dict(zip(CODES, explorer.current.seats.tolist())))
+    for component in ["district", "pr", "combined"]:
+        print(f"{component.title()} seats:", dict(zip(CODES, explorer.current.component_seats(component).tolist())))
     print("National votes (%):",
           dict(zip(CODES, (100 * explorer.current.votes).round(4).tolist())))
     if args.no_show:

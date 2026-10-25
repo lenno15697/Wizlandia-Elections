@@ -548,7 +548,41 @@ const data = {
     0.03,
     0.01
   ],
-  "spread": 0.1
+  "spread": 0.1,
+  "prSeatCount": 400,
+  "displayOrder": [
+    8,
+    7,
+    2,
+    4,
+    1,
+    0,
+    3,
+    6,
+    5
+  ],
+  "baselinePr": [
+    124,
+    100,
+    44,
+    40,
+    32,
+    28,
+    16,
+    12,
+    4
+  ],
+  "baselineCombined": [
+    310,
+    270,
+    62,
+    60,
+    38,
+    28,
+    16,
+    12,
+    4
+  ]
 };
 if(typeof module!=="undefined" && module.exports) module.exports=data;
 else root.WizlandiaData=data;

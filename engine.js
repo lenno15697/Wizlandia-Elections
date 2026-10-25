@@ -98,6 +98,24 @@ function voteShares(economic=0,cultural=0,variance=1,parties=D.parties){
   const sum=result.reduce((a,b)=>a+b,0);
   return result.map(v=>Math.max(0,v/sum));
 }
+function allocatePR(votes,total=D.prSeatCount){
+  if(!Array.isArray(votes)||!votes.length||!votes.every(v=>Number.isFinite(v)&&v>=0)||votes.reduce((a,b)=>a+b,0)<=0)throw new Error('Votes must be finite, nonnegative and have positive total.');
+  if(!Number.isInteger(total)||total<1)throw new Error('PR seat count must be a positive integer.');
+  const sum=votes.reduce((a,b)=>a+b,0),quotas=votes.map(v=>v/sum*total),seats=quotas.map(Math.floor);
+  const remaining=total-seats.reduce((a,b)=>a+b,0);
+  const order=quotas.map((q,i)=>({i,remainder:q-seats[i]})).sort((a,b)=>b.remainder-a.remainder||a.i-b.i);
+  for(const {i} of order.slice(0,remaining))seats[i]++;
+  return seats;
+}
+const components={
+  district:{key:'district',label:'District',noun:'district',total:400,majority:201,baseline:D.baseline,description:'400 single-member districts · Ranked Pairs model'},
+  pr:{key:'pr',label:'PR',noun:'PR',total:D.prSeatCount,majority:Math.floor(D.prSeatCount/2)+1,baseline:D.baselinePr,description:'400 nationwide PR seats · largest remainder'},
+  combined:{key:'combined',label:'Combined',noun:'combined',total:400+D.prSeatCount,majority:Math.floor((400+D.prSeatCount)/2)+1,baseline:D.baselineCombined,description:'400 district + 400 parallel PR seats'}
+};
+function component(result,key='combined'){
+  if(!Object.hasOwn(components,key))throw new Error('Unknown election component.');
+  return{...components[key],seats:result[key+'Seats']};
+}
 function evaluate(economic=0,cultural=0,variance=1,spread=D.spread,parties=D.parties){
   if(![economic,cultural,variance].every(Number.isFinite)||Math.abs(economic)>1||Math.abs(cultural)>1||variance<.5||variance>2)throw new Error('Use shifts from −1 to +1 and variance from 0.50 to 2.00.');
   validateParties(parties);
@@ -113,7 +131,8 @@ function evaluate(economic=0,cultural=0,variance=1,spread=D.spread,parties=D.par
     const ordered=distances.map((distance,i)=>({distance,i})).sort((a,b)=>a.distance-b.distance||a.i-b.i);
     return {...district,x,y,winner,runner:ordered[1].i,distanceGap:Math.sqrt(ordered[1].distance)-Math.sqrt(ordered[0].distance)};
   });
-  return{economic,cultural,variance,spread,parties:parties.map(p=>({...p})),seats,rows,votes:voteShares(economic,cultural,variance,parties),median:[D.center[0]+economic,D.center[1]+cultural],tied};
+  const votes=voteShares(economic,cultural,variance,parties),prSeats=allocatePR(votes),combinedSeats=seats.map((n,i)=>n+prSeats[i]);
+  return{economic,cultural,variance,spread,parties:parties.map(p=>({...p})),seats,districtSeats:seats,prSeats,combinedSeats,rows,votes,median:[D.center[0]+economic,D.center[1]+cultural],tied};
 }
 class Mulberry32{
   constructor(seed){this.seed=seed>>>0;}
@@ -137,6 +156,6 @@ function density(x,y,result){
     total+=w*Math.exp(-(zx*zx-2*rho*zx*zy+zy*zy)/(2*d))/(2*Math.PI*sx*sy*Math.sqrt(d));
   });return total;
 }
-const API={districts,evaluate,voteShares,density,drawShocks,Mulberry32,validateParties};
+const API={allocatePR,component,components,districts,evaluate,voteShares,density,drawShocks,Mulberry32,validateParties};
 if(typeof module!=='undefined'&&module.exports)module.exports=API;else root.WizlandiaEngine=API;
 })(typeof window!=='undefined'?window:globalThis);

@@ -14,7 +14,7 @@ scenarios += [(0,.5,1)]
 records=[]
 for e,c,v in scenarios:
     result=m.evaluate(e,c,v)
-    records.append(dict(economic=e,cultural=c,variance=v,seats=result.seats.tolist(),votes=result.votes.tolist()))
+    records.append(dict(economic=e,cultural=c,variance=v,seats=result.seats.tolist(),prSeats=result.pr_seats.tolist(),combinedSeats=result.combined_seats.tolist(),votes=result.votes.tolist()))
 fixture=dict(centres=m.INDIVIDUAL_CENTRES.tolist(),scenarios=records,
              shocks=[dict(economic=e.economic,cultural=e.cultural,variance=e.variance)
                      for e in m.simulate_elections(10)[1:]])

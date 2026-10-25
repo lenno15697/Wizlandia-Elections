@@ -27,6 +27,8 @@ data = dict(
     covariances=m.COVARIANCES.tolist(), gaussNodes=m.GAUSS_NODES.tolist(),
     gaussWeights=m.GAUSS_WEIGHTS.tolist(), baseline=m.BASELINE_SEATS.tolist(),
     targets=m.TARGETS.tolist(), spread=m.DISTRICT_SPREAD,
+    prSeatCount=m.PR_SEAT_COUNT, displayOrder=m.DISPLAY_ORDER,
+    baselinePr=m.BASELINE_PR_SEATS.tolist(), baselineCombined=m.BASELINE_COMBINED_SEATS.tolist(),
 )
 (root / 'data.js').write_text('/* Model constants exported from python/wizlandia_election_simulator.py. */\n(function(root){\nconst data = '+json.dumps(data,ensure_ascii=False,indent=2)+';\nif(typeof module!=="undefined" && module.exports) module.exports=data;\nelse root.WizlandiaData=data;\n})(typeof window!=="undefined"?window:globalThis);\n')
 print('Exported data.js')
