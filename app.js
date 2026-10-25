@@ -51,7 +51,6 @@ function render(){
 function renderParliament(){
   const v=shown(),seats=v.seats,isCombined=view==='combined';
   let order=displayOrder.slice();
-  if($('seat-order').value==='listed')order=current.parties.map((_,i)=>i);
   if($('seat-order').value==='size')order.sort((a,b)=>seats[b]-seats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b));
   const radii=Array.from({length:v.total>400?14:10},(_,i)=>v.total>400?136+i*14:145+i*18),sum=radii.reduce((a,b)=>a+b,0);
   const allocations=radii.map(r=>v.total*r/sum),counts=allocations.map(Math.floor);
