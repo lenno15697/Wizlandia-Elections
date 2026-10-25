@@ -50,8 +50,9 @@ function render(){
 }
 function renderParliament(){
   const v=shown(),seats=v.seats,isCombined=view==='combined',westminster=$('diagram-layout').value==='westminster';
+  $('seat-order').hidden=westminster;$('seat-order-label').hidden=westminster;
   let order=displayOrder.slice();
-  if($('seat-order').value==='size')order=largestPartiesFirst(order,seats);
+  if(westminster||$('seat-order').value==='size')order=largestPartiesFirst(order,seats);
   const selectedMembers=largestPartiesFirst(displayOrder.filter(i=>selected.has(i)),seats),coalition=selectedMembers.reduce((s,i)=>s+seats[i],0);
   $('coalition-label').textContent=selected.size?`${selectedMembers.map(i=>current.parties[i].code).join(' + ')} · ${coalition} ${v.noun} seats${isCombined?` · ${coalition>=v.majority?`${coalition-v.majority} above the majority threshold`:`${v.majority-coalition} short of a majority`}`:''}`:'Select parties below to build a coalition.';
   $('clear-coalition').hidden=!selected.size;
@@ -73,7 +74,7 @@ function renderParliament(){
     if(!coalition)artwork+=text(470,270,isCombined?'Select parties below to fill the government benches.':'Select parties below to move seats across the aisle.',13);
     const status=isCombined&&selected.size?(coalition>=v.majority?'Majority reached':'Majority not reached'):v.description;
     artwork+=text(450,392,status,11);
-    $('diagram-hint').textContent=isCombined?'Two facing benches. Select party cards to move parties between government and opposition.':'Two facing benches. Select party cards to move parties across the aisle.';
+    $('diagram-hint').textContent=(isCombined?'Two facing benches. Select party cards to move parties between government and opposition.':'Two facing benches. Select party cards to move parties across the aisle.')+' Parties are ordered largest first within each bench.';
   }else{
     geometry=G.hemicycle(v.total);
     const assignment=order.flatMap(i=>Array(seats[i]).fill(i));

@@ -161,7 +161,8 @@ rounding from splitting party colour blocks.
 Westminster uses two facing benches. Selecting party cards moves those parties
 to the government bench; clearing the selection moves them back. The component
 views use neutral Selected parties / Other parties labels and show no majority
-threshold. Seat order applies within each bench. Layout and seat-order choices
+threshold. Westminster always orders parties largest first within each bench;
+the Seat order control is shown only for the hemicycle. Layout and seat-order choices
 are included in configuration saves. SVG export uses the displayed diagram.
 
 Seat Distribution uses cards with a coloured left border, a large coloured seat
