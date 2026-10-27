@@ -276,7 +276,7 @@ The coastline-based update samples the five landmass silhouettes on a common hex
 ## Geographic realism update
 
 Major university/student districts are dispersed across Lorenvia, Wizlandia
-City, Akropolis, Southport, Sorenvia and Erewenton. Both manufacturing types are
+City, Akropolis, Southport, Ravenna and Erewenton. Both manufacturing types are
 coastal, and type 26 is now **Manufacturing towns**. Farmland is moved away from
 the cold north, with five Traditional dairy and livestock districts in Laxburg's
 hinterland. Sierra Vista and Zyoto receive tourism, hospitality and scenic/amenity
@@ -287,3 +287,21 @@ State-level election results change to reflect the revised type placement.
 
 Run `node tests/geography-realism.test.js` for the geographic constraints and
 `node tests/diagrams.test.js` for the restored arcs and tiny-party grouping.
+
+## Capital and northern tourism update
+
+The major university district formerly in Sorenvia is now in Ravenna. The six
+major university cities are Lorenvia, Wizlandia City, Akropolis, Southport,
+Ravenna and Erewenton.
+
+Alpinton has a wealthy resort/tourism-owner district, reflecting its skiing
+industry. Lux Aeterna has a scenic/amenity-tourism district centred on Northern
+Lights tourism. Westhaven has affluent managerial, professional-family,
+entrepreneurial and prosperous independent-business districts, while retaining
+its two dockyard/shipbuilding districts and one capital public-employment seat.
+
+The eight capital-city public-employment districts are allocated as Lorenvia
+three, and Ravenna, Erewenton, Westhaven, Kroana City and Luqur Bay one each.
+Every capital other than Lorenvia has at most one; several have none because
+the original national total remains eight. All type counts, compass centres,
+paired offsets, district boundaries, populations and map positions are retained.

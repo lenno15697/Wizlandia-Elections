@@ -2,12 +2,12 @@
 const assert=require('node:assert/strict'),H=require('../district-geography.js'),D=require('../data.js'),E=require('../engine.js');
 const universities=H.districts.filter(d=>d.type===8);
 assert.equal(universities.length,6);
-assert.deepEqual(universities.map(d=>d.locality).sort(),['Lorenvia','Wizlandia City','Akropolis','Southport','Sorenvia','Erewenton'].sort());
+assert.deepEqual(universities.map(d=>d.locality).sort(),['Lorenvia','Wizlandia City','Akropolis','Southport','Ravenna','Erewenton'].sort());
 for(const d of universities)assert.ok(d.metroShare>=.3);
 assert.equal(D.types.find(t=>t.id===26).name,'Manufacturing towns');
 for(const d of H.districts.filter(d=>[25,26].includes(d.type))){
  assert.ok(d.coastDistance<=14,'Manufacturing must lie in coastal population belts');
- assert.ok(!['Sierra Vista','Zyoto','Laxford'].includes(d.locality));
+ assert.ok(!['Sierra Vista','Zyoto','Laxford','Alpinton','Lux Aeterna','Westhaven'].includes(d.locality));
  if(d.type===26)assert.equal(d.typeName,'Manufacturing towns');
 }
 const farms=H.districts.filter(d=>[33,34,35,36,37,42].includes(d.type));assert.equal(farms.length,48);
@@ -23,4 +23,15 @@ const laxford=H.districts.filter(d=>d.locality==='Laxford');assert.deepEqual(lax
 for(const t of D.types)assert.equal(H.districts.filter(d=>d.type===t.id).length,t.count);
 assert.equal(new Set(H.districts.map(d=>d.legacyId)).size,400);
 assert.deepEqual(E.evaluate().districtSeats,D.baseline);
-console.log('Geographic realism checks passed: six university cities, coastal manufacturing, southern agriculture, Sierra Vista and Zyoto tourism, Laxford services and five Laxburg dairy districts; all 50 type counts and national baseline preserved.');
+const capitals=['Lorenvia','Westhaven','Erewenton','Ravenna','Avondale','Lyanna','Kroana City','Queloria','Akropolis','Luqur Bay','Illixia','Queenstown','Wittan'];
+const publicRows=H.districts.filter(d=>d.type===7);assert.equal(publicRows.length,8);
+for(const city of capitals.filter(c=>c!=='Lorenvia'))assert.ok(publicRows.filter(d=>d.locality===city).length<=1,`${city} can have at most one public-employment district`);
+assert.ok(publicRows.every(d=>capitals.includes(d.locality)));
+assert.equal(publicRows.filter(d=>d.locality==='Lorenvia').length,3);
+const alpinton=H.districts.filter(d=>d.locality==='Alpinton'),lux=H.districts.filter(d=>d.locality==='Lux Aeterna');
+assert.equal(alpinton.length,1);assert.equal(alpinton[0].type,46);
+assert.equal(lux.length,1);assert.equal(lux[0].type,40);
+const westhaven=H.districts.filter(d=>d.locality==='Westhaven');
+for(const type of [11,12,13,30])assert.ok(westhaven.some(d=>d.type===type));
+assert.ok(westhaven.every(d=>![10,25,26,31].includes(d.type)));
+console.log('Geographic realism checks passed: Ravenna university, ski and Northern Lights tourism, wealthy business Westhaven, capital public-employment cap, and all preceding manufacturing/farming/dairy rules.');
