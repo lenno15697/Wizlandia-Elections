@@ -125,7 +125,7 @@ function renderParliament(){
     $('diagram-hint').textContent=(isCombined?'Two facing benches. Select party cards to move parties between government and opposition.':'Two facing benches. Select party cards to move parties across the aisle.')+' Parties are ordered largest first within each bench.';
   }else{
     geometry=G.hemicycle(v.total);
-    const assignment=order.flatMap(i=>Array(seats[i]).fill(i));
+    const assignment=G.seatAssignments(geometry,order.map(i=>seats[i])).map(rank=>order[rank]);
     artwork+=geometry.dots.map((dot,i)=>circle(dot,assignment[i],geometry.radius)).join('');
     if(selected.size||isCombined){
       artwork+=`<text x="450" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="46" fill="${ink}">${selected.size?coalition:v.majority}</text>`;

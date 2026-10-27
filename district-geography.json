@@ -128,7 +128,9 @@
       "tileY": 12.0,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 2.86141,
+      "coldNorthShare": 1.0
     },
     {
       "id": "NX-02",
@@ -158,7 +160,9 @@
       "tileY": 13.5,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 2.53611,
+      "coldNorthShare": 1.0
     },
     {
       "id": "NX-03",
@@ -188,7 +192,9 @@
       "tileY": 13.5,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 5.3435,
+      "coldNorthShare": 1.0
     },
     {
       "id": "NX-04",
@@ -207,18 +213,20 @@
       "metroShare": 0.83868,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.83868,
-      "type": 28,
-      "typeName": "Regional university and college towns",
-      "family": "Regional city / town",
-      "legacyId": "28-01",
-      "x": -0.09484492703041036,
-      "y": -2.56149044434764,
-      "baselineWinner": "CA",
+      "type": 8,
+      "typeName": "Major university and student districts",
+      "family": "Urban core",
+      "legacyId": "08-02",
+      "x": -2.0715049814853765,
+      "y": -4.024835531369349,
+      "baselineWinner": "GRN",
       "tileX": 45.033321,
       "tileY": 12.0,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 3.85187,
+      "coldNorthShare": 1.0
     },
     {
       "id": "NX-05",
@@ -248,7 +256,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 1.7841,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-06",
@@ -278,7 +288,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 3.61801,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-07",
@@ -308,7 +320,9 @@
       "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 2.89058,
+      "coldNorthShare": 0.30862
     },
     {
       "id": "NX-08",
@@ -338,7 +352,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 6.49659,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-09",
@@ -368,7 +384,9 @@
       "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 7.81043,
+      "coldNorthShare": 0.56179
     },
     {
       "id": "NX-10",
@@ -398,7 +416,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 10.28319,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-11",
@@ -428,7 +448,9 @@
       "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 11.61296,
+      "coldNorthShare": 0.21964
     },
     {
       "id": "NX-12",
@@ -458,7 +480,9 @@
       "tileY": 13.5,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 9.12577,
+      "coldNorthShare": 0.221
     },
     {
       "id": "NX-13",
@@ -488,7 +512,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 1.85018,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-14",
@@ -518,7 +544,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 5.5982,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-15",
@@ -548,7 +576,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 5.551,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-16",
@@ -578,7 +608,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 9.91123,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-17",
@@ -608,7 +640,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 12.35842,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-18",
@@ -638,7 +672,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 14.21505,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-19",
@@ -668,7 +704,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 16.29497,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-20",
@@ -698,7 +736,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 5.12241,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-21",
@@ -728,7 +768,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 4.39231,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-22",
@@ -758,7 +800,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 20.8554,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-23",
@@ -788,7 +832,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 23.49703,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-24",
@@ -818,7 +864,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 15.48575,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-25",
@@ -848,7 +896,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 2.56793,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-26",
@@ -878,7 +928,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 3.36197,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-27",
@@ -908,7 +960,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 13.20999,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-28",
@@ -938,7 +992,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 2.58834,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-29",
@@ -968,7 +1024,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 19,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 8.35162,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-30",
@@ -998,7 +1056,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 6.34612,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-31",
@@ -1028,7 +1088,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 19,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 9.79573,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-32",
@@ -1058,7 +1120,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 10.78277,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-33",
@@ -1088,7 +1152,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 3.85776,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-34",
@@ -1118,7 +1184,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 3.99573,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-35",
@@ -1148,7 +1216,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 14,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 2.41109,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-36",
@@ -1178,7 +1248,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 17,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 8.94593,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-37",
@@ -1208,7 +1280,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 15.73127,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-38",
@@ -1238,7 +1312,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 9.21066,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-39",
@@ -1268,7 +1344,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 8.14016,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-40",
@@ -1298,7 +1376,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 15.30684,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-41",
@@ -1328,7 +1408,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 13,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 1.68131,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-42",
@@ -1358,7 +1440,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 14,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 3.14414,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-43",
@@ -1388,7 +1472,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 15,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 3.37127,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-44",
@@ -1407,18 +1493,20 @@
       "metroShare": 0.9712,
       "urbanCoreShare": 0.6723,
       "dominantCityShare": 0.95705,
-      "type": 18,
-      "typeName": "Diverse first-home buyer suburbs",
-      "family": "Suburban / exurban",
-      "legacyId": "18-05",
-      "x": 1.941803860283031,
-      "y": -0.9186151797861938,
-      "baselineWinner": "CA",
+      "type": 8,
+      "typeName": "Major university and student districts",
+      "family": "Urban core",
+      "legacyId": "08-03",
+      "x": -2.0971387445434266,
+      "y": -3.9119455336062354,
+      "baselineWinner": "GRN",
       "tileX": 27.712813,
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 16,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 5.60001,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-45",
@@ -1448,7 +1536,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 9.50033,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-46",
@@ -1478,7 +1568,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 9.37937,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-47",
@@ -1508,7 +1600,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 19,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 14.76285,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-48",
@@ -1538,7 +1632,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 19.49758,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-49",
@@ -1568,7 +1664,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 22.28148,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-50",
@@ -1598,7 +1696,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 14,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 1.49735,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-51",
@@ -1628,7 +1728,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 14,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 2.70584,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-52",
@@ -1658,7 +1760,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 15,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 3.45367,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-53",
@@ -1688,7 +1792,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 16,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 5.97526,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-54",
@@ -1718,7 +1824,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 17,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 8.48866,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-55",
@@ -1748,7 +1856,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 9.54463,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-56",
@@ -1778,7 +1888,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 19,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 15.73797,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-57",
@@ -1808,7 +1920,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 21.49202,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-58",
@@ -1827,18 +1941,20 @@
       "metroShare": 0.32366,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.16018,
-      "type": 30,
-      "typeName": "Prosperous independent-business towns",
-      "family": "Regional city / town",
-      "legacyId": "30-01",
-      "x": 3.3718764743090426,
-      "y": 0.9569628271427633,
+      "type": 35,
+      "typeName": "Export wine, orchard and specialty-crop districts",
+      "family": "Rural / resource",
+      "legacyId": "35-01",
+      "x": 3.910021986595005,
+      "y": -0.09954652706322262,
       "baselineWinner": "LDP",
       "tileX": 38.971143,
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 28.79969,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-59",
@@ -1868,7 +1984,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 15,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 1.82291,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-60",
@@ -1898,7 +2016,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 16,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 4.44469,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-61",
@@ -1928,7 +2048,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 17,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 2.97487,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-62",
@@ -1958,7 +2080,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 17,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 7.45206,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-63",
@@ -1988,7 +2112,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 13.29846,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-64",
@@ -2018,7 +2144,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 19,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 10.08432,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-65",
@@ -2048,7 +2176,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 15,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 2.72791,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-66",
@@ -2078,7 +2208,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 19,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 9.22183,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-67",
@@ -2108,7 +2240,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 17.87349,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-68",
@@ -2138,7 +2272,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 26.79367,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-69",
@@ -2157,18 +2293,20 @@
       "metroShare": 0.44127,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.34587,
-      "type": 24,
-      "typeName": "Regional retail and commercial hubs",
-      "family": "Regional city / town",
-      "legacyId": "24-02",
-      "x": 2.337852390629338,
-      "y": -0.025265988031362152,
+      "type": 35,
+      "typeName": "Export wine, orchard and specialty-crop districts",
+      "family": "Rural / resource",
+      "legacyId": "35-02",
+      "x": 4.089978013404995,
+      "y": -0.2940737190307273,
       "baselineWinner": "LDP",
       "tileX": 38.105118,
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 35.37312,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-70",
@@ -2198,7 +2336,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 16,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 2.59008,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-71",
@@ -2228,7 +2368,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 6.54462,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-72",
@@ -2258,7 +2400,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 10.82459,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-73",
@@ -2277,18 +2421,20 @@
       "metroShare": 0.96711,
       "urbanCoreShare": 0.90526,
       "dominantCityShare": 0.93493,
-      "type": 8,
-      "typeName": "Major university and student districts",
+      "type": 10,
+      "typeName": "Social-housing and old industrial cores",
       "family": "Urban core",
-      "legacyId": "08-02",
-      "x": -2.0715049814853765,
-      "y": -4.024835531369349,
-      "baselineWinner": "GRN",
+      "legacyId": "10-03",
+      "x": -2.2301432271110255,
+      "y": 0.13402270101460445,
+      "baselineWinner": "SDP",
       "tileX": 33.774991,
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 19,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 12.54834,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-74",
@@ -2318,7 +2464,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 17.23075,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-75",
@@ -2348,7 +2496,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 14,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 2.20983,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-76",
@@ -2378,7 +2528,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 15,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 5.1028,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-77",
@@ -2408,7 +2560,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 16,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 8.4382,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-78",
@@ -2438,7 +2592,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 17,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 8.23445,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-79",
@@ -2468,7 +2624,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 14.35956,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-80",
@@ -2498,7 +2656,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 20.33572,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-81",
@@ -2528,7 +2688,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 27.60277,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-82",
@@ -2558,7 +2720,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 14,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 2.97058,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-83",
@@ -2588,7 +2752,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 17,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 10.10008,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-84",
@@ -2618,7 +2784,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 19,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 17.27719,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-85",
@@ -2648,7 +2816,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 26.94093,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-86",
@@ -2678,7 +2848,9 @@
       "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 15,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 13.53667,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-87",
@@ -2697,18 +2869,20 @@
       "metroShare": 0.26302,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.20601,
-      "type": 24,
-      "typeName": "Regional retail and commercial hubs",
-      "family": "Regional city / town",
-      "legacyId": "24-03",
-      "x": 2.266623011192463,
-      "y": 0.040638979704738565,
+      "type": 35,
+      "typeName": "Export wine, orchard and specialty-crop districts",
+      "family": "Rural / resource",
+      "legacyId": "35-06",
+      "x": 3.8807403828690643,
+      "y": -0.32827644467263917,
       "baselineWinner": "LDP",
       "tileX": 34.641016,
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 18.77973,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-88",
@@ -2738,7 +2912,9 @@
       "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 14,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 8.41746,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-89",
@@ -2768,7 +2944,9 @@
       "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 17,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 19.4199,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-90",
@@ -2798,7 +2976,9 @@
       "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 10.78679,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-91",
@@ -2828,7 +3008,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 3.4969,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-92",
@@ -2858,7 +3040,9 @@
       "tileY": 33.0,
       "landmass": 3,
       "tileColumn": 14,
-      "tileRow": 22
+      "tileRow": 22,
+      "coastDistance": 7.52776,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-93",
@@ -2888,7 +3072,9 @@
       "tileY": 33.0,
       "landmass": 3,
       "tileColumn": 15,
-      "tileRow": 22
+      "tileRow": 22,
+      "coastDistance": 6.21845,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-94",
@@ -2918,7 +3104,9 @@
       "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 19,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 6.51197,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-95",
@@ -2948,7 +3136,9 @@
       "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 5.87132,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-96",
@@ -2978,7 +3168,9 @@
       "tileY": 33.0,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 22
+      "tileRow": 22,
+      "coastDistance": 4.12079,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-97",
@@ -3008,7 +3200,9 @@
       "tileY": 33.0,
       "landmass": 3,
       "tileColumn": 19,
-      "tileRow": 22
+      "tileRow": 22,
+      "coastDistance": 4.00623,
+      "coldNorthShare": 0.0
     },
     {
       "id": "NX-98",
@@ -3038,7 +3232,9 @@
       "tileY": 33.0,
       "landmass": 3,
       "tileColumn": 20,
-      "tileRow": 22
+      "tileRow": 22,
+      "coastDistance": 2.54541,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-01",
@@ -3057,18 +3253,20 @@
       "metroShare": 0.0,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0,
-      "type": 42,
-      "typeName": "Strongly religious agricultural districts",
-      "family": "Rural / resource",
-      "legacyId": "42-01",
-      "x": 1.3794877600651287,
-      "y": 3.0641582744163203,
-      "baselineWinner": "CON",
+      "type": 27,
+      "typeName": "Logistics and warehousing towns",
+      "family": "Regional city / town",
+      "legacyId": "27-04",
+      "x": 0.6294140328033201,
+      "y": 0.5005734762730036,
+      "baselineWinner": "CA",
       "tileX": 21.650635,
       "tileY": 7.5,
       "landmass": 2,
       "tileColumn": 12,
-      "tileRow": 5
+      "tileRow": 5,
+      "coastDistance": 8.73954,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-02",
@@ -3098,7 +3296,9 @@
       "tileY": 7.5,
       "landmass": 2,
       "tileColumn": 11,
-      "tileRow": 5
+      "tileRow": 5,
+      "coastDistance": 8.02044,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-03",
@@ -3128,7 +3328,9 @@
       "tileY": 9.0,
       "landmass": 2,
       "tileColumn": 13,
-      "tileRow": 6
+      "tileRow": 6,
+      "coastDistance": 5.20562,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-04",
@@ -3158,7 +3360,9 @@
       "tileY": 9.0,
       "landmass": 2,
       "tileColumn": 10,
-      "tileRow": 6
+      "tileRow": 6,
+      "coastDistance": 3.91103,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-05",
@@ -3177,18 +3381,20 @@
       "metroShare": 0.02771,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.02734,
-      "type": 36,
-      "typeName": "Traditional dairy and livestock districts",
+      "type": 40,
+      "typeName": "Scenic countryside and amenity-migration districts",
       "family": "Rural / resource",
-      "legacyId": "36-01",
-      "x": 1.2301564924925152,
-      "y": 1.9411107996089143,
-      "baselineWinner": "CON",
+      "legacyId": "40-01",
+      "x": 0.9049422983632298,
+      "y": -2.089070834575302,
+      "baselineWinner": "CA",
       "tileX": 20.78461,
       "tileY": 9.0,
       "landmass": 2,
       "tileColumn": 12,
-      "tileRow": 6
+      "tileRow": 6,
+      "coastDistance": 21.13721,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-06",
@@ -3218,7 +3424,9 @@
       "tileY": 10.5,
       "landmass": 2,
       "tileColumn": 13,
-      "tileRow": 7
+      "tileRow": 7,
+      "coastDistance": 4.66028,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-07",
@@ -3248,7 +3456,9 @@
       "tileY": 9.0,
       "landmass": 2,
       "tileColumn": 11,
-      "tileRow": 6
+      "tileRow": 6,
+      "coastDistance": 15.01957,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-08",
@@ -3267,18 +3477,20 @@
       "metroShare": 0.76609,
       "urbanCoreShare": 0.44251,
       "dominantCityShare": 0.7638,
-      "type": 46,
-      "typeName": "Resort-business and tourism-owner districts",
-      "family": "Specialised",
-      "legacyId": "46-02",
-      "x": 3.940066657851657,
-      "y": -1.3904299199871262,
+      "type": 11,
+      "typeName": "Affluent managerial suburbs",
+      "family": "Suburban / exurban",
+      "legacyId": "11-07",
+      "x": 4.110854938483341,
+      "y": -0.91001044636288,
       "baselineWinner": "LDP",
       "tileX": 24.248711,
       "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 14,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 3.76342,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-09",
@@ -3308,7 +3520,9 @@
       "tileY": 10.5,
       "landmass": 2,
       "tileColumn": 11,
-      "tileRow": 7
+      "tileRow": 7,
+      "coastDistance": 17.68201,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-10",
@@ -3338,7 +3552,9 @@
       "tileY": 10.5,
       "landmass": 2,
       "tileColumn": 12,
-      "tileRow": 7
+      "tileRow": 7,
+      "coastDistance": 10.3175,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-11",
@@ -3358,7 +3574,7 @@
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.26857,
       "type": 26,
-      "typeName": "Unionised export-manufacturing towns",
+      "typeName": "Manufacturing towns",
       "family": "Regional city / town",
       "legacyId": "26-01",
       "x": -0.6338027349011978,
@@ -3368,7 +3584,9 @@
       "tileY": 10.5,
       "landmass": 2,
       "tileColumn": 9,
-      "tileRow": 7
+      "tileRow": 7,
+      "coastDistance": 7.93463,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-12",
@@ -3398,7 +3616,9 @@
       "tileY": 10.5,
       "landmass": 2,
       "tileColumn": 10,
-      "tileRow": 7
+      "tileRow": 7,
+      "coastDistance": 11.11403,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-13",
@@ -3428,7 +3648,9 @@
       "tileY": 13.5,
       "landmass": 2,
       "tileColumn": 11,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 6.36531,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-14",
@@ -3458,7 +3680,9 @@
       "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 12,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 13.23778,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-15",
@@ -3488,7 +3712,9 @@
       "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 13,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 5.74915,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EW-16",
@@ -3518,7 +3744,9 @@
       "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 11,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 3.16586,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-17",
@@ -3548,7 +3776,9 @@
       "tileY": 15.0,
       "landmass": 2,
       "tileColumn": 12,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 2.71503,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-18",
@@ -3578,7 +3808,9 @@
       "tileY": 13.5,
       "landmass": 2,
       "tileColumn": 12,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 1.96105,
+      "coldNorthShare": 0.02078
     },
     {
       "id": "EW-19",
@@ -3597,18 +3829,20 @@
       "metroShare": 0.1278,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.09623,
-      "type": 35,
-      "typeName": "Export wine, orchard and specialty-crop districts",
-      "family": "Rural / resource",
-      "legacyId": "35-01",
-      "x": 3.910021986595005,
-      "y": -0.09954652706322262,
+      "type": 30,
+      "typeName": "Prosperous independent-business towns",
+      "family": "Regional city / town",
+      "legacyId": "30-01",
+      "x": 3.3718764743090426,
+      "y": 0.9569628271427633,
       "baselineWinner": "LDP",
       "tileX": 17.320508,
       "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 10,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 7.2515,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-20",
@@ -3638,7 +3872,9 @@
       "tileY": 9.0,
       "landmass": 2,
       "tileColumn": 7,
-      "tileRow": 6
+      "tileRow": 6,
+      "coastDistance": 13.79212,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-21",
@@ -3668,7 +3904,9 @@
       "tileY": 10.5,
       "landmass": 2,
       "tileColumn": 7,
-      "tileRow": 7
+      "tileRow": 7,
+      "coastDistance": 8.0741,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-22",
@@ -3698,7 +3936,9 @@
       "tileY": 13.5,
       "landmass": 2,
       "tileColumn": 10,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 6.16445,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-23",
@@ -3717,18 +3957,20 @@
       "metroShare": 0.17669,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.17631,
-      "type": 35,
-      "typeName": "Export wine, orchard and specialty-crop districts",
+      "type": 33,
+      "typeName": "Productive commercial farming districts",
       "family": "Rural / resource",
-      "legacyId": "35-02",
-      "x": 4.089978013404995,
-      "y": -0.2940737190307273,
+      "legacyId": "33-04",
+      "x": 3.6104780055732695,
+      "y": 1.4947489889944998,
       "baselineWinner": "LDP",
       "tileX": 10.392305,
       "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 29.21359,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-24",
@@ -3758,7 +4000,9 @@
       "tileY": 10.5,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 7
+      "tileRow": 7,
+      "coastDistance": 10.43858,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-25",
@@ -3788,7 +4032,9 @@
       "tileY": 15.0,
       "landmass": 2,
       "tileColumn": 11,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 2.59792,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-26",
@@ -3818,7 +4064,9 @@
       "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 7,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 9.19183,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-27",
@@ -3848,7 +4096,9 @@
       "tileY": 15.0,
       "landmass": 2,
       "tileColumn": 10,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 2.98582,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-28",
@@ -3878,7 +4128,9 @@
       "tileY": 15.0,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 33.5124,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-29",
@@ -3897,18 +4149,20 @@
       "metroShare": 0.07448,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.04499,
-      "type": 41,
-      "typeName": "Rural commuter belts",
+      "type": 33,
+      "typeName": "Productive commercial farming districts",
       "family": "Rural / resource",
-      "legacyId": "41-02",
-      "x": 2.6745647831579764,
-      "y": 1.2516807758128279,
+      "legacyId": "33-05",
+      "x": 3.6447427012998177,
+      "y": 1.5969699326321316,
       "baselineWinner": "LDP",
       "tileX": 11.25833,
       "tileY": 13.5,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 21.72497,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-30",
@@ -3927,18 +4181,20 @@
       "metroShare": 0.22485,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.20397,
-      "type": 24,
-      "typeName": "Regional retail and commercial hubs",
-      "family": "Regional city / town",
-      "legacyId": "24-06",
-      "x": 2.259292374294419,
-      "y": 0.14820036893930494,
+      "type": 34,
+      "typeName": "Mixed farming and rural-service districts",
+      "family": "Rural / resource",
+      "legacyId": "34-03",
+      "x": 2.8947427012998177,
+      "y": 1.4669699326321315,
       "baselineWinner": "LDP",
       "tileX": 16.454483,
       "tileY": 16.5,
       "landmass": 2,
       "tileColumn": 9,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 8.35331,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-31",
@@ -3968,7 +4224,9 @@
       "tileY": 15.0,
       "landmass": 2,
       "tileColumn": 7,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 12.91277,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-32",
@@ -3998,7 +4256,9 @@
       "tileY": 16.5,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 28.83799,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-33",
@@ -4028,7 +4288,9 @@
       "tileY": 18.0,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 30.97665,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-34",
@@ -4047,18 +4309,20 @@
       "metroShare": 0.359,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.31863,
-      "type": 30,
-      "typeName": "Prosperous independent-business towns",
-      "family": "Regional city / town",
-      "legacyId": "30-05",
-      "x": 3.5300642706194374,
-      "y": 1.098125263973837,
+      "type": 35,
+      "typeName": "Export wine, orchard and specialty-crop districts",
+      "family": "Rural / resource",
+      "legacyId": "35-07",
+      "x": 3.8008534598712247,
+      "y": -0.21526697962489882,
       "baselineWinner": "LDP",
       "tileX": 11.25833,
       "tileY": 16.5,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 20.7369,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-35",
@@ -4088,7 +4352,9 @@
       "tileY": 16.5,
       "landmass": 2,
       "tileColumn": 7,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 7.04362,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-36",
@@ -4118,7 +4384,9 @@
       "tileY": 18.0,
       "landmass": 2,
       "tileColumn": 9,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 1.61091,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-37",
@@ -4148,7 +4416,9 @@
       "tileY": 16.5,
       "landmass": 2,
       "tileColumn": 8,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 4.39658,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-38",
@@ -4167,18 +4437,20 @@
       "metroShare": 0.48641,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.36822,
-      "type": 27,
-      "typeName": "Logistics and warehousing towns",
-      "family": "Regional city / town",
-      "legacyId": "27-04",
-      "x": 0.6294140328033201,
-      "y": 0.5005734762730036,
-      "baselineWinner": "CA",
+      "type": 8,
+      "typeName": "Major university and student districts",
+      "family": "Urban core",
+      "legacyId": "08-05",
+      "x": -1.8552308009904177,
+      "y": -4.157956977558097,
+      "baselineWinner": "GRN",
       "tileX": 11.25833,
       "tileY": 19.5,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 12.60017,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-39",
@@ -4208,7 +4480,9 @@
       "tileY": 18.0,
       "landmass": 2,
       "tileColumn": 7,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 9.0679,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-40",
@@ -4238,7 +4512,9 @@
       "tileY": 18.0,
       "landmass": 2,
       "tileColumn": 8,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 4.0599,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-41",
@@ -4268,7 +4544,9 @@
       "tileY": 21.0,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 2.66441,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-42",
@@ -4298,7 +4576,9 @@
       "tileY": 24.0,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 3.91498,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-43",
@@ -4328,7 +4608,9 @@
       "tileY": 19.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 6.69973,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-44",
@@ -4358,7 +4640,9 @@
       "tileY": 22.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 9.55882,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-45",
@@ -4388,7 +4672,9 @@
       "tileY": 18.0,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 10.43338,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-46",
@@ -4418,7 +4704,9 @@
       "tileY": 21.0,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 14.6916,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-47",
@@ -4448,7 +4736,9 @@
       "tileY": 22.5,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 15.85394,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-48",
@@ -4478,7 +4768,9 @@
       "tileY": 19.5,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 15.63056,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-49",
@@ -4508,7 +4800,9 @@
       "tileY": 21.0,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 15.25508,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-50",
@@ -4538,7 +4832,9 @@
       "tileY": 21.0,
       "landmass": 2,
       "tileColumn": 7,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 8.21187,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-51",
@@ -4568,7 +4864,9 @@
       "tileY": 19.5,
       "landmass": 2,
       "tileColumn": 7,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 2.37647,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-52",
@@ -4598,7 +4896,9 @@
       "tileY": 25.5,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 2.77262,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-53",
@@ -4628,7 +4928,9 @@
       "tileY": 27.0,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 5.20498,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-54",
@@ -4658,7 +4960,9 @@
       "tileY": 24.0,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 11.92087,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-55",
@@ -4688,7 +4992,9 @@
       "tileY": 25.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 5.87428,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-56",
@@ -4718,7 +5024,9 @@
       "tileY": 25.5,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 8.05789,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-57",
@@ -4748,7 +5056,9 @@
       "tileY": 24.0,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 5.11154,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-58",
@@ -4778,7 +5088,9 @@
       "tileY": 25.5,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 3.82551,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-59",
@@ -4808,7 +5120,9 @@
       "tileY": 22.5,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 2.88193,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EW-60",
@@ -4838,7 +5152,9 @@
       "tileY": 22.5,
       "landmass": 2,
       "tileColumn": 7,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 3.01851,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-01",
@@ -4868,7 +5184,9 @@
       "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 53.95832,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-02",
@@ -4898,7 +5216,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 45.6242,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-03",
@@ -4917,18 +5237,20 @@
       "metroShare": 0.7192,
       "urbanCoreShare": 0.03294,
       "dominantCityShare": 0.49113,
-      "type": 11,
-      "typeName": "Affluent managerial suburbs",
-      "family": "Suburban / exurban",
-      "legacyId": "11-07",
-      "x": 4.110854938483341,
-      "y": -0.91001044636288,
+      "type": 46,
+      "typeName": "Resort-business and tourism-owner districts",
+      "family": "Specialised",
+      "legacyId": "46-02",
+      "x": 3.940066657851657,
+      "y": -1.3904299199871262,
       "baselineWinner": "LDP",
       "tileX": 46.765372,
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 28.79081,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-04",
@@ -4947,18 +5269,20 @@
       "metroShare": 0.98202,
       "urbanCoreShare": 0.64187,
       "dominantCityShare": 0.92107,
-      "type": 19,
-      "typeName": "Environmentally minded garden suburbs",
-      "family": "Suburban / exurban",
-      "legacyId": "19-04",
-      "x": 1.1109911126555185,
-      "y": -2.5976890703863513,
+      "type": 40,
+      "typeName": "Scenic countryside and amenity-migration districts",
+      "family": "Rural / resource",
+      "legacyId": "40-02",
+      "x": 0.9550577016367703,
+      "y": -2.3645494115186474,
       "baselineWinner": "CA",
       "tileX": 47.631397,
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 23.97537,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-05",
@@ -4977,18 +5301,20 @@
       "metroShare": 0.00191,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.00157,
-      "type": 38,
-      "typeName": "Forestry and timber communities",
+      "type": 37,
+      "typeName": "Declining smallholder farming districts",
       "family": "Rural / resource",
-      "legacyId": "38-01",
-      "x": 0.1605974219098572,
-      "y": 1.6102700773484784,
+      "legacyId": "37-01",
+      "x": -0.10097521538113235,
+      "y": 2.2813267085890843,
       "baselineWinner": "CA",
       "tileX": 45.033321,
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 76.63318,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-06",
@@ -5008,7 +5334,7 @@
       "urbanCoreShare": 0.08917,
       "dominantCityShare": 0.86711,
       "type": 26,
-      "typeName": "Unionised export-manufacturing towns",
+      "typeName": "Manufacturing towns",
       "family": "Regional city / town",
       "legacyId": "26-02",
       "x": -0.8661972650988022,
@@ -5018,7 +5344,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 12.20085,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-07",
@@ -5048,7 +5376,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 45.63722,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-08",
@@ -5078,7 +5408,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 6.65314,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-09",
@@ -5108,7 +5440,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 2.28565,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-10",
@@ -5138,7 +5472,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 5.70091,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-11",
@@ -5168,7 +5504,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 69.65816,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-12",
@@ -5187,18 +5525,20 @@
       "metroShare": 0.00014,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.00014,
-      "type": 40,
-      "typeName": "Scenic countryside and amenity-migration districts",
+      "type": 37,
+      "typeName": "Declining smallholder farming districts",
       "family": "Rural / resource",
-      "legacyId": "40-01",
-      "x": 0.9049422983632298,
-      "y": -2.089070834575302,
+      "legacyId": "37-02",
+      "x": -0.27902478461886765,
+      "y": 2.0850530453169656,
       "baselineWinner": "CA",
       "tileX": 40.703194,
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 24.45692,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-13",
@@ -5228,7 +5568,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 42.40863,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-14",
@@ -5247,18 +5589,20 @@
       "metroShare": 0.30738,
       "urbanCoreShare": 0.06605,
       "dominantCityShare": 0.20539,
-      "type": 27,
-      "typeName": "Logistics and warehousing towns",
+      "type": 25,
+      "typeName": "Advanced-manufacturing cities",
       "family": "Regional city / town",
-      "legacyId": "27-06",
-      "x": 0.43482893226587216,
-      "y": 0.28689203233777205,
+      "legacyId": "25-01",
+      "x": 1.2280553245188237,
+      "y": -0.2357138005311226,
       "baselineWinner": "CA",
       "tileX": 46.765372,
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 11.43927,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-15",
@@ -5288,7 +5632,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 49.52013,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-16",
@@ -5318,7 +5664,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 46.65532,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-17",
@@ -5337,18 +5685,20 @@
       "metroShare": 0.52517,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.34718,
-      "type": 26,
-      "typeName": "Unionised export-manufacturing towns",
+      "type": 28,
+      "typeName": "Regional university and college towns",
       "family": "Regional city / town",
-      "legacyId": "26-03",
-      "x": -0.8063649180018498,
-      "y": 0.0778709670089224,
+      "legacyId": "28-01",
+      "x": -0.09484492703041036,
+      "y": -2.56149044434764,
       "baselineWinner": "CA",
       "tileX": 45.899346,
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 24.84716,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-18",
@@ -5367,18 +5717,20 @@
       "metroShare": 0.68191,
       "urbanCoreShare": 0.3826,
       "dominantCityShare": 0.68037,
-      "type": 25,
-      "typeName": "Advanced-manufacturing cities",
-      "family": "Regional city / town",
-      "legacyId": "25-01",
-      "x": 1.2280553245188237,
-      "y": -0.2357138005311226,
+      "type": 18,
+      "typeName": "Diverse first-home buyer suburbs",
+      "family": "Suburban / exurban",
+      "legacyId": "18-05",
+      "x": 1.941803860283031,
+      "y": -0.9186151797861938,
       "baselineWinner": "CA",
       "tileX": 41.569219,
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 41.38659,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-19",
@@ -5397,18 +5749,20 @@
       "metroShare": 0.2126,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.21059,
-      "type": 26,
-      "typeName": "Unionised export-manufacturing towns",
-      "family": "Regional city / town",
-      "legacyId": "26-04",
-      "x": -0.6936350819981502,
-      "y": -0.19149121310287234,
+      "type": 37,
+      "typeName": "Declining smallholder farming districts",
+      "family": "Rural / resource",
+      "legacyId": "37-04",
+      "x": -0.035661431400199034,
+      "y": 2.197493940800916,
       "baselineWinner": "CA",
       "tileX": 45.033321,
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 39.1214,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-20",
@@ -5438,7 +5792,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 5.41519,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-21",
@@ -5468,7 +5824,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 7.55118,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-22",
@@ -5498,7 +5856,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 24.77699,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-23",
@@ -5517,18 +5877,20 @@
       "metroShare": 0.55577,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.55577,
-      "type": 25,
-      "typeName": "Advanced-manufacturing cities",
-      "family": "Regional city / town",
-      "legacyId": "25-02",
-      "x": 1.4719446754811765,
-      "y": -0.15790644556282737,
-      "baselineWinner": "CA",
+      "type": 14,
+      "typeName": "Established middle-income homeowner suburbs",
+      "family": "Suburban / exurban",
+      "legacyId": "14-15",
+      "x": 2.748213882546632,
+      "y": -0.17014072549491466,
+      "baselineWinner": "LDP",
       "tileX": 45.899346,
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 22.60893,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-24",
@@ -5547,18 +5909,20 @@
       "metroShare": 0.67724,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.67713,
-      "type": 25,
-      "typeName": "Advanced-manufacturing cities",
-      "family": "Regional city / town",
-      "legacyId": "25-03",
-      "x": 1.4825375055033214,
-      "y": -0.25804581227276124,
+      "type": 19,
+      "typeName": "Environmentally minded garden suburbs",
+      "family": "Suburban / exurban",
+      "legacyId": "19-04",
+      "x": 1.1109911126555185,
+      "y": -2.5976890703863513,
       "baselineWinner": "CA",
       "tileX": 47.631397,
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 17.91158,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-25",
@@ -5588,7 +5952,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 10.93148,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-26",
@@ -5618,7 +5984,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 4.00392,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-27",
@@ -5648,7 +6016,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 3.85471,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-28",
@@ -5678,7 +6048,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 12.91297,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-29",
@@ -5697,18 +6069,20 @@
       "metroShare": 0.13415,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.12431,
-      "type": 40,
-      "typeName": "Scenic countryside and amenity-migration districts",
+      "type": 42,
+      "typeName": "Strongly religious agricultural districts",
       "family": "Rural / resource",
-      "legacyId": "40-02",
-      "x": 0.9550577016367703,
-      "y": -2.3645494115186474,
-      "baselineWinner": "CA",
+      "legacyId": "42-01",
+      "x": 1.3794877600651287,
+      "y": 3.0641582744163203,
+      "baselineWinner": "CON",
       "tileX": 42.435245,
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 25.70701,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-30",
@@ -5727,18 +6101,20 @@
       "metroShare": 0.6295,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.6295,
-      "type": 25,
-      "typeName": "Advanced-manufacturing cities",
-      "family": "Regional city / town",
-      "legacyId": "25-05",
-      "x": 1.28668598251847,
-      "y": -0.04552451503898064,
-      "baselineWinner": "CA",
+      "type": 14,
+      "typeName": "Established middle-income homeowner suburbs",
+      "family": "Suburban / exurban",
+      "legacyId": "14-16",
+      "x": 2.3517861174533676,
+      "y": -0.2234795205990353,
+      "baselineWinner": "LDP",
       "tileX": 43.30127,
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 18.06566,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-31",
@@ -5768,7 +6144,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 15.01668,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-32",
@@ -5798,7 +6176,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 12.58735,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-33",
@@ -5828,7 +6208,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 10.88076,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-34",
@@ -5858,7 +6240,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 7.94492,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-35",
@@ -5888,7 +6272,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 3.78463,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-36",
@@ -5918,7 +6304,9 @@
       "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 1.63757,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-37",
@@ -5937,18 +6325,20 @@
       "metroShare": 0.94973,
       "urbanCoreShare": 0.57861,
       "dominantCityShare": 0.94973,
-      "type": 28,
-      "typeName": "Regional university and college towns",
+      "type": 25,
+      "typeName": "Advanced-manufacturing cities",
       "family": "Regional city / town",
-      "legacyId": "28-04",
-      "x": -0.1872043627974988,
-      "y": -2.508920890823586,
+      "legacyId": "25-02",
+      "x": 1.4719446754811765,
+      "y": -0.15790644556282737,
       "baselineWinner": "CA",
       "tileX": 38.971143,
       "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 3.67788,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-38",
@@ -5968,7 +6358,7 @@
       "urbanCoreShare": 0.12978,
       "dominantCityShare": 0.92978,
       "type": 26,
-      "typeName": "Unionised export-manufacturing towns",
+      "typeName": "Manufacturing towns",
       "family": "Regional city / town",
       "legacyId": "26-05",
       "x": -0.8055061738338665,
@@ -5978,7 +6368,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 6.82136,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-39",
@@ -5998,7 +6390,7 @@
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.60523,
       "type": 26,
-      "typeName": "Unionised export-manufacturing towns",
+      "typeName": "Manufacturing towns",
       "family": "Regional city / town",
       "legacyId": "26-06",
       "x": -0.6944938261661335,
@@ -6008,7 +6400,9 @@
       "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 10.41307,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-40",
@@ -6027,18 +6421,20 @@
       "metroShare": 0.11709,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.09684,
-      "type": 40,
-      "typeName": "Scenic countryside and amenity-migration districts",
+      "type": 37,
+      "typeName": "Declining smallholder farming districts",
       "family": "Rural / resource",
-      "legacyId": "40-03",
-      "x": 0.8394570490224575,
-      "y": -2.3706919288053068,
+      "legacyId": "37-06",
+      "x": -0.33138930090964785,
+      "y": 2.290499315439493,
       "baselineWinner": "CA",
       "tileX": 40.703194,
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 18.52097,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-41",
@@ -6068,7 +6464,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 12.42304,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-42",
@@ -6098,7 +6496,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 6.19918,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-43",
@@ -6128,7 +6528,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 8.2449,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-44",
@@ -6147,18 +6549,20 @@
       "metroShare": 0.99013,
       "urbanCoreShare": 0.99013,
       "dominantCityShare": 0.99013,
-      "type": 8,
-      "typeName": "Major university and student districts",
-      "family": "Urban core",
-      "legacyId": "08-03",
-      "x": -2.0971387445434266,
-      "y": -3.9119455336062354,
-      "baselineWinner": "GRN",
+      "type": 25,
+      "typeName": "Advanced-manufacturing cities",
+      "family": "Regional city / town",
+      "legacyId": "25-03",
+      "x": 1.4825375055033214,
+      "y": -0.25804581227276124,
+      "baselineWinner": "CA",
       "tileX": 45.033321,
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 5.00054,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-45",
@@ -6188,7 +6592,9 @@
       "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 6.58389,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-46",
@@ -6218,7 +6624,9 @@
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 3.78054,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-47",
@@ -6237,18 +6645,20 @@
       "metroShare": 0.98973,
       "urbanCoreShare": 0.98973,
       "dominantCityShare": 0.98973,
-      "type": 8,
-      "typeName": "Major university and student districts",
-      "family": "Urban core",
-      "legacyId": "08-05",
-      "x": -1.8552308009904177,
-      "y": -4.157956977558097,
-      "baselineWinner": "GRN",
+      "type": 25,
+      "typeName": "Advanced-manufacturing cities",
+      "family": "Regional city / town",
+      "legacyId": "25-05",
+      "x": 1.28668598251847,
+      "y": -0.04552451503898064,
+      "baselineWinner": "CA",
       "tileX": 50.229473,
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 2.84631,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-48",
@@ -6278,7 +6688,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 2.12696,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-49",
@@ -6308,7 +6720,9 @@
       "tileY": 33.0,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 22
+      "tileRow": 22,
+      "coastDistance": 1.94627,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-50",
@@ -6338,7 +6752,9 @@
       "tileY": 33.0,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 22
+      "tileRow": 22,
+      "coastDistance": 2.70076,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-51",
@@ -6357,18 +6773,20 @@
       "metroShare": 0.39525,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.39514,
-      "type": 31,
-      "typeName": "Declining former industrial towns",
+      "type": 26,
+      "typeName": "Manufacturing towns",
       "family": "Regional city / town",
-      "legacyId": "31-02",
-      "x": -1.5216610003324342,
-      "y": 1.454639197414636,
+      "legacyId": "26-03",
+      "x": -0.8063649180018498,
+      "y": 0.0778709670089224,
       "baselineWinner": "CA",
       "tileX": 39.837169,
       "tileY": 33.0,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 22
+      "tileRow": 22,
+      "coastDistance": 3.4833,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-52",
@@ -6398,7 +6816,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 10.35331,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-53",
@@ -6428,7 +6848,9 @@
       "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 6.23763,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-54",
@@ -6458,7 +6880,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 4.46505,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-55",
@@ -6488,7 +6912,9 @@
       "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 2.40185,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-56",
@@ -6518,7 +6944,9 @@
       "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 2.05164,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AX-57",
@@ -6537,18 +6965,20 @@
       "metroShare": 0.99129,
       "urbanCoreShare": 0.99129,
       "dominantCityShare": 0.99129,
-      "type": 8,
-      "typeName": "Major university and student districts",
-      "family": "Urban core",
-      "legacyId": "08-06",
-      "x": -2.024769199009582,
-      "y": -3.795663268535852,
-      "baselineWinner": "GRN",
+      "type": 26,
+      "typeName": "Manufacturing towns",
+      "family": "Regional city / town",
+      "legacyId": "26-04",
+      "x": -0.6936350819981502,
+      "y": -0.19149121310287234,
+      "baselineWinner": "CA",
       "tileX": 46.765372,
       "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 1.53507,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-01",
@@ -6578,7 +7008,9 @@
       "tileY": 12.0,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 2.98987,
+      "coldNorthShare": 1.0
     },
     {
       "id": "ET-02",
@@ -6608,7 +7040,9 @@
       "tileY": 13.5,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 13.33009,
+      "coldNorthShare": 1.0
     },
     {
       "id": "ET-03",
@@ -6627,18 +7061,20 @@
       "metroShare": 0.26551,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.26551,
-      "type": 25,
-      "typeName": "Advanced-manufacturing cities",
+      "type": 27,
+      "typeName": "Logistics and warehousing towns",
       "family": "Regional city / town",
-      "legacyId": "25-07",
-      "x": 1.2884016851355873,
-      "y": -0.3680691304184551,
+      "legacyId": "27-06",
+      "x": 0.43482893226587216,
+      "y": 0.28689203233777205,
       "baselineWinner": "CA",
       "tileX": 48.497423,
       "tileY": 12.0,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 24.33075,
+      "coldNorthShare": 1.0
     },
     {
       "id": "ET-04",
@@ -6657,18 +7093,20 @@
       "metroShare": 0.00032,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.00032,
-      "type": 37,
-      "typeName": "Declining smallholder farming districts",
+      "type": 38,
+      "typeName": "Forestry and timber communities",
       "family": "Rural / resource",
-      "legacyId": "37-01",
-      "x": -0.10097521538113235,
-      "y": 2.2813267085890843,
+      "legacyId": "38-01",
+      "x": 0.1605974219098572,
+      "y": 1.6102700773484784,
       "baselineWinner": "CA",
       "tileX": 50.229473,
       "tileY": 12.0,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 17.83229,
+      "coldNorthShare": 1.0
     },
     {
       "id": "ET-05",
@@ -6687,18 +7125,20 @@
       "metroShare": 0.0,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0,
-      "type": 34,
-      "typeName": "Mixed farming and rural-service districts",
+      "type": 39,
+      "typeName": "Remote mining and extractive districts",
       "family": "Rural / resource",
-      "legacyId": "34-03",
-      "x": 2.8947427012998177,
-      "y": 1.4669699326321315,
-      "baselineWinner": "LDP",
+      "legacyId": "39-01",
+      "x": 1.1815183218442293,
+      "y": 2.588551446597501,
+      "baselineWinner": "CON",
       "tileX": 51.961524,
       "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 20.47699,
+      "coldNorthShare": 0.8565
     },
     {
       "id": "ET-06",
@@ -6728,7 +7168,9 @@
       "tileY": 13.5,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 32.82159,
+      "coldNorthShare": 1.0
     },
     {
       "id": "ET-07",
@@ -6758,7 +7200,9 @@
       "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 32,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 12.94977,
+      "coldNorthShare": 0.61075
     },
     {
       "id": "ET-08",
@@ -6777,18 +7221,20 @@
       "metroShare": 0.0,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0,
-      "type": 42,
-      "typeName": "Strongly religious agricultural districts",
+      "type": 40,
+      "typeName": "Scenic countryside and amenity-migration districts",
       "family": "Rural / resource",
-      "legacyId": "42-03",
-      "x": 1.052062739634104,
-      "y": 3.114504341160397,
-      "baselineWinner": "CON",
+      "legacyId": "40-03",
+      "x": 0.8394570490224575,
+      "y": -2.3706919288053068,
+      "baselineWinner": "CA",
       "tileX": 46.765372,
       "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 56.9634,
+      "coldNorthShare": 0.34323
     },
     {
       "id": "ET-09",
@@ -6818,7 +7264,9 @@
       "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 77.93703,
+      "coldNorthShare": 0.3263
     },
     {
       "id": "ET-10",
@@ -6837,18 +7285,20 @@
       "metroShare": 0.0,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0,
-      "type": 33,
-      "typeName": "Productive commercial farming districts",
-      "family": "Rural / resource",
-      "legacyId": "33-04",
-      "x": 3.6104780055732695,
-      "y": 1.4947489889944998,
+      "type": 24,
+      "typeName": "Regional retail and commercial hubs",
+      "family": "Regional city / town",
+      "legacyId": "24-02",
+      "x": 2.337852390629338,
+      "y": -0.025265988031362152,
       "baselineWinner": "LDP",
       "tileX": 50.229473,
       "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 60.15126,
+      "coldNorthShare": 0.35332
     },
     {
       "id": "ET-11",
@@ -6867,18 +7317,20 @@
       "metroShare": 0.0,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0,
-      "type": 33,
-      "typeName": "Productive commercial farming districts",
-      "family": "Rural / resource",
-      "legacyId": "33-05",
-      "x": 3.6447427012998177,
-      "y": 1.5969699326321316,
+      "type": 24,
+      "typeName": "Regional retail and commercial hubs",
+      "family": "Regional city / town",
+      "legacyId": "24-03",
+      "x": 2.266623011192463,
+      "y": 0.040638979704738565,
       "baselineWinner": "LDP",
       "tileX": 49.363448,
       "tileY": 13.5,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 69.51091,
+      "coldNorthShare": 0.3271
     },
     {
       "id": "ET-12",
@@ -6897,18 +7349,20 @@
       "metroShare": 0.15432,
       "urbanCoreShare": 0.00626,
       "dominantCityShare": 0.15134,
-      "type": 26,
-      "typeName": "Unionised export-manufacturing towns",
-      "family": "Regional city / town",
-      "legacyId": "26-07",
-      "x": -0.5888955223926143,
-      "y": 0.027861875245561933,
+      "type": 37,
+      "typeName": "Declining smallholder farming districts",
+      "family": "Rural / resource",
+      "legacyId": "37-07",
+      "x": -0.22579671662395742,
+      "y": 2.3799602890554143,
       "baselineWinner": "CA",
       "tileX": 53.693575,
       "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 31,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 31.46889,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-13",
@@ -6938,7 +7392,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 31,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 4.99478,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-14",
@@ -6957,18 +7413,20 @@
       "metroShare": 0.0,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0,
-      "type": 39,
-      "typeName": "Remote mining and extractive districts",
+      "type": 42,
+      "typeName": "Strongly religious agricultural districts",
       "family": "Rural / resource",
-      "legacyId": "39-01",
-      "x": 1.1815183218442293,
-      "y": 2.588551446597501,
+      "legacyId": "42-03",
+      "x": 1.052062739634104,
+      "y": 3.114504341160397,
       "baselineWinner": "CON",
       "tileX": 47.631397,
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 27,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 82.72269,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-15",
@@ -6987,18 +7445,20 @@
       "metroShare": 0.09218,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.08865,
-      "type": 36,
-      "typeName": "Traditional dairy and livestock districts",
+      "type": 34,
+      "typeName": "Mixed farming and rural-service districts",
       "family": "Rural / resource",
-      "legacyId": "36-04",
-      "x": 1.2047862228778674,
-      "y": 1.9453953676943143,
-      "baselineWinner": "CON",
+      "legacyId": "34-04",
+      "x": 3.1052572987001823,
+      "y": 1.2394098212739186,
+      "baselineWinner": "LDP",
       "tileX": 49.363448,
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 57.20818,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-16",
@@ -7028,7 +7488,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 32,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 5.02146,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-17",
@@ -7047,18 +7509,20 @@
       "metroShare": 0.92654,
       "urbanCoreShare": 0.45097,
       "dominantCityShare": 0.89038,
-      "type": 28,
-      "typeName": "Regional university and college towns",
-      "family": "Regional city / town",
-      "legacyId": "28-05",
-      "x": -0.22163717592562238,
-      "y": -2.391567114302231,
-      "baselineWinner": "CA",
+      "type": 47,
+      "typeName": "Seasonal-worker and hospitality districts",
+      "family": "Specialised",
+      "legacyId": "47-01",
+      "x": -1.7288774487041374,
+      "y": -1.9357352483006423,
+      "baselineWinner": "SDP",
       "tileX": 48.497423,
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 28.48268,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-18",
@@ -7088,7 +7552,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 30.952,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-19",
@@ -7118,7 +7584,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 16.52953,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-20",
@@ -7148,7 +7616,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 31,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 5.50044,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-21",
@@ -7178,7 +7648,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 12.00617,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-22",
@@ -7208,7 +7680,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 31,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 3.72926,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-23",
@@ -7238,7 +7712,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 32,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 3.43091,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-24",
@@ -7268,7 +7744,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 10.42614,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-25",
@@ -7298,7 +7776,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 12.13182,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-26",
@@ -7328,7 +7808,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 12.4109,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-27",
@@ -7358,7 +7840,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 32,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 4.34392,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-28",
@@ -7388,7 +7872,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 28,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 2.73917,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-29",
@@ -7418,7 +7904,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 3.73495,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-30",
@@ -7437,18 +7925,20 @@
       "metroShare": 0.66461,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.66426,
-      "type": 29,
-      "typeName": "Healthcare and administrative centres",
+      "type": 25,
+      "typeName": "Advanced-manufacturing cities",
       "family": "Regional city / town",
-      "legacyId": "29-06",
-      "x": 0.06400130144145597,
-      "y": -0.7475100899757603,
+      "legacyId": "25-07",
+      "x": 1.2884016851355873,
+      "y": -0.3680691304184551,
       "baselineWinner": "CA",
       "tileX": 51.095499,
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 4.2276,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-31",
@@ -7467,18 +7957,20 @@
       "metroShare": 0.35569,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.17056,
-      "type": 31,
-      "typeName": "Declining former industrial towns",
+      "type": 26,
+      "typeName": "Manufacturing towns",
       "family": "Regional city / town",
-      "legacyId": "31-05",
-      "x": -1.590335613552339,
-      "y": 1.2345060898967737,
+      "legacyId": "26-07",
+      "x": -0.5888955223926143,
+      "y": 0.027861875245561933,
       "baselineWinner": "CA",
       "tileX": 51.961524,
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 5.28455,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-32",
@@ -7508,7 +8000,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 31,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 11.38685,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-33",
@@ -7538,7 +8032,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 32,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 5.94181,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-34",
@@ -7568,7 +8064,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 2.82982,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-35",
@@ -7598,7 +8096,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 3.57792,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-36",
@@ -7628,7 +8128,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 31,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 2.85606,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-37",
@@ -7658,7 +8160,9 @@
       "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 31,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 4.1946,
+      "coldNorthShare": 0.0
     },
     {
       "id": "ET-38",
@@ -7688,7 +8192,9 @@
       "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 32,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 1.92116,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-01",
@@ -7718,7 +8224,9 @@
       "tileY": 3.0,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 2
+      "tileRow": 2,
+      "coastDistance": 7.7486,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EX-02",
@@ -7748,7 +8256,9 @@
       "tileY": 3.0,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 2
+      "tileRow": 2,
+      "coastDistance": 10.71262,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EX-03",
@@ -7767,18 +8277,20 @@
       "metroShare": 0.01092,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.01092,
-      "type": 26,
-      "typeName": "Unionised export-manufacturing towns",
+      "type": 32,
+      "typeName": "Rail-connected commuter towns",
       "family": "Regional city / town",
-      "legacyId": "26-08",
-      "x": -0.9111044776073857,
-      "y": -0.14148212133951188,
+      "legacyId": "32-06",
+      "x": 0.1706828651046706,
+      "y": -1.1602971058448683,
       "baselineWinner": "CA",
       "tileX": 9.526279,
       "tileY": 4.5,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 3
+      "tileRow": 3,
+      "coastDistance": 19.46591,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EX-04",
@@ -7808,7 +8320,9 @@
       "tileY": 4.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 3
+      "tileRow": 3,
+      "coastDistance": 6.23089,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EX-05",
@@ -7827,18 +8341,20 @@
       "metroShare": 0.00299,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.00294,
-      "type": 35,
-      "typeName": "Export wine, orchard and specialty-crop districts",
+      "type": 41,
+      "typeName": "Rural commuter belts",
       "family": "Rural / resource",
-      "legacyId": "35-06",
-      "x": 3.8807403828690643,
-      "y": -0.32827644467263917,
+      "legacyId": "41-02",
+      "x": 2.6745647831579764,
+      "y": 1.2516807758128279,
       "baselineWinner": "LDP",
       "tileX": 10.392305,
       "tileY": 6.0,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 4
+      "tileRow": 4,
+      "coastDistance": 14.8892,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EX-06",
@@ -7857,18 +8373,20 @@
       "metroShare": 0.93094,
       "urbanCoreShare": 0.41719,
       "dominantCityShare": 0.93094,
-      "type": 47,
-      "typeName": "Seasonal-worker and hospitality districts",
-      "family": "Specialised",
-      "legacyId": "47-01",
-      "x": -1.7288774487041374,
-      "y": -1.9357352483006423,
-      "baselineWinner": "SDP",
+      "type": 26,
+      "typeName": "Manufacturing towns",
+      "family": "Regional city / town",
+      "legacyId": "26-08",
+      "x": -0.9111044776073857,
+      "y": -0.14148212133951188,
+      "baselineWinner": "CA",
       "tileX": 7.794229,
       "tileY": 7.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 5
+      "tileRow": 5,
+      "coastDistance": 3.61942,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EX-07",
@@ -7898,7 +8416,9 @@
       "tileY": 6.0,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 4
+      "tileRow": 4,
+      "coastDistance": 11.79817,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EX-08",
@@ -7917,18 +8437,20 @@
       "metroShare": 0.40383,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.31172,
-      "type": 26,
-      "typeName": "Unionised export-manufacturing towns",
+      "type": 28,
+      "typeName": "Regional university and college towns",
       "family": "Regional city / town",
-      "legacyId": "26-09",
-      "x": -0.9433940010429548,
-      "y": -0.005832085024728491,
+      "legacyId": "28-04",
+      "x": -0.1872043627974988,
+      "y": -2.508920890823586,
       "baselineWinner": "CA",
       "tileX": 9.526279,
       "tileY": 7.5,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 5
+      "tileRow": 5,
+      "coastDistance": 20.52356,
+      "coldNorthShare": 0.64376
     },
     {
       "id": "EX-09",
@@ -7958,7 +8480,9 @@
       "tileY": 10.5,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 7
+      "tileRow": 7,
+      "coastDistance": 5.56064,
+      "coldNorthShare": 0.64716
     },
     {
       "id": "EX-10",
@@ -7988,7 +8512,9 @@
       "tileY": 7.5,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 5
+      "tileRow": 5,
+      "coastDistance": 1.83962,
+      "coldNorthShare": 1.0
     },
     {
       "id": "EX-11",
@@ -8018,7 +8544,9 @@
       "tileY": 10.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 7
+      "tileRow": 7,
+      "coastDistance": 2.53109,
+      "coldNorthShare": 0.32288
     },
     {
       "id": "EX-12",
@@ -8048,7 +8576,9 @@
       "tileY": 9.0,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 6
+      "tileRow": 6,
+      "coastDistance": 9.31075,
+      "coldNorthShare": 0.40503
     },
     {
       "id": "EX-13",
@@ -8078,7 +8608,9 @@
       "tileY": 9.0,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 6
+      "tileRow": 6,
+      "coastDistance": 5.12358,
+      "coldNorthShare": 0.01487
     },
     {
       "id": "EX-14",
@@ -8108,7 +8640,9 @@
       "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 4.55804,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-15",
@@ -8138,7 +8672,9 @@
       "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 11.83784,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-16",
@@ -8157,18 +8693,20 @@
       "metroShare": 0.11673,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.10668,
-      "type": 36,
-      "typeName": "Traditional dairy and livestock districts",
+      "type": 34,
+      "typeName": "Mixed farming and rural-service districts",
       "family": "Rural / resource",
-      "legacyId": "36-05",
-      "x": 1.1872090148249255,
-      "y": 1.9692240180649232,
-      "baselineWinner": "CON",
+      "legacyId": "34-05",
+      "x": 3.0008658941965116,
+      "y": 1.175691989001533,
+      "baselineWinner": "LDP",
       "tileX": 8.660254,
       "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 20.76492,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-17",
@@ -8187,18 +8725,20 @@
       "metroShare": 0.15621,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.14168,
-      "type": 40,
-      "typeName": "Scenic countryside and amenity-migration districts",
-      "family": "Rural / resource",
-      "legacyId": "40-04",
-      "x": 1.0205429509775426,
-      "y": -2.082928317288643,
+      "type": 26,
+      "typeName": "Manufacturing towns",
+      "family": "Regional city / town",
+      "legacyId": "26-09",
+      "x": -0.9433940010429548,
+      "y": -0.005832085024728491,
       "baselineWinner": "CA",
       "tileX": 6.062178,
       "tileY": 13.5,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 9.00761,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-18",
@@ -8228,7 +8768,9 @@
       "tileY": 13.5,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 34.17457,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-19",
@@ -8247,18 +8789,20 @@
       "metroShare": 0.09131,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.09131,
-      "type": 41,
-      "typeName": "Rural commuter belts",
+      "type": 33,
+      "typeName": "Productive commercial farming districts",
       "family": "Rural / resource",
-      "legacyId": "41-05",
-      "x": 2.422062739634104,
-      "y": 1.2245043411603969,
+      "legacyId": "33-06",
+      "x": 3.8552572987001823,
+      "y": 1.3694098212739187,
       "baselineWinner": "LDP",
       "tileX": 7.794229,
       "tileY": 13.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 23.9097,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-20",
@@ -8288,7 +8832,9 @@
       "tileY": 15.0,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 7.48009,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-21",
@@ -8318,7 +8864,9 @@
       "tileY": 16.5,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 5.07699,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-22",
@@ -8348,7 +8896,9 @@
       "tileY": 15.0,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 18.37364,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-23",
@@ -8378,7 +8928,9 @@
       "tileY": 18.0,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 6.2913,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-24",
@@ -8408,7 +8960,9 @@
       "tileY": 16.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 19.05608,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-25",
@@ -8438,7 +8992,9 @@
       "tileY": 24.0,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 2.61755,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-26",
@@ -8468,7 +9024,9 @@
       "tileY": 19.5,
       "landmass": 2,
       "tileColumn": 2,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 2.54169,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-27",
@@ -8498,7 +9056,9 @@
       "tileY": 21.0,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 7.37097,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-28",
@@ -8528,7 +9088,9 @@
       "tileY": 18.0,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 11.21776,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-29",
@@ -8558,7 +9120,9 @@
       "tileY": 19.5,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 13.85109,
+      "coldNorthShare": 0.0
     },
     {
       "id": "EX-30",
@@ -8588,7 +9152,9 @@
       "tileY": 22.5,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 19.46005,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-01",
@@ -8607,18 +9173,20 @@
       "metroShare": 0.0409,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0409,
-      "type": 37,
-      "typeName": "Declining smallholder farming districts",
-      "family": "Rural / resource",
-      "legacyId": "37-02",
-      "x": -0.27902478461886765,
-      "y": 2.0850530453169656,
+      "type": 29,
+      "typeName": "Healthcare and administrative centres",
+      "family": "Regional city / town",
+      "legacyId": "29-06",
+      "x": 0.06400130144145597,
+      "y": -0.7475100899757603,
       "baselineWinner": "CA",
       "tileX": 56.291651,
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 32,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 13.97428,
+      "coldNorthShare": 0.58345
     },
     {
       "id": "KR-02",
@@ -8648,7 +9216,9 @@
       "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 33,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 7.95465,
+      "coldNorthShare": 0.84952
     },
     {
       "id": "KR-03",
@@ -8678,7 +9248,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 37,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 6.42673,
+      "coldNorthShare": 0.07337
     },
     {
       "id": "KR-04",
@@ -8708,7 +9280,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 33,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 19.96033,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-05",
@@ -8738,7 +9312,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 34,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 14.35553,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-06",
@@ -8768,7 +9344,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 35,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 11.04272,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-07",
@@ -8798,7 +9376,9 @@
       "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 36,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 6.56455,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-08",
@@ -8828,7 +9408,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 37,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 3.49969,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-09",
@@ -8847,18 +9429,20 @@
       "metroShare": 0.00252,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.00252,
-      "type": 35,
-      "typeName": "Export wine, orchard and specialty-crop districts",
-      "family": "Rural / resource",
-      "legacyId": "35-07",
-      "x": 3.8008534598712247,
-      "y": -0.21526697962489882,
+      "type": 30,
+      "typeName": "Prosperous independent-business towns",
+      "family": "Regional city / town",
+      "legacyId": "30-05",
+      "x": 3.5300642706194374,
+      "y": 1.098125263973837,
       "baselineWinner": "LDP",
       "tileX": 77.076261,
       "tileY": 25.5,
       "landmass": 4,
       "tileColumn": 44,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 11.86963,
+      "coldNorthShare": 0.05548
     },
     {
       "id": "KR-10",
@@ -8888,7 +9472,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 34,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 8.21456,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-11",
@@ -8918,7 +9504,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 36,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 4.82909,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-12",
@@ -8948,7 +9536,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 35,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 7.4486,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-13",
@@ -8978,7 +9568,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 36,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 3.2066,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-14",
@@ -9008,7 +9600,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 37,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 2.30805,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-15",
@@ -9038,7 +9632,9 @@
       "tileY": 25.5,
       "landmass": 4,
       "tileColumn": 42,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 5.13716,
+      "coldNorthShare": 0.00253
     },
     {
       "id": "KR-16",
@@ -9068,7 +9664,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 33,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 7.74523,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-17",
@@ -9098,7 +9696,9 @@
       "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 33,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 3.47925,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-18",
@@ -9128,7 +9728,9 @@
       "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 35,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 2.1513,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-19",
@@ -9158,7 +9760,9 @@
       "tileY": 25.5,
       "landmass": 4,
       "tileColumn": 43,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 15.01373,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-20",
@@ -9188,7 +9792,9 @@
       "tileY": 27.0,
       "landmass": 4,
       "tileColumn": 44,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 11.69224,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-21",
@@ -9207,18 +9813,20 @@
       "metroShare": 0.6421,
       "urbanCoreShare": 0.46699,
       "dominantCityShare": 0.6421,
-      "type": 46,
-      "typeName": "Resort-business and tourism-owner districts",
-      "family": "Specialised",
-      "legacyId": "46-03",
-      "x": 3.9911225512958626,
-      "y": -1.5157352483006423,
+      "type": 11,
+      "typeName": "Affluent managerial suburbs",
+      "family": "Suburban / exurban",
+      "legacyId": "11-16",
+      "x": 4.0582341171393175,
+      "y": -0.8957341348110914,
       "baselineWinner": "LDP",
       "tileX": 74.478185,
       "tileY": 27.0,
       "landmass": 4,
       "tileColumn": 43,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 6.32562,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-22",
@@ -9248,7 +9856,9 @@
       "tileY": 27.0,
       "landmass": 4,
       "tileColumn": 42,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 2.56063,
+      "coldNorthShare": 0.0
     },
     {
       "id": "KR-23",
@@ -9278,7 +9888,9 @@
       "tileY": 28.5,
       "landmass": 4,
       "tileColumn": 42,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 7.9634,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-01",
@@ -9297,18 +9909,20 @@
       "metroShare": 0.0,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0,
-      "type": 33,
-      "typeName": "Productive commercial farming districts",
+      "type": 41,
+      "typeName": "Rural commuter belts",
       "family": "Rural / resource",
-      "legacyId": "33-06",
-      "x": 3.8552572987001823,
-      "y": 1.3694098212739187,
+      "legacyId": "41-05",
+      "x": 2.422062739634104,
+      "y": 1.2245043411603969,
       "baselineWinner": "LDP",
       "tileX": 109.119201,
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 63,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 86.51727,
+      "coldNorthShare": 1.0
     },
     {
       "id": "LX-02",
@@ -9327,18 +9941,20 @@
       "metroShare": 0.00014,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.00014,
-      "type": 33,
-      "typeName": "Productive commercial farming districts",
+      "type": 41,
+      "typeName": "Rural commuter belts",
       "family": "Rural / resource",
-      "legacyId": "33-07",
-      "x": 3.750829307117786,
-      "y": 1.3131918997600467,
+      "legacyId": "41-06",
+      "x": 2.777937260365896,
+      "y": 1.0418754127456533,
       "baselineWinner": "LDP",
       "tileX": 113.449328,
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 65,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 84.97155,
+      "coldNorthShare": 0.99255
     },
     {
       "id": "LX-03",
@@ -9368,7 +9984,9 @@
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 64,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 63.76334,
+      "coldNorthShare": 0.60687
     },
     {
       "id": "LX-04",
@@ -9387,18 +10005,20 @@
       "metroShare": 0.0,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0,
-      "type": 34,
-      "typeName": "Mixed farming and rural-service districts",
+      "type": 36,
+      "typeName": "Traditional dairy and livestock districts",
       "family": "Rural / resource",
-      "legacyId": "34-04",
-      "x": 3.1052572987001823,
-      "y": 1.2394098212739186,
-      "baselineWinner": "LDP",
+      "legacyId": "36-01",
+      "x": 1.2301564924925152,
+      "y": 1.9411107996089143,
+      "baselineWinner": "CON",
       "tileX": 107.38715,
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 62,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 45.26403,
+      "coldNorthShare": 0.25758
     },
     {
       "id": "LX-05",
@@ -9417,18 +10037,20 @@
       "metroShare": 0.0,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0,
-      "type": 37,
-      "typeName": "Declining smallholder farming districts",
+      "type": 36,
+      "typeName": "Traditional dairy and livestock districts",
       "family": "Rural / resource",
-      "legacyId": "37-04",
-      "x": -0.035661431400199034,
-      "y": 2.197493940800916,
-      "baselineWinner": "CA",
+      "legacyId": "36-04",
+      "x": 1.2047862228778674,
+      "y": 1.9453953676943143,
+      "baselineWinner": "CON",
       "tileX": 108.253175,
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 62,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 48.42016,
+      "coldNorthShare": 0.23292
     },
     {
       "id": "LX-06",
@@ -9458,7 +10080,9 @@
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 63,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 46.4158,
+      "coldNorthShare": 0.16053
     },
     {
       "id": "LX-07",
@@ -9477,18 +10101,20 @@
       "metroShare": 0.16883,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.16883,
-      "type": 34,
-      "typeName": "Mixed farming and rural-service districts",
+      "type": 36,
+      "typeName": "Traditional dairy and livestock districts",
       "family": "Rural / resource",
-      "legacyId": "34-05",
-      "x": 3.0008658941965116,
-      "y": 1.175691989001533,
-      "baselineWinner": "LDP",
+      "legacyId": "36-05",
+      "x": 1.1872090148249255,
+      "y": 1.9692240180649232,
+      "baselineWinner": "CON",
       "tileX": 114.315353,
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 66,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 42.28573,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-08",
@@ -9518,7 +10144,9 @@
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 61,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 28.83069,
+      "coldNorthShare": 0.18874
     },
     {
       "id": "LX-09",
@@ -9537,18 +10165,20 @@
       "metroShare": 0.83689,
       "urbanCoreShare": 0.38847,
       "dominantCityShare": 0.83687,
-      "type": 14,
-      "typeName": "Established middle-income homeowner suburbs",
-      "family": "Suburban / exurban",
-      "legacyId": "14-15",
-      "x": 2.748213882546632,
-      "y": -0.17014072549491466,
+      "type": 24,
+      "typeName": "Regional retail and commercial hubs",
+      "family": "Regional city / town",
+      "legacyId": "24-06",
+      "x": 2.259292374294419,
+      "y": 0.14820036893930494,
       "baselineWinner": "LDP",
       "tileX": 112.583302,
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 65,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 36.72352,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-10",
@@ -9567,18 +10197,20 @@
       "metroShare": 0.95422,
       "urbanCoreShare": 0.58091,
       "dominantCityShare": 0.95421,
-      "type": 10,
-      "typeName": "Social-housing and old industrial cores",
-      "family": "Urban core",
-      "legacyId": "10-03",
-      "x": -2.2301432271110255,
-      "y": 0.13402270101460445,
-      "baselineWinner": "SDP",
+      "type": 29,
+      "typeName": "Healthcare and administrative centres",
+      "family": "Regional city / town",
+      "legacyId": "29-08",
+      "x": 0.12612476549922563,
+      "y": -1.0939204182816926,
+      "baselineWinner": "CA",
       "tileX": 113.449328,
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 65,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 41.67442,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-11",
@@ -9608,7 +10240,9 @@
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 64,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 22.53628,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-12",
@@ -9638,7 +10272,9 @@
       "tileY": 19.5,
       "landmass": 1,
       "tileColumn": 61,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 7.40928,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-13",
@@ -9657,18 +10293,20 @@
       "metroShare": 1e-05,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 1e-05,
-      "type": 38,
-      "typeName": "Forestry and timber communities",
+      "type": 36,
+      "typeName": "Traditional dairy and livestock districts",
       "family": "Rural / resource",
-      "legacyId": "38-06",
-      "x": 0.3357967166239574,
-      "y": 1.4264194648506359,
-      "baselineWinner": "CA",
+      "legacyId": "36-06",
+      "x": 1.2727909851750745,
+      "y": 1.9771557358411267,
+      "baselineWinner": "CON",
       "tileX": 107.38715,
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 62,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 7.50258,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-14",
@@ -9698,7 +10336,9 @@
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 63,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 4.14489,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-15",
@@ -9728,7 +10368,9 @@
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 64,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 6.52543,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-16",
@@ -9758,7 +10400,9 @@
       "tileY": 19.5,
       "landmass": 1,
       "tileColumn": 62,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 11.69599,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-17",
@@ -9788,7 +10432,9 @@
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 65,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 20.58999,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-18",
@@ -9807,18 +10453,20 @@
       "metroShare": 0.21662,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.21662,
-      "type": 29,
-      "typeName": "Healthcare and administrative centres",
-      "family": "Regional city / town",
-      "legacyId": "29-08",
-      "x": 0.12612476549922563,
-      "y": -1.0939204182816926,
-      "baselineWinner": "CA",
+      "type": 36,
+      "typeName": "Traditional dairy and livestock districts",
+      "family": "Rural / resource",
+      "legacyId": "36-08",
+      "x": 1.1914291381208628,
+      "y": 2.0024637859656615,
+      "baselineWinner": "CON",
       "tileX": 115.181379,
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 66,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 13.20207,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-19",
@@ -9848,7 +10496,9 @@
       "tileY": 21.0,
       "landmass": 1,
       "tileColumn": 63,
-      "tileRow": 14
+      "tileRow": 14,
+      "coastDistance": 3.76293,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-20",
@@ -9878,7 +10528,9 @@
       "tileY": 19.5,
       "landmass": 1,
       "tileColumn": 63,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 2.7319,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LX-21",
@@ -9908,7 +10560,9 @@
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 66,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 2.28423,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-01",
@@ -9938,7 +10592,9 @@
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 59,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 2.76007,
+      "coldNorthShare": 1.0
     },
     {
       "id": "LQ-02",
@@ -9968,7 +10624,9 @@
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 60,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 5.87264,
+      "coldNorthShare": 1.0
     },
     {
       "id": "LQ-03",
@@ -9998,7 +10656,9 @@
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 60,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 22.17297,
+      "coldNorthShare": 1.0
     },
     {
       "id": "LQ-04",
@@ -10028,7 +10688,9 @@
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 59,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 14.41351,
+      "coldNorthShare": 0.76849
     },
     {
       "id": "LQ-05",
@@ -10047,18 +10709,20 @@
       "metroShare": 3e-05,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 3e-05,
-      "type": 36,
-      "typeName": "Traditional dairy and livestock districts",
+      "type": 38,
+      "typeName": "Forestry and timber communities",
       "family": "Rural / resource",
-      "legacyId": "36-06",
-      "x": 1.2727909851750745,
-      "y": 1.9771557358411267,
-      "baselineWinner": "CON",
+      "legacyId": "38-06",
+      "x": 0.3357967166239574,
+      "y": 1.4264194648506359,
+      "baselineWinner": "CA",
       "tileX": 105.655099,
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 61,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 43.60974,
+      "coldNorthShare": 0.73805
     },
     {
       "id": "LQ-06",
@@ -10088,7 +10752,9 @@
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 58,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 15.82756,
+      "coldNorthShare": 0.05615
     },
     {
       "id": "LQ-07",
@@ -10118,7 +10784,9 @@
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 57,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 4.86469,
+      "coldNorthShare": 0.00527
     },
     {
       "id": "LQ-08",
@@ -10148,7 +10816,9 @@
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 60,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 19.03792,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-09",
@@ -10167,18 +10837,20 @@
       "metroShare": 0.0,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0,
-      "type": 41,
-      "typeName": "Rural commuter belts",
+      "type": 33,
+      "typeName": "Productive commercial farming districts",
       "family": "Rural / resource",
-      "legacyId": "41-06",
-      "x": 2.777937260365896,
-      "y": 1.0418754127456533,
+      "legacyId": "33-07",
+      "x": 3.750829307117786,
+      "y": 1.3131918997600467,
       "baselineWinner": "LDP",
       "tileX": 105.655099,
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 61,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 15.77772,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-10",
@@ -10208,7 +10880,9 @@
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 59,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 22.12885,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-11",
@@ -10227,18 +10901,20 @@
       "metroShare": 0.2325,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.2325,
-      "type": 25,
-      "typeName": "Advanced-manufacturing cities",
-      "family": "Regional city / town",
-      "legacyId": "25-10",
-      "x": 1.1729621125193566,
-      "y": -0.2898562750167958,
-      "baselineWinner": "CA",
+      "type": 34,
+      "typeName": "Mixed farming and rural-service districts",
+      "family": "Rural / resource",
+      "legacyId": "34-07",
+      "x": 3.13437703338697,
+      "y": 1.5013209435734918,
+      "baselineWinner": "LDP",
       "tileX": 103.923048,
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 60,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 19.11248,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-12",
@@ -10257,18 +10933,20 @@
       "metroShare": 0.85482,
       "urbanCoreShare": 0.13257,
       "dominantCityShare": 0.48895,
-      "type": 15,
-      "typeName": "Mixed-income commuter suburbs",
-      "family": "Suburban / exurban",
-      "legacyId": "15-14",
-      "x": 0.6729356483466157,
-      "y": -0.4319793669867319,
+      "type": 25,
+      "typeName": "Advanced-manufacturing cities",
+      "family": "Regional city / town",
+      "legacyId": "25-10",
+      "x": 1.1729621125193566,
+      "y": -0.2898562750167958,
       "baselineWinner": "CA",
       "tileX": 98.726896,
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 57,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 7.4222,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-13",
@@ -10298,7 +10976,9 @@
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 58,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 11.92529,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-14",
@@ -10328,7 +11008,9 @@
       "tileY": 19.5,
       "landmass": 1,
       "tileColumn": 56,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 2.71852,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-15",
@@ -10358,7 +11040,9 @@
       "tileY": 19.5,
       "landmass": 1,
       "tileColumn": 57,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 2.93997,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-16",
@@ -10388,7 +11072,9 @@
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 59,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 8.04288,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-17",
@@ -10418,7 +11104,9 @@
       "tileY": 19.5,
       "landmass": 1,
       "tileColumn": 60,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 4.69371,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-18",
@@ -10448,7 +11136,9 @@
       "tileY": 19.5,
       "landmass": 1,
       "tileColumn": 58,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 3.39691,
+      "coldNorthShare": 0.0
     },
     {
       "id": "LQ-19",
@@ -10478,7 +11168,9 @@
       "tileY": 19.5,
       "landmass": 1,
       "tileColumn": 59,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 4.11528,
+      "coldNorthShare": 0.0
     },
     {
       "id": "WT-01",
@@ -10497,18 +11189,20 @@
       "metroShare": 0.87766,
       "urbanCoreShare": 0.24229,
       "dominantCityShare": 0.65939,
-      "type": 26,
-      "typeName": "Unionised export-manufacturing towns",
+      "type": 28,
+      "typeName": "Regional university and college towns",
       "family": "Regional city / town",
-      "legacyId": "26-10",
-      "x": -0.5566059989570452,
-      "y": -0.10778816106922146,
+      "legacyId": "28-05",
+      "x": -0.22163717592562238,
+      "y": -2.391567114302231,
       "baselineWinner": "CA",
       "tileX": 117.779455,
       "tileY": 12.0,
       "landmass": 1,
       "tileColumn": 68,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 17.58595,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-02",
@@ -10538,7 +11232,9 @@
       "tileY": 12.0,
       "landmass": 1,
       "tileColumn": 69,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 7.62028,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-03",
@@ -10568,7 +11264,9 @@
       "tileY": 12.0,
       "landmass": 1,
       "tileColumn": 67,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 44.52009,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-04",
@@ -10587,18 +11285,20 @@
       "metroShare": 2e-05,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 2e-05,
-      "type": 37,
-      "typeName": "Declining smallholder farming districts",
-      "family": "Rural / resource",
-      "legacyId": "37-06",
-      "x": -0.33138930090964785,
-      "y": 2.290499315439493,
+      "type": 31,
+      "typeName": "Declining former industrial towns",
+      "family": "Regional city / town",
+      "legacyId": "31-02",
+      "x": -1.5216610003324342,
+      "y": 1.454639197414636,
       "baselineWinner": "CA",
       "tileX": 120.377531,
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 69,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 28.98945,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-05",
@@ -10617,18 +11317,20 @@
       "metroShare": 7e-05,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 7e-05,
-      "type": 37,
-      "typeName": "Declining smallholder farming districts",
-      "family": "Rural / resource",
-      "legacyId": "37-07",
-      "x": -0.22579671662395742,
-      "y": 2.3799602890554143,
+      "type": 31,
+      "typeName": "Declining former industrial towns",
+      "family": "Regional city / town",
+      "legacyId": "31-05",
+      "x": -1.590335613552339,
+      "y": 1.2345060898967737,
       "baselineWinner": "CA",
       "tileX": 115.181379,
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 66,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 73.60157,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-06",
@@ -10658,7 +11360,9 @@
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 67,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 63.78763,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-07",
@@ -10677,18 +11381,20 @@
       "metroShare": 0.0054,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.0054,
-      "type": 36,
-      "typeName": "Traditional dairy and livestock districts",
-      "family": "Rural / resource",
-      "legacyId": "36-08",
-      "x": 1.1914291381208628,
-      "y": 2.0024637859656615,
-      "baselineWinner": "CON",
+      "type": 26,
+      "typeName": "Manufacturing towns",
+      "family": "Regional city / town",
+      "legacyId": "26-10",
+      "x": -0.5566059989570452,
+      "y": -0.10778816106922146,
+      "baselineWinner": "CA",
       "tileX": 121.243557,
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 70,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 12.92449,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-08",
@@ -10718,7 +11424,9 @@
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 68,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 25.06743,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-09",
@@ -10748,7 +11456,9 @@
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 68,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 15.07355,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-10",
@@ -10778,7 +11488,9 @@
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 69,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 4.76538,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-11",
@@ -10808,7 +11520,9 @@
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 68,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 4.24579,
+      "coldNorthShare": 1.0
     },
     {
       "id": "WT-12",
@@ -10838,7 +11552,9 @@
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 69,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 4.58874,
+      "coldNorthShare": 0.66159
     },
     {
       "id": "WT-13",
@@ -10857,18 +11573,20 @@
       "metroShare": 0.12529,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.12529,
-      "type": 34,
-      "typeName": "Mixed farming and rural-service districts",
-      "family": "Rural / resource",
-      "legacyId": "34-07",
-      "x": 3.13437703338697,
-      "y": 1.5013209435734918,
+      "type": 30,
+      "typeName": "Prosperous independent-business towns",
+      "family": "Regional city / town",
+      "legacyId": "30-08",
+      "x": 3.658124634988551,
+      "y": 1.0456504820868293,
       "baselineWinner": "LDP",
       "tileX": 116.047404,
       "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 67,
-      "tileRow": 10
+      "tileRow": 10,
+      "coastDistance": 16.55507,
+      "coldNorthShare": 0.16516
     },
     {
       "id": "WT-14",
@@ -10898,7 +11616,9 @@
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 67,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 6.452,
+      "coldNorthShare": 0.01402
     },
     {
       "id": "WT-15",
@@ -10928,7 +11648,9 @@
       "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 67,
-      "tileRow": 11
+      "tileRow": 11,
+      "coastDistance": 18.16168,
+      "coldNorthShare": 0.0498
     },
     {
       "id": "WT-16",
@@ -10958,7 +11680,9 @@
       "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 68,
-      "tileRow": 12
+      "tileRow": 12,
+      "coastDistance": 11.98021,
+      "coldNorthShare": 0.29851
     },
     {
       "id": "WT-17",
@@ -10988,7 +11712,9 @@
       "tileY": 19.5,
       "landmass": 1,
       "tileColumn": 67,
-      "tileRow": 13
+      "tileRow": 13,
+      "coastDistance": 3.55775,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-01",
@@ -11007,18 +11733,20 @@
       "metroShare": 0.95768,
       "urbanCoreShare": 0.79199,
       "dominantCityShare": 0.94677,
-      "type": 9,
-      "typeName": "Cosmopolitan merchant and migrant districts",
-      "family": "Urban core",
-      "legacyId": "09-08",
-      "x": 2.823042241950646,
-      "y": -1.7765286068004895,
-      "baselineWinner": "LDP",
+      "type": 47,
+      "typeName": "Seasonal-worker and hospitality districts",
+      "family": "Specialised",
+      "legacyId": "47-02",
+      "x": -2.1111225512958627,
+      "y": -1.8178849977933076,
+      "baselineWinner": "SDP",
       "tileX": 88.334591,
       "tileY": 24.0,
       "landmass": 5,
       "tileColumn": 51,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 2.34169,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-02",
@@ -11048,7 +11776,9 @@
       "tileY": 22.5,
       "landmass": 5,
       "tileColumn": 51,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 5.50126,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-03",
@@ -11067,18 +11797,20 @@
       "metroShare": 0.47757,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.37797,
-      "type": 30,
-      "typeName": "Prosperous independent-business towns",
-      "family": "Regional city / town",
-      "legacyId": "30-08",
-      "x": 3.658124634988551,
-      "y": 1.0456504820868293,
-      "baselineWinner": "LDP",
+      "type": 40,
+      "typeName": "Scenic countryside and amenity-migration districts",
+      "family": "Rural / resource",
+      "legacyId": "40-04",
+      "x": 1.0205429509775426,
+      "y": -2.082928317288643,
+      "baselineWinner": "CA",
       "tileX": 90.932667,
       "tileY": 22.5,
       "landmass": 5,
       "tileColumn": 52,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 7.63805,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-04",
@@ -11108,7 +11840,9 @@
       "tileY": 22.5,
       "landmass": 5,
       "tileColumn": 53,
-      "tileRow": 15
+      "tileRow": 15,
+      "coastDistance": 6.34946,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-05",
@@ -11127,18 +11861,20 @@
       "metroShare": 0.71872,
       "urbanCoreShare": 0.3857,
       "dominantCityShare": 0.64822,
-      "type": 11,
-      "typeName": "Affluent managerial suburbs",
-      "family": "Suburban / exurban",
-      "legacyId": "11-16",
-      "x": 4.0582341171393175,
-      "y": -0.8957341348110914,
+      "type": 46,
+      "typeName": "Resort-business and tourism-owner districts",
+      "family": "Specialised",
+      "legacyId": "46-03",
+      "x": 3.9911225512958626,
+      "y": -1.5157352483006423,
       "baselineWinner": "LDP",
       "tileX": 89.200617,
       "tileY": 25.5,
       "landmass": 5,
       "tileColumn": 51,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 2.64639,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-06",
@@ -11168,7 +11904,9 @@
       "tileY": 24.0,
       "landmass": 5,
       "tileColumn": 52,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 4.78086,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-07",
@@ -11198,7 +11936,9 @@
       "tileY": 24.0,
       "landmass": 5,
       "tileColumn": 53,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 8.77322,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-08",
@@ -11217,18 +11957,20 @@
       "metroShare": 0.72368,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.68511,
-      "type": 32,
-      "typeName": "Rail-connected commuter towns",
-      "family": "Regional city / town",
-      "legacyId": "32-06",
-      "x": 0.1706828651046706,
-      "y": -1.1602971058448683,
-      "baselineWinner": "CA",
+      "type": 8,
+      "typeName": "Major university and student districts",
+      "family": "Urban core",
+      "legacyId": "08-06",
+      "x": -2.024769199009582,
+      "y": -3.795663268535852,
+      "baselineWinner": "GRN",
       "tileX": 93.530744,
       "tileY": 24.0,
       "landmass": 5,
       "tileColumn": 54,
-      "tileRow": 16
+      "tileRow": 16,
+      "coastDistance": 7.58167,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-09",
@@ -11258,7 +12000,9 @@
       "tileY": 27.0,
       "landmass": 5,
       "tileColumn": 52,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 2.7549,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-10",
@@ -11288,7 +12032,9 @@
       "tileY": 25.5,
       "landmass": 5,
       "tileColumn": 52,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 2.62218,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-11",
@@ -11318,7 +12064,9 @@
       "tileY": 25.5,
       "landmass": 5,
       "tileColumn": 53,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 6.96335,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-12",
@@ -11348,7 +12096,9 @@
       "tileY": 27.0,
       "landmass": 5,
       "tileColumn": 53,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 2.70952,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-13",
@@ -11378,7 +12128,9 @@
       "tileY": 28.5,
       "landmass": 5,
       "tileColumn": 53,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 1.53794,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-14",
@@ -11408,7 +12160,9 @@
       "tileY": 27.0,
       "landmass": 5,
       "tileColumn": 54,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 2.7255,
+      "coldNorthShare": 0.0
     },
     {
       "id": "AK-15",
@@ -11438,7 +12192,9 @@
       "tileY": 25.5,
       "landmass": 5,
       "tileColumn": 54,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 3.39887,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-01",
@@ -11468,7 +12224,9 @@
       "tileY": 25.5,
       "landmass": 4,
       "tileColumn": 45,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 37.94288,
+      "coldNorthShare": 0.0379
     },
     {
       "id": "QL-02",
@@ -11498,7 +12256,9 @@
       "tileY": 25.5,
       "landmass": 4,
       "tileColumn": 46,
-      "tileRow": 17
+      "tileRow": 17,
+      "coastDistance": 15.13392,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-03",
@@ -11528,7 +12288,9 @@
       "tileY": 30.0,
       "landmass": 4,
       "tileColumn": 43,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 15.52733,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-04",
@@ -11558,7 +12320,9 @@
       "tileY": 27.0,
       "landmass": 4,
       "tileColumn": 45,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 11.08942,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-05",
@@ -11577,18 +12341,20 @@
       "metroShare": 0.69301,
       "urbanCoreShare": 0.55732,
       "dominantCityShare": 0.6922,
-      "type": 46,
-      "typeName": "Resort-business and tourism-owner districts",
-      "family": "Specialised",
-      "legacyId": "46-04",
-      "x": 3.608877448704137,
-      "y": -1.3978849977933077,
+      "type": 9,
+      "typeName": "Cosmopolitan merchant and migrant districts",
+      "family": "Urban core",
+      "legacyId": "09-08",
+      "x": 2.823042241950646,
+      "y": -1.7765286068004895,
       "baselineWinner": "LDP",
       "tileX": 79.674337,
       "tileY": 27.0,
       "landmass": 4,
       "tileColumn": 46,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 2.90483,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-06",
@@ -11618,7 +12384,9 @@
       "tileY": 28.5,
       "landmass": 4,
       "tileColumn": 43,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 17.09639,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-07",
@@ -11648,7 +12416,9 @@
       "tileY": 28.5,
       "landmass": 4,
       "tileColumn": 44,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 8.26048,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-08",
@@ -11678,7 +12448,9 @@
       "tileY": 27.0,
       "landmass": 4,
       "tileColumn": 47,
-      "tileRow": 18
+      "tileRow": 18,
+      "coastDistance": 7.13694,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-09",
@@ -11697,18 +12469,20 @@
       "metroShare": 0.9505,
       "urbanCoreShare": 0.0,
       "dominantCityShare": 0.9505,
-      "type": 47,
-      "typeName": "Seasonal-worker and hospitality districts",
-      "family": "Specialised",
-      "legacyId": "47-02",
-      "x": -2.1111225512958627,
-      "y": -1.8178849977933076,
-      "baselineWinner": "SDP",
+      "type": 15,
+      "typeName": "Mixed-income commuter suburbs",
+      "family": "Suburban / exurban",
+      "legacyId": "15-14",
+      "x": 0.6729356483466157,
+      "y": -0.4319793669867319,
+      "baselineWinner": "CA",
       "tileX": 76.210236,
       "tileY": 30.0,
       "landmass": 4,
       "tileColumn": 44,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 4.0023,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-10",
@@ -11738,7 +12512,9 @@
       "tileY": 28.5,
       "landmass": 4,
       "tileColumn": 45,
-      "tileRow": 19
+      "tileRow": 19,
+      "coastDistance": 4.4564,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-11",
@@ -11768,7 +12544,9 @@
       "tileY": 30.0,
       "landmass": 4,
       "tileColumn": 45,
-      "tileRow": 20
+      "tileRow": 20,
+      "coastDistance": 2.00373,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-12",
@@ -11798,7 +12576,9 @@
       "tileY": 31.5,
       "landmass": 4,
       "tileColumn": 45,
-      "tileRow": 21
+      "tileRow": 21,
+      "coastDistance": 2.07581,
+      "coldNorthShare": 0.0
     },
     {
       "id": "QL-13",
@@ -11817,18 +12597,20 @@
       "metroShare": 0.9884,
       "urbanCoreShare": 0.62174,
       "dominantCityShare": 0.9884,
-      "type": 14,
-      "typeName": "Established middle-income homeowner suburbs",
-      "family": "Suburban / exurban",
-      "legacyId": "14-16",
-      "x": 2.3517861174533676,
-      "y": -0.2234795205990353,
+      "type": 46,
+      "typeName": "Resort-business and tourism-owner districts",
+      "family": "Specialised",
+      "legacyId": "46-04",
+      "x": 3.608877448704137,
+      "y": -1.3978849977933077,
       "baselineWinner": "LDP",
       "tileX": 79.674337,
       "tileY": 33.0,
       "landmass": 4,
       "tileColumn": 46,
-      "tileRow": 22
+      "tileRow": 22,
+      "coastDistance": 1.84921,
+      "coldNorthShare": 0.0
     },
     {
       "id": "IL-01",
@@ -11858,7 +12640,9 @@
       "tileY": 12.0,
       "landmass": 1,
       "tileColumn": 62,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 4.37728,
+      "coldNorthShare": 1.0
     },
     {
       "id": "IL-02",
@@ -11888,7 +12672,9 @@
       "tileY": 12.0,
       "landmass": 1,
       "tileColumn": 66,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 4.01675,
+      "coldNorthShare": 1.0
     },
     {
       "id": "IL-03",
@@ -11918,7 +12704,9 @@
       "tileY": 12.0,
       "landmass": 1,
       "tileColumn": 65,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 28.80964,
+      "coldNorthShare": 1.0
     },
     {
       "id": "IL-04",
@@ -11948,7 +12736,9 @@
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 62,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 16.97068,
+      "coldNorthShare": 1.0
     },
     {
       "id": "IL-05",
@@ -11978,7 +12768,9 @@
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 63,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 51.03952,
+      "coldNorthShare": 1.0
     },
     {
       "id": "IL-06",
@@ -12008,7 +12800,9 @@
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 64,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 46.93954,
+      "coldNorthShare": 1.0
     },
     {
       "id": "IL-07",
@@ -12038,7 +12832,9 @@
       "tileY": 12.0,
       "landmass": 1,
       "tileColumn": 61,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 3.58232,
+      "coldNorthShare": 1.0
     },
     {
       "id": "IL-08",
@@ -12068,7 +12864,9 @@
       "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 61,
-      "tileRow": 9
+      "tileRow": 9,
+      "coastDistance": 29.99234,
+      "coldNorthShare": 1.0
     },
     {
       "id": "IL-09",
@@ -12098,7 +12896,9 @@
       "tileY": 12.0,
       "landmass": 1,
       "tileColumn": 60,
-      "tileRow": 8
+      "tileRow": 8,
+      "coastDistance": 4.89355,
+      "coldNorthShare": 1.0
     }
   ],
   "layoutVersion": 2,
@@ -19784,5 +20584,25 @@
       "id": 1,
       "districts": 66
     }
-  ]
+  ],
+  "typePlacementVersion": 2,
+  "geographicRules": {
+    "majorUniversities": [
+      "Lorenvia",
+      "Wizlandia City",
+      "Akropolis",
+      "Southport",
+      "Sorenvia",
+      "Erewenton"
+    ],
+    "farmland_min_centroid_y": 285,
+    "specialty_crops_min_centroid_y": 315,
+    "farmland_max_cold_north_population_share": 0.35,
+    "manufacturing_max_population_weighted_coast_distance_pixels": 14,
+    "laxburg_dairy_seats": 5,
+    "tourism_centres": [
+      "Sierra Vista",
+      "Zyoto"
+    ]
+  }
 }

@@ -20,10 +20,11 @@ const document={body,activeElement:null,getElementById(id){assert.ok(nodes.has(i
  querySelectorAll(query){const key=query.slice(1,-1);return all.filter(n=>Object.hasOwn(n.attributes,key)||Object.hasOwn(n.dataset,key.replace(/^data-/,'')));},
  querySelector:()=>scroll,createElement:()=>node()};
 const context={window:{WizlandiaData:D,WizlandiaEngine:E,WizlandiaDiagrams:G,WizlandiaGeography:H},document,
- getComputedStyle:()=>({getPropertyValue:()=> '#202535'}),localStorage:{getItem(){return null},setItem(){}},
+ getComputedStyle:()=>({getPropertyValue:key=>({'--text':'#202535','--muted':'#727581','--border':'#e1e1dc','--accent':'#9b7d37'}[key]||'#202535')}),localStorage:{getItem(){return null},setItem(){}},
  setTimeout:()=>1,clearTimeout(){},cancelAnimationFrame(){},requestAnimationFrame:f=>{f();return 1},
  URL:{createObjectURL(blob){lastBlob=blob;return 'blob:test'},revokeObjectURL(){}},Blob,console};
 vm.runInNewContext(fs.readFileSync(require.resolve('../app.js'),'utf8'),context);
+if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREVIEW_SVG,nodes.get('hemicycle').innerHTML);
 (async()=>{
  const get=id=>nodes.get(id);
  assert.match(get('ticker').textContent,/Combined/);

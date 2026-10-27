@@ -191,10 +191,12 @@ The Python GUI also opens with Combined seats and has District, PR and Combined 
 ## Assembly diagrams and seat cards
 
 The Layout control offers Hemicycle and Westminster in all three seat views.
-Hemicycle fills aligned radial columns from left to right, alternating inward
-and outward within successive columns. Every assignment moves to an adjacent
-seat, so small parties remain a connected block even across column boundaries.
-The 400- and 800-seat layouts retain exact party totals without overlaps.
+Hemicycle restores the old evenly spaced concentric arcs: 14 rings for 800
+seats and 10 for 400. Ring capacities scale with circumference; the 800-seat
+layout matches the supplied old screenshot. Tiny disconnected party blocks
+receive a local reassignment between neighbouring rings, preserving every dot
+position, party total and within-ring display order. The normal baseline colour
+assignment is unchanged from the old layout.
 
 Westminster uses two facing benches. Selecting party cards moves those parties
 to the government bench; clearing the selection moves them back. The component
@@ -207,15 +209,15 @@ Seat Distribution uses cards with a coloured left border, a large coloured seat
 total, seat share above vote share, and a proportional share bar. Hover over a
 card for the district/PR breakdown.
 
-To install this update on GitHub Pages, replace `index.html`, `app.js`, and
-`styles.css`, and upload the new `diagrams.js` beside them at repository root.
-Keep `data.js`, `engine.js`, and `favicon.svg` in the same directory.
+For this update, replace `app.js`, `diagrams.js`, `data.js` and
+`district-geography.js` at repository root. The ZIP also contains the updated
+Python model, district register and geographic metadata.
 
-Run `node tests/diagrams.test.js` for layout checks and
-`node tests/model.test.js` for election-model checks. Browser QA covered both
-layouts, component views, coalition selection, and party ordering. The cloud
-browser did not expose a completed download event during the SVG export check;
-rendered SVG content was checked separately.
+Run `node tests/diagrams.test.js` for geometry and colour-assignment checks and
+`node tests/model.test.js` for election checks. The restored arcs were compared
+with the supplied old screenshot, and the application SVG was rendered for
+visual inspection. Interface event tests cover component views, coalition
+selection, state filters, district details and exports.
 
 
 ## Linked party selection
@@ -270,3 +272,18 @@ ranking, the four-suggestion limit, and the empty state.
 Validation for this update includes Python/JavaScript parity across 58 election scenarios, 156 cartogram renders across states and colour modes, connected state tile groups, and full-app event checks using a lightweight DOM harness. Browser layout testing was unavailable because the installed Chromium binary was incomplete; the PDF atlas was rendered and visually reviewed.
 
 The coastline-based update samples the five landmass silhouettes on a common hex lattice, balances exact state tile capacities, repairs state-piece connectivity, and transports the existing district anchors within their own state and landmass. It changes no district population, type, compass point, model index or ID. The new `stateBorders` metadata deduplicates shared edges on an integer lattice.
+
+## Geographic realism update
+
+Major university/student districts are dispersed across Lorenvia, Wizlandia
+City, Akropolis, Southport, Sorenvia and Erewenton. Both manufacturing types are
+coastal, and type 26 is now **Manufacturing towns**. Farmland is moved away from
+the cold north, with five Traditional dairy and livestock districts in Laxburg's
+hinterland. Sierra Vista and Zyoto receive tourism, hospitality and scenic/amenity
+types; Laxford receives retail/commercial and administrative/healthcare types.
+All 50 type counts, type centres and the national baseline are preserved. The
+geographic districts retain their IDs, boundaries, populations and map positions.
+State-level election results change to reflect the revised type placement.
+
+Run `node tests/geography-realism.test.js` for the geographic constraints and
+`node tests/diagrams.test.js` for the restored arcs and tiny-party grouping.

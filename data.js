@@ -253,7 +253,7 @@ const data = {
     },
     {
       "id": 26,
-      "name": "Unionised export-manufacturing towns",
+      "name": "Manufacturing towns",
       "count": 10,
       "x": -0.75,
       "y": -0.05681012304697498

@@ -2,78 +2,52 @@
 const assert=require('node:assert/strict'),G=require('../diagrams.js');
 const D=require('../data.js'),E=require('../engine.js'),fixture=require('./python-reference.json');
 let checks=0;
-for(const total of [400,800]){
-  const layout=G.hemicycle(total);
-  assert.equal(layout.dots.length,total);
-  assert.equal(new Set(layout.dots.map(d=>`${d.x.toFixed(8)},${d.y.toFixed(8)}`)).size,total);
-  layout.dots.forEach((d,i)=>{
-    assert.ok(d.x>=layout.radius&&d.x<=layout.width-layout.radius);
-    assert.ok(d.y>=layout.radius&&d.y<=layout.height-layout.radius);
-    if(i){
-      const prev=layout.dots[i-1];
-      assert.ok(prev.angleKey<=d.angleKey);
-      assert.ok((prev.column===d.column&&Math.abs(prev.row-d.row)===1)||
-        (d.column===prev.column+1&&prev.row===d.row),'Consecutive assignments must be adjacent seats');
-      assert.ok(Math.hypot(prev.x-d.x,prev.y-d.y)<27,'No distant jumps between assigned seats');
-    }
-  });
-  for(let i=0;i<layout.dots.length;i++)for(let j=i+1;j<layout.dots.length;j++){
-    assert.ok(Math.hypot(layout.dots[i].x-layout.dots[j].x,layout.dots[i].y-layout.dots[j].y)>2*layout.radius);
-  }
-  for(const side of [0,1]){
-    const ray=layout.dots.filter(d=>d.angleKey===side*1e12);
-    assert.equal(ray.length,layout.rows);
-    const column=side?layout.columns-1:0;
-    assert.deepEqual(ray.map(d=>d.row),Array.from({length:ray.length},(_,i)=>column%2?ray.length-1-i:i));
-  }
-  for(const lower of [0,1,Math.floor(total/2),total-1,total]){
-    const w=G.westminster(total,total-lower,lower),dots=[...w.upper,...w.lower];
-    assert.equal(dots.length,total);
-    assert.equal(w.upper.length,total-lower);assert.equal(w.lower.length,lower);
-    assert.equal(new Set(dots.map(d=>`${d.x},${d.y}`)).size,total);
-    dots.forEach(d=>assert.ok(d.x-w.radius>0&&d.x+w.radius<w.width&&d.y-w.radius>0&&d.y+w.radius<w.height));
-    w.upper.forEach(d=>assert.ok(d.y+w.radius<w.aisleTop));
-    w.lower.forEach(d=>assert.ok(d.y-w.radius>w.aisleBottom));
-    checks++;
-  }
+function connected(g,labels,party){
+ const group=labels.map((p,i)=>p===party?i:-1).filter(i=>i>=0);if(group.length<2)return true;
+ const pitch=Math.max(...g.rowCounts.map((n,row)=>Math.PI*Math.hypot(g.dots.find(d=>d.row===row).x-450,g.dots.find(d=>d.row===row).y-342)/(n-1)));
+ const threshold=1.45*Math.max(g.rowStep,pitch),seen=new Set([group[0]]),queue=[group[0]];
+ while(queue.length){const i=queue.pop();for(const j of group)if(!seen.has(j)&&Math.hypot(g.dots[i].x-g.dots[j].x,g.dots[i].y-g.dots[j].y)<threshold){seen.add(j);queue.push(j);}}
+ return seen.size===group.length;
 }
-// Every contiguous seat block follows neighboring seats. Check all possible
-// boundaries, including tiny parties split across two radial columns.
+assert.deepEqual(G.hemicycle(800).rowCounts,[34,38,41,45,48,52,55,59,62,66,70,73,77,80]);
 for(const total of [400,800]){
-  const g=G.hemicycle(total);
-  for(let start=0;start<total;start++)for(const count of [1,2,3,4,5,6,16,38]){
-    const block=g.dots.slice(start,start+count),seen=new Set([0]),queue=[0];
-    while(queue.length){
-      const a=block[queue.shift()];
-      block.forEach((b,i)=>{
-        if(!seen.has(i)&&Math.abs(a.row-b.row)+Math.abs(a.column-b.column)===1){seen.add(i);queue.push(i);}
-      });
-    }
-    assert.equal(seen.size,block.length,'A party block must stay connected');
-  }
+ const g=G.hemicycle(total);assert.equal(g.dots.length,total);assert.equal(g.rows,total===800?14:10);
+ assert.equal(new Set(g.dots.map(d=>`${d.x.toFixed(8)},${d.y.toFixed(8)}`)).size,total);
+ const first=total===800?136:156,step=total===800?14:18;
+ for(let row=0;row<g.rows;row++){
+  const ring=g.dots.filter(d=>d.row===row).sort((a,b)=>a.column-b.column);assert.equal(ring.length,g.rowCounts[row]);
+  ring.forEach(d=>assert.ok(Math.abs(Math.hypot(d.x-450,d.y-342)-(first+row*step))<1e-9));
+  assert.equal(ring[0].angleKey,0);assert.equal(ring.at(-1).angleKey,1e12);
+  const gaps=ring.slice(1).map((d,i)=>Math.hypot(d.x-ring[i].x,d.y-ring[i].y));
+  assert.ok(Math.max(...gaps)-Math.min(...gaps)<1e-9,'Seats must be evenly spaced along each old-style arc');
+ }
+ g.dots.forEach(d=>assert.ok(d.x>=g.radius&&d.x<=g.width-g.radius&&d.y>=g.radius&&d.y<=g.height-g.radius));
+ for(let i=0;i<g.dots.length;i++)for(let j=i+1;j<g.dots.length;j++)assert.ok(Math.hypot(g.dots[i].x-g.dots[j].x,g.dots[i].y-g.dots[j].y)>2*g.radius);
+ for(const key of [0,1e12])assert.deepEqual(g.dots.filter(d=>d.angleKey===key).map(d=>d.row),Array.from({length:g.rows},(_,i)=>i));
+ for(const lower of [0,1,Math.floor(total/2),total-1,total]){
+  const w=G.westminster(total,total-lower,lower),dots=[...w.upper,...w.lower];
+  assert.equal(dots.length,total);assert.equal(w.upper.length,total-lower);assert.equal(w.lower.length,lower);
+  assert.equal(new Set(dots.map(d=>`${d.x},${d.y}`)).size,total);
+  dots.forEach(d=>assert.ok(d.x-w.radius>0&&d.x+w.radius<w.width&&d.y-w.radius>0&&d.y+w.radius<w.height));
+  w.upper.forEach(d=>assert.ok(d.y+w.radius<w.aisleTop));w.lower.forEach(d=>assert.ok(d.y-w.radius>w.aisleBottom));checks++;
+ }
 }
-// Screenshot regression: SDP 20, Greens 4, CA 280, LDP 96. The four Greens
-// must occupy adjoining seats instead of three outer seats and one inner seat.
-const greens=G.hemicycle(400).dots.slice(20,24);
-assert.equal(new Set(greens.map(d=>d.column)).size,1);
-assert.deepEqual(greens.map(d=>d.row),[0,1,2,3]);
-// Party ranks follow left-to-right order on every ring. Each column may run
-// inward or outward, but a colour cannot be split by a different party.
+const baseline=D.displayOrder.map(i=>D.baselineCombined[i]);
+assert.deepEqual(G.seatAssignments(G.hemicycle(800),baseline),baseline.flatMap((n,p)=>Array(n).fill(p)));
+const regression=G.hemicycle(400),regressionLabels=G.seatAssignments(regression,[20,4,280,96]);
+assert.ok(connected(regression,regressionLabels,1));
 for(const scenario of fixture.scenarios){
-  const result=E.evaluate(scenario.economic,scenario.cultural,scenario.variance);
-  for(const component of ['district','pr','combined']){
-    const v=E.component(result,component),g=G.hemicycle(v.total);
-    const ranks=D.displayOrder.flatMap((party,rank)=>Array(v.seats[party]).fill(rank));
-    const dots=g.dots.map((d,i)=>({...d,rank:ranks[i]}));
-    const groups=new Map();
-    for(const d of dots){
-      for(const key of [`row:${d.row}`,`ray:${d.angleKey}`]){
-        if(!groups.has(key))groups.set(key,[]);groups.get(key).push(d.rank);
-      }
-    }
-    for(const group of groups.values())group.forEach((rank,i)=>{if(i)assert.ok(group[i-1]<=rank);});
-    assert.equal(ranks.length,v.total);checks++;
+ const result=E.evaluate(scenario.economic,scenario.cultural,scenario.variance);
+ for(const component of ['district','pr','combined']){
+  const v=E.component(result,component),g=G.hemicycle(v.total),counts=D.displayOrder.map(i=>v.seats[i]),labels=G.seatAssignments(g,counts);
+  assert.equal(labels.length,v.total);
+  counts.forEach((n,p)=>{assert.equal(labels.filter(x=>x===p).length,n);if(n&&n<=6)assert.ok(connected(g,labels,p),`Tiny party must stay connected: ${component} ${counts} party ${p}`)});
+  for(let row=0;row<g.rows;row++){
+   const ring=g.dots.map((d,i)=>({...d,party:labels[i]})).filter(d=>d.row===row).sort((a,b)=>a.column-b.column);
+   ring.forEach((d,i)=>{if(i)assert.ok(ring[i-1].party<=d.party,'Parties must retain the display order around every arc');});
   }
+  checks++;
+ }
 }
-assert.throws(()=>G.hemicycle(0));assert.throws(()=>G.westminster(400,200,199));
-console.log(`Diagram checks passed: ${checks} layouts, connected party blocks at every boundary, screenshot regression, exact seat counts, ordered colour blocks, both Westminster benches, and no overlaps or clipping.`);
+assert.throws(()=>G.hemicycle(0));assert.throws(()=>G.westminster(400,200,199));assert.throws(()=>G.seatAssignments(G.hemicycle(400),[1,2]));
+console.log(`Diagram checks passed: ${checks} layouts, restored concentric arcs and old baseline colour assignment, connected tiny parties, exact seat counts, consistent bottom rays, and both Westminster benches.`);
