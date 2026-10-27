@@ -5,23 +5,22 @@ function validateTotal(total){
 }
 function hemicycle(total){
   validateTotal(total);
-  const large=total>400,radii=Array.from({length:large?14:10},(_,i)=>large?136+i*14:145+i*18);
-  const sum=radii.reduce((a,b)=>a+b,0),quotas=radii.map(r=>total*r/sum),counts=quotas.map(Math.floor);
-  const remainder=total-counts.reduce((a,b)=>a+b,0);
-  quotas.map((q,row)=>({row,remainder:q-counts[row]})).sort((a,b)=>b.remainder-a.remainder||a.row-b.row).slice(0,remainder).forEach(({row})=>counts[row]++);
+  const large=total>400,rows=Math.min(total,large?16:10),columns=Math.ceil(total/rows);
+  const innerRadius=large?146:156,rowStep=large?12:18;
   const dots=[];
-  radii.forEach((radius,row)=>{
-    for(let column=0;column<counts[row];column++){
-      const fraction=counts[row]>1?column/(counts[row]-1):.5;
-      const angle=fraction===0?0:fraction===1?Math.PI:fraction*Math.PI;
-      // Quantize equal rays before sorting: floating-point differences must not
-      // change the inner-to-outer order at either endpoint or shared angles.
-      const angleKey=Math.round(fraction*1e12);
+  // Aligned radial columns let the assignment follow neighboring seats.
+  // Alternate direction at each column so even a small party crossing a
+  // column boundary remains one connected block instead of jumping rings.
+  for(let column=0;column<columns;column++){
+    const fraction=columns>1?column/(columns-1):.5;
+    const angle=fraction===0?0:fraction===1?Math.PI:fraction*Math.PI;
+    const angleKey=Math.round(fraction*1e12),count=Math.min(rows,total-dots.length);
+    for(let offset=0;offset<count;offset++){
+      const row=column%2?rows-1-offset:offset,radius=innerRadius+row*rowStep;
       dots.push({x:450-radius*Math.cos(angle),y:342-radius*Math.sin(angle),row,column,angleKey});
     }
-  });
-  dots.sort((a,b)=>a.angleKey-b.angleKey||a.row-b.row);
-  return{width:900,height:365,radius:large?4.6:6.1,dots};
+  }
+  return{width:900,height:365,radius:large?4.6:6.1,rows,columns,dots};
 }
 function westminster(total,upperCount,lowerCount){
   validateTotal(total);

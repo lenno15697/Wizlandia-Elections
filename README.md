@@ -2,6 +2,38 @@
 
 A standalone GitHub Pages election website inspired by the sidebar, parliament diagram, party cards and result tabs of [ThermidorElections](https://consuldelmar.github.io/ThermidorElections/). The interface and source here are a new implementation. No code or assets from the reference site are included.
 
+## Current update: fixed variation and geographic districts
+
+Within-type variation is fixed at **0.20**. The variation slider is removed, and loading an older configuration cannot override this setting. The economic, cultural and variance-multiplier sliders remain available. The existing party-boundary caps still apply, so 0.20 is a maximum offset rather than the standard deviation of every type.
+
+The **Cartogram** tab has 400 equal hexagons following the five source landmasses, with thick black outlines around state borders and coasts. State zoom and colours for current district winner, type family or state remain available. District labels and hover tooltips are removed. Clicking a tile opens a details box with its ID, locality and full district-type text; closing it hides the box. It always represents the district component, including when the Assembly view is Combined or PR List. The map updates when election parameters or party positions change. All source state-to-state adjacencies are retained, including Kroana’s two pieces on different landmasses. District results and CSV exports use state-based IDs and include locality and estimated resident population.
+
+Upload all top-level HTML, CSS, JS and SVG website files in this ZIP, including the new **district-geography.js**. The JSON and CSV contain the underlying mapping; tests and Python code are optional for hosting.
+
+State apportionment uses the Hare quota and largest remainder on 212 million residents:
+
+| State | Prefix | Districts |
+| --- | --- | ---: |
+| Neolexia | NX | 98 |
+| Erewen | EW | 60 |
+| Avax | AX | 57 |
+| Ethuarica | ET | 38 |
+| Extary | EX | 30 |
+| Kroana | KR | 23 |
+| Laxburg | LX | 21 |
+| Luqur | LQ | 19 |
+| Wittaria | WT | 17 |
+| Akro | AK | 15 |
+| Quelor | QL | 13 |
+| Illixium | IL | 9 |
+| **Total** | | **400** |
+
+Extary was omitted from the requested prefix list but is a federal state in the notes, so it is retained as EX. Pelagos and New Pelagore are excluded. Ravenna and mainland Pelagore retain the corrected Tier 2 population clusters.
+
+Each district covers land in one state only. Proposed geographic boundaries are drawn from the corrected population-density grid before political types are assigned. They cover all federal land without overlaps. Islands and detached coastal pieces may be combined in maritime districts. Residents per district range from **520,755 to 555,656**, with maximum deviation **0.27%** from each state's mean. Differences in the state means reflect rounding 400 state entitlements. IDs run in a north-to-south sweep, ordered west-to-east within eight-pixel latitude bands.
+
+All 50 original types, their counts, compass centres and model generation indices are preserved. The original ID is retained as `legacyId`; this also preserves the deterministic tie-breaking order. Type placement is a proposed interpretation of settlement and state economic notes. Finance, technology, shipbuilding, manufacturing, mining and agricultural placements have explicit geographic constraints; other types fit urban structure, state wealth and varied local neighbourhood profiles. These are assumptions, not observed voting patterns. Geographic population is separate from the calibrated nationwide Gaussian PR electorate.
+
 ## Publish on GitHub Pages
 
 1. Extract this ZIP.
@@ -39,7 +71,7 @@ History is in memory, capped at the latest 200 entries. Refreshing the page rese
 
 Previously all districts belonging to a type occupied exactly the same point. A type of six districts therefore changed winner as a block.
 
-Now every district has its own **fixed offset of at most 0.10 compass units**, before shocks. The transformation remains:
+Now every district has its own **fixed offset of at most 0.20 compass units**, before shocks. The transformation remains:
 
 ```text
 new position = national baseline median + election shift
@@ -48,21 +80,21 @@ new position = national baseline median + election shift
 
 Offsets come in opposite pairs. This preserves each district type's average exactly, up to floating-point rounding. Every type's radius is additionally capped at 80% of its distance to the nearest original party boundary. Thus all original baseline winners and the **186–170** LDP–CA split are preserved. Changing the seed redraws election shocks; it does not redraw district geography.
 
-The original national Gaussian mixture, party positions, type counts, national baseline vote shares and shock distribution are unchanged. Within-type variation can be set to zero to recover coincident district centres. Moving party coordinates is a scenario change; the original calibration refers to the default positions.
+The original national Gaussian mixture, party positions, type counts, national baseline vote shares and shock distribution are unchanged. The website fixes within-type variation at 0.20. Moving party coordinates is a scenario change; the original calibration refers to the default positions.
 
 ### Example: Greens can now win intermediate numbers of seats
 
-Hold the economic shift at 0.00, variance at 1.00, party positions at their defaults and within-type variation at 0.10:
+Hold the economic shift at 0.00, variance at 1.00, party positions at their defaults and the fixed within-type variation of 0.20:
 
 | Cultural shift | Green district seats |
 | --- | ---: |
 | +0.00 | 6 |
-| +0.41 | 5 |
-| +0.43 | 4 |
-| +0.50 | 3 |
-| +0.58 | 2 |
-| +0.65 | 1 |
-| +0.67 | 0 |
+| +0.28 | 5 |
+| +0.32 | 4 |
+| +0.46 | 3 |
+| +0.63 | 2 |
+| +0.76 | 1 |
+| +0.81 | 0 |
 
 These are illustrations along one path through the parameters, not limits on the party's possible seat totals. Each election is still discrete, so exact ties or simultaneous changes can occur; the offsets remove the systematic identical-type block effect.
 
@@ -126,7 +158,7 @@ Coalition combinations are arithmetic possibilities, including combinations part
 | `tests/model.test.js` | Model regression checks, using Node's built-in assertion library |
 | `tests/python-reference.json` | Python results for 58 scenarios and ten seeded shocks |
 
-Change **`DISTRICT_SPREAD = 0.10`** in the Python file to adjust its default district variation. To update the website's default too, run `python3 tools/export_data.py`. The browser slider supports 0.00–0.20. The geometry in `engine.js` and the Python file deliberately uses the same paired-offset algorithm.
+**`DISTRICT_SPREAD = 0.20`** is the fixed setting. The browser and Python use the same paired-offset algorithm, including the original boundary caps. `tools/export_data.py` regenerates browser constants from Python. `district-geography.js` and `district-geography.json` attach the proposed geographic identities without reordering the model.
 
 ## Verification
 
@@ -134,6 +166,11 @@ With Node installed:
 
 ```bash
 node tests/model.test.js
+node tests/diagrams.test.js
+node tests/selection.test.js
+node tests/coalition-priority.test.js
+node tests/cartogram.test.js
+node tests/interface.test.js
 ```
 
 For a fresh comparison against Python/SciPy:
@@ -146,7 +183,7 @@ python3 python/wizlandia_election_simulator.py --self-test
 
 Checks cover the calibrated district, PR and combined baselines; 400/400/800 seat totals; quota rounding and exact-remainder tie handling; the requested party order; unchanged type averages, distinct individual districts, maximum offset, all intermediate Green seat totals, zero-variation behaviour, seeded shocks, reciprocal density equality and exact district, PR and combined seat agreement across 58 Python reference scenarios. Maximum national vote-share discrepancy in those scenarios is about 0.000005 percentage points; JavaScript uses a numerical normal-CDF approximation.
 
-The revised Python district CSV now contains one row for each of the 400 individual districts rather than one row per type.
+The Python district CSV contains one row for each of the 400 individual districts, including state-based ID, state, locality, resident population, original model ID and original type.
 
 The Python GUI also opens with Combined seats and has District, PR and Combined buttons. To start a different view from the command line, use `--component district` or `--component pr`. The election CSV includes separate `*_district_seats`, `*_pr_seats` and `*_combined_seats` columns. For compatibility with earlier Python code, `ElectionResult.seats` continues to mean district seats; explicit `district_seats`, `pr_seats` and `combined_seats` properties are available.
 
@@ -154,9 +191,10 @@ The Python GUI also opens with Combined seats and has District, PR and Combined 
 ## Assembly diagrams and seat cards
 
 The Layout control offers Hemicycle and Westminster in all three seat views.
-Hemicycle orders seats by angle, with a consistent inner-to-outer order on
-shared rays, including both bottom endpoints. This prevents floating-point
-rounding from splitting party colour blocks.
+Hemicycle fills aligned radial columns from left to right, alternating inward
+and outward within successive columns. Every assignment moves to an adjacent
+seat, so small parties remain a connected block even across column boundaries.
+The 400- and 800-seat layouts retain exact party totals without overlaps.
 
 Westminster uses two facing benches. Selecting party cards moves those parties
 to the government bench; clearing the selection moves them back. The component
@@ -228,3 +266,7 @@ largest first.
 
 Run `node tests/coalition-priority.test.js` to check all tiers, the cordon,
 ranking, the four-suggestion limit, and the empty state.
+
+Validation for this update includes Python/JavaScript parity across 58 election scenarios, 156 cartogram renders across states and colour modes, connected state tile groups, and full-app event checks using a lightweight DOM harness. Browser layout testing was unavailable because the installed Chromium binary was incomplete; the PDF atlas was rendered and visually reviewed.
+
+The coastline-based update samples the five landmass silhouettes on a common hex lattice, balances exact state tile capacities, repairs state-piece connectivity, and transports the existing district anchors within their own state and landmass. It changes no district population, type, compass point, model index or ID. The new `stateBorders` metadata deduplicates shared edges on an integer lattice.

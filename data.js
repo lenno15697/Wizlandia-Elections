@@ -548,7 +548,7 @@ const data = {
     0.03,
     0.01
   ],
-  "spread": 0.1,
+  "spread": 0.2,
   "prSeatCount": 400,
   "displayOrder": [
     8,

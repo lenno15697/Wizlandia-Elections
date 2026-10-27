@@ -50,7 +50,7 @@ for(let i=0;i<=100;i++)counts.add(E.evaluate(0,i/100,1).seats[4]);
 assert.deepEqual([...counts].sort((a,b)=>a-b),[0,1,2,3,4,5,6]);
 const zeroSpreadCounts=new Set();for(let i=0;i<=100;i++)zeroSpreadCounts.add(E.evaluate(0,i/100,1,0).seats[4]);
 assert.deepEqual([...zeroSpreadCounts].sort((a,b)=>a-b),[0,6]);
-assert.deepEqual(E.evaluate(0,.5,1).seats,[183,162,21,31,3,0,0,0,0]);
+assert.deepEqual(E.evaluate(0,.5,1).seats,[181,161,21,34,3,0,0,0,0]);
 assert.throws(()=>E.evaluate(NaN,0,1));assert.throws(()=>E.evaluate(0,0,0));assert.throws(()=>E.evaluate(0,0,1,-1));
 const duplicates=D.parties.map(p=>({...p}));duplicates[0].x=duplicates[1].x;duplicates[0].y=duplicates[1].y;
 assert.throws(()=>E.evaluate(0,0,1,.1,duplicates));

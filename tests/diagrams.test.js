@@ -9,15 +9,22 @@ for(const total of [400,800]){
   layout.dots.forEach((d,i)=>{
     assert.ok(d.x>=layout.radius&&d.x<=layout.width-layout.radius);
     assert.ok(d.y>=layout.radius&&d.y<=layout.height-layout.radius);
-    if(i){const prev=layout.dots[i-1];assert.ok(prev.angleKey<d.angleKey||(prev.angleKey===d.angleKey&&prev.row<d.row));}
+    if(i){
+      const prev=layout.dots[i-1];
+      assert.ok(prev.angleKey<=d.angleKey);
+      assert.ok((prev.column===d.column&&Math.abs(prev.row-d.row)===1)||
+        (d.column===prev.column+1&&prev.row===d.row),'Consecutive assignments must be adjacent seats');
+      assert.ok(Math.hypot(prev.x-d.x,prev.y-d.y)<27,'No distant jumps between assigned seats');
+    }
   });
   for(let i=0;i<layout.dots.length;i++)for(let j=i+1;j<layout.dots.length;j++){
     assert.ok(Math.hypot(layout.dots[i].x-layout.dots[j].x,layout.dots[i].y-layout.dots[j].y)>2*layout.radius);
   }
   for(const side of [0,1]){
     const ray=layout.dots.filter(d=>d.angleKey===side*1e12);
-    assert.equal(ray.length,total===800?14:10);
-    assert.deepEqual(ray.map(d=>d.row),Array.from({length:ray.length},(_,i)=>i));
+    assert.equal(ray.length,layout.rows);
+    const column=side?layout.columns-1:0;
+    assert.deepEqual(ray.map(d=>d.row),Array.from({length:ray.length},(_,i)=>column%2?ray.length-1-i:i));
   }
   for(const lower of [0,1,Math.floor(total/2),total-1,total]){
     const w=G.westminster(total,total-lower,lower),dots=[...w.upper,...w.lower];
@@ -30,8 +37,28 @@ for(const total of [400,800]){
     checks++;
   }
 }
-// Party ranks must remain monotone on every ring and every shared ray,
-// including the bottom endpoints where the old renderer split colour blocks.
+// Every contiguous seat block follows neighboring seats. Check all possible
+// boundaries, including tiny parties split across two radial columns.
+for(const total of [400,800]){
+  const g=G.hemicycle(total);
+  for(let start=0;start<total;start++)for(const count of [1,2,3,4,5,6,16,38]){
+    const block=g.dots.slice(start,start+count),seen=new Set([0]),queue=[0];
+    while(queue.length){
+      const a=block[queue.shift()];
+      block.forEach((b,i)=>{
+        if(!seen.has(i)&&Math.abs(a.row-b.row)+Math.abs(a.column-b.column)===1){seen.add(i);queue.push(i);}
+      });
+    }
+    assert.equal(seen.size,block.length,'A party block must stay connected');
+  }
+}
+// Screenshot regression: SDP 20, Greens 4, CA 280, LDP 96. The four Greens
+// must occupy adjoining seats instead of three outer seats and one inner seat.
+const greens=G.hemicycle(400).dots.slice(20,24);
+assert.equal(new Set(greens.map(d=>d.column)).size,1);
+assert.deepEqual(greens.map(d=>d.row),[0,1,2,3]);
+// Party ranks follow left-to-right order on every ring. Each column may run
+// inward or outward, but a colour cannot be split by a different party.
 for(const scenario of fixture.scenarios){
   const result=E.evaluate(scenario.economic,scenario.cultural,scenario.variance);
   for(const component of ['district','pr','combined']){
@@ -49,4 +76,4 @@ for(const scenario of fixture.scenarios){
   }
 }
 assert.throws(()=>G.hemicycle(0));assert.throws(()=>G.westminster(400,200,199));
-console.log(`Diagram checks passed: ${checks} layouts, exact seat counts, ordered colour blocks, both Westminster benches, and no overlaps or clipping.`);
+console.log(`Diagram checks passed: ${checks} layouts, connected party blocks at every boundary, screenshot regression, exact seat counts, ordered colour blocks, both Westminster benches, and no overlaps or clipping.`);
