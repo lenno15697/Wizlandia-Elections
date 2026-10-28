@@ -35,7 +35,7 @@ function render(){
   }).join('');
   $('coalition-kicker').textContent=isCombined?`${v.label} · The road to ${v.majority}`:v.label;
   $('coalition-copy').textContent=isCombined?`Each combination reaches ${v.majority} of ${v.total} ${v.noun} seats and loses its majority if any member leaves. These are arithmetic possibilities, without political compatibility restrictions.`:'';
-  $('history-context').textContent=(isCombined?`Largest party and majority status use the Combined view (${v.total} seats; majority ${v.majority}).`:`Largest party uses the ${v.label} view (${v.total} seats).`)+` Select a run to restore it. History is kept in this tab until the page is closed or refreshed.`;
+  $('history-context').textContent=(isCombined?`Largest party and majority status use the Combined view (${v.total} seats; majority ${v.majority}).`:`Largest party uses the ${v.label} view (${v.total} seats).`)+` Most viable coalition uses each run’s Combined seats and the 401-seat majority. Select a run to restore it. History is kept in this tab until the page is closed or refreshed.`;
   $('assembly-panel').hidden=view!=='combined';$('panel-cartogram').hidden=view!=='district';$('panel-votes').hidden=view!=='pr';
   renderSummary();if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else renderParliament();renderHistory();
   if(activeTab==='districts')renderDistricts();if(activeTab==='compass')renderPartyCompass();if(activeTab==='medians')drawDistrictMedians();if(activeTab==='coalitions')renderCoalitions();
@@ -53,6 +53,16 @@ function coalitionTier(codes){
   for(const tier of [2,3,4])if(tiers[tier].includes(key))return tier;
   const tensions=[['LDP','SDP'],['LIB','SDP'],['CA','LIB']];
   return tensions.some(pair=>pair.every(code=>codes.includes(code)))?6:5;
+}
+function rankedCoalitions(parties,seats,majority){
+  const paths=[];
+  for(let mask=1;mask<(1<<parties.length);mask++){
+    const group=largestPartiesFirst(displayOrder.filter(i=>mask&(1<<i)),seats),sum=group.reduce((n,i)=>n+seats[i],0),tier=coalitionTier(group.map(i=>parties[i].code));
+    if(tier<7&&sum>=majority&&group.every(i=>sum-seats[i]<majority))paths.push({members:group,total:sum,tier});
+  }
+  // Prefer viability tiers, then fewer parties, then larger seat totals.
+  // Stable mask enumeration breaks ties when all three criteria are equal.
+  return paths.sort((a,b)=>a.tier-b.tier||a.members.length-b.members.length||b.total-a.total);
 }
 function renderSummary(){
   const v=shown(),seats=v.seats,isCombined=view==='combined';
@@ -82,16 +92,8 @@ function renderSummary(){
   $('summary-paths-label').textContent=`Ways to reach ${v.majority} (sorted by coalition viability)`;
   $('summary-paths-section').hidden=!isCombined;
   if(!isCombined){$('summary-paths').innerHTML='';$('summary-paths-empty').hidden=true;return;}
-  // Majority options are global; the summary's selected or largest party
-  // does not constrain which coalitions may appear here.
-  const paths=[];
-  for(let mask=1;mask<(1<<current.parties.length);mask++){
-    const group=largestPartiesFirst(displayOrder.filter(i=>mask&(1<<i)),seats),sum=group.reduce((n,i)=>n+seats[i],0),tier=coalitionTier(group.map(i=>current.parties[i].code));
-    if(tier<7&&sum>=v.majority&&group.every(i=>sum-seats[i]<v.majority))paths.push({members:group,total:sum,tier});
-  }
-  // Prefer viability tiers, then fewer parties, then larger seat totals.
-  // Stable mask enumeration breaks ties when all three criteria are equal.
-  paths.sort((a,b)=>a.tier-b.tier||a.members.length-b.members.length||b.total-a.total);
+  // Majority options do not depend on the selected or largest party.
+  const paths=rankedCoalitions(current.parties,seats,v.majority);
   $('summary-paths-empty').hidden=paths.length>0;
   $('summary-paths').innerHTML=paths.slice(0,4).map(c=>`<button class="summary-path" data-coalition="${c.members.join(',')}" data-tier="${c.tier}" aria-label="Select ${c.members.map(i=>current.parties[i].name).join(' plus ')}, ${c.total} seats"><span class="path-swatches" aria-hidden="true">${c.members.map(i=>swatch(current.parties[i])).join('')}</span><span>${c.members.map(i=>current.parties[i].code).join(' + ')}</span><strong>${c.total}</strong></button>`).join('');
 }
@@ -214,7 +216,9 @@ function renderHistory(){
   $('history-count').textContent=history.length;
   $('history-body').innerHTML=history.slice().reverse().map(h=>{
     const r=h.result,seats=shown(r).seats,i=seats.indexOf(Math.max(...seats));
-    return`<tr><td><button class="history-link" data-history="${h.id}">${esc(h.label)}</button></td><td>${signed(r.economic)}</td><td>${signed(r.cultural)}</td><td>${r.variance.toFixed(3)}×</td><td>${swatch(r.parties[i])} ${r.parties[i].code}</td><td>${r.districtSeats[i]}</td><td>${r.prSeats[i]}</td><td>${r.combinedSeats[i]}</td>${view==='combined'?`<td>${seats[i]>=v.majority?'Majority':'No overall majority'}</td>`:''}</tr>`;
+    const top=rankedCoalitions(r.parties,r.combinedSeats,E.component(r,'combined').majority)[0];
+    const coalition=top?`${esc(top.members.map(i=>r.parties[i].code).join(' + '))} · ${top.total} seats`:'No viable coalition';
+    return`<tr><td><button class="history-link" data-history="${h.id}">${esc(h.label)}</button></td><td>${signed(r.economic)}</td><td>${signed(r.cultural)}</td><td>${r.variance.toFixed(3)}×</td><td>${swatch(r.parties[i])} ${r.parties[i].code}</td><td>${coalition}</td><td>${r.districtSeats[i]}</td><td>${r.prSeats[i]}</td><td>${r.combinedSeats[i]}</td>${view==='combined'?`<td>${seats[i]>=v.majority?'Majority':'No overall majority'}</td>`:''}</tr>`;
   }).join('');
   if(!batchStats){$('batch-summary').innerHTML='';return;}
   const runs=batchStats.results,n=runs.length,ldp=runs.filter(r=>shown(r).seats[0]>=v.majority).length,ca=runs.filter(r=>shown(r).seats[1]>=v.majority).length,hung=runs.filter(r=>Math.max(...shown(r).seats)<v.majority).length;
