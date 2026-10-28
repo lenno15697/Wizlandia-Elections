@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "orderedSwaps": [
     [
       "NX-59",
@@ -48,7 +48,14 @@
   },
   "effectiveReceives": {
     "NX-06": "NX-59",
-    "NX-59": "NX-06",
+    "NX-35": "NX-41",
+    "NX-41": "NX-52",
+    "NX-42": "NX-06",
+    "NX-44": "NX-51",
+    "NX-51": "NX-53",
+    "NX-52": "NX-35",
+    "NX-53": "NX-44",
+    "NX-59": "NX-42",
     "NX-77": "ET-21",
     "EW-04": "EW-06",
     "EW-06": "KR-22",
@@ -67,10 +74,7 @@
     "WT-12": "WT-09",
     "WT-15": "WT-02",
     "QL-05": "QL-12",
-    "QL-12": "QL-05",
-    "NX-51": "NX-53",
-    "NX-53": "NX-44",
-    "NX-44": "NX-51"
+    "QL-12": "QL-05"
   },
   "politicalFields": [
     "type",
@@ -107,7 +111,7 @@
     "coldNorthShare"
   ],
   "identityHash": "cabd9271bb3b2016407f85e4ff1c98a16b6ee1a8ffdb2c741fb8813eeb2ff4c5",
-  "unaffectedPoliticalHash": "229ad252f99d8197f844b58a1c80300aac88fa8b043bf0ccb26d902c3333a300",
+  "unaffectedPoliticalHash": "482f38bd50fb305effdab27e862e54ef758900ff6d1d08af6c34de95fd77442c",
   "typeCountsBefore": {
     "1": 8,
     "2": 8,
@@ -426,6 +430,72 @@
       }
     },
     {
+      "district": "NX-35",
+      "receivesFrom": "NX-41",
+      "before": {
+        "type": 17,
+        "typeName": "Rapid-growth outer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "17-03",
+        "x": 2.9492361180024784,
+        "y": 0.3344366851879067,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 7,
+        "typeName": "Capital-city public-employment districts",
+        "family": "Urban core",
+        "legacyId": "07-01",
+        "x": 2.0755719276901914,
+        "y": -1.7838448897969732,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "NX-41",
+      "receivesFrom": "NX-52",
+      "before": {
+        "type": 7,
+        "typeName": "Capital-city public-employment districts",
+        "family": "Urban core",
+        "legacyId": "07-01",
+        "x": 2.0755719276901914,
+        "y": -1.7838448897969732,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 1,
+        "typeName": "Financial and corporate centres",
+        "family": "Urban core",
+        "legacyId": "01-05",
+        "x": 4.907997897823748,
+        "y": -1.5959459896926989,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "NX-42",
+      "receivesFrom": "NX-06",
+      "before": {
+        "type": 14,
+        "typeName": "Established middle-income homeowner suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "14-04",
+        "x": 2.567027666398366,
+        "y": -0.0654087966570715,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 1,
+        "typeName": "Financial and corporate centres",
+        "family": "Urban core",
+        "legacyId": "01-02",
+        "x": 4.897701376345378,
+        "y": -1.8263125870366268,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
       "district": "NX-44",
       "receivesFrom": "NX-51",
       "before": {
@@ -470,6 +540,28 @@
       }
     },
     {
+      "district": "NX-52",
+      "receivesFrom": "NX-35",
+      "before": {
+        "type": 1,
+        "typeName": "Financial and corporate centres",
+        "family": "Urban core",
+        "legacyId": "01-05",
+        "x": 4.907997897823748,
+        "y": -1.5959459896926989,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 17,
+        "typeName": "Rapid-growth outer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "17-03",
+        "x": 2.9492361180024784,
+        "y": 0.3344366851879067,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
       "district": "NX-53",
       "receivesFrom": "NX-44",
       "before": {
@@ -493,7 +585,7 @@
     },
     {
       "district": "NX-59",
-      "receivesFrom": "NX-06",
+      "receivesFrom": "NX-42",
       "before": {
         "type": 50,
         "typeName": "Freeport and digital-nomad enclaves",
@@ -504,12 +596,12 @@
         "baselineWinner": "LDP"
       },
       "after": {
-        "type": 1,
-        "typeName": "Financial and corporate centres",
-        "family": "Urban core",
-        "legacyId": "01-02",
-        "x": 4.897701376345378,
-        "y": -1.8263125870366268,
+        "type": 14,
+        "typeName": "Established middle-income homeowner suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "14-04",
+        "x": 2.567027666398366,
+        "y": -0.0654087966570715,
         "baselineWinner": "LDP"
       }
     },
@@ -703,79 +795,325 @@
     ]
   },
   "latestPermutation": {
-    "version": 4,
+    "version": 5,
     "simultaneousReceives": {
-      "NX-51": "NX-53",
-      "NX-53": "NX-44",
-      "NX-44": "NX-51"
+      "NX-52": "NX-35",
+      "NX-41": "NX-52",
+      "NX-35": "NX-41",
+      "NX-59": "NX-42",
+      "NX-42": "NX-59"
     },
     "changes": [
       {
-        "district": "NX-51",
-        "receivesFrom": "NX-53",
+        "district": "NX-52",
+        "receivesFrom": "NX-35",
+        "before": {
+          "type": 1,
+          "typeName": "Financial and corporate centres",
+          "family": "Urban core",
+          "legacyId": "01-05",
+          "x": 4.907997897823748,
+          "y": -1.5959459896926989,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 17,
+          "typeName": "Rapid-growth outer suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "17-03",
+          "x": 2.9492361180024784,
+          "y": 0.3344366851879067,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "NX-41",
+        "receivesFrom": "NX-52",
         "before": {
           "type": 7,
           "typeName": "Capital-city public-employment districts",
           "family": "Urban core",
-          "legacyId": "07-05",
-          "x": 2.0343714655142158,
-          "y": -1.7097196180452543,
+          "legacyId": "07-01",
+          "x": 2.0755719276901914,
+          "y": -1.7838448897969732,
           "baselineWinner": "LDP"
         },
         "after": {
           "type": 1,
           "typeName": "Financial and corporate centres",
           "family": "Urban core",
-          "legacyId": "01-06",
-          "x": 4.692002102176252,
-          "y": -1.8776742564012507,
+          "legacyId": "01-05",
+          "x": 4.907997897823748,
+          "y": -1.5959459896926989,
           "baselineWinner": "LDP"
         }
       },
       {
-        "district": "NX-53",
-        "receivesFrom": "NX-44",
+        "district": "NX-35",
+        "receivesFrom": "NX-41",
         "before": {
-          "type": 1,
-          "typeName": "Financial and corporate centres",
-          "family": "Urban core",
-          "legacyId": "01-06",
-          "x": 4.692002102176252,
-          "y": -1.8776742564012507,
+          "type": 17,
+          "typeName": "Rapid-growth outer suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "17-03",
+          "x": 2.9492361180024784,
+          "y": 0.3344366851879067,
           "baselineWinner": "LDP"
-        },
-        "after": {
-          "type": 8,
-          "typeName": "Major university and student districts",
-          "family": "Urban core",
-          "legacyId": "08-06",
-          "x": -2.024769199009582,
-          "y": -3.795663268535852,
-          "baselineWinner": "GRN"
-        }
-      },
-      {
-        "district": "NX-44",
-        "receivesFrom": "NX-51",
-        "before": {
-          "type": 8,
-          "typeName": "Major university and student districts",
-          "family": "Urban core",
-          "legacyId": "08-06",
-          "x": -2.024769199009582,
-          "y": -3.795663268535852,
-          "baselineWinner": "GRN"
         },
         "after": {
           "type": 7,
           "typeName": "Capital-city public-employment districts",
           "family": "Urban core",
-          "legacyId": "07-05",
-          "x": 2.0343714655142158,
-          "y": -1.7097196180452543,
+          "legacyId": "07-01",
+          "x": 2.0755719276901914,
+          "y": -1.7838448897969732,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "NX-59",
+        "receivesFrom": "NX-42",
+        "before": {
+          "type": 1,
+          "typeName": "Financial and corporate centres",
+          "family": "Urban core",
+          "legacyId": "01-02",
+          "x": 4.897701376345378,
+          "y": -1.8263125870366268,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 14,
+          "typeName": "Established middle-income homeowner suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "14-04",
+          "x": 2.567027666398366,
+          "y": -0.0654087966570715,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "NX-42",
+        "receivesFrom": "NX-59",
+        "before": {
+          "type": 14,
+          "typeName": "Established middle-income homeowner suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "14-04",
+          "x": 2.567027666398366,
+          "y": -0.0654087966570715,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 1,
+          "typeName": "Financial and corporate centres",
+          "family": "Urban core",
+          "legacyId": "01-02",
+          "x": 4.897701376345378,
+          "y": -1.8263125870366268,
           "baselineWinner": "LDP"
         }
       }
     ]
-  }
+  },
+  "permutationHistory": [
+    {
+      "version": 4,
+      "simultaneousReceives": {
+        "NX-51": "NX-53",
+        "NX-53": "NX-44",
+        "NX-44": "NX-51"
+      },
+      "changes": [
+        {
+          "district": "NX-51",
+          "receivesFrom": "NX-53",
+          "before": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-05",
+            "x": 2.0343714655142158,
+            "y": -1.7097196180452543,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 1,
+            "typeName": "Financial and corporate centres",
+            "family": "Urban core",
+            "legacyId": "01-06",
+            "x": 4.692002102176252,
+            "y": -1.8776742564012507,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "NX-53",
+          "receivesFrom": "NX-44",
+          "before": {
+            "type": 1,
+            "typeName": "Financial and corporate centres",
+            "family": "Urban core",
+            "legacyId": "01-06",
+            "x": 4.692002102176252,
+            "y": -1.8776742564012507,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 8,
+            "typeName": "Major university and student districts",
+            "family": "Urban core",
+            "legacyId": "08-06",
+            "x": -2.024769199009582,
+            "y": -3.795663268535852,
+            "baselineWinner": "GRN"
+          }
+        },
+        {
+          "district": "NX-44",
+          "receivesFrom": "NX-51",
+          "before": {
+            "type": 8,
+            "typeName": "Major university and student districts",
+            "family": "Urban core",
+            "legacyId": "08-06",
+            "x": -2.024769199009582,
+            "y": -3.795663268535852,
+            "baselineWinner": "GRN"
+          },
+          "after": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-05",
+            "x": 2.0343714655142158,
+            "y": -1.7097196180452543,
+            "baselineWinner": "LDP"
+          }
+        }
+      ]
+    },
+    {
+      "version": 5,
+      "simultaneousReceives": {
+        "NX-52": "NX-35",
+        "NX-41": "NX-52",
+        "NX-35": "NX-41",
+        "NX-59": "NX-42",
+        "NX-42": "NX-59"
+      },
+      "changes": [
+        {
+          "district": "NX-52",
+          "receivesFrom": "NX-35",
+          "before": {
+            "type": 1,
+            "typeName": "Financial and corporate centres",
+            "family": "Urban core",
+            "legacyId": "01-05",
+            "x": 4.907997897823748,
+            "y": -1.5959459896926989,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 17,
+            "typeName": "Rapid-growth outer suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "17-03",
+            "x": 2.9492361180024784,
+            "y": 0.3344366851879067,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "NX-41",
+          "receivesFrom": "NX-52",
+          "before": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-01",
+            "x": 2.0755719276901914,
+            "y": -1.7838448897969732,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 1,
+            "typeName": "Financial and corporate centres",
+            "family": "Urban core",
+            "legacyId": "01-05",
+            "x": 4.907997897823748,
+            "y": -1.5959459896926989,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "NX-35",
+          "receivesFrom": "NX-41",
+          "before": {
+            "type": 17,
+            "typeName": "Rapid-growth outer suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "17-03",
+            "x": 2.9492361180024784,
+            "y": 0.3344366851879067,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-01",
+            "x": 2.0755719276901914,
+            "y": -1.7838448897969732,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "NX-59",
+          "receivesFrom": "NX-42",
+          "before": {
+            "type": 1,
+            "typeName": "Financial and corporate centres",
+            "family": "Urban core",
+            "legacyId": "01-02",
+            "x": 4.897701376345378,
+            "y": -1.8263125870366268,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 14,
+            "typeName": "Established middle-income homeowner suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "14-04",
+            "x": 2.567027666398366,
+            "y": -0.0654087966570715,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "NX-42",
+          "receivesFrom": "NX-59",
+          "before": {
+            "type": 14,
+            "typeName": "Established middle-income homeowner suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "14-04",
+            "x": 2.567027666398366,
+            "y": -0.0654087966570715,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 1,
+            "typeName": "Financial and corporate centres",
+            "family": "Urban core",
+            "legacyId": "01-02",
+            "x": 4.897701376345378,
+            "y": -1.8263125870366268,
+            "baselineWinner": "LDP"
+          }
+        }
+      ]
+    }
+  ]
 }

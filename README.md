@@ -64,7 +64,7 @@ Each district covers land in one state only. Proposed geographic boundaries are 
 
 All 50 original types, their counts, compass centres and model generation indices are preserved. The original ID is retained as `legacyId`; this also preserves the deterministic tie-breaking order. Type placement is a proposed interpretation of settlement and state economic notes. Finance, technology, shipbuilding, manufacturing, mining and agricultural placements have explicit geographic constraints; other types fit urban structure, state wealth and varied local neighbourhood profiles. These are assumptions, not observed voting patterns. Geographic population is separate from the calibrated nationwide Gaussian PR electorate.
 
-## District type and compass permutations (version 4)
+## District type and compass permutations (version 5)
 
 The requested district swaps change **type, full type name, type family, legacy
 model ID, compass coordinates and derived baseline winner together**. Each
@@ -82,7 +82,12 @@ receives EW-06, and EW-06 receives KR-22.
 The subsequent Neolexia cycle is simultaneous: NX-51 receives the current
 NX-53 profile, NX-53 receives NX-44, and NX-44 receives NX-51.
 
-There are **24 affected districts** across the retained permutations. `district_permutation_changes.csv` lists
+The next cycle transfers the then-current profiles: NX-52 receives NX-35,
+NX-41 receives NX-52, and NX-35 receives NX-41. NX-59 and NX-42 exchange
+their then-current profiles. This composes with the earlier NX-59/NX-06
+exchange; NX-06 keeps its profile from that earlier exchange.
+
+There are **28 affected districts** across the retained permutations. `district_permutation_changes.csv` lists
 all old/new types and coordinates; `district_permutations.json` records the
 input swaps, the effective permutation and verification hashes. Earlier
 within-type permutation records are retained separately in
