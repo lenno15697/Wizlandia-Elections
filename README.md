@@ -64,6 +64,29 @@ Each district covers land in one state only. Proposed geographic boundaries are 
 
 All 50 original types, their counts, compass centres and model generation indices are preserved. The original ID is retained as `legacyId`; this also preserves the deterministic tie-breaking order. Type placement is a proposed interpretation of settlement and state economic notes. Finance, technology, shipbuilding, manufacturing, mining and agricultural placements have explicit geographic constraints; other types fit urban structure, state wealth and varied local neighbourhood profiles. These are assumptions, not observed voting patterns. Geographic population is separate from the calibrated nationwide Gaussian PR electorate.
 
+## District type and compass permutations (version 3)
+
+The requested district swaps change **type, full type name, type family, legacy
+model ID, compass coordinates and derived baseline winner together**. Each
+district retains its geographic ID, state, locality, population and map tile.
+All 50 type counts and the complete national set of district positions remain
+unchanged, so nationwide district and PR totals are preserved for every model
+scenario. State and individual district outcomes can change.
+
+The LQ-16/LQ-18 swap has been reversed. The earlier WT-11/LQ-16 swap
+remains in place: WT-11 receives the former LQ-16 profile, LQ-16 receives the
+former WT-11 profile, and LQ-18 retains its original profile. The final three
+arrows are simultaneous: KR-22 receives the former EW-04 profile, EW-04
+receives EW-06, and EW-06 receives KR-22.
+
+There are **21 affected districts**. `district_permutation_changes.csv` lists
+all old/new types and coordinates; `district_permutations.json` records the
+input swaps, the effective permutation and verification hashes. Earlier
+within-type permutation records are retained separately in
+`compass_permutation_changes.csv`.
+
+Run `node tests/permutations.test.js` to verify the exact transfers, all type counts and unchanged district geography.
+
 ## Publish on GitHub Pages
 
 1. Extract this ZIP.

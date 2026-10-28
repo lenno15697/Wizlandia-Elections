@@ -1,0 +1,633 @@
+{
+  "version": 3,
+  "orderedSwaps": [
+    [
+      "NX-59",
+      "NX-06"
+    ],
+    [
+      "AX-18",
+      "ET-01"
+    ],
+    [
+      "QL-05",
+      "QL-12"
+    ],
+    [
+      "WT-11",
+      "LQ-16"
+    ],
+    [
+      "LX-21",
+      "KR-18"
+    ],
+    [
+      "ET-21",
+      "NX-77"
+    ],
+    [
+      "WT-09",
+      "WT-12"
+    ],
+    [
+      "WT-15",
+      "WT-02"
+    ],
+    [
+      "KR-01",
+      "KR-16"
+    ]
+  ],
+  "simultaneousReceives": {
+    "KR-22": "EW-04",
+    "EW-06": "KR-22",
+    "EW-04": "EW-06"
+  },
+  "effectiveReceives": {
+    "NX-06": "NX-59",
+    "NX-59": "NX-06",
+    "NX-77": "ET-21",
+    "EW-04": "EW-06",
+    "EW-06": "KR-22",
+    "AX-18": "ET-01",
+    "ET-01": "AX-18",
+    "ET-21": "NX-77",
+    "KR-01": "KR-16",
+    "KR-16": "KR-01",
+    "KR-18": "LX-21",
+    "KR-22": "EW-04",
+    "LX-21": "KR-18",
+    "LQ-16": "WT-11",
+    "WT-02": "WT-15",
+    "WT-09": "WT-12",
+    "WT-11": "LQ-16",
+    "WT-12": "WT-09",
+    "WT-15": "WT-02",
+    "QL-05": "QL-12",
+    "QL-12": "QL-05"
+  },
+  "politicalFields": [
+    "type",
+    "typeName",
+    "family",
+    "legacyId",
+    "x",
+    "y",
+    "baselineWinner"
+  ],
+  "identityFields": [
+    "id",
+    "state",
+    "stateCode",
+    "stateIndex",
+    "population",
+    "stateTarget",
+    "mapX",
+    "mapY",
+    "centroidX",
+    "centroidY",
+    "sourceArea",
+    "rasterId",
+    "locality",
+    "metroShare",
+    "urbanCoreShare",
+    "dominantCityShare",
+    "tileX",
+    "tileY",
+    "landmass",
+    "tileColumn",
+    "tileRow",
+    "coastDistance",
+    "coldNorthShare"
+  ],
+  "identityHash": "cabd9271bb3b2016407f85e4ff1c98a16b6ee1a8ffdb2c741fb8813eeb2ff4c5",
+  "unaffectedPoliticalHash": "0ff893bf0bc80469c9c9f12be3dc7021d6d309031a59829bcac9ce89c0f7f28f",
+  "typeCountsBefore": {
+    "1": 8,
+    "2": 8,
+    "3": 6,
+    "4": 10,
+    "5": 12,
+    "6": 10,
+    "7": 8,
+    "8": 6,
+    "9": 8,
+    "10": 4,
+    "11": 16,
+    "12": 12,
+    "13": 14,
+    "14": 16,
+    "15": 16,
+    "16": 12,
+    "17": 12,
+    "18": 8,
+    "19": 8,
+    "20": 6,
+    "21": 4,
+    "22": 4,
+    "23": 16,
+    "24": 12,
+    "25": 10,
+    "26": 10,
+    "27": 10,
+    "28": 8,
+    "29": 8,
+    "30": 8,
+    "31": 8,
+    "32": 6,
+    "33": 12,
+    "34": 8,
+    "35": 8,
+    "36": 8,
+    "37": 8,
+    "38": 6,
+    "39": 6,
+    "40": 6,
+    "41": 6,
+    "42": 4,
+    "43": 4,
+    "44": 4,
+    "45": 4,
+    "46": 4,
+    "47": 2,
+    "48": 2,
+    "49": 2,
+    "50": 2
+  },
+  "changes": [
+    {
+      "district": "AX-18",
+      "receivesFrom": "ET-01",
+      "before": {
+        "type": 18,
+        "typeName": "Diverse first-home buyer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "18-05",
+        "x": 1.941803860283031,
+        "y": -0.9186151797861938,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 6,
+        "typeName": "Mixed urban service-worker districts",
+        "family": "Urban core",
+        "legacyId": "06-07",
+        "x": -0.3582308912170805,
+        "y": -0.6873668567045366,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "ET-01",
+      "receivesFrom": "AX-18",
+      "before": {
+        "type": 6,
+        "typeName": "Mixed urban service-worker districts",
+        "family": "Urban core",
+        "legacyId": "06-07",
+        "x": -0.3582308912170805,
+        "y": -0.6873668567045366,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 18,
+        "typeName": "Diverse first-home buyer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "18-05",
+        "x": 1.941803860283031,
+        "y": -0.9186151797861938,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "ET-21",
+      "receivesFrom": "NX-77",
+      "before": {
+        "type": 44,
+        "typeName": "Officer-family and defence-contractor districts",
+        "family": "Specialised",
+        "legacyId": "44-02",
+        "x": 4.046119393096416,
+        "y": 1.7685235626549347,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 9,
+        "typeName": "Cosmopolitan merchant and migrant districts",
+        "family": "Urban core",
+        "legacyId": "09-04",
+        "x": 2.584303870767574,
+        "y": -1.7364213108008548,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "EW-04",
+      "receivesFrom": "EW-06",
+      "before": {
+        "type": 45,
+        "typeName": "Port trading and import-export districts",
+        "family": "Specialised",
+        "legacyId": "45-01",
+        "x": 1.9233766445832878,
+        "y": 0.14061402246714336,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 13,
+        "typeName": "Educated professional family suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "13-04",
+        "x": 3.3780532796689644,
+        "y": -1.4278328814339702,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "EW-06",
+      "receivesFrom": "KR-22",
+      "before": {
+        "type": 13,
+        "typeName": "Educated professional family suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "13-04",
+        "x": 3.3780532796689644,
+        "y": -1.4278328814339702,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 44,
+        "typeName": "Officer-family and defence-contractor districts",
+        "family": "Specialised",
+        "legacyId": "44-04",
+        "x": 4.024591469086167,
+        "y": 1.4379506978752241,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "KR-01",
+      "receivesFrom": "KR-16",
+      "before": {
+        "type": 29,
+        "typeName": "Healthcare and administrative centres",
+        "family": "Regional city / town",
+        "legacyId": "29-06",
+        "x": 0.06400130144145597,
+        "y": -0.7475100899757603,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 32,
+        "typeName": "Rail-connected commuter towns",
+        "family": "Regional city / town",
+        "legacyId": "32-05",
+        "x": 0.5693171348953294,
+        "y": -1.1933231402490816,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "KR-16",
+      "receivesFrom": "KR-01",
+      "before": {
+        "type": 32,
+        "typeName": "Rail-connected commuter towns",
+        "family": "Regional city / town",
+        "legacyId": "32-05",
+        "x": 0.5693171348953294,
+        "y": -1.1933231402490816,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 29,
+        "typeName": "Healthcare and administrative centres",
+        "family": "Regional city / town",
+        "legacyId": "29-06",
+        "x": 0.06400130144145597,
+        "y": -0.7475100899757603,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "KR-18",
+      "receivesFrom": "LX-21",
+      "before": {
+        "type": 4,
+        "typeName": "Creative and gentrifying inner districts",
+        "family": "Urban core",
+        "legacyId": "04-07",
+        "x": 0.47537563628645496,
+        "y": -2.7134772284362034,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 5,
+        "typeName": "Established working-class urban districts",
+        "family": "Urban core",
+        "legacyId": "05-12",
+        "x": -2.254769199009582,
+        "y": -0.8556632685358521,
+        "baselineWinner": "SDP"
+      }
+    },
+    {
+      "district": "KR-22",
+      "receivesFrom": "EW-04",
+      "before": {
+        "type": 44,
+        "typeName": "Officer-family and defence-contractor districts",
+        "family": "Specialised",
+        "legacyId": "44-04",
+        "x": 4.024591469086167,
+        "y": 1.4379506978752241,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 45,
+        "typeName": "Port trading and import-export districts",
+        "family": "Specialised",
+        "legacyId": "45-01",
+        "x": 1.9233766445832878,
+        "y": 0.14061402246714336,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "LQ-16",
+      "receivesFrom": "WT-11",
+      "before": {
+        "type": 45,
+        "typeName": "Port trading and import-export districts",
+        "family": "Specialised",
+        "legacyId": "45-04",
+        "x": 1.9722924685685972,
+        "y": 0.11745062691939859,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 4,
+        "typeName": "Creative and gentrifying inner districts",
+        "family": "Urban core",
+        "legacyId": "04-10",
+        "x": 0.4324572408103665,
+        "y": -2.675128614335001,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "LX-21",
+      "receivesFrom": "KR-18",
+      "before": {
+        "type": 5,
+        "typeName": "Established working-class urban districts",
+        "family": "Urban core",
+        "legacyId": "05-12",
+        "x": -2.254769199009582,
+        "y": -0.8556632685358521,
+        "baselineWinner": "SDP"
+      },
+      "after": {
+        "type": 4,
+        "typeName": "Creative and gentrifying inner districts",
+        "family": "Urban core",
+        "legacyId": "04-07",
+        "x": 0.47537563628645496,
+        "y": -2.7134772284362034,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "NX-06",
+      "receivesFrom": "NX-59",
+      "before": {
+        "type": 1,
+        "typeName": "Financial and corporate centres",
+        "family": "Urban core",
+        "legacyId": "01-02",
+        "x": 4.897701376345378,
+        "y": -1.8263125870366268,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 50,
+        "typeName": "Freeport and digital-nomad enclaves",
+        "family": "Specialised",
+        "legacyId": "50-01",
+        "x": 5.563049411089097,
+        "y": -1.9009874588421718,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "NX-59",
+      "receivesFrom": "NX-06",
+      "before": {
+        "type": 50,
+        "typeName": "Freeport and digital-nomad enclaves",
+        "family": "Specialised",
+        "legacyId": "50-01",
+        "x": 5.563049411089097,
+        "y": -1.9009874588421718,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 1,
+        "typeName": "Financial and corporate centres",
+        "family": "Urban core",
+        "legacyId": "01-02",
+        "x": 4.897701376345378,
+        "y": -1.8263125870366268,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "NX-77",
+      "receivesFrom": "ET-21",
+      "before": {
+        "type": 9,
+        "typeName": "Cosmopolitan merchant and migrant districts",
+        "family": "Urban core",
+        "legacyId": "09-04",
+        "x": 2.584303870767574,
+        "y": -1.7364213108008548,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 44,
+        "typeName": "Officer-family and defence-contractor districts",
+        "family": "Specialised",
+        "legacyId": "44-02",
+        "x": 4.046119393096416,
+        "y": 1.7685235626549347,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "QL-05",
+      "receivesFrom": "QL-12",
+      "before": {
+        "type": 9,
+        "typeName": "Cosmopolitan merchant and migrant districts",
+        "family": "Urban core",
+        "legacyId": "09-01",
+        "x": 2.527524213811741,
+        "y": -1.8262538989240458,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 6,
+        "typeName": "Mixed urban service-worker districts",
+        "family": "Urban core",
+        "legacyId": "06-10",
+        "x": -0.27476919900958213,
+        "y": -0.5756632685358523,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "QL-12",
+      "receivesFrom": "QL-05",
+      "before": {
+        "type": 6,
+        "typeName": "Mixed urban service-worker districts",
+        "family": "Urban core",
+        "legacyId": "06-10",
+        "x": -0.27476919900958213,
+        "y": -0.5756632685358523,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 9,
+        "typeName": "Cosmopolitan merchant and migrant districts",
+        "family": "Urban core",
+        "legacyId": "09-01",
+        "x": 2.527524213811741,
+        "y": -1.8262538989240458,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "WT-02",
+      "receivesFrom": "WT-15",
+      "before": {
+        "type": 31,
+        "typeName": "Declining former industrial towns",
+        "family": "Regional city / town",
+        "legacyId": "31-06",
+        "x": -1.309664386447661,
+        "y": 1.4518736640092764,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 27,
+        "typeName": "Logistics and warehousing towns",
+        "family": "Regional city / town",
+        "legacyId": "27-10",
+        "x": 0.47183245232840104,
+        "y": 0.5314152663290417,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "WT-09",
+      "receivesFrom": "WT-12",
+      "before": {
+        "type": 49,
+        "typeName": "Remote island and fishing communities",
+        "family": "Specialised",
+        "legacyId": "49-01",
+        "x": 0.008898030376125462,
+        "y": 2.41148994060509,
+        "baselineWinner": "CON"
+      },
+      "after": {
+        "type": 18,
+        "typeName": "Diverse first-home buyer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "18-07",
+        "x": 1.9917142212074612,
+        "y": -0.8925430194386453,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "WT-11",
+      "receivesFrom": "LQ-16",
+      "before": {
+        "type": 4,
+        "typeName": "Creative and gentrifying inner districts",
+        "family": "Urban core",
+        "legacyId": "04-10",
+        "x": 0.4324572408103665,
+        "y": -2.675128614335001,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 45,
+        "typeName": "Port trading and import-export districts",
+        "family": "Specialised",
+        "legacyId": "45-04",
+        "x": 1.9722924685685972,
+        "y": 0.11745062691939859,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "WT-12",
+      "receivesFrom": "WT-09",
+      "before": {
+        "type": 18,
+        "typeName": "Diverse first-home buyer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "18-07",
+        "x": 1.9917142212074612,
+        "y": -0.8925430194386453,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 49,
+        "typeName": "Remote island and fishing communities",
+        "family": "Specialised",
+        "legacyId": "49-01",
+        "x": 0.008898030376125462,
+        "y": 2.41148994060509,
+        "baselineWinner": "CON"
+      }
+    },
+    {
+      "district": "WT-15",
+      "receivesFrom": "WT-02",
+      "before": {
+        "type": 27,
+        "typeName": "Logistics and warehousing towns",
+        "family": "Regional city / town",
+        "legacyId": "27-10",
+        "x": 0.47183245232840104,
+        "y": 0.5314152663290417,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 31,
+        "typeName": "Declining former industrial towns",
+        "family": "Regional city / town",
+        "legacyId": "31-06",
+        "x": -1.309664386447661,
+        "y": 1.4518736640092764,
+        "baselineWinner": "CA"
+      }
+    }
+  ],
+  "hashFormat": "SHA-256 of sorted district rows; fields in listed order; numbers as n + IEEE754 big-endian double, strings as s + UTF-8 + NUL",
+  "correction": {
+    "version": 3,
+    "reversedSwap": [
+      "LQ-16",
+      "LQ-18"
+    ],
+    "retainedSwap": [
+      "WT-11",
+      "LQ-16"
+    ]
+  }
+}

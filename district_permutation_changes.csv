@@ -1,0 +1,22 @@
+district,receives_from,locality,old_type_id,old_type,new_type_id,new_type,old_legacy_id,new_legacy_id,old_economy,old_culture,new_economy,new_culture
+AX-18,ET-01,Lakeside,18,Diverse first-home buyer suburbs,6,Mixed urban service-worker districts,18-05,06-07,1.941803860283031,-0.9186151797861938,-0.3582308912170805,-0.6873668567045366
+ET-01,AX-18,Northport,6,Mixed urban service-worker districts,18,Diverse first-home buyer suburbs,06-07,18-05,-0.3582308912170805,-0.6873668567045366,1.941803860283031,-0.9186151797861938
+ET-21,NX-77,Lyanna,44,Officer-family and defence-contractor districts,9,Cosmopolitan merchant and migrant districts,44-02,09-04,4.046119393096416,1.7685235626549347,2.584303870767574,-1.7364213108008548
+EW-04,EW-06,Wintervale,45,Port trading and import-export districts,13,Educated professional family suburbs,45-01,13-04,1.9233766445832878,0.14061402246714336,3.3780532796689644,-1.4278328814339702
+EW-06,KR-22,North Covina,13,Educated professional family suburbs,44,Officer-family and defence-contractor districts,13-04,44-04,3.3780532796689644,-1.4278328814339702,4.024591469086167,1.4379506978752241
+KR-01,KR-16,Kroana hinterland,29,Healthcare and administrative centres,32,Rail-connected commuter towns,29-06,32-05,0.06400130144145597,-0.7475100899757603,0.5693171348953294,-1.1933231402490816
+KR-16,KR-01,Kroana City,32,Rail-connected commuter towns,29,Healthcare and administrative centres,32-05,29-06,0.5693171348953294,-1.1933231402490816,0.06400130144145597,-0.7475100899757603
+KR-18,LX-21,Kroana City,4,Creative and gentrifying inner districts,5,Established working-class urban districts,04-07,05-12,0.47537563628645496,-2.7134772284362034,-2.254769199009582,-0.8556632685358521
+KR-22,EW-04,Davenport,44,Officer-family and defence-contractor districts,45,Port trading and import-export districts,44-04,45-01,4.024591469086167,1.4379506978752241,1.9233766445832878,0.14061402246714336
+LQ-16,WT-11,Luqur Bay,45,Port trading and import-export districts,4,Creative and gentrifying inner districts,45-04,04-10,1.9722924685685972,0.11745062691939859,0.4324572408103665,-2.675128614335001
+LX-21,KR-18,Suffolk,5,Established working-class urban districts,4,Creative and gentrifying inner districts,05-12,04-07,-2.254769199009582,-0.8556632685358521,0.47537563628645496,-2.7134772284362034
+NX-06,NX-59,Wizlandia City,1,Financial and corporate centres,50,Freeport and digital-nomad enclaves,01-02,50-01,4.897701376345378,-1.8263125870366268,5.563049411089097,-1.9009874588421718
+NX-59,NX-06,Lorenvia,50,Freeport and digital-nomad enclaves,1,Financial and corporate centres,50-01,01-02,5.563049411089097,-1.9009874588421718,4.897701376345378,-1.8263125870366268
+NX-77,ET-21,Sorenvia,9,Cosmopolitan merchant and migrant districts,44,Officer-family and defence-contractor districts,09-04,44-02,2.584303870767574,-1.7364213108008548,4.046119393096416,1.7685235626549347
+QL-05,QL-12,Queloria,9,Cosmopolitan merchant and migrant districts,6,Mixed urban service-worker districts,09-01,06-10,2.527524213811741,-1.8262538989240458,-0.27476919900958213,-0.5756632685358523
+QL-12,QL-05,Atlantis,6,Mixed urban service-worker districts,9,Cosmopolitan merchant and migrant districts,06-10,09-01,-0.27476919900958213,-0.5756632685358523,2.527524213811741,-1.8262538989240458
+WT-02,WT-15,Alegow,31,Declining former industrial towns,27,Logistics and warehousing towns,31-06,27-10,-1.309664386447661,1.4518736640092764,0.47183245232840104,0.5314152663290417
+WT-09,WT-12,East Harbour,49,Remote island and fishing communities,18,Diverse first-home buyer suburbs,49-01,18-07,0.008898030376125462,2.41148994060509,1.9917142212074612,-0.8925430194386453
+WT-11,LQ-16,East Harbour,4,Creative and gentrifying inner districts,45,Port trading and import-export districts,04-10,45-04,0.4324572408103665,-2.675128614335001,1.9722924685685972,0.11745062691939859
+WT-12,WT-09,East Harbour,18,Diverse first-home buyer suburbs,49,Remote island and fishing communities,18-07,49-01,1.9917142212074612,-0.8925430194386453,0.008898030376125462,2.41148994060509
+WT-15,WT-02,Wittan,27,Logistics and warehousing towns,31,Declining former industrial towns,27-10,31-06,0.47183245232840104,0.5314152663290417,-1.309664386447661,1.4518736640092764
