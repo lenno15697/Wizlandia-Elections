@@ -33,7 +33,7 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  assert.ok(html.indexOf('id="tab-medians"')>html.indexOf('id="tab-history"'));assert.match(html,/id="panel-medians"[\s\S]*?<canvas id="compass"/);
  const checkCompass=seats=>{const svg=get('party-compass').innerHTML,bubbles=[...svg.matchAll(/data-party="(\d+)" data-compass-code="([^"]+)" data-seats="(\d+)" data-radius="([^"]+)"/g)];assert.equal(bubbles.length,9);for(const [,index,code,count,radius] of bubbles){const i=Number(index),n=Number(count),r=Number(radius);assert.equal(code,D.parties[i].code);assert.equal(n,seats[i]);if(n){assert.ok(r>6,'Every positive-seat party must be larger than the zero-seat marker');assert.ok(Math.abs((r-6)**2-3600*n/seats.reduce((a,b)=>a+b,0))<1e-9,'The radius contribution must follow square-root seat-share scaling for the selected component');}else assert.equal(r,6);}return svg;};
  get('tab-compass').onclick();const compass=checkCompass(E.evaluate().combinedSeats);assert.ok(compass.includes('>10</text>')&&compass.includes('>-10</text>'));assert.ok(!compass.includes('>12</text>')&&!compass.includes('>-12</text>'));
- for(const [code,x,y] of [['CA',0,0],['NF',-.5,8],['SWP',-9,-7.5],['SDP',-4,-1.5]]){
+ for(const [code,x,y] of [['CA',0,0],['NF',-1,8],['SWP',-9,-7.5],['SDP',-4,-1.5]]){
    const chunk=compass.split(`data-compass-code="${code}"`)[1].split('</g>')[0];
    assert.match(chunk,new RegExp(`cx="${90+(x+10)*40}" cy="${40+(10-y)*40}"`));
    assert.ok(chunk.includes(`Economy ${x.toFixed(2)}, culture ${y.toFixed(2)}`));

@@ -18,7 +18,7 @@ clicks, keyboard activation, seat cards and sidebar parties all use the same
 selection, including coalition highlights and fading. Both party-compass axes
 range from −10 to +10. SVG export is available.
 
-Only the Compass tab displays CA at `(0.00, 0.00)`, NF at `(-0.50, 8.00)`,
+Only the Compass tab displays CA at `(0.00, 0.00)`, NF at `(-1.00, 8.00)`,
 SWP at `(-9.00, -7.50)` and SDP at `(-4.00, -1.50)`. These presentation-only
 coordinates never enter election calculations, saved configurations or the
 Districts Median Position plot. The model retains CA `(0.00, -0.50)`, NF

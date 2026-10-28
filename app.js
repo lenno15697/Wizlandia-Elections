@@ -251,7 +251,7 @@ function renderPartyCompass(){
   artwork+=label(left+size/2,910,'Economic position');
   artwork+=`<text transform="translate(26 ${top+size/2}) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="${muted}">Cultural position</text>`;
   // Presentation-only coordinates: never pass these to the election model or median plot.
-  const displayPositions={CA:{x:0,y:0},NF:{x:-.5,y:8},SWP:{x:-9,y:-7.5},SDP:{x:-4,y:-1.5}};
+  const displayPositions={CA:{x:0,y:0},NF:{x:-1,y:8},SWP:{x:-9,y:-7.5},SDP:{x:-4,y:-1.5}};
   const nodes=current.parties.map((party,i)=>{
     const p={...party,...displayPositions[party.code]};
     return{p,i,x:px(p.x),y:py(p.y),r:6+60*Math.sqrt(seats[i]/v.total)};
