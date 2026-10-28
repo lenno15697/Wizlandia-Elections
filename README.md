@@ -13,6 +13,9 @@ clicks, keyboard activation, seat cards and sidebar parties all use the same
 selection, including coalition highlights and fading. Both compass axes range
 from −10 to +10. SVG export is available.
 
+The Compass displays SDP at `(-4.00, -1.50)` as a presentation-only override.
+Its election-model position and Districts Median Position marker are unchanged.
+
 Default party positions are now CA `(0.00, 0.00)`, NF `(-0.50, 8.00)` and
 SWP `(-9.00, -7.50)`. Elections use these positions. The national electorate,
 all 400 district coordinates and their geographic assignments stay fixed.
