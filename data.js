@@ -129,7 +129,7 @@ const data = {
       "id": 8,
       "name": "Major university and student districts",
       "count": 6,
-      "x": -1.94,
+      "x": -0.05,
       "y": -3.976810123046975
     },
     {

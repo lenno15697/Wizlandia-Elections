@@ -2,7 +2,7 @@
 
 A standalone GitHub Pages election website inspired by the sidebar, parliament diagram, party cards and result tabs of [ThermidorElections](https://consuldelmar.github.io/ThermidorElections/). The interface and source here are a new implementation. No code or assets from the reference site are included.
 
-## Current update: fixed variation and geographic districts
+## Current model and interface
 
 
 The **Compass** tab is a party-bubble compass inspired by Thermidor's presentation.
@@ -62,13 +62,29 @@ Extary was omitted from the requested prefix list but is a federal state in the 
 
 Each district covers land in one state only. Proposed geographic boundaries are drawn from the corrected population-density grid before political types are assigned. They cover all federal land without overlaps. Islands and detached coastal pieces may be combined in maritime districts. Residents per district range from **520,755 to 555,656**, with maximum deviation **0.27%** from each state's mean. Differences in the state means reflect rounding 400 state entitlements. IDs run in a north-to-south sweep, ordered west-to-east within eight-pixel latitude bands.
 
-All 50 original types, their counts, compass centres and model generation indices are preserved. The original ID is retained as `legacyId`; this also preserves the deterministic tie-breaking order. Type placement is a proposed interpretation of settlement and state economic notes. Finance, technology, shipbuilding, manufacturing, mining and agricultural placements have explicit geographic constraints; other types fit urban structure, state wealth and varied local neighbourhood profiles. These are assumptions, not observed voting patterns. Geographic population is separate from the calibrated nationwide Gaussian PR electorate.
+The geographic permutations preserve all 50 types, their counts and model generation indices. The separate university update below deliberately moves type 8’s economic centre. The original ID is retained as `legacyId`; this also preserves the deterministic tie-breaking order. Type placement is a proposed interpretation of settlement and state economic notes. Finance, technology, shipbuilding, manufacturing, mining and agricultural placements have explicit geographic constraints; other types fit urban structure, state wealth and varied local neighbourhood profiles. These are assumptions, not observed voting patterns. Geographic population is separate from the calibrated nationwide Gaussian PR electorate.
 
 Type 50 is **Upscale waterfront and marina districts**, covering NX-06
 (Wizlandia City) and AK-09 (Akropolis). Both use the **Urban core** family
 colour (`#246d78`), reflecting waterfront neighbourhoods in major cities.
 Only the name and family classification changed; both district compass
 positions, the type centre, type count and election calculations are unchanged.
+
+## University district economic centre
+
+Major university and student districts (type 8, six districts) now have an
+economic centre of **−0.05**, matching regional university and college towns
+(type 28), instead of −1.94. Their cultural centre remains −3.976810123046975.
+Every university district moves +1.89 horizontally at baseline; its paired
+offset, cultural position, geographic identity and map tile stay unchanged.
+
+The baseline allocation, national PR electorate, party positions, independent
+shock distributions and the other 49 district types are unchanged. The saved
+permutation audit uses the updated type-8 coordinates consistently. Earlier
+notes below about preserving original type centres describe the geographic
+permutations before this model update. See `analysis/university_shift_impact.md`
+for the detailed matched-election results and `tools/analyze_university_shift.js`
+to reproduce them.
 
 ## District type and compass permutations (version 9)
 
@@ -174,17 +190,17 @@ The original national Gaussian mixture, party positions, type counts, national b
 
 ### Example: Greens can now win intermediate numbers of seats
 
-Hold the economic shift at 0.00, variance at 1.00, party positions at their defaults and the fixed within-type variation of 0.20:
+With the updated university economic centre, hold the economic shift at 0.00, variance at 0.80, party positions at their defaults and fixed within-type variation at 0.20:
 
 | Cultural shift | Green district seats |
 | --- | ---: |
 | +0.00 | 6 |
-| +0.28 | 5 |
-| +0.32 | 4 |
-| +0.46 | 3 |
-| +0.63 | 2 |
-| +0.76 | 1 |
-| +0.81 | 0 |
+| +0.67 | 5 |
+| +0.77 | 4 |
+| +0.79 | 3 |
+| +0.88 | 2 |
+| +0.89 | 1 |
+| +0.99 | 0 |
 
 These are illustrations along one path through the parameters, not limits on the party's possible seat totals. Each election is still discrete, so exact ties or simultaneous changes can occur; the offsets remove the systematic identical-type block effect.
 

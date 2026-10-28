@@ -1,0 +1,979 @@
+{
+  "samples": 100000,
+  "seed": 20261028,
+  "codes": [
+    "LDP",
+    "CA",
+    "SDP",
+    "CON",
+    "GRN",
+    "NF",
+    "LIB",
+    "UPL",
+    "SWP"
+  ],
+  "before": {
+    "district": [
+      18762161,
+      15942225,
+      1563306,
+      1926489,
+      1564487,
+      0,
+      241320,
+      12,
+      0
+    ],
+    "combined": [
+      30828446,
+      25530046,
+      6376451,
+      5974492,
+      4798755,
+      2847445,
+      1988556,
+      1208995,
+      446814
+    ],
+    "university": [
+      0,
+      498,
+      79310,
+      0,
+      520180,
+      0,
+      0,
+      12,
+      0
+    ],
+    "combinedMajority": [
+      58,
+      12,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "districtMajority": [
+      39969,
+      6473,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "largestCombined": [
+      85670,
+      14330,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "noCombinedMajority": 99930,
+    "coalitions": {
+      "LDP + CON": 14904,
+      "LDP + CA": 22774,
+      "CA + SDP + GRN": 5837,
+      "LDP + CON + LIB": 18451,
+      "LDP + GRN + LIB": 9986,
+      "CA + SDP + CON": 21880,
+      "LDP + GRN": 3400,
+      "CA + SDP": 2367,
+      "CA + CON": 320,
+      "LDP": 58,
+      "CA": 12,
+      "CA + GRN": 11
+    }
+  },
+  "after": {
+    "district": [
+      18762161,
+      15942515,
+      1483996,
+      1926489,
+      1643519,
+      0,
+      241320,
+      0,
+      0
+    ],
+    "combined": [
+      30828446,
+      25530336,
+      6297141,
+      5974492,
+      4877787,
+      2847445,
+      1988556,
+      1208983,
+      446814
+    ],
+    "university": [
+      0,
+      788,
+      0,
+      0,
+      599212,
+      0,
+      0,
+      0,
+      0
+    ],
+    "combinedMajority": [
+      58,
+      12,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "districtMajority": [
+      39969,
+      6477,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "largestCombined": [
+      85670,
+      14330,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "noCombinedMajority": 99930,
+    "coalitions": {
+      "LDP + CON": 14904,
+      "LDP + CA": 23235,
+      "CA + SDP + GRN": 6095,
+      "LDP + CON + LIB": 18467,
+      "LDP + GRN + LIB": 9986,
+      "CA + SDP + CON": 21565,
+      "LDP + GRN": 3400,
+      "CA + SDP": 1902,
+      "CA + CON": 365,
+      "LDP": 58,
+      "CA": 12,
+      "CA + GRN": 11
+    }
+  },
+  "sumPR": [
+    12066285,
+    9587821,
+    4813145,
+    4048003,
+    3234268,
+    2847445,
+    1747236,
+    1208983,
+    446814
+  ],
+  "changed": 27014,
+  "flipHistogram": [
+    72986,
+    3356,
+    8871,
+    7450,
+    3686,
+    776,
+    2875
+  ],
+  "transitions": {
+    "GRN → GRN": 520180,
+    "SDP → GRN": 79020,
+    "CA → CA": 498,
+    "SDP → CA": 290,
+    "UPL → GRN": 12
+  },
+  "individual": {
+    "EW-38": {
+      "locality": "Erewenton",
+      "before": [
+        0,
+        106,
+        7334,
+        0,
+        92560,
+        0,
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        136,
+        0,
+        0,
+        99864,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changed": 7334
+    },
+    "AX-45": {
+      "locality": "Southport",
+      "before": [
+        0,
+        46,
+        14791,
+        0,
+        85153,
+        0,
+        0,
+        10,
+        0
+      ],
+      "after": [
+        0,
+        77,
+        0,
+        0,
+        99923,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changed": 14801
+    },
+    "NX-31": {
+      "locality": "Ravenna",
+      "before": [
+        0,
+        81,
+        23665,
+        0,
+        76252,
+        0,
+        0,
+        2,
+        0
+      ],
+      "after": [
+        0,
+        151,
+        0,
+        0,
+        99849,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changed": 23667
+    },
+    "NX-04": {
+      "locality": "Wizlandia City",
+      "before": [
+        0,
+        55,
+        3651,
+        0,
+        96294,
+        0,
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        68,
+        0,
+        0,
+        99932,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changed": 3651
+    },
+    "AK-08": {
+      "locality": "Akropolis",
+      "before": [
+        0,
+        32,
+        2878,
+        0,
+        97090,
+        0,
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        37,
+        0,
+        0,
+        99963,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changed": 2878
+    },
+    "NX-53": {
+      "locality": "Lorenvia",
+      "before": [
+        0,
+        178,
+        26991,
+        0,
+        72831,
+        0,
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        319,
+        0,
+        0,
+        99681,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changed": 26991
+    }
+  },
+  "bins": {
+    "variance": {
+      "<0.8": {
+        "samples": 9310,
+        "changed": 2029,
+        "universityFlips": 6378
+      },
+      "0.8–1.0": {
+        "samples": 32656,
+        "changed": 7908,
+        "universityFlips": 23700
+      },
+      "1.0–1.2": {
+        "samples": 34292,
+        "changed": 9582,
+        "universityFlips": 28186
+      },
+      "≥1.2": {
+        "samples": 23742,
+        "changed": 7495,
+        "universityFlips": 21058
+      }
+    },
+    "economic": {
+      "<−0.35": {
+        "samples": 15212,
+        "changed": 12543,
+        "universityFlips": 45324
+      },
+      "−0.35–0.35": {
+        "samples": 68850,
+        "changed": 14433,
+        "universityFlips": 33932
+      },
+      "≥0.35": {
+        "samples": 15938,
+        "changed": 38,
+        "universityFlips": 66
+      }
+    },
+    "cultural": {
+      "<−0.25": {
+        "samples": 15324,
+        "changed": 557,
+        "universityFlips": 1138
+      },
+      "−0.25–0.25": {
+        "samples": 68336,
+        "changed": 16336,
+        "universityFlips": 43302
+      },
+      "≥0.25": {
+        "samples": 16340,
+        "changed": 10121,
+        "universityFlips": 34882
+      }
+    }
+  },
+  "largestChanged": 0,
+  "coalitionChanged": 1152,
+  "majorityStatusChanged": 0,
+  "coalitionExamples": [
+    {
+      "shock": {
+        "economic": -0.4,
+        "cultural": 0.07,
+        "variance": 1.2781024739233402
+      },
+      "before": [
+        273,
+        235,
+        99,
+        68,
+        57,
+        32,
+        16,
+        13,
+        7
+      ],
+      "after": [
+        273,
+        235,
+        96,
+        68,
+        60,
+        32,
+        16,
+        13,
+        7
+      ],
+      "beforeCoalition": "CA + SDP + CON",
+      "afterCoalition": "LDP + CA"
+    },
+    {
+      "shock": {
+        "economic": -0.24,
+        "cultural": 0.13,
+        "variance": 1.2028535552588593
+      },
+      "before": [
+        286,
+        248,
+        86,
+        68,
+        45,
+        31,
+        17,
+        13,
+        6
+      ],
+      "after": [
+        286,
+        248,
+        84,
+        68,
+        47,
+        31,
+        17,
+        13,
+        6
+      ],
+      "beforeCoalition": "CA + SDP + CON",
+      "afterCoalition": "LDP + CA"
+    },
+    {
+      "shock": {
+        "economic": 0.01,
+        "cultural": 0.41,
+        "variance": 0.9657104025258594
+      },
+      "before": [
+        308,
+        270,
+        56,
+        76,
+        32,
+        29,
+        14,
+        11,
+        4
+      ],
+      "after": [
+        308,
+        270,
+        54,
+        76,
+        34,
+        29,
+        14,
+        11,
+        4
+      ],
+      "beforeCoalition": "CA + SDP + CON",
+      "afterCoalition": "LDP + CA"
+    },
+    {
+      "shock": {
+        "economic": -0.49,
+        "cultural": -0.01,
+        "variance": 1.1752023398406652
+      },
+      "before": [
+        269,
+        252,
+        97,
+        59,
+        58,
+        31,
+        15,
+        13,
+        6
+      ],
+      "after": [
+        269,
+        252,
+        94,
+        59,
+        61,
+        31,
+        15,
+        13,
+        6
+      ],
+      "beforeCoalition": "CA + SDP + CON",
+      "afterCoalition": "CA + SDP + GRN"
+    },
+    {
+      "shock": {
+        "economic": -0.73,
+        "cultural": 0.47,
+        "variance": 1.026919445455447
+      },
+      "before": [
+        213,
+        307,
+        96,
+        95,
+        29,
+        32,
+        11,
+        12,
+        5
+      ],
+      "after": [
+        213,
+        307,
+        90,
+        95,
+        35,
+        32,
+        11,
+        12,
+        5
+      ],
+      "beforeCoalition": "CA + SDP",
+      "afterCoalition": "CA + CON"
+    }
+  ],
+  "examples": [
+    {
+      "economic": 0,
+      "cultural": 0,
+      "variance": 1,
+      "beforeDistrict": [
+        186,
+        170,
+        18,
+        20,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterDistrict": [
+        186,
+        170,
+        18,
+        20,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "beforeUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "economic": 0,
+      "cultural": 0.5,
+      "variance": 1,
+      "beforeDistrict": [
+        181,
+        161,
+        21,
+        34,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterDistrict": [
+        181,
+        161,
+        18,
+        34,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "beforeUniversity": [
+        0,
+        0,
+        3,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "economic": 0,
+      "cultural": 0,
+      "variance": 0.8,
+      "beforeDistrict": [
+        186,
+        193,
+        5,
+        10,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterDistrict": [
+        186,
+        193,
+        5,
+        10,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "beforeUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "economic": 0,
+      "cultural": 0.5,
+      "variance": 0.8,
+      "beforeDistrict": [
+        184,
+        183,
+        3,
+        27,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterDistrict": [
+        184,
+        183,
+        0,
+        27,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "beforeUniversity": [
+        0,
+        0,
+        3,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "economic": -0.5,
+      "cultural": 0,
+      "variance": 1,
+      "beforeDistrict": [
+        160,
+        206,
+        21,
+        10,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterDistrict": [
+        160,
+        206,
+        18,
+        10,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "beforeUniversity": [
+        0,
+        0,
+        3,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "economic": 0.5,
+      "cultural": 0,
+      "variance": 1,
+      "beforeDistrict": [
+        208,
+        154,
+        5,
+        22,
+        6,
+        0,
+        5,
+        0,
+        0
+      ],
+      "afterDistrict": [
+        208,
+        154,
+        5,
+        22,
+        6,
+        0,
+        5,
+        0,
+        0
+      ],
+      "beforeUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "economic": 0,
+      "cultural": 0,
+      "variance": 1.5,
+      "beforeDistrict": [
+        176,
+        139,
+        18,
+        26,
+        33,
+        0,
+        8,
+        0,
+        0
+      ],
+      "afterDistrict": [
+        176,
+        139,
+        18,
+        26,
+        33,
+        0,
+        8,
+        0,
+        0
+      ],
+      "beforeUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "economic": 0,
+      "cultural": 1,
+      "variance": 1,
+      "beforeDistrict": [
+        148,
+        145,
+        19,
+        88,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterDistrict": [
+        148,
+        145,
+        13,
+        88,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "beforeUniversity": [
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "afterUniversity": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

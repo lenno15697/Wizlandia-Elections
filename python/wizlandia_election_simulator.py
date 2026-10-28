@@ -230,7 +230,7 @@ DISTRICT_ROWS = [
     (5, "Established working-class urban districts", 12, -2.17, -1.0368101230469748),
     (6, "Mixed urban service-worker districts", 10, -0.19, -0.756810123046975),
     (7, "Capital-city public-employment districts", 8, 2.1, -1.7368101230469748),
-    (8, "Major university and student districts", 6, -1.94, -3.976810123046975),
+    (8, "Major university and student districts", 6, -0.05, -3.976810123046975),
     (9, "Cosmopolitan merchant and migrant districts", 8, 2.65, -1.876810123046975),
     (10, "Social-housing and old industrial cores", 4, -2.29, -0.05681012304697498),
     (11, "Affluent managerial suburbs", 16, 4.2, -1.0368101230469748),
@@ -779,13 +779,13 @@ def self_test():
                   DISTRICT_CENTRES[INDIVIDUAL_TYPE_INDEX], axis=1)) <= DISTRICT_SPREAD + 1e-12
     for i, centre in enumerate(DISTRICT_CENTRES):
         assert np.allclose(INDIVIDUAL_CENTRES[INDIVIDUAL_TYPE_INDEX == i].mean(axis=0), centre)
-    # Previously the six Green seats could only change together. Hold every
-    # other parameter fixed and verify all intermediate counts are reachable.
+    # At variance 0.8 the cultural sweep still crosses the university/Green
+    # boundary. Verify all intermediate university-seat counts are reachable.
     green_counts = set()
     for cultural in np.linspace(0, 1, 1001):
-        points = INDIVIDUAL_CENTRES + [0, cultural]
+        points = CENTER + [0, cultural] + np.sqrt(.8) * (INDIVIDUAL_CENTRES - CENTER)
         winners = np.argmin(((points[:, None] - POINTS) ** 2).sum(axis=2), axis=1)
-        green_counts.add(int(np.sum(winners == 4)))
+        green_counts.add(int(np.sum((winners == 4) & (DISTRICT_IDS[INDIVIDUAL_TYPE_INDEX] == 8))))
     assert set(range(7)).issubset(green_counts), green_counts
     assert np.allclose(vote_shares(), TARGETS, atol=1e-8, rtol=0)
     median_x = brentq(lambda x: np.dot(WEIGHTS, ndtr((x - MEANS[:, 0]) /

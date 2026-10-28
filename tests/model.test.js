@@ -46,11 +46,11 @@ assert.ok(maxVoteError<1e-6,`Share probability error ${maxVoteError}`);
 const rng=new E.Mulberry32(20261014);
 for(const expected of fixture.shocks){const got=E.drawShocks(rng);assert.equal(got.economic,expected.economic);assert.equal(got.cultural,expected.cultural);assert.ok(Math.abs(got.variance-expected.variance)<1e-14);}
 const counts=new Set();
-for(let i=0;i<=100;i++)counts.add(E.evaluate(0,i/100,1).seats[4]);
+for(let i=0;i<=100;i++)counts.add(E.evaluate(0,i/100,.8).rows.filter(d=>d.type===8&&d.winner===4).length);
 assert.deepEqual([...counts].sort((a,b)=>a-b),[0,1,2,3,4,5,6]);
-const zeroSpreadCounts=new Set();for(let i=0;i<=100;i++)zeroSpreadCounts.add(E.evaluate(0,i/100,1,0).seats[4]);
+const zeroSpreadCounts=new Set();for(let i=0;i<=100;i++)zeroSpreadCounts.add(E.evaluate(0,i/100,.8,0).rows.filter(d=>d.type===8&&d.winner===4).length);
 assert.deepEqual([...zeroSpreadCounts].sort((a,b)=>a-b),[0,6]);
-assert.deepEqual(E.evaluate(0,.5,1).seats,[181,161,21,34,3,0,0,0,0]);
+assert.deepEqual(E.evaluate(0,.5,1).seats,[181,161,18,34,6,0,0,0,0]);
 assert.throws(()=>E.evaluate(NaN,0,1));assert.throws(()=>E.evaluate(0,0,0));assert.throws(()=>E.evaluate(0,0,1,-1));
 const duplicates=D.parties.map(p=>({...p}));duplicates[0].x=duplicates[1].x;duplicates[0].y=duplicates[1].y;
 assert.throws(()=>E.evaluate(0,0,1,.1,duplicates));

@@ -121,7 +121,7 @@
     "coldNorthShare"
   ],
   "identityHash": "cabd9271bb3b2016407f85e4ff1c98a16b6ee1a8ffdb2c741fb8813eeb2ff4c5",
-  "unaffectedPoliticalHash": "18419947ba9e9a75981288cb8facf75c68bc98b7919814ef47bd4dd3b04ad127",
+  "unaffectedPoliticalHash": "585fd471435b32ecfde51637c3f441a0269953a10b351e98b9834403830727e3",
   "typeCountsBefore": {
     "1": 8,
     "2": 8,
@@ -689,7 +689,7 @@
         "typeName": "Major university and student districts",
         "family": "Urban core",
         "legacyId": "08-06",
-        "x": -2.024769199009582,
+        "x": -0.13476919900958215,
         "y": -3.795663268535852,
         "baselineWinner": "GRN"
       },
@@ -786,7 +786,7 @@
         "typeName": "Major university and student districts",
         "family": "Urban core",
         "legacyId": "08-06",
-        "x": -2.024769199009582,
+        "x": -0.13476919900958215,
         "y": -3.795663268535852,
         "baselineWinner": "GRN"
       }
@@ -1131,7 +1131,7 @@
             "typeName": "Major university and student districts",
             "family": "Urban core",
             "legacyId": "08-06",
-            "x": -2.024769199009582,
+            "x": -0.13476919900958215,
             "y": -3.795663268535852,
             "baselineWinner": "GRN"
           }
@@ -1144,7 +1144,7 @@
             "typeName": "Major university and student districts",
             "family": "Urban core",
             "legacyId": "08-06",
-            "x": -2.024769199009582,
+            "x": -0.13476919900958215,
             "y": -3.795663268535852,
             "baselineWinner": "GRN"
           },
@@ -1657,6 +1657,33 @@
       ],
       "count": 2,
       "modelCoordinatesUnchanged": true
+    }
+  ],
+  "modelUpdates": [
+    {
+      "type": 8,
+      "name": "Major university and student districts",
+      "oldCentre": [
+        -1.94,
+        -3.976810123046975
+      ],
+      "centre": [
+        -0.05,
+        -3.976810123046975
+      ],
+      "economicChange": 1.89,
+      "districts": [
+        "NX-04",
+        "NX-31",
+        "NX-53",
+        "EW-38",
+        "AX-45",
+        "AK-08"
+      ],
+      "districtCount": 6,
+      "culturalCoordinatesUnchanged": true,
+      "pairedOffsetsUnchanged": true,
+      "nationalPRDistributionUnchanged": true
     }
   ]
 }

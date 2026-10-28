@@ -1,0 +1,1002 @@
+{
+  "before": {
+    "NX-04": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -13.399094768169597,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 7.5101404771390285,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": 8.721231181987743,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.8540331605839173
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -41.85494685393032,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 19.49147255215812,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -96.3141790987374,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -53.79818953633919,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 0.16553994698455357,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": 9.802224006168771,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -16.600905231830403,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    },
+    "NX-31": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -15.176916717830363,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 8.335731916082729,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": 12.796422307038256,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 1.887860689989287
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -41.82653400771215,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 16.444601424120645,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": -1.0,
+          "variance": 0.8279014061271642
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -94.75472860295486,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -57.353833435660725,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 0.07380756487969602,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": 14.937858955847265,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -0.9713060815805934,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -14.823083282169637,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    },
+    "NX-53": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -14.7675327466434,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 9.075747719549728,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": 13.307896051110717,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 1.9708994979979697
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -40.79960224048867,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 16.108222272385092,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": -1.0,
+          "variance": 0.8628643289565131
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -93.35692097418385,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -56.5350654932868,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": -0.00841641328330272,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": 12.846390102231268,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -15.2324672533566,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    },
+    "EW-38": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -13.54410122965501,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 8.228568023656912,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": 9.879842716691396,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -41.129197255208716,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 18.361916802833896,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": -1.0,
+          "variance": 0.9271168205199488
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -94.95714928864805,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -54.08820245931002,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 0.08571466403812167,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": 9.388094841381886,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -16.45589877034499,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    },
+    "AX-45": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -15.031910256344947,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 7.617304369564845,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": 11.455946433293782,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 1.8747273960843003
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -42.55228360643376,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 17.328879675351143,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": -1.0,
+          "variance": 0.8257804432855829
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -96.11175841304419,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -57.063820512689894,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 0.1536328478261287,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": 15.139522828554039,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -0.9571417287752536,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -14.968089743655053,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    },
+    "AK-08": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -13.80847873935656,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 6.770124673672026,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": 8.457274536811127,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.8046276362084545
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -42.8818786211538,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 19.905923276908744,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 1.0,
+          "cultural": -1.0,
+          "variance": 1.923445193434289
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -97.71198672750839,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -54.61695747871311,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 0.24776392514755152,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": 12.324101636075866,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -16.19152126064344,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    }
+  },
+  "after": {
+    "NX-04": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -2.7076402366289987,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 7.5101404771390285,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": -3.505129715399857,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.8540331605839178
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -36.50921958816002,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 34.95842793829917,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 0.5367014222778579,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -96.3141790987374,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -32.415280473257994,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 0.16553994698455318,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": -30.290730487108476,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -57.58309025047946,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    },
+    "NX-31": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -4.485462186289762,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 8.335731916082729,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -0.7631247915934765,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": -0.9735045987910098,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.9147186562100583
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -36.48080674194185,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 33.307245060411766,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 0.9287384056331324,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -94.75472860295486,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -35.970924372579525,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 0.07380756487969681,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": -24.724686761138884,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -50.2392245748491,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    },
+    "NX-53": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -4.0760782151028,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 9.075747719549728,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -0.7320738098288473,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": -0.9962215026973631,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.9747844257845221
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -35.453874974718374,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 31.827213453477768,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 0.7794072824575338,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -93.35692097418385,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -35.15215643020559,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": -0.00841641328330351,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": -27.246564391045993,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -53.17048617594317,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    },
+    "EW-38": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -2.8526466981144107,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 8.228568023656912,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -0.9791338267738193,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": -2.963889489545945,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.9064826072941693
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -35.783469989438416,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 33.5215728452634,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 0.5273385902512493,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -94.95714928864805,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -32.70529339622882,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 0.08571466403812088,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": -30.704859651895347,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -57.852212953780935,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    },
+    "AX-45": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -4.3404557248043485,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 7.617304369564845,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -0.8610758822255846,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": -1.5758229427651536,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.8615633352602247
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -37.206556340663454,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 34.74410015344753,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 0.9381012376597389,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -96.11175841304419,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -35.68091144960869,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 0.1536328478261287,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": -24.310557596351998,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -49.97010187154764,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    },
+    "AK-08": {
+      "LDP": {
+        "maximumSquaredDistanceAdvantage": -3.1170242078159607,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "CA": {
+        "maximumSquaredDistanceAdvantage": 6.770124673672026,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "SDP": {
+        "maximumSquaredDistanceAdvantage": -3.41017289663937,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.8046276362084541
+        }
+      },
+      "CON": {
+        "maximumSquaredDistanceAdvantage": -37.5361513553835,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "GRN": {
+        "maximumSquaredDistanceAdvantage": 36.43845954523317,
+        "possibleUniqueWinner": true,
+        "witness": {
+          "economic": 0.6860325454534565,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "NF": {
+        "maximumSquaredDistanceAdvantage": -97.71198672750839,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": 1.0,
+          "variance": 0.5000000000000001
+        }
+      },
+      "LIB": {
+        "maximumSquaredDistanceAdvantage": -33.23404841563192,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": 1.0,
+          "cultural": 0.2477639251475523,
+          "variance": 0.5000000000000001
+        }
+      },
+      "UPL": {
+        "maximumSquaredDistanceAdvantage": -27.768852857201367,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      },
+      "SWP": {
+        "maximumSquaredDistanceAdvantage": -54.65182864938539,
+        "possibleUniqueWinner": false,
+        "witness": {
+          "economic": -1.0,
+          "cultural": -1.0,
+          "variance": 2.0000000000000004
+        }
+      }
+    }
+  }
+}
