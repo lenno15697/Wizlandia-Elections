@@ -28,14 +28,15 @@ centres. Nearest-party district winners have the intended Condorcet/Ranked
 Pairs interpretation under Euclidean preferences and centrally symmetric
 within-district electorates.
 
-District baseline seats: LDP 186, CA 170, SDP 18, CON 20, GRN 6, all others zero.
+Current default district seats: LDP 194, CA 151, SDP 18, CON 10, GRN 27.
 PR seats use nationwide largest remainder (Hare quota), without a threshold.
 They are added to district seats: 800 total seats and a majority of 401.
-National baseline votes: 31%, 25%, 11%, 10%, 8%, 7%, 4%, 3%, 1%.
+The original national mixture was calibrated to 31%, 25%, 11%, 10%, 8%,
+7%, 4%, 3%, 1%; current shares reflect the updated CA, NF and SWP positions.
 Each district has its own fixed, tiny offset from its type centre (at most
 0.20 compass units). Antithetic offsets preserve each type mean. The radius
 is capped at 80% of the nearest baseline party boundary distance, preserving
-the calibrated baseline. Offsets are generated once, never redrawn per election.
+the original fixed district coordinates when parties move. Offsets are generated once, never redrawn per election.
 Exact individual ties use a deterministic district-ID rule.
 
 Random elections are independent shocks around the SAME baseline, not a
@@ -74,10 +75,15 @@ COLORS = [
     "#000080", "#FF9000", "#C00040", "#60C0FF", "#20A020", "#404040",
     "#F0C000", "#E030C0", "#700000",
 ]
-POINTS = np.array([
+# Retain the original boundaries for the already-fixed district offsets.
+DISTRICT_BOUNDARY_POINTS = np.array([
     [4.0, -0.5], [0.0, -0.5], [-3.5, -1.5], [2.0, 4.5], [0.0, -5.0],
     [0.0, 8.0], [8.0, -3.0], [-7.5, -8.0], [-9.5, -8.0],
 ])
+POINTS = DISTRICT_BOUNDARY_POINTS.copy()
+POINTS[1] = [0.0, 0.0]     # CA
+POINTS[5] = [-0.5, 8.0]    # NF
+POINTS[8] = [-9.0, -7.5]   # SWP
 TARGETS = np.array([.31, .25, .11, .10, .08, .07, .04, .03, .01])
 WEIGHTS = np.array([0.41125786895728933, 0.2734878236831255, 0.31525430735958515])
 MEANS = np.array([[3.4642267581522934, -0.20049498176725483], [-1.4020929437915204, -0.2661854623528666], [1.4642267581522932, 0.37867297676123957]])
@@ -280,7 +286,6 @@ DISTRICT_NAMES = [row[1] for row in DISTRICT_ROWS]
 DISTRICT_COUNTS = np.array([row[2] for row in DISTRICT_ROWS], dtype=int)
 DISTRICT_CENTRES = np.array([row[3:5] for row in DISTRICT_ROWS], dtype=float)
 TOTAL_DISTRICTS = int(DISTRICT_COUNTS.sum())
-BASELINE_SEATS = np.array([186, 170, 18, 20, 6, 0, 0, 0, 0], dtype=int)
 
 # Edit this one line to change within-type heterogeneity. Zero restores the
 # old shared-centre behaviour. Party-boundary caps preserve the baseline.
@@ -295,11 +300,11 @@ def individual_district_centres(spread=DISTRICT_SPREAD):
     result = []
     for type_id, _name, count, x, y in DISTRICT_ROWS:
         centre = np.array([x, y])
-        squared = ((POINTS - centre) ** 2).sum(axis=1)
+        squared = ((DISTRICT_BOUNDARY_POINTS - centre) ** 2).sum(axis=1)
         winner = int(np.argmin(squared))
         margins = [(squared[j] - squared[winner]) /
-                   (2 * np.linalg.norm(POINTS[j] - POINTS[winner]))
-                   for j in range(len(POINTS)) if j != winner]
+                   (2 * np.linalg.norm(DISTRICT_BOUNDARY_POINTS[j] - DISTRICT_BOUNDARY_POINTS[winner]))
+                   for j in range(len(DISTRICT_BOUNDARY_POINTS)) if j != winner]
         radius = min(float(spread), .8 * min(margins))
         pairs = count // 2
         for pair in range(pairs):
@@ -313,6 +318,10 @@ def individual_district_centres(spread=DISTRICT_SPREAD):
 
 
 INDIVIDUAL_CENTRES = individual_district_centres()
+BASELINE_SEATS = np.bincount(
+    np.argmin(((INDIVIDUAL_CENTRES[:, None] - POINTS) ** 2).sum(axis=2), axis=1),
+    minlength=len(CODES),
+)
 INDIVIDUAL_TYPE_INDEX = np.repeat(np.arange(len(DISTRICT_ROWS)), DISTRICT_COUNTS)
 INDIVIDUAL_IDS = [f"{row[0]:02d}-{i + 1:02d}"
                   for row in DISTRICT_ROWS for i in range(row[2])]
@@ -342,7 +351,7 @@ def allocate_pr(votes, total=PR_SEAT_COUNT):
     return seats
 
 
-BASELINE_PR_SEATS = allocate_pr(TARGETS)
+BASELINE_PR_SEATS = allocate_pr(vote_shares())
 BASELINE_COMBINED_SEATS = BASELINE_SEATS + BASELINE_PR_SEATS
 
 
@@ -768,8 +777,8 @@ def self_test():
     assert DISTRICT_SPREAD == .20
     assert len(set(INDIVIDUAL_IDS)) == 400
     assert sum(g["population"] for g in DISTRICT_GEOGRAPHY.values()) == 212000000
-    assert np.array_equal(evaluate().pr_seats, [124, 100, 44, 40, 32, 28, 16, 12, 4])
-    assert np.array_equal(evaluate().combined_seats, [310, 270, 62, 60, 38, 28, 16, 12, 4])
+    assert np.array_equal(evaluate().pr_seats, [125, 98, 44, 41, 33, 26, 16, 13, 4])
+    assert np.array_equal(evaluate().combined_seats, [319, 249, 62, 51, 60, 26, 16, 13, 4])
     assert np.array_equal(allocate_pr([.4, .35, .25], 7), [3, 2, 2])
     assert [CODES[i] for i in DISPLAY_ORDER] == ["SWP", "UPL", "SDP", "GRN", "CA", "LDP", "CON", "LIB", "NF"]
     assert np.array_equal(evaluate().seats, BASELINE_SEATS)
@@ -787,7 +796,7 @@ def self_test():
         winners = np.argmin(((points[:, None] - POINTS) ** 2).sum(axis=2), axis=1)
         green_counts.add(int(np.sum(winners == 4)))
     assert set(range(7)).issubset(green_counts), green_counts
-    assert np.allclose(vote_shares(), TARGETS, atol=1e-8, rtol=0)
+    assert np.allclose(vote_shares(), [.311661275, .246064244, .110839628, .102015844, .083139052, .065953151, .039999992, .031218559, .009108256], atol=1e-7, rtol=0)
     median_x = brentq(lambda x: np.dot(WEIGHTS, ndtr((x - MEANS[:, 0]) /
                               STANDARD_DEVIATIONS[:, 0])) - .5, -20, 20)
     assert abs(median_x - 2) < 1e-10

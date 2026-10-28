@@ -22,6 +22,7 @@ summaries = [
 data = dict(
     parties=[dict(code=c, name=n, color=k, x=float(p[0]), y=float(p[1]), description=d)
              for c,n,k,p,d in zip(m.CODES,m.NAMES,m.COLORS,m.POINTS,summaries)],
+    districtBoundaryParties=[dict(x=float(p[0]), y=float(p[1])) for p in m.DISTRICT_BOUNDARY_POINTS],
     types=[dict(id=i,name=n,count=c,x=x,y=y) for i,n,c,x,y in m.DISTRICT_ROWS],
     center=m.CENTER.tolist(), weights=m.WEIGHTS.tolist(), means=m.MEANS.tolist(),
     covariances=m.COVARIANCES.tolist(), gaussNodes=m.GAUSS_NODES.tolist(),

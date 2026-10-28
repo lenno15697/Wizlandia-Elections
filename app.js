@@ -230,7 +230,7 @@ function showTab(name){
 function renderPartyCompass(){
   const v=shown(),seats=v.seats,style=getComputedStyle(document.body),dark=document.body.classList.contains('dark');
   const ink=style.getPropertyValue('--text').trim(),muted=style.getPropertyValue('--muted').trim(),border=style.getPropertyValue('--border').trim(),surface=style.getPropertyValue('--surface').trim(),soft=style.getPropertyValue('--soft').trim();
-  const left=90,top=40,size=800,bound=Math.max(12,2*Math.ceil((Math.max(...current.parties.flatMap(p=>[Math.abs(p.x),Math.abs(p.y)]))+2)/2));
+  const left=90,top=40,size=800,bound=10;
   const px=x=>left+(x+bound)*size/(2*bound),py=y=>top+(bound-y)*size/(2*bound);
   const label=(x,y,text,anchor='middle',weight=400,font=18)=>`<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="system-ui,sans-serif" font-size="${font}" font-weight="${weight}" fill="${muted}">${esc(text)}</text>`;
   let artwork=`<rect width="980" height="940" fill="${surface}"/><rect x="${left}" y="${top}" width="${size}" height="${size}" rx="18" fill="${soft}" stroke="${border}" stroke-width="2"/>`;
@@ -240,11 +240,11 @@ function renderPartyCompass(){
   }
   artwork+=`<path d="M${px(0)},${top}V${top+size}M${left},${py(0)}H${left+size}" fill="none" stroke="${border}" stroke-width="3"/>`;
   for(const n of [-bound,0,bound])artwork+=label(px(n),top+size+30,n)+label(left-18,py(n)+6,n,'end');
-  artwork+=label(left+14,py(0)-15,'Interventionist','start',650,19)+label(left+size-14,py(0)-15,'Market liberal','end',650,19);
-  artwork+=label(px(0)+15,top+32,'Traditional','start',650,20)+label(px(0)+15,top+size-18,'Liberal','start',650,20);
+  artwork+=label(left+14,py(0)-15,'Interventionist','start',650,19)+label(left+size-14,py(0)-15,'Liberal','end',650,19);
+  artwork+=label(px(0)+15,top+32,'Traditional','start',650,20)+label(px(0)+15,top+size-18,'Progressive','start',650,20);
   artwork+=label(left+size/2,910,'Economic position');
   artwork+=`<text transform="translate(26 ${top+size/2}) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="${muted}">Cultural position</text>`;
-  const nodes=current.parties.map((p,i)=>({p,i,x:px(p.x),y:py(p.y),r:seats[i]>0?17*Math.sqrt(Math.log1p(seats[i])):6}));
+  const nodes=current.parties.map((p,i)=>({p,i,x:px(p.x),y:py(p.y),r:seats[i]>0?3*Math.sqrt(seats[i]):6}));
   const ordered=displayOrder.slice().sort((a,b)=>seats[b]-seats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b)),placed=[];
   const labelPositions=new Map();
   for(const i of ordered){
@@ -269,7 +269,7 @@ function renderPartyCompass(){
     artwork+=`<circle class="party-compass-dot" cx="${x}" cy="${y}" r="${r}" fill="${seats[i]>0?p.color:soft}" stroke="${seats[i]>0?(dark?'#e9e9ed':'#ffffff'):p.color}" stroke-width="${seats[i]>0?3:3.5}"/><text x="${pos.x}" y="${pos.y}" text-anchor="${pos.anchor}" font-family="ui-monospace,monospace" font-size="18" fill="${ink}"><tspan font-weight="750">${p.code}</tspan><tspan fill="${muted}"> ${seats[i]}</tspan></text></g>`;
   }
   $('party-compass').innerHTML=`<svg id="party-compass-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 940" role="group" aria-label="Party compass showing ${v.label} seats"><title>Wizlandia party compass · ${v.label} seats</title>${artwork}</svg>`;
-  $('party-compass-note').textContent=`${v.label} seats · Bubble area scales with log(1 + seats). Hollow dots indicate zero seats. Select dots or seat cards to highlight parties.`;
+  $('party-compass-note').textContent=`${v.label} seats · Circle radius scales with the square root of seats. Hollow dots indicate zero seats. Select dots or seat cards to highlight parties.`;
 }
 function clippedRegion(index){
   let polygon=[[-12,-10],[12,-10],[12,10],[-12,10]];const p=current.parties[index];
@@ -327,8 +327,8 @@ function drawDistrictMedians(){
   c.strokeStyle=dark?'#ffffff33':'#1f253533';c.lineWidth=1;c.strokeRect(x0,y0,w,h);c.fillStyle=muted;c.font='11px sans-serif';c.textAlign='center';
   for(let x=-10;x<=10;x+=2)c.fillText(String(x),px(x),y0+h+20);
   c.textAlign='right';for(let y=-8;y<=8;y+=2)c.fillText(String(y),x0-12,py(y)+4);
-  c.textAlign='center';c.font='12px sans-serif';c.fillText('Economy · market liberal →',x0+w/2,y0+h+49);
-  c.save();c.translate(20,y0+h/2);c.rotate(-Math.PI/2);c.fillText('Culture · traditional →',0,0);c.restore();
+  c.textAlign='center';c.font='12px sans-serif';c.fillText('Economy · Interventionist ↔ Liberal',x0+w/2,y0+h+49);
+  c.save();c.translate(20,y0+h/2);c.rotate(-Math.PI/2);c.fillText('Culture · Progressive ↔ Traditional',0,0);c.restore();
 }
 function recompute(){try{current=E.evaluate(state.economic,state.cultural,state.variance,state.spread,state.parties);render();}catch(error){notice(error.message);}}
 function restore(result){state={economic:result.economic,cultural:result.cultural,variance:result.variance,spread:D.spread,parties:result.parties.map(p=>({...p}))};current=result;render();}

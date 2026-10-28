@@ -42,8 +42,8 @@ function suggestions(seats,selection=[]){
 const baseline=baselineResult.combinedSeats;
 const baselinePaths=suggestions(baseline).paths;
 assert.deepEqual(baselinePaths.map(p=>p.tier),[4,4,5,6]);
-assert.deepEqual(baselinePaths[2],{codes:['CA','SDP','CON','GRN'],tier:5,total:430});
-assert.deepEqual(baselinePaths[3],{codes:['LDP','SDP','CON'],tier:6,total:432});
+assert.deepEqual(baselinePaths[2],{codes:['CA','SDP','GRN','CON'],tier:5,total:422});
+assert.deepEqual(baselinePaths[3],{codes:['LDP','SDP','GRN'],tier:6,total:441});
 // The largest party is LDP, but the two highest-priority ways are CA coalitions.
 const alternate=[250,240,150,70,40,10,20,10,10],global=suggestions(alternate);
 assert.deepEqual(global.paths.map(p=>p.tier),[3,3,4,6]);

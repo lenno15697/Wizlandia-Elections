@@ -15,7 +15,7 @@ const data = {
       "name": "Civic Alliance",
       "color": "#FF9000",
       "x": 0.0,
-      "y": -0.5,
+      "y": 0.0,
       "description": "Centrist and moderately pro-market. Families, public services, social cohesion and work-linked welfare."
     },
     {
@@ -46,7 +46,7 @@ const data = {
       "code": "NF",
       "name": "National Front",
       "color": "#404040",
-      "x": 0.0,
+      "x": -0.5,
       "y": 8.0,
       "description": "National conservatism, immigration restriction, protectionism and fewer overseas commitments."
     },
@@ -70,9 +70,47 @@ const data = {
       "code": "SWP",
       "name": "Socialist Workers Party",
       "color": "#700000",
-      "x": -9.5,
-      "y": -8.0,
+      "x": -9.0,
+      "y": -7.5,
       "description": "Communism and a fundamental transformation of economic ownership and political institutions."
+    }
+  ],
+  "districtBoundaryParties": [
+    {
+      "x": 4.0,
+      "y": -0.5
+    },
+    {
+      "x": 0.0,
+      "y": -0.5
+    },
+    {
+      "x": -3.5,
+      "y": -1.5
+    },
+    {
+      "x": 2.0,
+      "y": 4.5
+    },
+    {
+      "x": 0.0,
+      "y": -5.0
+    },
+    {
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "x": 8.0,
+      "y": -3.0
+    },
+    {
+      "x": -7.5,
+      "y": -8.0
+    },
+    {
+      "x": -9.5,
+      "y": -8.0
     }
   ],
   "types": [
@@ -527,11 +565,11 @@ const data = {
     0.017614007139150893
   ],
   "baseline": [
-    186,
-    170,
+    194,
+    151,
     18,
-    20,
-    6,
+    10,
+    27,
     0,
     0,
     0,
@@ -562,25 +600,25 @@ const data = {
     5
   ],
   "baselinePr": [
-    124,
-    100,
+    125,
+    98,
     44,
-    40,
-    32,
-    28,
+    41,
+    33,
+    26,
     16,
-    12,
+    13,
     4
   ],
   "baselineCombined": [
-    310,
-    270,
+    319,
+    249,
     62,
+    51,
     60,
-    38,
-    28,
+    26,
     16,
-    12,
+    13,
     4
   ]
 };

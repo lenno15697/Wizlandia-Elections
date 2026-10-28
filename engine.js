@@ -4,6 +4,7 @@
 const D = typeof module !== 'undefined' && module.exports ? require('./data.js') : root.WizlandiaData;
 const GEO=typeof module!=='undefined'&&module.exports?require('./district-geography.js'):root.WizlandiaGeography;
 const byLegacy=new Map(GEO.districts.map(d=>[d.legacyId,d]));
+const districtBoundaryParties=D.districtBoundaryParties;
 const GOLDEN_ANGLE = Math.PI * (3-Math.sqrt(5));
 const sq=(a,b)=>(a.x-b.x)**2+(a.y-b.y)**2;
 function validateParties(parties){
@@ -17,8 +18,8 @@ function districts(spread=D.spread){
   if(!Number.isFinite(spread)||spread<0||spread>0.2)throw new Error('District variation must be between 0 and 0.20.');
   const out=[];
   D.types.forEach(t=>{
-    const d=D.parties.map(p=>sq(t,p)), win=d.indexOf(Math.min(...d));
-    const margin=Math.min(...D.parties.map((p,j)=>j===win?Infinity:(d[j]-d[win])/(2*Math.sqrt(sq(p,D.parties[win])))));
+    const d=districtBoundaryParties.map(p=>sq(t,p)), win=d.indexOf(Math.min(...d));
+    const margin=Math.min(...districtBoundaryParties.map((p,j)=>j===win?Infinity:(d[j]-d[win])/(2*Math.sqrt(sq(p,districtBoundaryParties[win])))));
     const radius=Math.min(spread,.8*margin), pairs=Math.floor(t.count/2);
     let k=0;
     for(let j=0;j<pairs;j++){
