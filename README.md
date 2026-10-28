@@ -7,8 +7,13 @@ A standalone GitHub Pages election website inspired by the sidebar, parliament d
 
 The **Compass** tab is a party-bubble compass inspired by Thermidor's presentation.
 Party coordinates retain their Wizlandia economic and cultural meanings. Circle
-radius is proportional to `sqrt(seats)` using the selected Combined, Electoral
-Districts or PR List component; zero-seat parties have hollow markers. Bubble
+radius follows `6 + 60 × sqrt(party seats / total seats)` using the selected
+component: total seats is 800 for Combined and 400 for Electoral Districts or
+PR List. Equal seat shares therefore have equal dot sizes across views. The
+coefficient preserves the previous scale for the 400-seat component views.
+The zero-seat marker has radius 6; every party with seats adds a positive
+square-root contribution above that minimum.
+Zero-seat parties retain hollow markers. Bubble
 clicks, keyboard activation, seat cards and sidebar parties all use the same
 selection, including coalition highlights and fading. Both party-compass axes
 range from −10 to +10. SVG export is available.

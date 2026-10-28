@@ -254,7 +254,7 @@ function renderPartyCompass(){
   const displayPositions={CA:{x:0,y:0},NF:{x:-.5,y:8},SWP:{x:-9,y:-7.5},SDP:{x:-4,y:-1.5}};
   const nodes=current.parties.map((party,i)=>{
     const p={...party,...displayPositions[party.code]};
-    return{p,i,x:px(p.x),y:py(p.y),r:seats[i]>0?3*Math.sqrt(seats[i]):6};
+    return{p,i,x:px(p.x),y:py(p.y),r:6+60*Math.sqrt(seats[i]/v.total)};
   });
   const ordered=displayOrder.slice().sort((a,b)=>seats[b]-seats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b)),placed=[];
   const labelPositions=new Map();
@@ -280,7 +280,7 @@ function renderPartyCompass(){
     artwork+=`<circle class="party-compass-dot" cx="${x}" cy="${y}" r="${r}" fill="${seats[i]>0?p.color:soft}" stroke="${seats[i]>0?(dark?'#e9e9ed':'#ffffff'):p.color}" stroke-width="${seats[i]>0?3:3.5}"/><text x="${pos.x}" y="${pos.y}" text-anchor="${pos.anchor}" font-family="ui-monospace,monospace" font-size="18" fill="${ink}"><tspan font-weight="750">${p.code}</tspan><tspan fill="${muted}"> ${seats[i]}</tspan></text></g>`;
   }
   $('party-compass').innerHTML=`<svg id="party-compass-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 940" role="group" aria-label="Party compass showing ${v.label} seats"><title>Wizlandia party compass · ${v.label} seats</title>${artwork}</svg>`;
-  $('party-compass-note').textContent=`${v.label} seats · Circle radius scales with the square root of seats. Hollow dots indicate zero seats. Select dots or seat cards to highlight parties.`;
+  $('party-compass-note').textContent=`${v.label} seats · Circle radius adds square-root seat-share scaling above the zero-seat minimum. Hollow dots indicate zero seats. Select dots or seat cards to highlight parties.`;
 }
 function clippedRegion(index){
   let polygon=[[-12,-10],[12,-10],[12,10],[-12,10]];const p=current.parties[index];
