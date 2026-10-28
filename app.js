@@ -244,9 +244,10 @@ function renderPartyCompass(){
   artwork+=label(px(0)+15,top+32,'Traditional','start',650,20)+label(px(0)+15,top+size-18,'Progressive','start',650,20);
   artwork+=label(left+size/2,910,'Economic position');
   artwork+=`<text transform="translate(26 ${top+size/2}) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="${muted}">Cultural position</text>`;
+  // Presentation-only coordinates: never pass these to the election model or median plot.
+  const displayPositions={CA:{x:0,y:0},NF:{x:-.5,y:8},SWP:{x:-9,y:-7.5},SDP:{x:-4,y:-1.5}};
   const nodes=current.parties.map((party,i)=>{
-    // This requested display position applies only to the party Compass.
-    const p=party.code==='SDP'?{...party,x:-4,y:-1.5}:party;
+    const p={...party,...displayPositions[party.code]};
     return{p,i,x:px(p.x),y:py(p.y),r:seats[i]>0?3*Math.sqrt(seats[i]):6};
   });
   const ordered=displayOrder.slice().sort((a,b)=>seats[b]-seats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b)),placed=[];

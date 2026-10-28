@@ -33,10 +33,25 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  assert.ok(html.indexOf('id="tab-medians"')>html.indexOf('id="tab-history"'));assert.match(html,/id="panel-medians"[\s\S]*?<canvas id="compass"/);
  const checkCompass=seats=>{const svg=get('party-compass').innerHTML,bubbles=[...svg.matchAll(/data-party="(\d+)" data-compass-code="([^"]+)" data-seats="(\d+)" data-radius="([^"]+)"/g)];assert.equal(bubbles.length,9);for(const [,index,code,count,radius] of bubbles){const i=Number(index),n=Number(count),r=Number(radius);assert.equal(code,D.parties[i].code);assert.equal(n,seats[i]);if(n)assert.ok(Math.abs(r*r-9*n)<1e-9,'Circle radius must be proportional to the square root of seats');else assert.equal(r,6);}return svg;};
  get('tab-compass').onclick();const compass=checkCompass(E.evaluate().combinedSeats);assert.ok(compass.includes('>10</text>')&&compass.includes('>-10</text>'));assert.ok(!compass.includes('>12</text>')&&!compass.includes('>-12</text>'));
- for(const [code,x,y] of [['CA',0,0],['NF',-.5,8],['SWP',-9,-7.5]]){const party=D.parties.find(p=>p.code===code);assert.equal(party.x,x);assert.equal(party.y,y);const chunk=compass.split(`data-compass-code="${code}"`)[1].split('</g>')[0];assert.match(chunk,new RegExp(`cx="${90+(x+10)*40}" cy="${40+(10-y)*40}"`));}assert.equal(get('panel-medians').hidden,true);
- const sdpCompass=compass.split('data-compass-code="SDP"')[1].split('</g>')[0];
- assert.match(sdpCompass,/cx="330" cy="500"/);assert.match(sdpCompass,/Economy -4\.00, culture -1\.50/);
- assert.equal(D.parties.find(p=>p.code==='SDP').x,-3.5,'The Compass-only SDP move must not change the election model');
+ for(const [code,x,y] of [['CA',0,0],['NF',-.5,8],['SWP',-9,-7.5],['SDP',-4,-1.5]]){
+   const chunk=compass.split(`data-compass-code="${code}"`)[1].split('</g>')[0];
+   assert.match(chunk,new RegExp(`cx="${90+(x+10)*40}" cy="${40+(10-y)*40}"`));
+   assert.ok(chunk.includes(`Economy ${x.toFixed(2)}, culture ${y.toFixed(2)}`));
+ }
+ assert.equal(get('panel-medians').hidden,true);
+ const originalPositions={CA:[0,-.5],NF:[0,8],SWP:[-9.5,-8],SDP:[-3.5,-1.5]};
+ for(const [code,[x,y]] of Object.entries(originalPositions)){
+   const p=D.parties.find(p=>p.code===code);assert.equal(p.x,x);assert.equal(p.y,y);
+ }
+ // Exercise the actual median-plot renderer and inspect its party-label coordinates.
+ const medianLabels=new Map(),canvasContext=new Proxy({fillText(text,x,y){if(D.parties.some(p=>p.code===text))medianLabels.set(text,[x,y]);}},{get:(target,key)=>key in target?target[key]:()=>{}});
+ get('compass').getContext=()=>canvasContext;get('show-density').checked=false;get('show-districts').checked=false;
+ get('tab-medians').onclick();
+ const labelOffsets={CA:[9,-7],NF:[9,-8],SWP:[-32,14],SDP:[-32,14]};
+ for(const [code,[x,y]] of Object.entries(originalPositions)){
+   const [dx,dy]=labelOffsets[code];assert.deepEqual(medianLabels.get(code),[65+(x+12)*780/24+dx,28+(10-y)*650/20+dy],code+' median marker must retain its original model position');
+ }
+ get('tab-compass').onclick();
  const partyEvent=(container,i)=>({target:{closest:()=>({dataset:{party:String(i)}})},currentTarget:get(container)});
  get('party-compass').onclick(partyEvent('party-compass',0));assert.match(get('party-cards').innerHTML,/data-party="0" aria-pressed="true"/);assert.match(get('party-compass').innerHTML,/data-party="0"[^>]*aria-pressed="true"/);
  get('party-cards').onclick(partyEvent('party-cards',0));assert.match(get('party-compass').innerHTML,/data-party="0"[^>]*aria-pressed="false"/);

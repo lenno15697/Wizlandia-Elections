@@ -4,8 +4,8 @@ const D=require('../data.js'),E=require('../engine.js'),fixture=require('./pytho
 const base=E.evaluate();
 assert.deepEqual(base.seats,D.baseline);
 assert.deepEqual(base.districtSeats,D.baseline);
-assert.deepEqual(base.prSeats,[125,98,44,41,33,26,16,13,4]);
-assert.deepEqual(base.combinedSeats,[319,249,62,51,60,26,16,13,4]);
+assert.deepEqual(base.prSeats,[124,100,44,40,32,28,16,12,4]);
+assert.deepEqual(base.combinedSeats,[310,270,62,60,38,28,16,12,4]);
 assert.deepEqual(D.displayOrder.map(i=>D.parties[i].code),['SWP','UPL','SDP','GRN','CA','LDP','CON','LIB','NF']);
 assert.deepEqual(E.allocatePR([.4,.35,.25],7),[3,2,2]);
 assert.deepEqual(E.allocatePR([1,1,1],2),[1,1,0]);
@@ -17,10 +17,7 @@ assert.equal(E.component(base,'district').majority,201);
 assert.throws(()=>E.component(base,'other'));
 assert.equal(base.rows.length,400);
 assert.equal(new Set(base.rows.map(d=>`${d.x},${d.y}`)).size,400);
-// Offsets remain tied to the original calibration when default parties move.
-const originalParties=D.parties.map((p,i)=>({...p,...D.districtBoundaryParties[i]}));
-for(const spread of [0,.01,.05,.10,.15,.20])assert.deepEqual(E.evaluate(0,0,1,spread,originalParties).seats,[186,170,18,20,6,0,0,0,0]);
-assert.deepEqual(base.districtSeats,[194,151,18,10,27,0,0,0,0]);
+for(const spread of [0,.01,.05,.10,.15,.20])assert.deepEqual(E.evaluate(0,0,1,spread).seats,D.baseline);
 for(const t of D.types){
   const rows=base.rows.filter(d=>d.type===t.id);
   assert.equal(rows.length,t.count);
@@ -49,11 +46,11 @@ assert.ok(maxVoteError<1e-6,`Share probability error ${maxVoteError}`);
 const rng=new E.Mulberry32(20261014);
 for(const expected of fixture.shocks){const got=E.drawShocks(rng);assert.equal(got.economic,expected.economic);assert.equal(got.cultural,expected.cultural);assert.ok(Math.abs(got.variance-expected.variance)<1e-14);}
 const counts=new Set();
-for(let i=0;i<=100;i++)counts.add(E.evaluate(0,i/100,1,D.spread,originalParties).seats[4]);
+for(let i=0;i<=100;i++)counts.add(E.evaluate(0,i/100,1).seats[4]);
 assert.deepEqual([...counts].sort((a,b)=>a-b),[0,1,2,3,4,5,6]);
-const zeroSpreadCounts=new Set();for(let i=0;i<=100;i++)zeroSpreadCounts.add(E.evaluate(0,i/100,1,0,originalParties).seats[4]);
+const zeroSpreadCounts=new Set();for(let i=0;i<=100;i++)zeroSpreadCounts.add(E.evaluate(0,i/100,1,0).seats[4]);
 assert.deepEqual([...zeroSpreadCounts].sort((a,b)=>a-b),[0,6]);
-assert.deepEqual(E.evaluate(0,.5,1).seats,[182,168,20,27,3,0,0,0,0]);
+assert.deepEqual(E.evaluate(0,.5,1).seats,[181,161,21,34,3,0,0,0,0]);
 assert.throws(()=>E.evaluate(NaN,0,1));assert.throws(()=>E.evaluate(0,0,0));assert.throws(()=>E.evaluate(0,0,1,-1));
 const duplicates=D.parties.map(p=>({...p}));duplicates[0].x=duplicates[1].x;duplicates[0].y=duplicates[1].y;
 assert.throws(()=>E.evaluate(0,0,1,.1,duplicates));

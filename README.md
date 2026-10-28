@@ -10,20 +10,17 @@ Party coordinates retain their Wizlandia economic and cultural meanings. Circle
 radius is proportional to `sqrt(seats)` using the selected Combined, Electoral
 Districts or PR List component; zero-seat parties have hollow markers. Bubble
 clicks, keyboard activation, seat cards and sidebar parties all use the same
-selection, including coalition highlights and fading. Both compass axes range
-from −10 to +10. SVG export is available.
+selection, including coalition highlights and fading. Both party-compass axes
+range from −10 to +10. SVG export is available.
 
-The Compass displays SDP at `(-4.00, -1.50)` as a presentation-only override.
-Its election-model position and Districts Median Position marker are unchanged.
+Only the Compass tab displays CA at `(0.00, 0.00)`, NF at `(-0.50, 8.00)`,
+SWP at `(-9.00, -7.50)` and SDP at `(-4.00, -1.50)`. These presentation-only
+coordinates never enter election calculations, saved configurations or the
+Districts Median Position plot. The model retains CA `(0.00, -0.50)`, NF
+`(0.00, 8.00)`, SWP `(-9.50, -8.00)` and SDP `(-3.50, -1.50)`, with its
+original calibrated results.
 
-Default party positions are now CA `(0.00, 0.00)`, NF `(-0.50, 8.00)` and
-SWP `(-9.00, -7.50)`. Elections use these positions. The national electorate,
-all 400 district coordinates and their geographic assignments stay fixed.
-District-offset caps retain the original calibration positions independently
-of editable/default party positions. Baseline comparison totals now use the
-updated defaults.
-
-The former compass has moved to **Districts Median Position**, after
+The former compass has moved unchanged to **Districts Median Position**, after
 History. It retains the density overlay and contours, all 400 district medians,
 party crosses, national median star, density/district controls and hover details.
 
@@ -106,13 +103,13 @@ new position = national baseline median + election shift
                + sqrt(variance multiplier) × (individual baseline position − national baseline median)
 ```
 
-Offsets come in opposite pairs. This preserves each district type's average exactly, up to floating-point rounding. Every type's radius is additionally capped at 80% of its distance to the nearest original party boundary. Thus all original baseline winners and the **186–170** LDP–CA split are preserved when using the original party positions. The updated CA position changes district winners without moving their medians. Changing the seed redraws election shocks; it does not redraw district geography.
+Offsets come in opposite pairs. This preserves each district type's average exactly, up to floating-point rounding. Every type's radius is additionally capped at 80% of its distance to the nearest original party boundary. Thus all original baseline winners and the **186–170** LDP–CA split are preserved. Changing the seed redraws election shocks; it does not redraw district geography.
 
-The original national Gaussian mixture, type counts, district medians and shock distribution are unchanged. The website fixes within-type variation at 0.20. Party defaults include the requested CA, NF and SWP moves; the original calibration refers to the original positions.
+The original national Gaussian mixture, party positions, type counts, national baseline vote shares and shock distribution are unchanged. The website fixes within-type variation at 0.20. Moving party coordinates is a scenario change; the original calibration refers to the default positions.
 
 ### Example: Greens can now win intermediate numbers of seats
 
-Hold the economic shift at 0.00, variance at 1.00, party positions at the original calibration values and the fixed within-type variation of 0.20:
+Hold the economic shift at 0.00, variance at 1.00, party positions at their defaults and the fixed within-type variation of 0.20:
 
 | Cultural shift | Green district seats |
 | --- | ---: |
@@ -134,19 +131,19 @@ PR uses **Hare quota / largest remainder** on the simulated national vote shares
 
 The view buttons appear as Combined, Electoral Districts, and PR List. The Combined view opens by default. Switching views updates the main map, vote-share chart or Assembly diagram, seat totals, party cards, representation comparisons and history summaries. The Combined view also shows coalition tools and majority information. The overview table always shows all three seat columns. CSV exports contain all three components, and the SVG export uses the selected view. Editing party compass positions does not reorder the fixed left-to-right display.
 
-Current default seat allocation:
+Baseline seat allocation:
 
 | Party | District | PR | Combined |
 | --- | ---: | ---: | ---: |
 | SWP | 0 | 4 | 4 |
-| UPL | 0 | 13 | 13 |
+| UPL | 0 | 12 | 12 |
 | SDP | 18 | 44 | 62 |
-| Green | 27 | 33 | 60 |
-| CA | 151 | 98 | 249 |
-| LDP | 194 | 125 | 319 |
-| Conservative | 10 | 41 | 51 |
+| Green | 6 | 32 | 38 |
+| CA | 170 | 100 | 270 |
+| LDP | 186 | 124 | 310 |
+| Conservative | 20 | 40 | 60 |
 | Libertarian | 0 | 16 | 16 |
-| NF | 0 | 26 | 26 |
+| NF | 0 | 28 | 28 |
 | **Total** | **400** | **400** | **800** |
 
 Wizlandia has 400 single-member districts. As in the original simulator, the closest party to each district median wins. Under Euclidean voter preferences and centrally symmetric district electorates, that party is the Condorcet winner and therefore wins Ranked Pairs. This is the existing spatial model's interpretation, rather than an implementation that constructs individual ballots and executes a Ranked Pairs tally.
@@ -298,7 +295,7 @@ largest first.
 Run `node tests/coalition-priority.test.js` to check all tiers, the cordon,
 ranking, the four-suggestion limit, and the empty state.
 
-Validation includes 156 cartogram renders, 184 Assembly layouts, and full-app event checks. Browser review confirms the PR chart’s fixed party order, percentage labels and live updates. Party-compass checks cover square-root radius sizing and fixed ±10 axes, zero-seat markers, all three seat components, two-way dot/card selection, keyboard activation, dark mode, and the relocated original density plot. Measured map dimensions are two-thirds of their previous size for all 12 states, with the nationwide dimensions unchanged. The original national electorate, district medians and geographic assignments are preserved; election outcomes reflect the updated party positions.
+Validation includes 156 cartogram renders, 184 Assembly layouts, and full-app event checks. Browser review confirms the PR chart’s fixed party order, percentage labels and live updates. Party-compass checks cover square-root radius sizing and fixed ±10 axes, zero-seat markers, all three seat components, two-way dot/card selection, keyboard activation, dark mode, and the relocated original density plot. Measured map dimensions are two-thirds of their previous size for all 12 states, with the nationwide dimensions unchanged. The original election calibration and geographic assignments are preserved.
 
 The coastline-based update samples the five landmass silhouettes on a common hex lattice, balances exact state tile capacities, repairs state-piece connectivity, and transports the existing district anchors within their own state and landmass. It changes no district population, type, compass point, model index or ID. The new `stateBorders` metadata deduplicates shared edges on an integer lattice.
 
