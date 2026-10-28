@@ -147,7 +147,7 @@ To try it locally, open `index.html` in a browser. Alternatively, run `python3 -
 - National vote shares, a linked party-bubble Compass, and a separate Districts Median Position plot with party regions, voter density and contours.
 - 400 individually positioned districts, with searchable results and a competitiveness sort.
 - Coalition selection and minimal winning coalition combinations.
-- Seeded single draws and batches of up to 100 elections, a batch summary and restorable run history; summaries follow the selected component.
+- Seeded single draws and batches of up to 100 elections, a batch summary and restorable run history; summaries follow the selected component. A fresh editable seed is generated when the page opens, using browser randomness with a time-based fallback. The displayed seed initializes both single draws and batches; manually entered seeds and saved configurations remain reproducible.
 - Editable party coordinates for exploratory scenarios.
 - JSON configuration save/load; results, districts and history CSV downloads; Assembly, vote-share chart and cartogram SVG downloads.
 - Light and dark themes, keyboard-operable controls and a responsive layout.

@@ -19,14 +19,29 @@ const body=node(),scroll=node();let lastBlob;
 const document={body,activeElement:null,getElementById(id){assert.ok(nodes.has(id),'Missing real HTML element: '+id);return nodes.get(id);},
  querySelectorAll(query){const key=query.slice(1,-1);return all.filter(n=>Object.hasOwn(n.attributes,key)||Object.hasOwn(n.dataset,key.replace(/^data-/,'')));},
  querySelector:()=>scroll,createElement:()=>node()};
-const context={window:{WizlandiaData:D,WizlandiaEngine:E,WizlandiaDiagrams:G,WizlandiaGeography:H},document,
+const generatedSeeds=[0x89abcdef,0xfedcba98];let generatedSeedCount=0;
+const context={window:{WizlandiaData:D,WizlandiaEngine:E,WizlandiaDiagrams:G,WizlandiaGeography:H,crypto:{getRandomValues(values){assert.equal(values.length,1);values[0]=generatedSeeds[generatedSeedCount++];return values;}}},document,
  getComputedStyle:()=>({getPropertyValue:key=>({'--text':'#202535','--muted':'#727581','--border':'#e1e1dc','--accent':'#9b7d37'}[key]||'#202535')}),localStorage:{getItem(){return null},setItem(){}},
  setTimeout:()=>1,clearTimeout(){},cancelAnimationFrame(){},requestAnimationFrame:f=>{f();return 1},
  URL:{createObjectURL(blob){lastBlob=blob;return 'blob:test'},revokeObjectURL(){}},Blob,console};
-vm.runInNewContext(fs.readFileSync(require.resolve('../app.js'),'utf8'),context);
+const appSource=fs.readFileSync(require.resolve('../app.js'),'utf8');
+vm.runInNewContext(appSource,context);
+assert.equal(Number(nodes.get('seed').value),generatedSeeds[0]);
+vm.runInNewContext(appSource,context);
+assert.equal(Number(nodes.get('seed').value),generatedSeeds[1],'A new page initialization must use its fresh generated seed');
 if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREVIEW_SVG,nodes.get('hemicycle').innerHTML);
 (async()=>{
  const get=id=>nodes.get(id);
+ const readConfig=async()=>{get('save-config').onclick();return JSON.parse(await lastBlob.text());};
+ const checkRandomDraw=async generator=>{
+   const expected=E.drawShocks(generator);get('random-mode').onclick();get('run').onclick();
+   const saved=await readConfig();
+   for(const key of ['economic','cultural','variance'])assert.equal(saved[key],expected[key],'Random draws must use the visible seed and preserve the seeded sequence');
+   return saved;
+ };
+ const startupConfig=await checkRandomDraw(new E.Mulberry32(generatedSeeds[1]));
+ assert.equal(startupConfig.seed,generatedSeeds[1]);assert.equal(generatedSeedCount,2,'Drawing must not silently replace the seed');
+ get('baseline').onclick();
  assert.match(get('ticker').textContent,/Combined/);
  assert.equal(get('runs').value,'20');assert.ok(!nodes.has('tab-cartogram'));assert.ok(!nodes.has('cartogram-legend'));
  assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);assert.equal(get('panel-votes').hidden,true);
@@ -79,7 +94,23 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  get('export-districts').onclick();assert.equal((await lastBlob.text()).trim().split('\n').length,401);
  const config={version:1,economic:.1,cultural:.2,variance:1,spread:0,seed:1,runs:3,parties:D.parties.map(({code,x,y})=>({code,x,y}))};
  get('load-config').files=[{size:1000,text:async()=>JSON.stringify(config)}];await get('load-config').onchange({target:get('load-config')});
- assert.equal(get('notice').textContent,'Configuration loaded.');get('save-config').onclick();assert.equal(JSON.parse(await lastBlob.text()).spread,.2);
+ assert.equal(get('notice').textContent,'Configuration loaded.');const loadedConfig=await readConfig();assert.equal(loadedConfig.spread,.2);assert.equal(loadedConfig.seed,1);assert.equal(Number(get('seed').value),1);
  get('theme').onclick();get('view-district').onclick();assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,400);
- console.log('Interface event checks passed: full app startup, fixed variation, square-root party compass, two-way mouse and keyboard selection, relocated medians tab, live vote-share chart, political party order, map, tile inspection, state zoom/filter, Combined-only majority, 400-row export, old config normalization and theme switch.');
+ // Manual boundary seeds must still replay complete sequences and survive saves.
+ for(const seed of [0,4294967295]){
+   for(let repeat=0;repeat<2;repeat++){
+     get('seed').value=String(seed);get('seed').listeners.change();const generator=new E.Mulberry32(seed);
+     for(let draw=0;draw<2;draw++)assert.equal((await checkRandomDraw(generator)).seed,seed);
+   }
+ }
+ // Without browser randomness, different load times must still produce valid seeds.
+ context.window.crypto=undefined;let now=1793200000000;
+ context.Date={now:()=>now};context.Math=Object.create(Math);context.Math.random=()=>.25;
+ vm.runInNewContext(appSource,context);const firstFallback=Number(get('seed').value);
+ assert.ok(Number.isInteger(firstFallback)&&firstFallback>=0&&firstFallback<=4294967295);
+ now++;vm.runInNewContext(appSource,context);const secondFallback=Number(get('seed').value);
+ assert.ok(Number.isInteger(secondFallback)&&secondFallback>=0&&secondFallback<=4294967295);
+ assert.notEqual(firstFallback,secondFallback,'The fallback must vary with the page-load time');
+ await checkRandomDraw(new E.Mulberry32(secondFallback));
+ console.log('Interface event checks passed: fresh page-load seeds, visible-seed replay, manual boundary seeds, configuration preservation, time-based fallback, full app startup, fixed variation, square-root party compass, linked selection, medians tab, vote-share chart, map, district inspection, export and theme switch.');
 })().catch(e=>{console.error(e);process.exitCode=1});

@@ -4,8 +4,10 @@ const D=window.WizlandiaData,E=window.WizlandiaEngine,G=window.WizlandiaDiagrams
 const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const signed=(v,n=2)=>(v>=0?'+':'')+v.toFixed(n),pct=v=>(100*v).toFixed(1)+'%';
 const swatch=p=>`<span class="swatch" style="background:${p.color}"></span>`;
+const initialSeed=createRandomSeed();
+$('seed').value=String(initialSeed);
 let state={economic:0,cultural:0,variance:1,spread:D.spread,parties:D.parties.map(p=>({...p}))};
-let current=E.evaluate(),history=[],nextRun=1,selected=new Set(),mode='manual',activeTab='overview',rng=new E.Mulberry32(20261014),batchStats=null,busy=false;
+let current=E.evaluate(),history=[],nextRun=1,selected=new Set(),mode='manual',activeTab='overview',rng=new E.Mulberry32(initialSeed),batchStats=null,busy=false;
 let noticeTimer,frame,compassDots=[],view='combined',inspectedDistrict=null;
 const displayOrder=D.displayOrder;
 const largestPartiesFirst=(indices,seats)=>indices.slice().sort((a,b)=>seats[b]-seats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b));
@@ -343,6 +345,12 @@ function drawDistrictMedians(){
 }
 function recompute(){try{current=E.evaluate(state.economic,state.cultural,state.variance,state.spread,state.parties);render();}catch(error){notice(error.message);}}
 function restore(result){state={economic:result.economic,cultural:result.cultural,variance:result.variance,spread:D.spread,parties:result.parties.map(p=>({...p}))};current=result;render();}
+function createRandomSeed(){
+  if(window.crypto&&typeof window.crypto.getRandomValues==='function'){
+    const value=new Uint32Array(1);window.crypto.getRandomValues(value);return value[0];
+  }
+  return(Date.now()^Math.floor(Math.random()*4294967296))>>>0;
+}
 function getSeed(){const n=Number($('seed').value);if(!Number.isInteger(n)||n<0||n>4294967295)throw new Error('Enter an integer seed between 0 and 4294967295.');return n;}
 function setMode(value){mode=value;$('manual-mode').classList.toggle('active',value==='manual');$('random-mode').classList.toggle('active',value==='random');$('run').textContent=value==='manual'?'▶ Run election':'⚄ Draw election';$('mode-hint').textContent=value==='manual'?'Sliders update the preview. Run saves it to history.':'Draw a new seeded shock around the same baseline.';}
 function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.hidden=true;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);}
