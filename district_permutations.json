@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "orderedSwaps": [
     [
       "NX-59",
@@ -61,9 +61,15 @@
     "EW-06": "KR-22",
     "AX-15": "AX-18",
     "AX-18": "ET-01",
+    "AX-49": "KR-14",
     "ET-01": "AX-15",
     "ET-21": "NX-77",
+    "ET-23": "EX-11",
+    "EX-11": "ET-23",
     "KR-01": "KR-16",
+    "KR-12": "KR-13",
+    "KR-13": "AX-49",
+    "KR-14": "KR-12",
     "KR-16": "KR-01",
     "KR-18": "LX-21",
     "KR-22": "EW-04",
@@ -112,7 +118,7 @@
     "coldNorthShare"
   ],
   "identityHash": "cabd9271bb3b2016407f85e4ff1c98a16b6ee1a8ffdb2c741fb8813eeb2ff4c5",
-  "unaffectedPoliticalHash": "9a594cda7d6622b512b919d4b6bd825c4441ec17ed384c468355e8d53e73d71d",
+  "unaffectedPoliticalHash": "ffecd0d8cac9ea7c7a773fad925276e7338a9ca5d100115529e2996c7f9b73e1",
   "typeCountsBefore": {
     "1": 8,
     "2": 8,
@@ -211,6 +217,28 @@
       }
     },
     {
+      "district": "AX-49",
+      "receivesFrom": "KR-14",
+      "before": {
+        "type": 6,
+        "typeName": "Mixed urban service-worker districts",
+        "family": "Urban core",
+        "legacyId": "06-06",
+        "x": -0.3440486925971554,
+        "y": -0.8130684585103278,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 7,
+        "typeName": "Capital-city public-employment districts",
+        "family": "Urban core",
+        "legacyId": "07-06",
+        "x": 2.1656285344857844,
+        "y": -1.7639006280486953,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
       "district": "ET-01",
       "receivesFrom": "AX-15",
       "before": {
@@ -251,6 +279,28 @@
         "legacyId": "09-04",
         "x": 2.584303870767574,
         "y": -1.7364213108008548,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "ET-23",
+      "receivesFrom": "EX-11",
+      "before": {
+        "type": 9,
+        "typeName": "Cosmopolitan merchant and migrant districts",
+        "family": "Urban core",
+        "legacyId": "09-06",
+        "x": 2.596877114061035,
+        "y": -2.0461742544016266,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 7,
+        "typeName": "Capital-city public-employment districts",
+        "family": "Urban core",
+        "legacyId": "07-04",
+        "x": 2.0417620796279046,
+        "y": -1.7580785181611691,
         "baselineWinner": "LDP"
       }
     },
@@ -299,6 +349,28 @@
       }
     },
     {
+      "district": "EX-11",
+      "receivesFrom": "ET-23",
+      "before": {
+        "type": 7,
+        "typeName": "Capital-city public-employment districts",
+        "family": "Urban core",
+        "legacyId": "07-04",
+        "x": 2.0417620796279046,
+        "y": -1.7580785181611691,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 9,
+        "typeName": "Cosmopolitan merchant and migrant districts",
+        "family": "Urban core",
+        "legacyId": "09-06",
+        "x": 2.596877114061035,
+        "y": -2.0461742544016266,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
       "district": "KR-01",
       "receivesFrom": "KR-16",
       "before": {
@@ -318,6 +390,72 @@
         "x": 0.5693171348953294,
         "y": -1.1933231402490816,
         "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "KR-12",
+      "receivesFrom": "KR-13",
+      "before": {
+        "type": 1,
+        "typeName": "Financial and corporate centres",
+        "family": "Urban core",
+        "legacyId": "01-08",
+        "x": 4.996942697063085,
+        "y": -1.7019737329711124,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 2,
+        "typeName": "Affluent inner-city professional districts",
+        "family": "Urban core",
+        "legacyId": "02-07",
+        "x": 3.818751058962479,
+        "y": -2.5441557335722393,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "KR-13",
+      "receivesFrom": "AX-49",
+      "before": {
+        "type": 2,
+        "typeName": "Affluent inner-city professional districts",
+        "family": "Urban core",
+        "legacyId": "02-07",
+        "x": 3.818751058962479,
+        "y": -2.5441557335722393,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 6,
+        "typeName": "Mixed urban service-worker districts",
+        "family": "Urban core",
+        "legacyId": "06-06",
+        "x": -0.3440486925971554,
+        "y": -0.8130684585103278,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "KR-14",
+      "receivesFrom": "KR-12",
+      "before": {
+        "type": 7,
+        "typeName": "Capital-city public-employment districts",
+        "family": "Urban core",
+        "legacyId": "07-06",
+        "x": 2.1656285344857844,
+        "y": -1.7639006280486953,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 1,
+        "typeName": "Financial and corporate centres",
+        "family": "Urban core",
+        "legacyId": "01-08",
+        "x": 4.996942697063085,
+        "y": -1.7019737329711124,
+        "baselineWinner": "LDP"
       }
     },
     {
@@ -818,53 +956,163 @@
     ]
   },
   "latestPermutation": {
-    "version": 6,
+    "version": 7,
+    "orderedSwaps": [
+      [
+        "EX-11",
+        "ET-23"
+      ],
+      [
+        "AX-49",
+        "KR-14"
+      ],
+      [
+        "KR-14",
+        "KR-12"
+      ],
+      [
+        "KR-13",
+        "KR-12"
+      ]
+    ],
     "simultaneousReceives": {
-      "AX-15": "ET-01",
-      "ET-01": "AX-15"
+      "EX-11": "ET-23",
+      "ET-23": "EX-11",
+      "AX-49": "KR-14",
+      "KR-14": "KR-12",
+      "KR-12": "KR-13",
+      "KR-13": "AX-49"
     },
     "changes": [
       {
-        "district": "AX-15",
-        "receivesFrom": "ET-01",
+        "district": "EX-11",
+        "receivesFrom": "ET-23",
         "before": {
-          "type": 45,
-          "typeName": "Port trading and import-export districts",
-          "family": "Specialised",
-          "legacyId": "45-02",
-          "x": 1.876623355416712,
-          "y": 0.025765731438906668,
-          "baselineWinner": "CA"
+          "type": 7,
+          "typeName": "Capital-city public-employment districts",
+          "family": "Urban core",
+          "legacyId": "07-04",
+          "x": 2.0417620796279046,
+          "y": -1.7580785181611691,
+          "baselineWinner": "LDP"
         },
         "after": {
-          "type": 18,
-          "typeName": "Diverse first-home buyer suburbs",
-          "family": "Suburban / exurban",
-          "legacyId": "18-05",
-          "x": 1.941803860283031,
-          "y": -0.9186151797861938,
-          "baselineWinner": "CA"
+          "type": 9,
+          "typeName": "Cosmopolitan merchant and migrant districts",
+          "family": "Urban core",
+          "legacyId": "09-06",
+          "x": 2.596877114061035,
+          "y": -2.0461742544016266,
+          "baselineWinner": "LDP"
         }
       },
       {
-        "district": "ET-01",
-        "receivesFrom": "AX-15",
+        "district": "ET-23",
+        "receivesFrom": "EX-11",
         "before": {
-          "type": 18,
-          "typeName": "Diverse first-home buyer suburbs",
-          "family": "Suburban / exurban",
-          "legacyId": "18-05",
-          "x": 1.941803860283031,
-          "y": -0.9186151797861938,
+          "type": 9,
+          "typeName": "Cosmopolitan merchant and migrant districts",
+          "family": "Urban core",
+          "legacyId": "09-06",
+          "x": 2.596877114061035,
+          "y": -2.0461742544016266,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 7,
+          "typeName": "Capital-city public-employment districts",
+          "family": "Urban core",
+          "legacyId": "07-04",
+          "x": 2.0417620796279046,
+          "y": -1.7580785181611691,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "AX-49",
+        "receivesFrom": "KR-14",
+        "before": {
+          "type": 6,
+          "typeName": "Mixed urban service-worker districts",
+          "family": "Urban core",
+          "legacyId": "06-06",
+          "x": -0.3440486925971554,
+          "y": -0.8130684585103278,
           "baselineWinner": "CA"
         },
         "after": {
-          "type": 45,
-          "typeName": "Port trading and import-export districts",
-          "family": "Specialised",
-          "legacyId": "45-02",
-          "x": 1.876623355416712,
-          "y": 0.025765731438906668,
+          "type": 7,
+          "typeName": "Capital-city public-employment districts",
+          "family": "Urban core",
+          "legacyId": "07-06",
+          "x": 2.1656285344857844,
+          "y": -1.7639006280486953,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "KR-14",
+        "receivesFrom": "KR-12",
+        "before": {
+          "type": 7,
+          "typeName": "Capital-city public-employment districts",
+          "family": "Urban core",
+          "legacyId": "07-06",
+          "x": 2.1656285344857844,
+          "y": -1.7639006280486953,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 1,
+          "typeName": "Financial and corporate centres",
+          "family": "Urban core",
+          "legacyId": "01-08",
+          "x": 4.996942697063085,
+          "y": -1.7019737329711124,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "KR-12",
+        "receivesFrom": "KR-13",
+        "before": {
+          "type": 1,
+          "typeName": "Financial and corporate centres",
+          "family": "Urban core",
+          "legacyId": "01-08",
+          "x": 4.996942697063085,
+          "y": -1.7019737329711124,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 2,
+          "typeName": "Affluent inner-city professional districts",
+          "family": "Urban core",
+          "legacyId": "02-07",
+          "x": 3.818751058962479,
+          "y": -2.5441557335722393,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "KR-13",
+        "receivesFrom": "AX-49",
+        "before": {
+          "type": 2,
+          "typeName": "Affluent inner-city professional districts",
+          "family": "Urban core",
+          "legacyId": "02-07",
+          "x": 3.818751058962479,
+          "y": -2.5441557335722393,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 6,
+          "typeName": "Mixed urban service-worker districts",
+          "family": "Urban core",
+          "legacyId": "06-06",
+          "x": -0.3440486925971554,
+          "y": -0.8130684585103278,
           "baselineWinner": "CA"
         }
       }
@@ -1117,6 +1365,169 @@
             "legacyId": "45-02",
             "x": 1.876623355416712,
             "y": 0.025765731438906668,
+            "baselineWinner": "CA"
+          }
+        }
+      ]
+    },
+    {
+      "version": 7,
+      "orderedSwaps": [
+        [
+          "EX-11",
+          "ET-23"
+        ],
+        [
+          "AX-49",
+          "KR-14"
+        ],
+        [
+          "KR-14",
+          "KR-12"
+        ],
+        [
+          "KR-13",
+          "KR-12"
+        ]
+      ],
+      "simultaneousReceives": {
+        "EX-11": "ET-23",
+        "ET-23": "EX-11",
+        "AX-49": "KR-14",
+        "KR-14": "KR-12",
+        "KR-12": "KR-13",
+        "KR-13": "AX-49"
+      },
+      "changes": [
+        {
+          "district": "EX-11",
+          "receivesFrom": "ET-23",
+          "before": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-04",
+            "x": 2.0417620796279046,
+            "y": -1.7580785181611691,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 9,
+            "typeName": "Cosmopolitan merchant and migrant districts",
+            "family": "Urban core",
+            "legacyId": "09-06",
+            "x": 2.596877114061035,
+            "y": -2.0461742544016266,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "ET-23",
+          "receivesFrom": "EX-11",
+          "before": {
+            "type": 9,
+            "typeName": "Cosmopolitan merchant and migrant districts",
+            "family": "Urban core",
+            "legacyId": "09-06",
+            "x": 2.596877114061035,
+            "y": -2.0461742544016266,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-04",
+            "x": 2.0417620796279046,
+            "y": -1.7580785181611691,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "AX-49",
+          "receivesFrom": "KR-14",
+          "before": {
+            "type": 6,
+            "typeName": "Mixed urban service-worker districts",
+            "family": "Urban core",
+            "legacyId": "06-06",
+            "x": -0.3440486925971554,
+            "y": -0.8130684585103278,
+            "baselineWinner": "CA"
+          },
+          "after": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-06",
+            "x": 2.1656285344857844,
+            "y": -1.7639006280486953,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "KR-14",
+          "receivesFrom": "KR-12",
+          "before": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-06",
+            "x": 2.1656285344857844,
+            "y": -1.7639006280486953,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 1,
+            "typeName": "Financial and corporate centres",
+            "family": "Urban core",
+            "legacyId": "01-08",
+            "x": 4.996942697063085,
+            "y": -1.7019737329711124,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "KR-12",
+          "receivesFrom": "KR-13",
+          "before": {
+            "type": 1,
+            "typeName": "Financial and corporate centres",
+            "family": "Urban core",
+            "legacyId": "01-08",
+            "x": 4.996942697063085,
+            "y": -1.7019737329711124,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 2,
+            "typeName": "Affluent inner-city professional districts",
+            "family": "Urban core",
+            "legacyId": "02-07",
+            "x": 3.818751058962479,
+            "y": -2.5441557335722393,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "KR-13",
+          "receivesFrom": "AX-49",
+          "before": {
+            "type": 2,
+            "typeName": "Affluent inner-city professional districts",
+            "family": "Urban core",
+            "legacyId": "02-07",
+            "x": 3.818751058962479,
+            "y": -2.5441557335722393,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 6,
+            "typeName": "Mixed urban service-worker districts",
+            "family": "Urban core",
+            "legacyId": "06-06",
+            "x": -0.3440486925971554,
+            "y": -0.8130684585103278,
             "baselineWinner": "CA"
           }
         }

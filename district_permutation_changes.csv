@@ -1,11 +1,17 @@
 district,receives_from,locality,old_type_id,old_type,new_type_id,new_type,old_legacy_id,new_legacy_id,old_economy,old_culture,new_economy,new_culture
 AX-15,AX-18,Lakeside,45,Port trading and import-export districts,18,Diverse first-home buyer suburbs,45-02,18-05,1.876623355416712,0.025765731438906668,1.941803860283031,-0.9186151797861938
 AX-18,ET-01,Lakeside,18,Diverse first-home buyer suburbs,6,Mixed urban service-worker districts,18-05,06-07,1.941803860283031,-0.9186151797861938,-0.3582308912170805,-0.6873668567045366
+AX-49,KR-14,Avondale,6,Mixed urban service-worker districts,7,Capital-city public-employment districts,06-06,07-06,-0.3440486925971554,-0.8130684585103278,2.1656285344857844,-1.7639006280486953
 ET-01,AX-15,Northport,6,Mixed urban service-worker districts,45,Port trading and import-export districts,06-07,45-02,-0.3582308912170805,-0.6873668567045366,1.876623355416712,0.025765731438906668
 ET-21,NX-77,Lyanna,44,Officer-family and defence-contractor districts,9,Cosmopolitan merchant and migrant districts,44-02,09-04,4.046119393096416,1.7685235626549347,2.584303870767574,-1.7364213108008548
+ET-23,EX-11,Lyanna,9,Cosmopolitan merchant and migrant districts,7,Capital-city public-employment districts,09-06,07-04,2.596877114061035,-2.0461742544016266,2.0417620796279046,-1.7580785181611691
 EW-04,EW-06,Wintervale,45,Port trading and import-export districts,13,Educated professional family suburbs,45-01,13-04,1.9233766445832878,0.14061402246714336,3.3780532796689644,-1.4278328814339702
 EW-06,KR-22,North Covina,13,Educated professional family suburbs,44,Officer-family and defence-contractor districts,13-04,44-04,3.3780532796689644,-1.4278328814339702,4.024591469086167,1.4379506978752241
+EX-11,ET-23,Westhaven,7,Capital-city public-employment districts,9,Cosmopolitan merchant and migrant districts,07-04,09-06,2.0417620796279046,-1.7580785181611691,2.596877114061035,-2.0461742544016266
 KR-01,KR-16,Kroana hinterland,29,Healthcare and administrative centres,32,Rail-connected commuter towns,29-06,32-05,0.06400130144145597,-0.7475100899757603,0.5693171348953294,-1.1933231402490816
+KR-12,KR-13,Kroana City,1,Financial and corporate centres,2,Affluent inner-city professional districts,01-08,02-07,4.996942697063085,-1.7019737329711124,3.818751058962479,-2.5441557335722393
+KR-13,AX-49,Kroana City,2,Affluent inner-city professional districts,6,Mixed urban service-worker districts,02-07,06-06,3.818751058962479,-2.5441557335722393,-0.3440486925971554,-0.8130684585103278
+KR-14,KR-12,Kroana City,7,Capital-city public-employment districts,1,Financial and corporate centres,07-06,01-08,2.1656285344857844,-1.7639006280486953,4.996942697063085,-1.7019737329711124
 KR-16,KR-01,Kroana City,32,Rail-connected commuter towns,29,Healthcare and administrative centres,32-05,29-06,0.5693171348953294,-1.1933231402490816,0.06400130144145597,-0.7475100899757603
 KR-18,LX-21,Kroana City,4,Creative and gentrifying inner districts,5,Established working-class urban districts,04-07,05-12,0.47537563628645496,-2.7134772284362034,-2.254769199009582,-0.8556632685358521
 KR-22,EW-04,Davenport,44,Officer-family and defence-contractor districts,45,Port trading and import-export districts,44-04,45-01,4.024591469086167,1.4379506978752241,1.9233766445832878,0.14061402246714336

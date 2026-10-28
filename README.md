@@ -70,7 +70,7 @@ colour (`#246d78`), reflecting waterfront neighbourhoods in major cities.
 Only the name and family classification changed; both district compass
 positions, the type centre, type count and election calculations are unchanged.
 
-## District type and compass permutations (version 6)
+## District type and compass permutations (version 7)
 
 The requested district swaps change **type, full type name, type family, legacy
 model ID, compass coordinates and derived baseline winner together**. Each
@@ -97,7 +97,13 @@ AX-15 and ET-01 then exchange their current type and compass profiles.
 The earlier AX-18/ET-01 exchange remains composed into this result; AX-18
 keeps its profile from that earlier exchange.
 
-There are **29 affected districts** across the retained permutations. `district_permutation_changes.csv` lists
+The next four swaps are applied in the supplied order: EX-11/ET-23,
+AX-49/KR-14, KR-14/KR-12, then KR-13/KR-12. The net transfer is
+EX-11 receiving ET-23 and vice versa; AX-49 receives the former KR-14
+profile, KR-14 receives KR-12, KR-12 receives KR-13, and KR-13 receives
+AX-49. Each source refers to its profile before this group of four swaps.
+
+There are **35 affected districts** across the retained permutations. `district_permutation_changes.csv` lists
 all old/new types and coordinates; `district_permutations.json` records the
 input swaps, the effective permutation and verification hashes. Earlier
 within-type permutation records are retained separately in
