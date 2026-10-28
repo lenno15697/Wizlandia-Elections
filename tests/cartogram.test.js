@@ -76,6 +76,27 @@ for(const shifts of [[0,0,1],[.3,-.25,1],[-1,1,2],[1,-1,.5]])for(const color of 
  }
  rendered++;
 }
+// Four CA seats, four Conservative seats and one SDP seat in Illixium.
+// National Combined seats break ties in both state and all-states results.
+function tiedStateOrder(state,prSeats,extraCon=0){
+ let local=0,outside=0;
+ const rows=base.rows.map(d=>({...d,winner:d.stateCode==='IL'?([1,1,1,1,3,3,3,3,2][local++]):(outside++<extraCon?3:0)}));
+ const districtSeats=D.parties.map((_,i)=>rows.filter(d=>d.winner===i).length);
+ const current={...base,rows,districtSeats,prSeats,combinedSeats:districtSeats.map((n,i)=>n+prSeats[i])};
+ const nodes=new Map(),$=id=>{if(!nodes.has(id))nodes.set(id,{value:'all',innerHTML:'',classList:{toggle(){}}});return nodes.get(id);};
+ $('cartogram-state').value=state;$('cartogram-color').value='winner';
+ vm.runInNewContext(cartogram+'\nrenderCartogram()',{
+   current,H,displayOrder:D.displayOrder,largestPartiesFirst:(ids,seats)=>ids.slice().sort((a,b)=>seats[b]-seats[a]||D.displayOrder.indexOf(a)-D.displayOrder.indexOf(b)),selected:new Set(),inspectedDistrict:null,$,esc:String,swatch:()=>'',
+   document:{body:{classList:{contains:()=>false}},querySelector:()=>({classList:{toggle(){}}})}
+ });
+ return [...$('cartogram-state-results').innerHTML.matchAll(/<span>([^<]+)<\/span><strong>\d+<\/strong>/g)].map(m=>D.parties.find(p=>p.name===m[1]).code);
+}
+assert.deepEqual(tiedStateOrder('IL',[0,180,20,200,0,0,0,0,0]),['CON','CA','SDP']);
+assert.deepEqual(tiedStateOrder('all',[0,180,20,200,0,0,0,0,0]),['LDP','CON','CA','SDP']);
+assert.deepEqual(tiedStateOrder('IL',[0,210,0,190,0,0,0,0,0],40),['CON','CA','SDP']);
+assert.deepEqual(tiedStateOrder('IL',[0,200,0,200,0,0,0,0,0]),['CA','CON','SDP']);
+assert.deepEqual(tiedStateOrder('all',[0,200,0,200,0,0,0,0,0]),['LDP','CA','CON','SDP']);
+assert.deepEqual(tiedStateOrder('IL',[0,50,250,100,0,0,0,0,0]),['CON','CA','SDP']);
 const nodes=new Map(),$=id=>{if(!nodes.has(id))nodes.set(id,{value:'all',innerHTML:''});return nodes.get(id)};
 $('district-search').value='';$('district-state').value='IL';$('district-sort').value='id';
 vm.runInNewContext(districts+'\nrenderDistricts()',{current:base,$,esc:String,swatch:()=>''});

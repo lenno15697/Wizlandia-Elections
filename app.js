@@ -185,6 +185,7 @@ function renderCartogram(){
   const results=$('cartogram-state-results');results.hidden=false;
   const counts=current.parties.map((_,i)=>rows.filter(d=>d.winner===i).length);
   const winners=largestPartiesFirst(displayOrder.filter(i=>counts[i]>0),counts);
+  winners.sort((a,b)=>counts[b]-counts[a]||current.combinedSeats[b]-current.combinedSeats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b));
   const heading=stateFilter==='all'?'Nationwide':states[0].name;
   results.innerHTML=`<div class="state-results-heading"><strong>${esc(heading)}</strong><span>${rows.length} district seats</span></div><div class="state-party-results">${winners.map(i=>{const p=current.parties[i];return`<div class="state-party-result" style="--party:${p.color}">${swatch(p)}<span>${esc(p.name)}</span><strong>${counts[i]}</strong></div>`;}).join('')}</div>`;
   const d=rows.find(d=>d.id===inspectedDistrict);
