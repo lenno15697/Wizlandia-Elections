@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "orderedSwaps": [
     [
       "NX-59",
@@ -60,6 +60,7 @@
     "NX-77": "ET-21",
     "EW-04": "EW-06",
     "EW-06": "KR-22",
+    "EW-58": "WT-14",
     "AX-15": "AX-18",
     "AX-18": "ET-01",
     "AX-49": "KR-14",
@@ -80,6 +81,7 @@
     "WT-09": "WT-12",
     "WT-11": "LQ-16",
     "WT-12": "WT-09",
+    "WT-14": "EW-58",
     "WT-15": "WT-02",
     "QL-05": "QL-12",
     "QL-12": "QL-05"
@@ -119,7 +121,7 @@
     "coldNorthShare"
   ],
   "identityHash": "cabd9271bb3b2016407f85e4ff1c98a16b6ee1a8ffdb2c741fb8813eeb2ff4c5",
-  "unaffectedPoliticalHash": "bcc234d3a59d861e63494a7a26ccc969d6df634e1d4c3388d04a3393e3f19382",
+  "unaffectedPoliticalHash": "18419947ba9e9a75981288cb8facf75c68bc98b7919814ef47bd4dd3b04ad127",
   "typeCountsBefore": {
     "1": 8,
     "2": 8,
@@ -347,6 +349,28 @@
         "x": 4.024591469086167,
         "y": 1.4379506978752241,
         "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "EW-58",
+      "receivesFrom": "WT-14",
+      "before": {
+        "type": 23,
+        "typeName": "Diversified regional-city centres",
+        "family": "Regional city / town",
+        "legacyId": "23-09",
+        "x": 0.86581734508351,
+        "y": -0.4634489502949686,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 28,
+        "typeName": "Regional university and college towns",
+        "family": "Regional city / town",
+        "legacyId": "28-08",
+        "x": -0.1581675476715989,
+        "y": -2.2685847336709584,
+        "baselineWinner": "CA"
       }
     },
     {
@@ -944,6 +968,28 @@
       }
     },
     {
+      "district": "WT-14",
+      "receivesFrom": "EW-58",
+      "before": {
+        "type": 28,
+        "typeName": "Regional university and college towns",
+        "family": "Regional city / town",
+        "legacyId": "28-08",
+        "x": -0.1581675476715989,
+        "y": -2.2685847336709584,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 23,
+        "typeName": "Diversified regional-city centres",
+        "family": "Regional city / town",
+        "legacyId": "23-09",
+        "x": 0.86581734508351,
+        "y": -0.4634489502949686,
+        "baselineWinner": "CA"
+      }
+    },
+    {
       "district": "WT-15",
       "receivesFrom": "WT-02",
       "before": {
@@ -979,87 +1025,60 @@
     ]
   },
   "latestPermutation": {
-    "version": 8,
+    "version": 9,
     "orderedSwaps": [
       [
-        "NX-35",
-        "EX-11"
-      ],
-      [
-        "NX-35",
-        "NX-50"
+        "EW-58",
+        "WT-14"
       ]
     ],
     "simultaneousReceives": {
-      "NX-35": "NX-50",
-      "EX-11": "NX-35",
-      "NX-50": "EX-11"
+      "EW-58": "WT-14",
+      "WT-14": "EW-58"
     },
     "changes": [
       {
-        "district": "NX-35",
-        "receivesFrom": "NX-50",
+        "district": "EW-58",
+        "receivesFrom": "WT-14",
         "before": {
-          "type": 7,
-          "typeName": "Capital-city public-employment districts",
-          "family": "Urban core",
-          "legacyId": "07-01",
-          "x": 2.0755719276901914,
-          "y": -1.7838448897969732,
-          "baselineWinner": "LDP"
+          "type": 23,
+          "typeName": "Diversified regional-city centres",
+          "family": "Regional city / town",
+          "legacyId": "23-09",
+          "x": 0.86581734508351,
+          "y": -0.4634489502949686,
+          "baselineWinner": "CA"
         },
         "after": {
-          "type": 1,
-          "typeName": "Financial and corporate centres",
-          "family": "Urban core",
-          "legacyId": "01-04",
-          "x": 4.7864490126688715,
-          "y": -1.5824036117129265,
-          "baselineWinner": "LDP"
+          "type": 28,
+          "typeName": "Regional university and college towns",
+          "family": "Regional city / town",
+          "legacyId": "28-08",
+          "x": -0.1581675476715989,
+          "y": -2.2685847336709584,
+          "baselineWinner": "CA"
         }
       },
       {
-        "district": "EX-11",
-        "receivesFrom": "NX-35",
+        "district": "WT-14",
+        "receivesFrom": "EW-58",
         "before": {
-          "type": 9,
-          "typeName": "Cosmopolitan merchant and migrant districts",
-          "family": "Urban core",
-          "legacyId": "09-06",
-          "x": 2.596877114061035,
-          "y": -2.0461742544016266,
-          "baselineWinner": "LDP"
+          "type": 28,
+          "typeName": "Regional university and college towns",
+          "family": "Regional city / town",
+          "legacyId": "28-08",
+          "x": -0.1581675476715989,
+          "y": -2.2685847336709584,
+          "baselineWinner": "CA"
         },
         "after": {
-          "type": 7,
-          "typeName": "Capital-city public-employment districts",
-          "family": "Urban core",
-          "legacyId": "07-01",
-          "x": 2.0755719276901914,
-          "y": -1.7838448897969732,
-          "baselineWinner": "LDP"
-        }
-      },
-      {
-        "district": "NX-50",
-        "receivesFrom": "EX-11",
-        "before": {
-          "type": 1,
-          "typeName": "Financial and corporate centres",
-          "family": "Urban core",
-          "legacyId": "01-04",
-          "x": 4.7864490126688715,
-          "y": -1.5824036117129265,
-          "baselineWinner": "LDP"
-        },
-        "after": {
-          "type": 9,
-          "typeName": "Cosmopolitan merchant and migrant districts",
-          "family": "Urban core",
-          "legacyId": "09-06",
-          "x": 2.596877114061035,
-          "y": -2.0461742544016266,
-          "baselineWinner": "LDP"
+          "type": 23,
+          "typeName": "Diversified regional-city centres",
+          "family": "Regional city / town",
+          "legacyId": "23-09",
+          "x": 0.86581734508351,
+          "y": -0.4634489502949686,
+          "baselineWinner": "CA"
         }
       }
     ]
@@ -1561,6 +1580,65 @@
             "x": 2.596877114061035,
             "y": -2.0461742544016266,
             "baselineWinner": "LDP"
+          }
+        }
+      ]
+    },
+    {
+      "version": 9,
+      "orderedSwaps": [
+        [
+          "EW-58",
+          "WT-14"
+        ]
+      ],
+      "simultaneousReceives": {
+        "EW-58": "WT-14",
+        "WT-14": "EW-58"
+      },
+      "changes": [
+        {
+          "district": "EW-58",
+          "receivesFrom": "WT-14",
+          "before": {
+            "type": 23,
+            "typeName": "Diversified regional-city centres",
+            "family": "Regional city / town",
+            "legacyId": "23-09",
+            "x": 0.86581734508351,
+            "y": -0.4634489502949686,
+            "baselineWinner": "CA"
+          },
+          "after": {
+            "type": 28,
+            "typeName": "Regional university and college towns",
+            "family": "Regional city / town",
+            "legacyId": "28-08",
+            "x": -0.1581675476715989,
+            "y": -2.2685847336709584,
+            "baselineWinner": "CA"
+          }
+        },
+        {
+          "district": "WT-14",
+          "receivesFrom": "EW-58",
+          "before": {
+            "type": 28,
+            "typeName": "Regional university and college towns",
+            "family": "Regional city / town",
+            "legacyId": "28-08",
+            "x": -0.1581675476715989,
+            "y": -2.2685847336709584,
+            "baselineWinner": "CA"
+          },
+          "after": {
+            "type": 23,
+            "typeName": "Diversified regional-city centres",
+            "family": "Regional city / town",
+            "legacyId": "23-09",
+            "x": 0.86581734508351,
+            "y": -0.4634489502949686,
+            "baselineWinner": "CA"
           }
         }
       ]

@@ -7,6 +7,7 @@ ET-21,NX-77,Lyanna,44,Officer-family and defence-contractor districts,9,Cosmopol
 ET-23,EX-11,Lyanna,9,Cosmopolitan merchant and migrant districts,7,Capital-city public-employment districts,09-06,07-04,2.596877114061035,-2.0461742544016266,2.0417620796279046,-1.7580785181611691
 EW-04,EW-06,Wintervale,45,Port trading and import-export districts,13,Educated professional family suburbs,45-01,13-04,1.9233766445832878,0.14061402246714336,3.3780532796689644,-1.4278328814339702
 EW-06,KR-22,North Covina,13,Educated professional family suburbs,44,Officer-family and defence-contractor districts,13-04,44-04,3.3780532796689644,-1.4278328814339702,4.024591469086167,1.4379506978752241
+EW-58,WT-14,Hogsvale,23,Diversified regional-city centres,28,Regional university and college towns,23-09,28-08,0.86581734508351,-0.4634489502949686,-0.1581675476715989,-2.2685847336709584
 EX-11,NX-41,Westhaven,7,Capital-city public-employment districts,7,Capital-city public-employment districts,07-04,07-01,2.0417620796279046,-1.7580785181611691,2.0755719276901914,-1.7838448897969732
 KR-01,KR-16,Kroana hinterland,29,Healthcare and administrative centres,32,Rail-connected commuter towns,29-06,32-05,0.06400130144145597,-0.7475100899757603,0.5693171348953294,-1.1933231402490816
 KR-12,KR-13,Kroana City,1,Financial and corporate centres,2,Affluent inner-city professional districts,01-08,02-07,4.996942697063085,-1.7019737329711124,3.818751058962479,-2.5441557335722393
@@ -34,4 +35,5 @@ WT-02,WT-15,Alegow,31,Declining former industrial towns,27,Logistics and warehou
 WT-09,WT-12,East Harbour,49,Remote island and fishing communities,18,Diverse first-home buyer suburbs,49-01,18-07,0.008898030376125462,2.41148994060509,1.9917142212074612,-0.8925430194386453
 WT-11,LQ-16,East Harbour,4,Creative and gentrifying inner districts,45,Port trading and import-export districts,04-10,45-04,0.4324572408103665,-2.675128614335001,1.9722924685685972,0.11745062691939859
 WT-12,WT-09,East Harbour,18,Diverse first-home buyer suburbs,49,Remote island and fishing communities,18-07,49-01,1.9917142212074612,-0.8925430194386453,0.008898030376125462,2.41148994060509
+WT-14,EW-58,Wittan,28,Regional university and college towns,23,Diversified regional-city centres,28-08,23-09,-0.1581675476715989,-2.2685847336709584,0.86581734508351,-0.4634489502949686
 WT-15,WT-02,Wittan,27,Logistics and warehousing towns,31,Declining former industrial towns,27-10,31-06,0.47183245232840104,0.5314152663290417,-1.309664386447661,1.4518736640092764
