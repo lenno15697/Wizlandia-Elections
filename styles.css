@@ -51,6 +51,7 @@ button.party-line.is-muted:hover,button.party-line.is-muted:focus-visible{opacit
 .projection-meta small{font-size:9px}
 .assembly-content{display:grid;grid-template-columns:minmax(285px,.9fr) minmax(0,1.5fr);gap:22px;align-items:center;margin:20px 0 14px}
 .assembly-drawing{min-width:0}
+.parliament.is-pr .selection-summary{align-self:start}
 .selection-summary{--summary-color:var(--navy);border:1px solid var(--border);border-left:5px solid var(--summary-color);border-radius:9px;background:var(--surface);padding:20px 18px;box-shadow:0 2px 8px #20253505;min-width:0}
 .summary-header{display:grid;grid-template-columns:70px minmax(0,1fr);gap:14px;align-items:center}
 .summary-badge{width:70px;height:82px;background:var(--accent);padding:4px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}

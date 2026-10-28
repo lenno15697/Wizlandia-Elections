@@ -42,7 +42,11 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  const expected=E.evaluate(.3,0,1),chunk=get('cartogram').innerHTML;
  for(const r of expected.rows){assert.ok(chunk.split(`data-district="${r.id}"`)[1].split('</g>')[0].includes(`fill="${D.parties[r.winner].color}"`));}
  get('view-pr').onclick();assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);assert.ok(all.filter(n=>Object.hasOwn(n.attributes,'data-combined-only')).every(n=>n.hidden));
- get('view-combined').onclick();
+ assert.ok(get('assembly-panel').classList.contains('is-pr'));
+ const svg=get('hemicycle').innerHTML,bounds=svg.match(/viewBox="([^"]+)"/)[1].split(' ').map(Number),circles=[...svg.matchAll(/<circle[^>]*cx="([^"]+)" cy="([^"]+)" r="([^"]+)"/g)];
+ assert.equal(circles.length,400);
+ for(const [,cx,cy,r] of circles){const x=Number(cx),y=Number(cy),radius=Number(r);assert.ok(x-radius>=bounds[0]&&x+radius<=bounds[0]+bounds[2]&&y-radius>=bounds[1]&&y+radius<=bounds[1]+bounds[3],'Every PR seat must fit fully inside the exported SVG viewport');}
+ get('view-combined').onclick();assert.ok(!get('assembly-panel').classList.contains('is-pr'));
  get('tab-districts').onclick();get('district-state').value='IL';get('district-state').listeners.input();assert.equal((get('district-body').innerHTML.match(/<tr>/g)||[]).length,9);
  get('export-districts').onclick();assert.equal((await lastBlob.text()).trim().split('\n').length,401);
  const config={version:1,economic:.1,cultural:.2,variance:1,spread:0,seed:1,runs:3,parties:D.parties.map(({code,x,y})=>({code,x,y}))};

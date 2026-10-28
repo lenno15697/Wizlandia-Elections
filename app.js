@@ -99,6 +99,7 @@ function renderSummary(){
 
 function renderParliament(){
   const v=shown(),seats=v.seats,isCombined=view==='combined',westminster=$('diagram-layout').value==='westminster';
+  $('assembly-panel').classList.toggle('is-pr',view==='pr');
   $('seat-order').hidden=westminster;$('seat-order-label').hidden=westminster;
   let order=displayOrder.slice();
   if(westminster||$('seat-order').value==='size')order=largestPartiesFirst(order,seats);
@@ -137,7 +138,7 @@ function renderParliament(){
     $('diagram-hint').textContent='Each dot represents one seat. Parties follow the selected seat order; select party cards to highlight a coalition.';
   }
   const layout=westminster?'Westminster':'Hemicycle';
-  $('hemicycle').innerHTML=`<svg id="parliament-svg" xmlns="http://www.w3.org/2000/svg" viewBox="${westminster?`0 0 ${geometry.width} ${geometry.height}`:`${v.total>400?120:130} 0 ${v.total>400?660:640} ${geometry.height}`}" role="img" aria-label="${v.label} ${layout} Assembly diagram with ${v.total} seats" aria-describedby="diagram-hint"><title>Wizlandia ${v.label} Assembly · ${layout} · ${order.map(i=>`${current.parties[i].code} ${seats[i]}`).join(', ')}</title>${artwork}</svg>`;
+  $('hemicycle').innerHTML=`<svg id="parliament-svg" xmlns="http://www.w3.org/2000/svg" viewBox="${westminster?`0 0 ${geometry.width} ${geometry.height}`:`120 0 660 ${geometry.height}`}" role="img" aria-label="${v.label} ${layout} Assembly diagram with ${v.total} seats" aria-describedby="diagram-hint"><title>Wizlandia ${v.label} Assembly · ${layout} · ${order.map(i=>`${current.parties[i].code} ${seats[i]}`).join(', ')}</title>${artwork}</svg>`;
 }
 function renderCartogram(){
   const mode=$('cartogram-color').value,stateFilter=$('cartogram-state').value;
