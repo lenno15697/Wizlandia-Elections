@@ -217,7 +217,7 @@ function renderHistory(){
   $('history-body').innerHTML=history.slice().reverse().map(h=>{
     const r=h.result,seats=shown(r).seats,i=seats.indexOf(Math.max(...seats));
     const top=rankedCoalitions(r.parties,r.combinedSeats,E.component(r,'combined').majority)[0];
-    const coalition=top?`${esc(top.members.map(i=>r.parties[i].code).join(' + '))} · ${top.total} seats`:'No viable coalition';
+    const coalition=top?`<span class="history-coalition-swatches" aria-hidden="true">${top.members.map(i=>swatch(r.parties[i])).join('')}</span>${esc(top.members.map(i=>r.parties[i].code).join(' + '))} · ${top.total} seats`:'No viable coalition';
     return`<tr><td><button class="history-link" data-history="${h.id}">${esc(h.label)}</button></td><td>${signed(r.economic)}</td><td>${signed(r.cultural)}</td><td>${r.variance.toFixed(3)}×</td><td>${swatch(r.parties[i])} ${r.parties[i].code}</td><td>${coalition}</td><td>${r.districtSeats[i]}</td><td>${r.prSeats[i]}</td><td>${r.combinedSeats[i]}</td>${view==='combined'?`<td>${seats[i]>=v.majority?'Majority':'No overall majority'}</td>`:''}</tr>`;
   }).join('');
   if(!batchStats){$('batch-summary').innerHTML='';return;}

@@ -90,7 +90,7 @@ To try it locally, open `index.html` in a browser. Alternatively, run `python3 -
 - Light and dark themes, keyboard-operable controls and a responsive layout.
 - An updated Python simulator in `python/wizlandia_election_simulator.py`.
 
-The History table includes **Most Viable Coalition** immediately after **Largest party**. For each saved election, it shows the first option from “Ways to reach 401 (sorted by coalition viability)”, with party codes and Combined seat total. It always uses that run’s Combined results, regardless of the selected component. A single-party majority is shown as that party; when the ranking produces no eligible majority, the cell says “No viable coalition”. Both displays share the same ranking function.
+The History table includes **Most Viable Coalition** immediately after **Largest party**. For each saved election, it shows the first option from “Ways to reach 401 (sorted by coalition viability)”, with overlapping party-colour dots, party codes and Combined seat total. It always uses that run’s Combined results, regardless of the selected component. A single-party majority is shown as that party; when the ranking produces no eligible majority, the cell says “No viable coalition”. Both displays share the same ranking function.
 
 History is in memory, capped at the latest 200 entries. Refreshing the page resets it. Configuration saves parameters, party positions and the selected component view, not history. Older configurations without a view open in Combined. Export history as CSV before closing if you want to keep it. The theme is stored locally when browser storage is available.
 

@@ -13,7 +13,7 @@ for(const seats of [[316,195,60,56,73,35,43,14,8],[300,70,70,110,115,5,120,5,5],
 let checked=0;
 for(const view of ['combined','district','pr']){
   const nodes=new Map(),$=id=>{if(!nodes.has(id))nodes.set(id,{style:{setProperty(){}},classList:{toggle(){}},setAttribute(){}});return nodes.get(id);};
-  const c={view,current:base,history:runs,batchStats:null,selected:new Set([5,7,8]),displayOrder:D.displayOrder,$,esc:String,swatch:()=>'',signed:x=>String(x),pct:String,E,D};
+  const c={view,current:base,history:runs,batchStats:null,selected:new Set([5,7,8]),displayOrder:D.displayOrder,$,esc:String,swatch:p=>`<span class="swatch" style="background:${p.color}"></span>`,signed:x=>String(x),pct:String,E,D};
   c.shown=(r=c.current)=>E.component(r,c.view);
   vm.createContext(c);vm.runInContext(helper+'\n'+ranking+'\n'+summary+'\n'+historyRenderer+'\nrenderHistory();',c);
   const historyRows=[...$('history-body').innerHTML.matchAll(/<tr>([\s\S]*?)<\/tr>/g)];
@@ -30,6 +30,9 @@ for(const view of ['combined','district','pr']){
     const first=$('summary-paths').innerHTML.match(/data-coalition="([\d,]+)"[\s\S]*?<strong>(\d+)<\/strong>/);
     const expected=first?first[1].split(',').map(i=>run.result.parties[Number(i)].code).join(' + ')+' · '+first[2]+' seats':'No viable coalition';
     assert.equal(cells[5],expected,'History must match the saved run’s top Combined coalition in '+view+' view');
+    const coalitionHtml=[...row[1].matchAll(/<td>([\s\S]*?)<\/td>/g)][5][1];
+    const colors=[...coalitionHtml.matchAll(/style="background:([^"]+)"/g)].map(m=>m[1]);
+    assert.deepEqual(colors,first?first[1].split(',').map(i=>run.result.parties[Number(i)].color):[],'Coalition dots must match its parties in display order');
     checked++;
   }
   assert.ok($('history-body').innerHTML.includes('No viable coalition'));
