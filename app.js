@@ -246,7 +246,7 @@ function renderPartyCompass(){
   }
   artwork+=`<path d="M${px(0)},${top}V${top+size}M${left},${py(0)}H${left+size}" fill="none" stroke="${border}" stroke-width="3"/>`;
   for(const n of [-bound,0,bound])artwork+=label(px(n),top+size+30,n)+label(left-18,py(n)+6,n,'end');
-  artwork+=label(left+14,py(0)-15,'Interventionist','start',650,19)+label(left+size-14,py(0)-15,'Liberal','end',650,19);
+  artwork+=label(left+14,py(0)-15,'Socialist','start',650,19)+label(left+size-14,py(0)-15,'Liberal','end',650,19);
   artwork+=label(px(0)+15,top+32,'Traditional','start',650,20)+label(px(0)+15,top+size-18,'Progressive','start',650,20);
   artwork+=label(left+size/2,910,'Economic position');
   artwork+=`<text transform="translate(26 ${top+size/2}) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="${muted}">Cultural position</text>`;
@@ -338,7 +338,7 @@ function drawDistrictMedians(){
   c.strokeStyle=dark?'#ffffff33':'#1f253533';c.lineWidth=1;c.strokeRect(x0,y0,w,h);c.fillStyle=muted;c.font='11px sans-serif';c.textAlign='center';
   for(let x=-10;x<=10;x+=2)c.fillText(String(x),px(x),y0+h+20);
   c.textAlign='right';for(let y=-8;y<=8;y+=2)c.fillText(String(y),x0-12,py(y)+4);
-  c.textAlign='center';c.font='12px sans-serif';c.fillText('Economy · Interventionist ↔ Liberal',x0+w/2,y0+h+49);
+  c.textAlign='center';c.font='12px sans-serif';c.fillText('Economy · Socialist ↔ Liberal',x0+w/2,y0+h+49);
   c.save();c.translate(20,y0+h/2);c.rotate(-Math.PI/2);c.fillText('Culture · Progressive ↔ Traditional',0,0);c.restore();
 }
 function recompute(){try{current=E.evaluate(state.economic,state.cultural,state.variance,state.spread,state.parties);render();}catch(error){notice(error.message);}}

@@ -272,7 +272,7 @@ DISTRICT_ROWS = [
     (47, "Seasonal-worker and hospitality districts", 2, -1.92, -1.876810123046975),
     (48, "Wealthy retirement enclaves", 2, 3.9, 1.903189876953025),
     (49, "Remote island and fishing communities", 2, 0.02, 2.463189876953025),
-    (50, "Freeport and digital-nomad enclaves", 2, 5.4, -2.016810123046975),
+    (50, "Upscale waterfront and marina districts", 2, 5.4, -2.016810123046975),
 ]
 
 DISTRICT_IDS = np.array([row[0] for row in DISTRICT_ROWS], dtype=int)

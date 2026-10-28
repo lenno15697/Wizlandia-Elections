@@ -421,7 +421,7 @@ const data = {
     },
     {
       "id": 50,
-      "name": "Freeport and digital-nomad enclaves",
+      "name": "Upscale waterfront and marina districts",
       "count": 2,
       "x": 5.4,
       "y": -2.016810123046975

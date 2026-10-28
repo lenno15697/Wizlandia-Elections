@@ -64,6 +64,12 @@ Each district covers land in one state only. Proposed geographic boundaries are 
 
 All 50 original types, their counts, compass centres and model generation indices are preserved. The original ID is retained as `legacyId`; this also preserves the deterministic tie-breaking order. Type placement is a proposed interpretation of settlement and state economic notes. Finance, technology, shipbuilding, manufacturing, mining and agricultural placements have explicit geographic constraints; other types fit urban structure, state wealth and varied local neighbourhood profiles. These are assumptions, not observed voting patterns. Geographic population is separate from the calibrated nationwide Gaussian PR electorate.
 
+Type 50 is **Upscale waterfront and marina districts**, covering NX-06
+(Wizlandia City) and AK-09 (Akropolis). Both use the **Urban core** family
+colour (`#246d78`), reflecting waterfront neighbourhoods in major cities.
+Only the name and family classification changed; both district compass
+positions, the type centre, type count and election calculations are unchanged.
+
 ## District type and compass permutations (version 5)
 
 The requested district swaps change **type, full type name, type family, legacy

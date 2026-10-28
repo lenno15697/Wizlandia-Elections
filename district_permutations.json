@@ -111,7 +111,7 @@
     "coldNorthShare"
   ],
   "identityHash": "cabd9271bb3b2016407f85e4ff1c98a16b6ee1a8ffdb2c741fb8813eeb2ff4c5",
-  "unaffectedPoliticalHash": "482f38bd50fb305effdab27e862e54ef758900ff6d1d08af6c34de95fd77442c",
+  "unaffectedPoliticalHash": "53071f975a3b3ad0470cca29ebb3d35f73b68ac7a3123106ddcddae594137faf",
   "typeCountsBefore": {
     "1": 8,
     "2": 8,
@@ -421,8 +421,8 @@
       },
       "after": {
         "type": 50,
-        "typeName": "Freeport and digital-nomad enclaves",
-        "family": "Specialised",
+        "typeName": "Upscale waterfront and marina districts",
+        "family": "Urban core",
         "legacyId": "50-01",
         "x": 5.563049411089097,
         "y": -1.9009874588421718,
@@ -588,8 +588,8 @@
       "receivesFrom": "NX-42",
       "before": {
         "type": 50,
-        "typeName": "Freeport and digital-nomad enclaves",
-        "family": "Specialised",
+        "typeName": "Upscale waterfront and marina districts",
+        "family": "Urban core",
         "legacyId": "50-01",
         "x": 5.563049411089097,
         "y": -1.9009874588421718,
@@ -1114,6 +1114,21 @@
           }
         }
       ]
+    }
+  ],
+  "typeDefinitionUpdates": [
+    {
+      "type": 50,
+      "oldName": "Freeport and digital-nomad enclaves",
+      "name": "Upscale waterfront and marina districts",
+      "oldFamily": "Specialised",
+      "family": "Urban core",
+      "districts": [
+        "NX-06",
+        "AK-09"
+      ],
+      "count": 2,
+      "modelCoordinatesUnchanged": true
     }
   ]
 }
