@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "orderedSwaps": [
     [
       "NX-59",
@@ -41,7 +41,10 @@
   "simultaneousReceives": {
     "KR-22": "EW-04",
     "EW-06": "KR-22",
-    "EW-04": "EW-06"
+    "EW-04": "EW-06",
+    "NX-51": "NX-53",
+    "NX-53": "NX-44",
+    "NX-44": "NX-51"
   },
   "effectiveReceives": {
     "NX-06": "NX-59",
@@ -64,7 +67,10 @@
     "WT-12": "WT-09",
     "WT-15": "WT-02",
     "QL-05": "QL-12",
-    "QL-12": "QL-05"
+    "QL-12": "QL-05",
+    "NX-51": "NX-53",
+    "NX-53": "NX-44",
+    "NX-44": "NX-51"
   },
   "politicalFields": [
     "type",
@@ -101,7 +107,7 @@
     "coldNorthShare"
   ],
   "identityHash": "cabd9271bb3b2016407f85e4ff1c98a16b6ee1a8ffdb2c741fb8813eeb2ff4c5",
-  "unaffectedPoliticalHash": "0ff893bf0bc80469c9c9f12be3dc7021d6d309031a59829bcac9ce89c0f7f28f",
+  "unaffectedPoliticalHash": "229ad252f99d8197f844b58a1c80300aac88fa8b043bf0ccb26d902c3333a300",
   "typeCountsBefore": {
     "1": 8,
     "2": 8,
@@ -420,6 +426,72 @@
       }
     },
     {
+      "district": "NX-44",
+      "receivesFrom": "NX-51",
+      "before": {
+        "type": 8,
+        "typeName": "Major university and student districts",
+        "family": "Urban core",
+        "legacyId": "08-06",
+        "x": -2.024769199009582,
+        "y": -3.795663268535852,
+        "baselineWinner": "GRN"
+      },
+      "after": {
+        "type": 7,
+        "typeName": "Capital-city public-employment districts",
+        "family": "Urban core",
+        "legacyId": "07-05",
+        "x": 2.0343714655142158,
+        "y": -1.7097196180452543,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "NX-51",
+      "receivesFrom": "NX-53",
+      "before": {
+        "type": 7,
+        "typeName": "Capital-city public-employment districts",
+        "family": "Urban core",
+        "legacyId": "07-05",
+        "x": 2.0343714655142158,
+        "y": -1.7097196180452543,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 1,
+        "typeName": "Financial and corporate centres",
+        "family": "Urban core",
+        "legacyId": "01-06",
+        "x": 4.692002102176252,
+        "y": -1.8776742564012507,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "NX-53",
+      "receivesFrom": "NX-44",
+      "before": {
+        "type": 1,
+        "typeName": "Financial and corporate centres",
+        "family": "Urban core",
+        "legacyId": "01-06",
+        "x": 4.692002102176252,
+        "y": -1.8776742564012507,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 8,
+        "typeName": "Major university and student districts",
+        "family": "Urban core",
+        "legacyId": "08-06",
+        "x": -2.024769199009582,
+        "y": -3.795663268535852,
+        "baselineWinner": "GRN"
+      }
+    },
+    {
       "district": "NX-59",
       "receivesFrom": "NX-06",
       "before": {
@@ -628,6 +700,82 @@
     "retainedSwap": [
       "WT-11",
       "LQ-16"
+    ]
+  },
+  "latestPermutation": {
+    "version": 4,
+    "simultaneousReceives": {
+      "NX-51": "NX-53",
+      "NX-53": "NX-44",
+      "NX-44": "NX-51"
+    },
+    "changes": [
+      {
+        "district": "NX-51",
+        "receivesFrom": "NX-53",
+        "before": {
+          "type": 7,
+          "typeName": "Capital-city public-employment districts",
+          "family": "Urban core",
+          "legacyId": "07-05",
+          "x": 2.0343714655142158,
+          "y": -1.7097196180452543,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 1,
+          "typeName": "Financial and corporate centres",
+          "family": "Urban core",
+          "legacyId": "01-06",
+          "x": 4.692002102176252,
+          "y": -1.8776742564012507,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "NX-53",
+        "receivesFrom": "NX-44",
+        "before": {
+          "type": 1,
+          "typeName": "Financial and corporate centres",
+          "family": "Urban core",
+          "legacyId": "01-06",
+          "x": 4.692002102176252,
+          "y": -1.8776742564012507,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 8,
+          "typeName": "Major university and student districts",
+          "family": "Urban core",
+          "legacyId": "08-06",
+          "x": -2.024769199009582,
+          "y": -3.795663268535852,
+          "baselineWinner": "GRN"
+        }
+      },
+      {
+        "district": "NX-44",
+        "receivesFrom": "NX-51",
+        "before": {
+          "type": 8,
+          "typeName": "Major university and student districts",
+          "family": "Urban core",
+          "legacyId": "08-06",
+          "x": -2.024769199009582,
+          "y": -3.795663268535852,
+          "baselineWinner": "GRN"
+        },
+        "after": {
+          "type": 7,
+          "typeName": "Capital-city public-employment districts",
+          "family": "Urban core",
+          "legacyId": "07-05",
+          "x": 2.0343714655142158,
+          "y": -1.7097196180452543,
+          "baselineWinner": "LDP"
+        }
+      }
     ]
   }
 }
