@@ -70,7 +70,7 @@ colour (`#246d78`), reflecting waterfront neighbourhoods in major cities.
 Only the name and family classification changed; both district compass
 positions, the type centre, type count and election calculations are unchanged.
 
-## District type and compass permutations (version 7)
+## District type and compass permutations (version 8)
 
 The requested district swaps change **type, full type name, type family, legacy
 model ID, compass coordinates and derived baseline winner together**. Each
@@ -103,7 +103,13 @@ EX-11 receiving ET-23 and vice versa; AX-49 receives the former KR-14
 profile, KR-14 receives KR-12, KR-12 receives KR-13, and KR-13 receives
 AX-49. Each source refers to its profile before this group of four swaps.
 
-There are **35 affected districts** across the retained permutations. `district_permutation_changes.csv` lists
+The subsequent NX-35/EX-11 and NX-35/NX-50 swaps are applied in that
+order. NX-35 receives the then-current NX-50 profile, EX-11 receives the
+then-current NX-35 profile, and NX-50 receives the then-current EX-11
+profile. This transfers one public-employment district from Lorenvia to
+Westhaven; Lorenvia now has two, and Westhaven has one.
+
+There are **36 affected districts** across the retained permutations. `district_permutation_changes.csv` lists
 all old/new types and coordinates; `district_permutations.json` records the
 input swaps, the effective permutation and verification hashes. Earlier
 within-type permutation records are retained separately in

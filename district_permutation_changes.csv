@@ -7,7 +7,7 @@ ET-21,NX-77,Lyanna,44,Officer-family and defence-contractor districts,9,Cosmopol
 ET-23,EX-11,Lyanna,9,Cosmopolitan merchant and migrant districts,7,Capital-city public-employment districts,09-06,07-04,2.596877114061035,-2.0461742544016266,2.0417620796279046,-1.7580785181611691
 EW-04,EW-06,Wintervale,45,Port trading and import-export districts,13,Educated professional family suburbs,45-01,13-04,1.9233766445832878,0.14061402246714336,3.3780532796689644,-1.4278328814339702
 EW-06,KR-22,North Covina,13,Educated professional family suburbs,44,Officer-family and defence-contractor districts,13-04,44-04,3.3780532796689644,-1.4278328814339702,4.024591469086167,1.4379506978752241
-EX-11,ET-23,Westhaven,7,Capital-city public-employment districts,9,Cosmopolitan merchant and migrant districts,07-04,09-06,2.0417620796279046,-1.7580785181611691,2.596877114061035,-2.0461742544016266
+EX-11,NX-41,Westhaven,7,Capital-city public-employment districts,7,Capital-city public-employment districts,07-04,07-01,2.0417620796279046,-1.7580785181611691,2.0755719276901914,-1.7838448897969732
 KR-01,KR-16,Kroana hinterland,29,Healthcare and administrative centres,32,Rail-connected commuter towns,29-06,32-05,0.06400130144145597,-0.7475100899757603,0.5693171348953294,-1.1933231402490816
 KR-12,KR-13,Kroana City,1,Financial and corporate centres,2,Affluent inner-city professional districts,01-08,02-07,4.996942697063085,-1.7019737329711124,3.818751058962479,-2.5441557335722393
 KR-13,AX-49,Kroana City,2,Affluent inner-city professional districts,6,Mixed urban service-worker districts,02-07,06-06,3.818751058962479,-2.5441557335722393,-0.3440486925971554,-0.8130684585103278
@@ -18,10 +18,11 @@ KR-22,EW-04,Davenport,44,Officer-family and defence-contractor districts,45,Port
 LQ-16,WT-11,Luqur Bay,45,Port trading and import-export districts,4,Creative and gentrifying inner districts,45-04,04-10,1.9722924685685972,0.11745062691939859,0.4324572408103665,-2.675128614335001
 LX-21,KR-18,Suffolk,5,Established working-class urban districts,4,Creative and gentrifying inner districts,05-12,04-07,-2.254769199009582,-0.8556632685358521,0.47537563628645496,-2.7134772284362034
 NX-06,NX-59,Wizlandia City,1,Financial and corporate centres,50,Upscale waterfront and marina districts,01-02,50-01,4.897701376345378,-1.8263125870366268,5.563049411089097,-1.9009874588421718
-NX-35,NX-41,Lorenvia,17,Rapid-growth outer suburbs,7,Capital-city public-employment districts,17-03,07-01,2.9492361180024784,0.3344366851879067,2.0755719276901914,-1.7838448897969732
+NX-35,NX-50,Lorenvia,17,Rapid-growth outer suburbs,1,Financial and corporate centres,17-03,01-04,2.9492361180024784,0.3344366851879067,4.7864490126688715,-1.5824036117129265
 NX-41,NX-52,Lorenvia,7,Capital-city public-employment districts,1,Financial and corporate centres,07-01,01-05,2.0755719276901914,-1.7838448897969732,4.907997897823748,-1.5959459896926989
 NX-42,NX-06,Lorenvia,14,Established middle-income homeowner suburbs,1,Financial and corporate centres,14-04,01-02,2.567027666398366,-0.0654087966570715,4.897701376345378,-1.8263125870366268
 NX-44,NX-51,Lorenvia,8,Major university and student districts,7,Capital-city public-employment districts,08-06,07-05,-2.024769199009582,-3.795663268535852,2.0343714655142158,-1.7097196180452543
+NX-50,ET-23,Lorenvia,1,Financial and corporate centres,9,Cosmopolitan merchant and migrant districts,01-04,09-06,4.7864490126688715,-1.5824036117129265,2.596877114061035,-2.0461742544016266
 NX-51,NX-53,Lorenvia,7,Capital-city public-employment districts,1,Financial and corporate centres,07-05,01-06,2.0343714655142158,-1.7097196180452543,4.692002102176252,-1.8776742564012507
 NX-52,NX-35,Lorenvia,1,Financial and corporate centres,17,Rapid-growth outer suburbs,01-05,17-03,4.907997897823748,-1.5959459896926989,2.9492361180024784,0.3344366851879067
 NX-53,NX-44,Lorenvia,1,Financial and corporate centres,8,Major university and student districts,01-06,08-06,4.692002102176252,-1.8776742564012507,-2.024769199009582,-3.795663268535852

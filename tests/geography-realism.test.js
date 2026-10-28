@@ -27,7 +27,8 @@ const capitals=['Lorenvia','Westhaven','Erewenton','Ravenna','Avondale','Lyanna'
 const publicRows=H.districts.filter(d=>d.type===7);assert.equal(publicRows.length,8);
 for(const city of capitals.filter(c=>c!=='Lorenvia'))assert.ok(publicRows.filter(d=>d.locality===city).length<=1,`${city} can have at most one public-employment district`);
 assert.ok(publicRows.every(d=>capitals.includes(d.locality)));
-assert.equal(publicRows.filter(d=>d.locality==='Lorenvia').length,3);
+assert.equal(publicRows.filter(d=>d.locality==='Lorenvia').length,2);
+assert.equal(publicRows.filter(d=>d.locality==='Westhaven').length,1);
 const alpinton=H.districts.filter(d=>d.locality==='Alpinton'),lux=H.districts.filter(d=>d.locality==='Lux Aeterna');
 assert.equal(alpinton.length,1);assert.equal(alpinton[0].type,46);
 assert.equal(lux.length,1);assert.equal(lux[0].type,40);
