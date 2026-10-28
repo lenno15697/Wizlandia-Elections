@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "orderedSwaps": [
     [
       "NX-59",
@@ -59,8 +59,9 @@
     "NX-77": "ET-21",
     "EW-04": "EW-06",
     "EW-06": "KR-22",
+    "AX-15": "AX-18",
     "AX-18": "ET-01",
-    "ET-01": "AX-18",
+    "ET-01": "AX-15",
     "ET-21": "NX-77",
     "KR-01": "KR-16",
     "KR-16": "KR-01",
@@ -111,7 +112,7 @@
     "coldNorthShare"
   ],
   "identityHash": "cabd9271bb3b2016407f85e4ff1c98a16b6ee1a8ffdb2c741fb8813eeb2ff4c5",
-  "unaffectedPoliticalHash": "53071f975a3b3ad0470cca29ebb3d35f73b68ac7a3123106ddcddae594137faf",
+  "unaffectedPoliticalHash": "9a594cda7d6622b512b919d4b6bd825c4441ec17ed384c468355e8d53e73d71d",
   "typeCountsBefore": {
     "1": 8,
     "2": 8,
@@ -166,6 +167,28 @@
   },
   "changes": [
     {
+      "district": "AX-15",
+      "receivesFrom": "AX-18",
+      "before": {
+        "type": 45,
+        "typeName": "Port trading and import-export districts",
+        "family": "Specialised",
+        "legacyId": "45-02",
+        "x": 1.876623355416712,
+        "y": 0.025765731438906668,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 18,
+        "typeName": "Diverse first-home buyer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "18-05",
+        "x": 1.941803860283031,
+        "y": -0.9186151797861938,
+        "baselineWinner": "CA"
+      }
+    },
+    {
       "district": "AX-18",
       "receivesFrom": "ET-01",
       "before": {
@@ -189,7 +212,7 @@
     },
     {
       "district": "ET-01",
-      "receivesFrom": "AX-18",
+      "receivesFrom": "AX-15",
       "before": {
         "type": 6,
         "typeName": "Mixed urban service-worker districts",
@@ -200,12 +223,12 @@
         "baselineWinner": "CA"
       },
       "after": {
-        "type": 18,
-        "typeName": "Diverse first-home buyer suburbs",
-        "family": "Suburban / exurban",
-        "legacyId": "18-05",
-        "x": 1.941803860283031,
-        "y": -0.9186151797861938,
+        "type": 45,
+        "typeName": "Port trading and import-export districts",
+        "family": "Specialised",
+        "legacyId": "45-02",
+        "x": 1.876623355416712,
+        "y": 0.025765731438906668,
         "baselineWinner": "CA"
       }
     },
@@ -795,123 +818,54 @@
     ]
   },
   "latestPermutation": {
-    "version": 5,
+    "version": 6,
     "simultaneousReceives": {
-      "NX-52": "NX-35",
-      "NX-41": "NX-52",
-      "NX-35": "NX-41",
-      "NX-59": "NX-42",
-      "NX-42": "NX-59"
+      "AX-15": "ET-01",
+      "ET-01": "AX-15"
     },
     "changes": [
       {
-        "district": "NX-52",
-        "receivesFrom": "NX-35",
+        "district": "AX-15",
+        "receivesFrom": "ET-01",
         "before": {
-          "type": 1,
-          "typeName": "Financial and corporate centres",
-          "family": "Urban core",
-          "legacyId": "01-05",
-          "x": 4.907997897823748,
-          "y": -1.5959459896926989,
-          "baselineWinner": "LDP"
+          "type": 45,
+          "typeName": "Port trading and import-export districts",
+          "family": "Specialised",
+          "legacyId": "45-02",
+          "x": 1.876623355416712,
+          "y": 0.025765731438906668,
+          "baselineWinner": "CA"
         },
         "after": {
-          "type": 17,
-          "typeName": "Rapid-growth outer suburbs",
+          "type": 18,
+          "typeName": "Diverse first-home buyer suburbs",
           "family": "Suburban / exurban",
-          "legacyId": "17-03",
-          "x": 2.9492361180024784,
-          "y": 0.3344366851879067,
-          "baselineWinner": "LDP"
+          "legacyId": "18-05",
+          "x": 1.941803860283031,
+          "y": -0.9186151797861938,
+          "baselineWinner": "CA"
         }
       },
       {
-        "district": "NX-41",
-        "receivesFrom": "NX-52",
+        "district": "ET-01",
+        "receivesFrom": "AX-15",
         "before": {
-          "type": 7,
-          "typeName": "Capital-city public-employment districts",
-          "family": "Urban core",
-          "legacyId": "07-01",
-          "x": 2.0755719276901914,
-          "y": -1.7838448897969732,
-          "baselineWinner": "LDP"
-        },
-        "after": {
-          "type": 1,
-          "typeName": "Financial and corporate centres",
-          "family": "Urban core",
-          "legacyId": "01-05",
-          "x": 4.907997897823748,
-          "y": -1.5959459896926989,
-          "baselineWinner": "LDP"
-        }
-      },
-      {
-        "district": "NX-35",
-        "receivesFrom": "NX-41",
-        "before": {
-          "type": 17,
-          "typeName": "Rapid-growth outer suburbs",
+          "type": 18,
+          "typeName": "Diverse first-home buyer suburbs",
           "family": "Suburban / exurban",
-          "legacyId": "17-03",
-          "x": 2.9492361180024784,
-          "y": 0.3344366851879067,
-          "baselineWinner": "LDP"
+          "legacyId": "18-05",
+          "x": 1.941803860283031,
+          "y": -0.9186151797861938,
+          "baselineWinner": "CA"
         },
         "after": {
-          "type": 7,
-          "typeName": "Capital-city public-employment districts",
-          "family": "Urban core",
-          "legacyId": "07-01",
-          "x": 2.0755719276901914,
-          "y": -1.7838448897969732,
-          "baselineWinner": "LDP"
-        }
-      },
-      {
-        "district": "NX-59",
-        "receivesFrom": "NX-42",
-        "before": {
-          "type": 1,
-          "typeName": "Financial and corporate centres",
-          "family": "Urban core",
-          "legacyId": "01-02",
-          "x": 4.897701376345378,
-          "y": -1.8263125870366268,
-          "baselineWinner": "LDP"
-        },
-        "after": {
-          "type": 14,
-          "typeName": "Established middle-income homeowner suburbs",
-          "family": "Suburban / exurban",
-          "legacyId": "14-04",
-          "x": 2.567027666398366,
-          "y": -0.0654087966570715,
-          "baselineWinner": "LDP"
-        }
-      },
-      {
-        "district": "NX-42",
-        "receivesFrom": "NX-59",
-        "before": {
-          "type": 14,
-          "typeName": "Established middle-income homeowner suburbs",
-          "family": "Suburban / exurban",
-          "legacyId": "14-04",
-          "x": 2.567027666398366,
-          "y": -0.0654087966570715,
-          "baselineWinner": "LDP"
-        },
-        "after": {
-          "type": 1,
-          "typeName": "Financial and corporate centres",
-          "family": "Urban core",
-          "legacyId": "01-02",
-          "x": 4.897701376345378,
-          "y": -1.8263125870366268,
-          "baselineWinner": "LDP"
+          "type": 45,
+          "typeName": "Port trading and import-export districts",
+          "family": "Specialised",
+          "legacyId": "45-02",
+          "x": 1.876623355416712,
+          "y": 0.025765731438906668,
+          "baselineWinner": "CA"
         }
       }
     ]
@@ -1111,6 +1065,59 @@
             "x": 4.897701376345378,
             "y": -1.8263125870366268,
             "baselineWinner": "LDP"
+          }
+        }
+      ]
+    },
+    {
+      "version": 6,
+      "simultaneousReceives": {
+        "AX-15": "ET-01",
+        "ET-01": "AX-15"
+      },
+      "changes": [
+        {
+          "district": "AX-15",
+          "receivesFrom": "ET-01",
+          "before": {
+            "type": 45,
+            "typeName": "Port trading and import-export districts",
+            "family": "Specialised",
+            "legacyId": "45-02",
+            "x": 1.876623355416712,
+            "y": 0.025765731438906668,
+            "baselineWinner": "CA"
+          },
+          "after": {
+            "type": 18,
+            "typeName": "Diverse first-home buyer suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "18-05",
+            "x": 1.941803860283031,
+            "y": -0.9186151797861938,
+            "baselineWinner": "CA"
+          }
+        },
+        {
+          "district": "ET-01",
+          "receivesFrom": "AX-15",
+          "before": {
+            "type": 18,
+            "typeName": "Diverse first-home buyer suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "18-05",
+            "x": 1.941803860283031,
+            "y": -0.9186151797861938,
+            "baselineWinner": "CA"
+          },
+          "after": {
+            "type": 45,
+            "typeName": "Port trading and import-export districts",
+            "family": "Specialised",
+            "legacyId": "45-02",
+            "x": 1.876623355416712,
+            "y": 0.025765731438906668,
+            "baselineWinner": "CA"
           }
         }
       ]

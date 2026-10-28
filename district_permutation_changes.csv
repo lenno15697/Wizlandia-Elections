@@ -1,6 +1,7 @@
 district,receives_from,locality,old_type_id,old_type,new_type_id,new_type,old_legacy_id,new_legacy_id,old_economy,old_culture,new_economy,new_culture
+AX-15,AX-18,Lakeside,45,Port trading and import-export districts,18,Diverse first-home buyer suburbs,45-02,18-05,1.876623355416712,0.025765731438906668,1.941803860283031,-0.9186151797861938
 AX-18,ET-01,Lakeside,18,Diverse first-home buyer suburbs,6,Mixed urban service-worker districts,18-05,06-07,1.941803860283031,-0.9186151797861938,-0.3582308912170805,-0.6873668567045366
-ET-01,AX-18,Northport,6,Mixed urban service-worker districts,18,Diverse first-home buyer suburbs,06-07,18-05,-0.3582308912170805,-0.6873668567045366,1.941803860283031,-0.9186151797861938
+ET-01,AX-15,Northport,6,Mixed urban service-worker districts,45,Port trading and import-export districts,06-07,45-02,-0.3582308912170805,-0.6873668567045366,1.876623355416712,0.025765731438906668
 ET-21,NX-77,Lyanna,44,Officer-family and defence-contractor districts,9,Cosmopolitan merchant and migrant districts,44-02,09-04,4.046119393096416,1.7685235626549347,2.584303870767574,-1.7364213108008548
 EW-04,EW-06,Wintervale,45,Port trading and import-export districts,13,Educated professional family suburbs,45-01,13-04,1.9233766445832878,0.14061402246714336,3.3780532796689644,-1.4278328814339702
 EW-06,KR-22,North Covina,13,Educated professional family suburbs,44,Officer-family and defence-contractor districts,13-04,44-04,3.3780532796689644,-1.4278328814339702,4.024591469086167,1.4379506978752241
