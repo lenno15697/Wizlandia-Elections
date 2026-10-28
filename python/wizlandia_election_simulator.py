@@ -286,10 +286,12 @@ BASELINE_SEATS = np.array([186, 170, 18, 20, 6, 0, 0, 0, 0], dtype=int)
 # old shared-centre behaviour. Party-boundary caps preserve the baseline.
 DISTRICT_SPREAD = 0.20
 GOLDEN_ANGLE = math.pi * (3 - math.sqrt(5))
+DISTRICT_ECONOMIC_COMPRESSION = dict(origin=2.15, sourceMax=5.75, targetMax=4.75,
+                                     scale=13 / 18)
 
 
-def individual_district_centres(spread=DISTRICT_SPREAD):
-    """Deterministic paired offsets, zero type means and unchanged baseline."""
+def individual_district_centres(spread=DISTRICT_SPREAD, apply_compression=True):
+    """Fixed paired source offsets, then the requested horizontal compression."""
     if not np.isfinite(spread) or spread < 0:
         raise ValueError("District spread must be finite and nonnegative.")
     result = []
@@ -309,11 +311,29 @@ def individual_district_centres(spread=DISTRICT_SPREAD):
             result.extend([centre + offset, centre - offset])
         if count % 2:
             result.append(centre)
-    return np.array(result)
+    result = np.array(result)
+    if apply_compression:
+        c = DISTRICT_ECONOMIC_COMPRESSION
+        selected = (result[:, 0] >= c['origin']) & (result[:, 0] <= c['sourceMax'])
+        result[selected, 0] = c['origin'] + c['scale'] * (result[selected, 0] - c['origin'])
+    return result
 
 
 INDIVIDUAL_CENTRES = individual_district_centres()
 INDIVIDUAL_TYPE_INDEX = np.repeat(np.arange(len(DISTRICT_ROWS)), DISTRICT_COUNTS)
+# Published type centres are the actual means after the piecewise transform.
+# Retain exact source centres for untouched groups and wholly affine groups.
+SOURCE_DISTRICT_CENTRES = DISTRICT_CENTRES.copy()
+SOURCE_INDIVIDUAL_CENTRES = individual_district_centres(apply_compression=False)
+for _i, _centre in enumerate(SOURCE_DISTRICT_CENTRES):
+    _rows = INDIVIDUAL_TYPE_INDEX == _i
+    _x = SOURCE_INDIVIDUAL_CENTRES[_rows, 0]
+    _c = DISTRICT_ECONOMIC_COMPRESSION
+    _selected = (_x >= _c['origin']) & (_x <= _c['sourceMax'])
+    if np.all(_selected):
+        DISTRICT_CENTRES[_i, 0] = _c['origin'] + _c['scale'] * (_centre[0] - _c['origin'])
+    elif np.any(_selected):
+        DISTRICT_CENTRES[_i, 0] = _centre[0] + np.mean(INDIVIDUAL_CENTRES[_rows, 0] - _x)
 INDIVIDUAL_IDS = [f"{row[0]:02d}-{i + 1:02d}"
                   for row in DISTRICT_ROWS for i in range(row[2])]
 

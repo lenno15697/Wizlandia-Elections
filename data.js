@@ -80,6 +80,358 @@ const data = {
       "id": 1,
       "name": "Financial and corporate centres",
       "count": 8,
+      "x": 4.063888888888888,
+      "y": -1.7368101230469748
+    },
+    {
+      "id": 2,
+      "name": "Affluent inner-city professional districts",
+      "count": 8,
+      "x": 3.2333333333333334,
+      "y": -2.4368101230469748
+    },
+    {
+      "id": 3,
+      "name": "Technology and startup districts",
+      "count": 6,
+      "x": 4.208333333333334,
+      "y": -2.576810123046975
+    },
+    {
+      "id": 4,
+      "name": "Creative and gentrifying inner districts",
+      "count": 10,
+      "x": 0.51,
+      "y": -2.6468101230469747
+    },
+    {
+      "id": 5,
+      "name": "Established working-class urban districts",
+      "count": 12,
+      "x": -2.17,
+      "y": -1.0368101230469748
+    },
+    {
+      "id": 6,
+      "name": "Mixed urban service-worker districts",
+      "count": 10,
+      "x": -0.19,
+      "y": -0.756810123046975
+    },
+    {
+      "id": 7,
+      "name": "Capital-city public-employment districts",
+      "count": 8,
+      "x": 2.099171303650768,
+      "y": -1.7368101230469748
+    },
+    {
+      "id": 8,
+      "name": "Major university and student districts",
+      "count": 6,
+      "x": -0.05,
+      "y": -3.976810123046975
+    },
+    {
+      "id": 9,
+      "name": "Cosmopolitan merchant and migrant districts",
+      "count": 8,
+      "x": 2.511111111111111,
+      "y": -1.876810123046975
+    },
+    {
+      "id": 10,
+      "name": "Social-housing and old industrial cores",
+      "count": 4,
+      "x": -2.29,
+      "y": -0.05681012304697498
+    },
+    {
+      "id": 11,
+      "name": "Affluent managerial suburbs",
+      "count": 16,
+      "x": 3.6305555555555555,
+      "y": -1.0368101230469748
+    },
+    {
+      "id": 12,
+      "name": "Business-owner and entrepreneurial suburbs",
+      "count": 12,
+      "x": 4.136111111111111,
+      "y": -0.19681012304697498
+    },
+    {
+      "id": 13,
+      "name": "Educated professional family suburbs",
+      "count": 14,
+      "x": 2.980555555555555,
+      "y": -1.3168101230469749
+    },
+    {
+      "id": 14,
+      "name": "Established middle-income homeowner suburbs",
+      "count": 16,
+      "x": 2.4388888888888887,
+      "y": -0.19681012304697498
+    },
+    {
+      "id": 15,
+      "name": "Mixed-income commuter suburbs",
+      "count": 16,
+      "x": 0.86,
+      "y": -0.40681012304697495
+    },
+    {
+      "id": 16,
+      "name": "Skilled-trade and contractor suburbs",
+      "count": 12,
+      "x": 1.98,
+      "y": 0.643189876953025
+    },
+    {
+      "id": 17,
+      "name": "Rapid-growth outer suburbs",
+      "count": 12,
+      "x": 2.6555555555555554,
+      "y": 0.433189876953025
+    },
+    {
+      "id": 18,
+      "name": "Diverse first-home buyer suburbs",
+      "count": 8,
+      "x": 1.96,
+      "y": -0.896810123046975
+    },
+    {
+      "id": 19,
+      "name": "Environmentally minded garden suburbs",
+      "count": 8,
+      "x": 1.07,
+      "y": -2.6468101230469747
+    },
+    {
+      "id": 20,
+      "name": "Older, settled middle-class suburbs",
+      "count": 6,
+      "x": 1.35,
+      "y": 0.923189876953025
+    },
+    {
+      "id": 21,
+      "name": "Wealthy estate and executive exurbs",
+      "count": 4,
+      "x": 4.208333333333334,
+      "y": 1.2731898769530252
+    },
+    {
+      "id": 22,
+      "name": "Construction-led family exurbs",
+      "count": 4,
+      "x": 2.9444444444444446,
+      "y": 1.063189876953025
+    },
+    {
+      "id": 23,
+      "name": "Diversified regional-city centres",
+      "count": 16,
+      "x": 0.93,
+      "y": -0.616810123046975
+    },
+    {
+      "id": 24,
+      "name": "Regional retail and commercial hubs",
+      "count": 12,
+      "x": 2.3305555555555553,
+      "y": 0.08318987695302502
+    },
+    {
+      "id": 25,
+      "name": "Advanced-manufacturing cities",
+      "count": 10,
+      "x": 1.35,
+      "y": -0.19681012304697498
+    },
+    {
+      "id": 26,
+      "name": "Manufacturing towns",
+      "count": 10,
+      "x": -0.75,
+      "y": -0.05681012304697498
+    },
+    {
+      "id": 27,
+      "name": "Logistics and warehousing towns",
+      "count": 10,
+      "x": 0.58,
+      "y": 0.36318987695302507
+    },
+    {
+      "id": 28,
+      "name": "Regional university and college towns",
+      "count": 8,
+      "x": -0.05,
+      "y": -2.4368101230469748
+    },
+    {
+      "id": 29,
+      "name": "Healthcare and administrative centres",
+      "count": 8,
+      "x": 0.16,
+      "y": -0.896810123046975
+    },
+    {
+      "id": 30,
+      "name": "Prosperous independent-business towns",
+      "count": 8,
+      "x": 3.125,
+      "y": 0.923189876953025
+    },
+    {
+      "id": 31,
+      "name": "Declining former industrial towns",
+      "count": 8,
+      "x": -1.45,
+      "y": 1.343189876953025
+    },
+    {
+      "id": 32,
+      "name": "Rail-connected commuter towns",
+      "count": 6,
+      "x": 0.37,
+      "y": -1.176810123046975
+    },
+    {
+      "id": 33,
+      "name": "Productive commercial farming districts",
+      "count": 12,
+      "x": 3.3055555555555554,
+      "y": 1.4831898769530252
+    },
+    {
+      "id": 34,
+      "name": "Mixed farming and rural-service districts",
+      "count": 8,
+      "x": 2.763888888888889,
+      "y": 1.353189876953025
+    },
+    {
+      "id": 35,
+      "name": "Export wine, orchard and specialty-crop districts",
+      "count": 8,
+      "x": 3.486111111111111,
+      "y": 0.203189876953025
+    },
+    {
+      "id": 36,
+      "name": "Traditional dairy and livestock districts",
+      "count": 8,
+      "x": 1.23,
+      "y": 2.473189876953025
+    },
+    {
+      "id": 37,
+      "name": "Declining smallholder farming districts",
+      "count": 8,
+      "x": -0.19,
+      "y": 2.183189876953025
+    },
+    {
+      "id": 38,
+      "name": "Forestry and timber communities",
+      "count": 6,
+      "x": 0.3,
+      "y": 1.623189876953025
+    },
+    {
+      "id": 39,
+      "name": "Remote mining and extractive districts",
+      "count": 6,
+      "x": 0.37,
+      "y": 2.673189876953025
+    },
+    {
+      "id": 40,
+      "name": "Scenic countryside and amenity-migration districts",
+      "count": 6,
+      "x": 0.93,
+      "y": -2.226810123046975
+    },
+    {
+      "id": 41,
+      "name": "Rural commuter belts",
+      "count": 6,
+      "x": 2.475,
+      "y": 1.133189876953025
+    },
+    {
+      "id": 42,
+      "name": "Strongly religious agricultural districts",
+      "count": 4,
+      "x": 1.23,
+      "y": 3.023189876953025
+    },
+    {
+      "id": 43,
+      "name": "Naval dockyard and shipbuilding districts",
+      "count": 4,
+      "x": 2.908333333333333,
+      "y": 1.55
+    },
+    {
+      "id": 44,
+      "name": "Officer-family and defence-contractor districts",
+      "count": 4,
+      "x": 3.558333333333333,
+      "y": 1.623189876953025
+    },
+    {
+      "id": 45,
+      "name": "Port trading and import-export districts",
+      "count": 4,
+      "x": 1.9,
+      "y": 0.08318987695302502
+    },
+    {
+      "id": 46,
+      "name": "Resort-business and tourism-owner districts",
+      "count": 4,
+      "x": 3.341666666666667,
+      "y": -1.456810123046975
+    },
+    {
+      "id": 47,
+      "name": "Seasonal-worker and hospitality districts",
+      "count": 2,
+      "x": -1.92,
+      "y": -1.876810123046975
+    },
+    {
+      "id": 48,
+      "name": "Wealthy retirement enclaves",
+      "count": 2,
+      "x": 3.4138888888888888,
+      "y": 1.903189876953025
+    },
+    {
+      "id": 49,
+      "name": "Remote island and fishing communities",
+      "count": 2,
+      "x": 0.52,
+      "y": 2.463189876953025
+    },
+    {
+      "id": 50,
+      "name": "Upscale waterfront and marina districts",
+      "count": 2,
+      "x": 4.497222222222222,
+      "y": -2.016810123046975
+    }
+  ],
+  "sourceTypes": [
+    {
+      "id": 1,
+      "name": "Financial and corporate centres",
+      "count": 8,
       "x": 4.8,
       "y": -1.7368101230469748
     },
@@ -427,6 +779,12 @@ const data = {
       "y": -2.016810123046975
     }
   ],
+  "economicCompression": {
+    "origin": 2.15,
+    "sourceMax": 5.75,
+    "targetMax": 4.75,
+    "scale": 0.7222222222222222
+  },
   "center": [
     2.0,
     -0.19681012304697498

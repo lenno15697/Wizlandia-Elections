@@ -6,6 +6,10 @@ const GEO=typeof module!=='undefined'&&module.exports?require('./district-geogra
 const byLegacy=new Map(GEO.districts.map(d=>[d.legacyId,d]));
 const GOLDEN_ANGLE = Math.PI * (3-Math.sqrt(5));
 const sq=(a,b)=>(a.x-b.x)**2+(a.y-b.y)**2;
+function compressEconomic(x){
+  const c=D.economicCompression;
+  return c&&x>=c.origin&&x<=c.sourceMax?c.origin+c.scale*(x-c.origin):x;
+}
 function validateParties(parties){
   if(!Array.isArray(parties)||parties.length!==9)throw new Error('The model requires nine parties.');
   parties.forEach((p,i)=>{
@@ -13,10 +17,10 @@ function validateParties(parties){
     if(parties.some((q,j)=>j<i&&sq(p,q)<1e-12))throw new Error('Two parties cannot occupy exactly the same position.');
   });
 }
-function districts(spread=D.spread){
+function districts(spread=D.spread,applyCompression=true){
   if(!Number.isFinite(spread)||spread<0||spread>0.2)throw new Error('District variation must be between 0 and 0.20.');
   const out=[];
-  D.types.forEach(t=>{
+  (D.sourceTypes||D.types).forEach(t=>{
     const d=D.parties.map(p=>sq(t,p)), win=d.indexOf(Math.min(...d));
     const margin=Math.min(...D.parties.map((p,j)=>j===win?Infinity:(d[j]-d[win])/(2*Math.sqrt(sq(p,D.parties[win])))));
     const radius=Math.min(spread,.8*margin), pairs=Math.floor(t.count/2);
@@ -27,7 +31,7 @@ function districts(spread=D.spread){
     }
     if(t.count%2)out.push({id:`${String(t.id).padStart(2,'0')}-${String(++k).padStart(2,'0')}`,type:t.id,name:t.name,x:t.x,y:t.y});
   });
-  return out.map(d=>{const g=byLegacy.get(d.id);if(!g||g.type!==d.type)throw new Error('District geography does not match the model.');return{...d,id:g.id,legacyId:d.id,state:g.state,stateCode:g.stateCode,stateIndex:g.stateIndex,locality:g.locality,population:g.population,mapX:g.mapX,mapY:g.mapY,tileX:g.tileX,tileY:g.tileY,family:g.family};});
+  return out.map(d=>{const g=byLegacy.get(d.id);if(!g||g.type!==d.type)throw new Error('District geography does not match the model.');return{...d,x:applyCompression?compressEconomic(d.x):d.x,id:g.id,legacyId:d.id,state:g.state,stateCode:g.stateCode,stateIndex:g.stateIndex,locality:g.locality,population:g.population,mapX:g.mapX,mapY:g.mapY,tileX:g.tileX,tileY:g.tileY,family:g.family};});
 }
 function cellPieces(index,parties){
   let lower=[],upper=[],left=-Infinity,right=Infinity;

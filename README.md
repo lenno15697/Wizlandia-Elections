@@ -70,6 +70,29 @@ colour (`#246d78`), reflecting waterfront neighbourhoods in major cities.
 Only the name and family classification changed; both district compass
 positions, the type centre, type count and election calculations are unchanged.
 
+## Compression of the economically liberal district band
+
+The marked economic band is interpreted as **[2.15, 5.75]**, compressed into
+**[2.15, 4.75]** using `x_new = 2.15 + (13/18) × (x_old − 2.15)`.
+Only the 180 baseline district points inside the source band move. Their
+cultural coordinates remain identical; all 220 points outside stay fixed.
+Party coordinates, the national voter distribution, PR calculations, baseline
+seat totals, geography and previous district permutations are preserved.
+
+Compression happens after the fixed source offsets are generated, before
+election-level shifts and variance. It squeezes horizontal offsets as well
+as type means, without changing vertical offsets. `data.js` retains those
+source definitions as `sourceTypes`; `types` publishes the actual default-spread
+means after compression. Two public-employment points straddle the lower
+boundary, so that type’s displayed mean is calculated from its transformed
+points. The full 0.20 dairy/livestock radius is preserved outside the band.
+
+The green line bounds the baseline positions. Subsequent economic/cultural
+shifts and variance can still carry districts outside it. See
+`analysis/economic_compression_impact.md` for Libertarian win rates and the
+full-domain best-case check; reproduce it with
+`python3 tools/analyze_economic_compression.py 100000 20261028`.
+
 ## Rural and resource district centres
 
 | District type | Economic centre | Cultural centre | Change |

@@ -22,7 +22,10 @@ summaries = [
 data = dict(
     parties=[dict(code=c, name=n, color=k, x=float(p[0]), y=float(p[1]), description=d)
              for c,n,k,p,d in zip(m.CODES,m.NAMES,m.COLORS,m.POINTS,summaries)],
-    types=[dict(id=i,name=n,count=c,x=x,y=y) for i,n,c,x,y in m.DISTRICT_ROWS],
+    types=[dict(id=i,name=n,count=c,x=float(centre[0]),y=float(centre[1]))
+           for (i,n,c,_x,_y),centre in zip(m.DISTRICT_ROWS,m.DISTRICT_CENTRES)],
+    sourceTypes=[dict(id=i,name=n,count=c,x=x,y=y) for i,n,c,x,y in m.DISTRICT_ROWS],
+    economicCompression=m.DISTRICT_ECONOMIC_COMPRESSION,
     center=m.CENTER.tolist(), weights=m.WEIGHTS.tolist(), means=m.MEANS.tolist(),
     covariances=m.COVARIANCES.tolist(), gaussNodes=m.GAUSS_NODES.tolist(),
     gaussWeights=m.GAUSS_WEIGHTS.tolist(), baseline=m.BASELINE_SEATS.tolist(),
