@@ -37,8 +37,9 @@ function render(){
   $('coalition-kicker').textContent=isCombined?`${v.label} · The road to ${v.majority}`:v.label;
   $('coalition-copy').textContent=isCombined?`Each combination reaches ${v.majority} of ${v.total} ${v.noun} seats and loses its majority if any member leaves. These are arithmetic possibilities, without political compatibility restrictions.`:'';
   $('history-context').textContent=(isCombined?`Largest party and majority status use the Combined view (${v.total} seats; majority ${v.majority}).`:`Largest party uses the ${v.label} view (${v.total} seats).`)+` Select a run to restore it. History is kept in this tab until the page is closed or refreshed.`;
-  renderSummary();renderParliament();renderHistory();
-  if(activeTab==='cartogram')renderCartogram();if(activeTab==='districts')renderDistricts();if(activeTab==='compass')drawCompass();if(activeTab==='coalitions')renderCoalitions();
+  $('assembly-panel').hidden=view==='district';$('panel-cartogram').hidden=view!=='district';
+  renderSummary();if(view==='district')renderCartogram();else renderParliament();renderHistory();
+  if(activeTab==='districts')renderDistricts();if(activeTab==='compass')drawCompass();if(activeTab==='coalitions')renderCoalitions();
 }
 function coalitionTier(codes){
   const mainstream=['LDP','CA','SDP','CON','GRN','LIB'];
@@ -159,6 +160,13 @@ function renderCartogram(){
   document.querySelector('.cartogram-scroll').classList.toggle('is-focused',stateFilter!=='all');
   const legend=mode==='winner'?displayOrder.map(i=>[current.parties[i].code,current.parties[i].color]):mode==='family'?Object.entries(H.familyColors):states.map(s=>[`${s.code} · ${s.name}`,s.color]);
   $('cartogram-legend').innerHTML=legend.map(([name,color])=>`<span><i class="swatch" style="background:${color}"></i>${esc(name)}</span>`).join('');
+  const results=$('cartogram-state-results');results.hidden=stateFilter==='all';
+  if(stateFilter==='all')results.innerHTML='';
+  else{
+    const counts=current.parties.map((_,i)=>rows.filter(d=>d.winner===i).length);
+    const winners=largestPartiesFirst(displayOrder.filter(i=>counts[i]>0),counts);
+    results.innerHTML=`<div class="state-results-heading"><strong>${esc(states[0].name)}</strong><span>${rows.length} district seats</span></div><div class="state-party-results">${winners.map(i=>{const p=current.parties[i];return`<div class="state-party-result" style="--party:${p.color}">${swatch(p)}<span>${esc(p.name)}</span><strong>${counts[i]}</strong></div>`;}).join('')}</div>`;
+  }
   const d=rows.find(d=>d.id===inspectedDistrict);
   $('cartogram-detail').hidden=!d;
   if(d){const p=current.parties[d.winner];$('cartogram-detail').innerHTML=`<button type="button" class="text-button district-detail-close" data-close-district aria-label="Close district details">×</button><strong>${d.id} · ${esc(d.locality)}</strong><p class="district-type-name">${esc(d.name)}</p><p>${esc(d.state)} · ${d.population.toLocaleString()} estimated residents</p><p>${swatch(p)} ${esc(p.name)}</p>`;}
@@ -199,7 +207,7 @@ function showTab(name){
   if(name==='coalitions'&&view!=='combined')name='overview';
   activeTab=name;
   for(const tab of document.querySelectorAll('[data-tab]')){const active=tab.dataset.tab===name;tab.setAttribute('aria-selected',active);tab.tabIndex=active?0:-1;$('panel-'+tab.dataset.tab).hidden=!active;}
-  if(name==='cartogram')renderCartogram();if(name==='compass')drawCompass();if(name==='districts')renderDistricts();if(name==='coalitions')renderCoalitions();
+  if(name==='compass')drawCompass();if(name==='districts')renderDistricts();if(name==='coalitions')renderCoalitions();
 }
 function clippedRegion(index){
   let polygon=[[-12,-10],[12,-10],[12,10],[-12,10]];const p=current.parties[index];
@@ -342,7 +350,7 @@ $('party-form').onsubmit=event=>{event.preventDefault();try{
   const parties=state.parties.map((p,i)=>({...p,x:Number($('party-x-'+i).value),y:Number($('party-y-'+i).value)}));E.validateParties(parties);
   const result=E.evaluate(state.economic,state.cultural,state.variance,state.spread,parties);restore(result);$('parties-dialog').close();notice('Party positions updated.');
 }catch(e){$('party-error').textContent=e.message;}};
-function applyTheme(dark){document.body.classList.toggle('dark',dark);$('theme').textContent=dark?'☀ Light':'◐ Dark';renderParliament();if(activeTab==='cartogram')renderCartogram();if(activeTab==='compass')drawCompass();}
+function applyTheme(dark){document.body.classList.toggle('dark',dark);$('theme').textContent=dark?'☀ Light':'◐ Dark';if(view==='district')renderCartogram();else renderParliament();if(activeTab==='compass')drawCompass();}
 let initialDark=false;try{initialDark=localStorage.getItem('wizlandia-theme')==='dark';}catch(e){}
 $('theme').onclick=()=>{const dark=!document.body.classList.contains('dark');try{localStorage.setItem('wizlandia-theme',dark?'dark':'light');}catch(e){}applyTheme(dark);};
 for(const id of ['cartogram-state','district-state'])$(id).innerHTML='<option value="all">All states</option>'+H.states.map(s=>`<option value="${s.code}">${esc(s.name)} (${s.districts})</option>`).join('');

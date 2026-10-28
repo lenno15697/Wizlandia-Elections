@@ -28,21 +28,24 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
 (async()=>{
  const get=id=>nodes.get(id);
  assert.match(get('ticker').textContent,/Combined/);
- get('tab-cartogram').onclick();assert.equal(get('cartogram-detail').hidden,true);assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,400);
+ assert.equal(get('runs').value,'20');assert.ok(!nodes.has('tab-cartogram'));
+ assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);
+ get('view-district').onclick();assert.equal(get('assembly-panel').hidden,true);assert.equal(get('panel-cartogram').hidden,false);assert.equal(get('cartogram-detail').hidden,true);assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,400);
  get('cartogram-state').value='AK';get('cartogram-state').listeners.change();assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,15);
+ assert.match(get('cartogram-state-results').innerHTML,/Akro/);assert.match(get('cartogram-state-results').innerHTML,/15 district seats/);
  get('cartogram').onclick({target:{closest:()=>({dataset:{district:'AK-01'}})}});assert.match(get('cartogram-detail').innerHTML,/AK-01/);assert.equal(get('cartogram-detail').hidden,false);assert.ok(!/T[0-9]{2}\s*[·<]/.test(get('cartogram-detail').innerHTML));
  get('cartogram-detail').onclick({target:{closest:()=>({})}});assert.equal(get('cartogram-detail').hidden,true);
  get('cartogram-state').value='all';get('cartogram-state').listeners.change();
  get('economic').value='.30';get('economic').listeners.input();
  const expected=E.evaluate(.3,0,1),chunk=get('cartogram').innerHTML;
  for(const r of expected.rows){assert.ok(chunk.split(`data-district="${r.id}"`)[1].split('</g>')[0].includes(`fill="${D.parties[r.winner].color}"`));}
- get('view-pr').onclick();assert.ok(all.filter(n=>Object.hasOwn(n.attributes,'data-combined-only')).every(n=>n.hidden));
+ get('view-pr').onclick();assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);assert.ok(all.filter(n=>Object.hasOwn(n.attributes,'data-combined-only')).every(n=>n.hidden));
  get('view-combined').onclick();
  get('tab-districts').onclick();get('district-state').value='IL';get('district-state').listeners.input();assert.equal((get('district-body').innerHTML.match(/<tr>/g)||[]).length,9);
  get('export-districts').onclick();assert.equal((await lastBlob.text()).trim().split('\n').length,401);
  const config={version:1,economic:.1,cultural:.2,variance:1,spread:0,seed:1,runs:3,parties:D.parties.map(({code,x,y})=>({code,x,y}))};
  get('load-config').files=[{size:1000,text:async()=>JSON.stringify(config)}];await get('load-config').onchange({target:get('load-config')});
  assert.equal(get('notice').textContent,'Configuration loaded.');get('save-config').onclick();assert.equal(JSON.parse(await lastBlob.text()).spread,.2);
- get('theme').onclick();get('tab-cartogram').onclick();assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,400);
+ get('theme').onclick();get('view-district').onclick();assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,400);
  console.log('Interface event checks passed: full app startup, fixed variation, live map, tile inspection, state zoom/filter, Combined-only majority, 400-row export, old config normalization and theme switch.');
 })().catch(e=>{console.error(e);process.exitCode=1});

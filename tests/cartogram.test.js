@@ -9,6 +9,15 @@ assert.deepEqual([...new Set(H.stateBorders.filter(e=>!e.coast).map(e=>e.states.
 assert.equal(H.landmasses.length,5);assert.equal(H.landmasses.reduce((n,m)=>n+m.districts,0),400);
 const original=require('./geography-reference.json');
 const base=E.evaluate(),byId=new Map(H.districts.map(d=>[d.id,d]));
+const at=(q,r)=>H.districts.find(d=>d.tileColumn===q&&d.tileRow===r);
+for(const [q,r] of [[7,6],[6,7],[7,7],[6,8],[7,8]])assert.equal(at(q,r).stateCode,'EX');
+for(const [q,r] of [[5,9],[5,10],[3,14],[3,15],[3,16]])assert.equal(at(q,r).stateCode,'EW');
+for(const city of new Set(H.districts.map(d=>d.locality).filter(c=>!c.includes('hinterland')))){
+  const rows=H.districts.filter(d=>d.locality===city),seen=new Set([0]);let previous=-1;
+  while(previous!==seen.size){previous=seen.size;for(const i of [...seen])rows.forEach((d,j)=>{if(Math.hypot(d.tileX-rows[i].tileX,d.tileY-rows[i].tileY)<1.733)seen.add(j)});}
+  assert.equal(seen.size,rows.length,city+' must form one connected group');
+}
+assert.equal(byId.get('KR-22').locality,'Davenport');
 assert.equal(byId.size,400);assert.equal(new Set(base.rows.map(d=>d.id)).size,400);
 assert.equal(H.districts.reduce((n,d)=>n+d.population,0),212000000);
 for(const s of H.states){
@@ -36,7 +45,7 @@ let rendered=0;
 for(const shifts of [[0,0,1],[.3,-.25,1],[-1,1,2],[1,-1,.5]])for(const color of ['winner','family','state'])for(const state of ['all',...H.states.map(s=>s.code)]){
  const current=E.evaluate(...shifts),nodes=new Map(),$=id=>{if(!nodes.has(id))nodes.set(id,{value:'all',checked:true,innerHTML:'',classList:{toggle(){}}});return nodes.get(id);};
  $('cartogram-color').value=color;$('cartogram-state').value=state;
- const c={current,H,displayOrder:D.displayOrder,selected:new Set(),inspectedDistrict:'NX-01',$,esc:String,swatch:()=>'',document:{body:{classList:{contains:()=>false}},querySelector:()=>({classList:{toggle(){}}})}};
+ const c={current,H,displayOrder:D.displayOrder,largestPartiesFirst:(indices,seats)=>indices.slice().sort((a,b)=>seats[b]-seats[a]||a-b),selected:new Set(),inspectedDistrict:'NX-01',$,esc:String,swatch:()=>'',document:{body:{classList:{contains:()=>false}},querySelector:()=>({classList:{toggle(){}}})}};
  vm.runInNewContext(cartogram+'\nrenderCartogram()',c);
  const out=$('cartogram').innerHTML;
  assert.ok(out.includes('data-state-borders="true"'));assert.ok(out.includes('stroke="#000000"'));
@@ -45,6 +54,17 @@ for(const shifts of [[0,0,1],[.3,-.25,1],[-1,1,2],[1,-1,.5]])for(const color of 
  if(!$('cartogram-detail').hidden){assert.ok(!/T[0-9]{2}\s*[·<]/.test($('cartogram-detail').innerHTML));assert.ok($('cartogram-detail').innerHTML.includes(byId.get('NX-01').typeName));}const expected=state==='all'?400:H.states.find(s=>s.code===state).districts;
  assert.equal((out.match(/data-district=/g)||[]).length,expected);
  assert.ok(!/NaN|undefined|Infinity/.test(out));
+ assert.equal($('cartogram-state-results').hidden,state==='all');
+ if(state!=='all'){
+   const result=$('cartogram-state-results').innerHTML;
+   const subset=current.rows.filter(d=>d.stateCode===state);
+   for(let i=0;i<current.parties.length;i++){
+     const n=subset.filter(d=>d.winner===i).length,p=current.parties[i];
+     if(n)assert.ok(result.includes(`<span>${p.name}</span><strong>${n}</strong>`));
+     else assert.ok(!result.includes(`<span>${p.name}</span>`));
+   }
+ }
+
  for(const row of current.rows.filter(d=>state==='all'||d.stateCode===state)){
    const chunk=out.split(`data-district="${row.id}"`)[1].split('</g>')[0];
    assert.ok(!chunk.includes('<text')&&!chunk.includes('<title>'),'District names and types must not appear on tiles or hover');

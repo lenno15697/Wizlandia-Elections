@@ -6,7 +6,11 @@ A standalone GitHub Pages election website inspired by the sidebar, parliament d
 
 Within-type variation is fixed at **0.20**. The variation slider is removed, and loading an older configuration cannot override this setting. The economic, cultural and variance-multiplier sliders remain available. The existing party-boundary caps still apply, so 0.20 is a maximum offset rather than the standard deviation of every type.
 
-The **Cartogram** tab has 400 equal hexagons following the five source landmasses, with thick black outlines around state borders and coasts. State zoom and colours for current district winner, type family or state remain available. District labels and hover tooltips are removed. Clicking a tile opens a details box with its ID, locality and full district-type text; closing it hides the box. It always represents the district component, including when the Assembly view is Combined or PR List. The map updates when election parameters or party positions change. All source state-to-state adjacencies are retained, including Kroana’s two pieces on different landmasses. District results and CSV exports use state-based IDs and include locality and estimated resident population.
+The **Electoral Districts** view displays the 400-seat cartogram in place of the Assembly diagram. Combined and PR List retain their Assembly diagrams. The separate lower Cartogram tab has been removed. State selection zooms the map and lists the seat totals for every party that won at least one district in that state, using the current election. Colour by current winner, type family or state; click a tile for its ID, locality and full type name.
+
+The Extary–Erewen border follows the ten marked tiles: five move into Extary's schematic territory and five into Erewen's. Their entitlements remain 30 and 60. Every one of the 49 named cities now has one connected group of tiles, including cities spanning two states. KR-22 is assigned to Davenport on its own island, rather than the capital across the strait. All 50 type counts, individual offsets, district populations and underlying geographic polygons are preserved.
+
+The sidebar heading is “Explore Wizlandia’s elections.” The two requested explanatory paragraphs are removed. Batch size defaults to **20** elections; saved configurations can still specify another batch size.
 
 Upload all top-level HTML, CSS, JS and SVG website files in this ZIP, including the new **district-geography.js**. The JSON and CSV contain the underlying mapping; tests and Python code are optional for hosting.
 
@@ -53,7 +57,7 @@ To try it locally, open `index.html` in a browser. Alternatively, run `python3 -
 
 - Economic and cultural sliders in **[−1.00, +1.00]**.
 - Variance multiplier in **[0.50, 2.00]**.
-- Three selectable parliament views: **District (400)**, **PR (400)** and **Combined (800)**. The combined majority threshold is **401**.
+- Three selectable seat views: **Electoral Districts (400, cartogram)**, **PR List (400)** and **Combined (800)**. The combined majority threshold is **401**.
 - The specified left-to-right order: **SWP, UPL, SDP, Green, CA, LDP, Conservative, Libertarian, NF**.
 - All nine original party colours, and a results table showing district, PR and combined seat counts together.
 - National vote shares and a political compass with lightly shaded party regions, voter density and solid contour lines.
@@ -104,7 +108,7 @@ The Assembly combines **400 district seats and 400 nationwide PR seats**, for a 
 
 PR uses **Hare quota / largest remainder** on the simulated national vote shares, with **no electoral threshold**. Multiply each party's normalized vote share by 400, assign the integer part, then award remaining seats by descending fractional remainder. Exact remainder ties follow canonical model code order (LDP, CA, SDP, CON, GRN, NF, LIB, UPL, SWP). This tie rule is separate from the requested visual display order.
 
-The view buttons appear as Combined, Electoral Districts, and PR List. The Combined view opens by default. Switching views updates the parliament, seat totals, party cards, representation comparisons and history summaries. The Combined view also shows coalition tools and majority information. The overview table always shows all three seat columns. CSV exports contain all three components, and the SVG export uses the selected view. Editing party compass positions does not reorder the fixed left-to-right display.
+The view buttons appear as Combined, Electoral Districts, and PR List. The Combined view opens by default. Switching views updates the main map or Assembly diagram, seat totals, party cards, representation comparisons and history summaries. The Combined view also shows coalition tools and majority information. The overview table always shows all three seat columns. CSV exports contain all three components, and the SVG export uses the selected view. Editing party compass positions does not reorder the fixed left-to-right display.
 
 Baseline seat allocation:
 

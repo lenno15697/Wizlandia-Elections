@@ -5,7 +5,7 @@
   "federalPopulation": 212000000,
   "apportionment": "Hare quota / largest remainder; supplied state order breaks equal remainders",
   "districting": "Population-first recursive spatial cuts at four subpixels per source pixel",
-  "cartogram": "Source-coastline hex cartogram with five landmasses and exact state capacities",
+  "cartogram": "Source-coastline hex cartogram with connected cities and marked Extary–Erewen border",
   "states": [
     {
       "name": "Neolexia",
@@ -220,11 +220,11 @@
       "x": -2.0715049814853765,
       "y": -4.024835531369349,
       "baselineWinner": "GRN",
-      "tileX": 45.033321,
-      "tileY": 12.0,
+      "tileX": 44.167296,
+      "tileY": 13.5,
       "landmass": 3,
-      "tileColumn": 26,
-      "tileRow": 8,
+      "tileColumn": 25,
+      "tileRow": 9,
       "coastDistance": 3.85187,
       "coldNorthShare": 1.0
     },
@@ -412,11 +412,11 @@
       "x": 1.9449728164167674,
       "y": -0.8818560682939713,
       "baselineWinner": "CA",
-      "tileX": 42.435245,
-      "tileY": 16.5,
+      "tileX": 41.569219,
+      "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 11,
+      "tileRow": 12,
       "coastDistance": 10.28319,
       "coldNorthShare": 0.0
     },
@@ -444,11 +444,11 @@
       "x": 1.9876464899545605,
       "y": 0.6496343467818633,
       "baselineWinner": "CA",
-      "tileX": 43.30127,
-      "tileY": 15.0,
+      "tileX": 42.435245,
+      "tileY": 16.5,
       "landmass": 3,
-      "tileColumn": 25,
-      "tileRow": 10,
+      "tileColumn": 24,
+      "tileRow": 11,
       "coastDistance": 11.61296,
       "coldNorthShare": 0.21964
     },
@@ -476,11 +476,11 @@
       "x": 0.9566121160211238,
       "y": -0.7351036468801851,
       "baselineWinner": "CA",
-      "tileX": 44.167296,
-      "tileY": 13.5,
+      "tileX": 43.30127,
+      "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 9,
+      "tileRow": 10,
       "coastDistance": 9.12577,
       "coldNorthShare": 0.221
     },
@@ -636,10 +636,10 @@
       "x": 3.4199915950457473,
       "y": -1.3431899386149009,
       "baselineWinner": "LDP",
-      "tileX": 40.703194,
+      "tileX": 38.971143,
       "tileY": 19.5,
       "landmass": 3,
-      "tileColumn": 23,
+      "tileColumn": 22,
       "tileRow": 13,
       "coastDistance": 12.35842,
       "coldNorthShare": 0.0
@@ -668,11 +668,11 @@
       "x": 2.4802655567168066,
       "y": -0.09762005338280402,
       "baselineWinner": "LDP",
-      "tileX": 41.569219,
-      "tileY": 18.0,
+      "tileX": 40.703194,
+      "tileY": 19.5,
       "landmass": 3,
-      "tileColumn": 24,
-      "tileRow": 12,
+      "tileColumn": 23,
+      "tileRow": 13,
       "coastDistance": 14.21505,
       "coldNorthShare": 0.0
     },
@@ -764,11 +764,11 @@
       "x": 4.236288168563941,
       "y": -0.9211177234596423,
       "baselineWinner": "LDP",
-      "tileX": 38.971143,
-      "tileY": 19.5,
+      "tileX": 38.105118,
+      "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 13,
+      "tileRow": 14,
       "coastDistance": 4.39231,
       "coldNorthShare": 0.0
     },
@@ -988,11 +988,11 @@
       "x": 2.1582379203720956,
       "y": -1.7155417279327805,
       "baselineWinner": "LDP",
-      "tileX": 31.176915,
-      "tileY": 21.0,
+      "tileX": 32.04294,
+      "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 14,
+      "tileRow": 13,
       "coastDistance": 2.58834,
       "coldNorthShare": 0.0
     },
@@ -1020,10 +1020,10 @@
       "x": 2.9748932567509105,
       "y": 0.4280251486783531,
       "baselineWinner": "LDP",
-      "tileX": 32.908965,
+      "tileX": 34.641016,
       "tileY": 21.0,
       "landmass": 3,
-      "tileColumn": 19,
+      "tileColumn": 20,
       "tileRow": 14,
       "coastDistance": 8.35162,
       "coldNorthShare": 0.0
@@ -1052,10 +1052,10 @@
       "x": 3.7443080234517234,
       "y": -2.3138020065967617,
       "baselineWinner": "LDP",
-      "tileX": 32.04294,
+      "tileX": 33.774991,
       "tileY": 19.5,
       "landmass": 3,
-      "tileColumn": 18,
+      "tileColumn": 19,
       "tileRow": 13,
       "coastDistance": 6.34612,
       "coldNorthShare": 0.0
@@ -1084,10 +1084,10 @@
       "x": -1.8084950185146234,
       "y": -3.9287847147246007,
       "baselineWinner": "GRN",
-      "tileX": 33.774991,
+      "tileX": 35.507042,
       "tileY": 19.5,
       "landmass": 3,
-      "tileColumn": 19,
+      "tileColumn": 20,
       "tileRow": 13,
       "coastDistance": 9.79573,
       "coldNorthShare": 0.0
@@ -1116,11 +1116,11 @@
       "x": 2.5329723336016334,
       "y": -0.32821144943687847,
       "baselineWinner": "LDP",
-      "tileX": 35.507042,
-      "tileY": 19.5,
+      "tileX": 36.373067,
+      "tileY": 21.0,
       "landmass": 3,
-      "tileColumn": 20,
-      "tileRow": 13,
+      "tileColumn": 21,
+      "tileRow": 14,
       "coastDistance": 10.78277,
       "coldNorthShare": 0.0
     },
@@ -1148,11 +1148,11 @@
       "x": 4.085359514707697,
       "y": -1.1032466275602715,
       "baselineWinner": "LDP",
-      "tileX": 36.373067,
-      "tileY": 21.0,
+      "tileX": 37.239092,
+      "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 14,
+      "tileRow": 15,
       "coastDistance": 3.85776,
       "coldNorthShare": 0.0
     },
@@ -1180,11 +1180,11 @@
       "x": 1.958854452140679,
       "y": -0.8720365944306877,
       "baselineWinner": "CA",
-      "tileX": 38.105118,
-      "tileY": 21.0,
+      "tileX": 38.971143,
+      "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 14,
+      "tileRow": 15,
       "coastDistance": 3.99573,
       "coldNorthShare": 0.0
     },
@@ -1276,11 +1276,11 @@
       "x": 2.462147609370662,
       "y": 0.19164574193741218,
       "baselineWinner": "LDP",
-      "tileX": 37.239092,
-      "tileY": 22.5,
+      "tileX": 36.373067,
+      "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 21,
-      "tileRow": 15,
+      "tileRow": 16,
       "coastDistance": 15.73127,
       "coldNorthShare": 0.0
     },
@@ -1308,11 +1308,11 @@
       "x": 1.961145547859321,
       "y": -0.9215836516632624,
       "baselineWinner": "CA",
-      "tileX": 38.105118,
-      "tileY": 24.0,
+      "tileX": 38.971143,
+      "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 16,
+      "tileRow": 17,
       "coastDistance": 9.21066,
       "coldNorthShare": 0.0
     },
@@ -1340,11 +1340,11 @@
       "x": -0.005155072969589641,
       "y": -2.3121298017463094,
       "baselineWinner": "CA",
-      "tileX": 38.971143,
-      "tileY": 22.5,
+      "tileX": 38.105118,
+      "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 22,
-      "tileRow": 15,
+      "tileRow": 16,
       "coastDistance": 8.14016,
       "coldNorthShare": 0.0
     },
@@ -1532,11 +1532,11 @@
       "x": 1.9911904358048815,
       "y": 0.6427271172996144,
       "baselineWinner": "CA",
-      "tileX": 32.04294,
-      "tileY": 22.5,
+      "tileX": 31.176915,
+      "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 18,
-      "tileRow": 15,
+      "tileRow": 14,
       "coastDistance": 9.50033,
       "coldNorthShare": 0.0
     },
@@ -1596,10 +1596,10 @@
       "x": 0.8755819211381279,
       "y": -0.28656551304866706,
       "baselineWinner": "CA",
-      "tileX": 33.774991,
+      "tileX": 32.04294,
       "tileY": 22.5,
       "landmass": 3,
-      "tileColumn": 19,
+      "tileColumn": 18,
       "tileRow": 15,
       "coastDistance": 14.76285,
       "coldNorthShare": 0.0
@@ -1628,10 +1628,10 @@
       "x": 0.9613159918979257,
       "y": -0.3214208978148682,
       "baselineWinner": "CA",
-      "tileX": 34.641016,
+      "tileX": 32.908965,
       "tileY": 21.0,
       "landmass": 3,
-      "tileColumn": 20,
+      "tileColumn": 19,
       "tileRow": 14,
       "coastDistance": 19.49758,
       "coldNorthShare": 0.0
@@ -1660,10 +1660,10 @@
       "x": 0.04271239954407359,
       "y": -0.9584531987269813,
       "baselineWinner": "CA",
-      "tileX": 35.507042,
+      "tileX": 33.774991,
       "tileY": 22.5,
       "landmass": 3,
-      "tileColumn": 20,
+      "tileColumn": 19,
       "tileRow": 15,
       "coastDistance": 22.28148,
       "coldNorthShare": 0.0
@@ -1756,11 +1756,11 @@
       "x": 4.907997897823748,
       "y": -1.5959459896926989,
       "baselineWinner": "LDP",
-      "tileX": 26.846788,
-      "tileY": 25.5,
+      "tileX": 25.980762,
+      "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 15,
-      "tileRow": 17,
+      "tileRow": 18,
       "coastDistance": 3.45367,
       "coldNorthShare": 0.0
     },
@@ -1788,10 +1788,10 @@
       "x": 4.692002102176252,
       "y": -1.8776742564012507,
       "baselineWinner": "LDP",
-      "tileX": 28.578838,
+      "tileX": 26.846788,
       "tileY": 25.5,
       "landmass": 3,
-      "tileColumn": 16,
+      "tileColumn": 15,
       "tileRow": 17,
       "coastDistance": 5.97526,
       "coldNorthShare": 0.0
@@ -1852,10 +1852,10 @@
       "x": 3.1800084049542523,
       "y": -1.2904303074790489,
       "baselineWinner": "LDP",
-      "tileX": 32.04294,
+      "tileX": 30.310889,
       "tileY": 25.5,
       "landmass": 3,
-      "tileColumn": 18,
+      "tileColumn": 17,
       "tileRow": 17,
       "coastDistance": 9.54463,
       "coldNorthShare": 0.0
@@ -1884,11 +1884,11 @@
       "x": 2.4400817069031935,
       "y": -0.2894493768365247,
       "baselineWinner": "LDP",
-      "tileX": 32.908965,
-      "tileY": 24.0,
+      "tileX": 32.04294,
+      "tileY": 25.5,
       "landmass": 3,
-      "tileColumn": 19,
-      "tileRow": 16,
+      "tileColumn": 18,
+      "tileRow": 17,
       "coastDistance": 15.73797,
       "coldNorthShare": 0.0
     },
@@ -1916,11 +1916,11 @@
       "x": 1.9887894847373624,
       "y": 0.6344431656824002,
       "baselineWinner": "CA",
-      "tileX": 36.373067,
-      "tileY": 24.0,
+      "tileX": 35.507042,
+      "tileY": 22.5,
       "landmass": 3,
-      "tileColumn": 21,
-      "tileRow": 16,
+      "tileColumn": 20,
+      "tileRow": 15,
       "coastDistance": 21.49202,
       "coldNorthShare": 0.0
     },
@@ -1948,11 +1948,11 @@
       "x": 3.910021986595005,
       "y": -0.09954652706322262,
       "baselineWinner": "LDP",
-      "tileX": 38.971143,
-      "tileY": 25.5,
+      "tileX": 34.641016,
+      "tileY": 24.0,
       "landmass": 3,
-      "tileColumn": 22,
-      "tileRow": 17,
+      "tileColumn": 20,
+      "tileRow": 16,
       "coastDistance": 28.79969,
       "coldNorthShare": 0.0
     },
@@ -1980,11 +1980,11 @@
       "x": 5.563049411089097,
       "y": -1.9009874588421718,
       "baselineWinner": "LDP",
-      "tileX": 25.980762,
-      "tileY": 27.0,
+      "tileX": 25.114737,
+      "tileY": 28.5,
       "landmass": 3,
-      "tileColumn": 15,
-      "tileRow": 18,
+      "tileColumn": 14,
+      "tileRow": 19,
       "coastDistance": 1.82291,
       "coldNorthShare": 0.0
     },
@@ -2076,10 +2076,10 @@
       "x": 2.7507638819975218,
       "y": 0.5319430687181433,
       "baselineWinner": "LDP",
-      "tileX": 30.310889,
+      "tileX": 28.578838,
       "tileY": 25.5,
       "landmass": 3,
-      "tileColumn": 17,
+      "tileColumn": 16,
       "tileRow": 17,
       "coastDistance": 7.45206,
       "coldNorthShare": 0.0
@@ -2108,10 +2108,10 @@
       "x": 2.842840325879244,
       "y": 0.5880244308048206,
       "baselineWinner": "LDP",
-      "tileX": 34.641016,
+      "tileX": 32.908965,
       "tileY": 24.0,
       "landmass": 3,
-      "tileColumn": 20,
+      "tileColumn": 19,
       "tileRow": 16,
       "coastDistance": 13.29846,
       "coldNorthShare": 0.0
@@ -2172,10 +2172,10 @@
       "x": 1.0725262395001203,
       "y": -2.7014423813490582,
       "baselineWinner": "CA",
-      "tileX": 26.846788,
+      "tileX": 28.578838,
       "tileY": 28.5,
       "landmass": 3,
-      "tileColumn": 15,
+      "tileColumn": 16,
       "tileRow": 19,
       "coastDistance": 2.72791,
       "coldNorthShare": 0.0
@@ -2332,10 +2332,10 @@
       "x": -0.1872043627974988,
       "y": -2.508920890823586,
       "baselineWinner": "CA",
-      "tileX": 28.578838,
+      "tileX": 30.310889,
       "tileY": 28.5,
       "landmass": 3,
-      "tileColumn": 16,
+      "tileColumn": 17,
       "tileRow": 19,
       "coastDistance": 2.59008,
       "coldNorthShare": 0.0
@@ -2492,10 +2492,10 @@
       "x": 0.45797441874755396,
       "y": -2.6560127158288394,
       "baselineWinner": "CA",
-      "tileX": 25.114737,
+      "tileX": 26.846788,
       "tileY": 28.5,
       "landmass": 3,
-      "tileColumn": 14,
+      "tileColumn": 15,
       "tileRow": 19,
       "coastDistance": 2.20983,
       "coldNorthShare": 0.0
@@ -2524,10 +2524,10 @@
       "x": 0.5620255812524461,
       "y": -2.63760753026511,
       "baselineWinner": "CA",
-      "tileX": 25.980762,
+      "tileX": 27.712813,
       "tileY": 30.0,
       "landmass": 3,
-      "tileColumn": 15,
+      "tileColumn": 16,
       "tileRow": 20,
       "coastDistance": 5.1028,
       "coldNorthShare": 0.0
@@ -2556,10 +2556,10 @@
       "x": 2.584303870767574,
       "y": -1.7364213108008548,
       "baselineWinner": "LDP",
-      "tileX": 27.712813,
+      "tileX": 29.444864,
       "tileY": 30.0,
       "landmass": 3,
-      "tileColumn": 16,
+      "tileColumn": 17,
       "tileRow": 20,
       "coastDistance": 8.4382,
       "coldNorthShare": 0.0
@@ -2588,11 +2588,11 @@
       "x": -0.15677064897260945,
       "y": -0.8804216525670747,
       "baselineWinner": "CA",
-      "tileX": 30.310889,
-      "tileY": 28.5,
+      "tileX": 31.176915,
+      "tileY": 30.0,
       "landmass": 3,
-      "tileColumn": 17,
-      "tileRow": 19,
+      "tileColumn": 18,
+      "tileRow": 20,
       "coastDistance": 8.23445,
       "coldNorthShare": 0.0
     },
@@ -2620,10 +2620,10 @@
       "x": 1.0290088873444816,
       "y": -2.695931175707598,
       "baselineWinner": "CA",
-      "tileX": 31.176915,
+      "tileX": 32.908965,
       "tileY": 30.0,
       "landmass": 3,
-      "tileColumn": 18,
+      "tileColumn": 19,
       "tileRow": 20,
       "coastDistance": 14.35956,
       "coldNorthShare": 0.0
@@ -2716,10 +2716,10 @@
       "x": 4.791848598780847,
       "y": -0.2594860707010283,
       "baselineWinner": "LDP",
-      "tileX": 24.248711,
+      "tileX": 25.980762,
       "tileY": 30.0,
       "landmass": 3,
-      "tileColumn": 14,
+      "tileColumn": 15,
       "tileRow": 20,
       "coastDistance": 2.97058,
       "coldNorthShare": 0.0
@@ -2748,11 +2748,11 @@
       "x": 2.7410794453561724,
       "y": 0.30266664999291293,
       "baselineWinner": "LDP",
-      "tileX": 29.444864,
-      "tileY": 30.0,
+      "tileX": 30.310889,
+      "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 17,
-      "tileRow": 20,
+      "tileRow": 21,
       "coastDistance": 10.10008,
       "coldNorthShare": 0.0
     },
@@ -2780,10 +2780,10 @@
       "x": 2.395132361628871,
       "y": -0.1904058599863818,
       "baselineWinner": "LDP",
-      "tileX": 32.908965,
+      "tileX": 34.641016,
       "tileY": 30.0,
       "landmass": 3,
-      "tileColumn": 19,
+      "tileColumn": 20,
       "tileRow": 20,
       "coastDistance": 17.27719,
       "coldNorthShare": 0.0
@@ -2876,11 +2876,11 @@
       "x": 3.8807403828690643,
       "y": -0.32827644467263917,
       "baselineWinner": "LDP",
-      "tileX": 34.641016,
-      "tileY": 30.0,
+      "tileX": 45.033321,
+      "tileY": 12.0,
       "landmass": 3,
-      "tileColumn": 20,
-      "tileRow": 20,
+      "tileColumn": 26,
+      "tileRow": 8,
       "coastDistance": 18.77973,
       "coldNorthShare": 0.0
     },
@@ -2908,11 +2908,11 @@
       "x": 0.6294158185221697,
       "y": 0.2451133048492246,
       "baselineWinner": "CA",
-      "tileX": 25.114737,
-      "tileY": 31.5,
+      "tileX": 24.248711,
+      "tileY": 30.0,
       "landmass": 3,
       "tileColumn": 14,
-      "tileRow": 21,
+      "tileRow": 20,
       "coastDistance": 8.41746,
       "coldNorthShare": 0.0
     },
@@ -2940,10 +2940,10 @@
       "x": -1.3783389996675657,
       "y": 1.2317405564914141,
       "baselineWinner": "CA",
-      "tileX": 30.310889,
+      "tileX": 25.114737,
       "tileY": 31.5,
       "landmass": 3,
-      "tileColumn": 17,
+      "tileColumn": 14,
       "tileRow": 21,
       "coastDistance": 19.4199,
       "coldNorthShare": 0.0
@@ -3292,11 +3292,11 @@
       "x": 0.40401145905091107,
       "y": 0.40957989155326935,
       "baselineWinner": "CA",
-      "tileX": 19.918584,
-      "tileY": 7.5,
+      "tileX": 19.052559,
+      "tileY": 9.0,
       "landmass": 2,
       "tileColumn": 11,
-      "tileRow": 5,
+      "tileRow": 6,
       "coastDistance": 8.02044,
       "coldNorthShare": 1.0
     },
@@ -3388,11 +3388,11 @@
       "x": 0.9049422983632298,
       "y": -2.089070834575302,
       "baselineWinner": "CA",
-      "tileX": 20.78461,
-      "tileY": 9.0,
+      "tileX": 19.918584,
+      "tileY": 7.5,
       "landmass": 2,
-      "tileColumn": 12,
-      "tileRow": 6,
+      "tileColumn": 11,
+      "tileRow": 5,
       "coastDistance": 21.13721,
       "coldNorthShare": 1.0
     },
@@ -3452,11 +3452,11 @@
       "x": 2.5254352168420238,
       "y": 1.0146989780932223,
       "baselineWinner": "LDP",
-      "tileX": 19.052559,
-      "tileY": 9.0,
+      "tileX": 11.25833,
+      "tileY": 13.5,
       "landmass": 2,
-      "tileColumn": 11,
-      "tileRow": 6,
+      "tileColumn": 6,
+      "tileRow": 9,
       "coastDistance": 15.01957,
       "coldNorthShare": 1.0
     },
@@ -3516,11 +3516,11 @@
       "x": 3.583829849445489,
       "y": 0.7928152001866122,
       "baselineWinner": "LDP",
-      "tileX": 19.918584,
-      "tileY": 10.5,
+      "tileX": 19.052559,
+      "tileY": 15.0,
       "landmass": 2,
       "tileColumn": 11,
-      "tileRow": 7,
+      "tileRow": 10,
       "coastDistance": 17.68201,
       "coldNorthShare": 1.0
     },
@@ -3548,11 +3548,11 @@
       "x": 3.416170150554511,
       "y": 1.0535645537194378,
       "baselineWinner": "LDP",
-      "tileX": 21.650635,
-      "tileY": 10.5,
+      "tileX": 20.78461,
+      "tileY": 9.0,
       "landmass": 2,
       "tileColumn": 12,
-      "tileRow": 7,
+      "tileRow": 6,
       "coastDistance": 10.3175,
       "coldNorthShare": 1.0
     },
@@ -3580,11 +3580,11 @@
       "x": -0.6338027349011978,
       "y": -0.11049620675177388,
       "baselineWinner": "CA",
-      "tileX": 16.454483,
-      "tileY": 10.5,
+      "tileX": 9.526279,
+      "tileY": 13.5,
       "landmass": 2,
-      "tileColumn": 9,
-      "tileRow": 7,
+      "tileColumn": 5,
+      "tileRow": 9,
       "coastDistance": 7.93463,
       "coldNorthShare": 1.0
     },
@@ -3612,10 +3612,10 @@
       "x": 0.8641235340670984,
       "y": -0.7317733399304255,
       "baselineWinner": "CA",
-      "tileX": 18.186533,
+      "tileX": 19.918584,
       "tileY": 10.5,
       "landmass": 2,
-      "tileColumn": 10,
+      "tileColumn": 11,
       "tileRow": 7,
       "coastDistance": 11.11403,
       "coldNorthShare": 1.0
@@ -3676,11 +3676,11 @@
       "x": 1.9705175046545373,
       "y": 0.6318266783706152,
       "baselineWinner": "CA",
-      "tileX": 20.78461,
-      "tileY": 12.0,
+      "tileX": 21.650635,
+      "tileY": 10.5,
       "landmass": 2,
       "tileColumn": 12,
-      "tileRow": 8,
+      "tileRow": 7,
       "coastDistance": 13.23778,
       "coldNorthShare": 1.0
     },
@@ -3740,10 +3740,10 @@
       "x": 2.540707625705581,
       "y": 0.01817938496674508,
       "baselineWinner": "LDP",
-      "tileX": 19.052559,
+      "tileX": 20.78461,
       "tileY": 12.0,
       "landmass": 2,
-      "tileColumn": 11,
+      "tileColumn": 12,
       "tileRow": 8,
       "coastDistance": 3.16586,
       "coldNorthShare": 0.0
@@ -3836,11 +3836,11 @@
       "x": 3.3718764743090426,
       "y": 0.9569628271427633,
       "baselineWinner": "LDP",
-      "tileX": 17.320508,
-      "tileY": 12.0,
+      "tileX": 10.392305,
+      "tileY": 15.0,
       "landmass": 2,
-      "tileColumn": 10,
-      "tileRow": 8,
+      "tileColumn": 6,
+      "tileRow": 10,
       "coastDistance": 7.2515,
       "coldNorthShare": 0.0
     },
@@ -3868,11 +3868,11 @@
       "x": 0.7930504132779758,
       "y": -0.6605007764715549,
       "baselineWinner": "CA",
-      "tileX": 12.124356,
-      "tileY": 9.0,
+      "tileX": 18.186533,
+      "tileY": 10.5,
       "landmass": 2,
-      "tileColumn": 7,
-      "tileRow": 6,
+      "tileColumn": 10,
+      "tileRow": 7,
       "coastDistance": 13.79212,
       "coldNorthShare": 0.0
     },
@@ -3900,11 +3900,11 @@
       "x": 0.23559406025973165,
       "y": -1.2809016374107085,
       "baselineWinner": "CA",
-      "tileX": 12.990381,
-      "tileY": 10.5,
+      "tileX": 17.320508,
+      "tileY": 12.0,
       "landmass": 2,
-      "tileColumn": 7,
-      "tileRow": 7,
+      "tileColumn": 10,
+      "tileRow": 8,
       "coastDistance": 8.0741,
       "coldNorthShare": 0.0
     },
@@ -3932,11 +3932,11 @@
       "x": 1.0669495867220244,
       "y": -0.5731194696223951,
       "baselineWinner": "CA",
-      "tileX": 18.186533,
-      "tileY": 13.5,
+      "tileX": 19.052559,
+      "tileY": 12.0,
       "landmass": 2,
-      "tileColumn": 10,
-      "tileRow": 9,
+      "tileColumn": 11,
+      "tileRow": 8,
       "coastDistance": 6.16445,
       "coldNorthShare": 0.0
     },
@@ -3964,11 +3964,11 @@
       "x": 3.6104780055732695,
       "y": 1.4947489889944998,
       "baselineWinner": "LDP",
-      "tileX": 10.392305,
-      "tileY": 12.0,
+      "tileX": 8.660254,
+      "tileY": 15.0,
       "landmass": 2,
-      "tileColumn": 6,
-      "tileRow": 8,
+      "tileColumn": 5,
+      "tileRow": 10,
       "coastDistance": 29.21359,
       "coldNorthShare": 0.0
     },
@@ -3996,10 +3996,10 @@
       "x": 2.6678428901279427,
       "y": -0.314079538268053,
       "baselineWinner": "LDP",
-      "tileX": 11.25833,
+      "tileX": 16.454483,
       "tileY": 10.5,
       "landmass": 2,
-      "tileColumn": 6,
+      "tileColumn": 9,
       "tileRow": 7,
       "coastDistance": 10.43858,
       "coldNorthShare": 0.0
@@ -4028,11 +4028,11 @@
       "x": 0.5608471309492904,
       "y": -2.679154905644299,
       "baselineWinner": "CA",
-      "tileX": 19.052559,
-      "tileY": 15.0,
+      "tileX": 18.186533,
+      "tileY": 13.5,
       "landmass": 2,
-      "tileColumn": 11,
-      "tileRow": 10,
+      "tileColumn": 10,
+      "tileRow": 9,
       "coastDistance": 2.59792,
       "coldNorthShare": 0.0
     },
@@ -4060,11 +4060,11 @@
       "x": 4.810854938483341,
       "y": -0.07001044636288015,
       "baselineWinner": "LDP",
-      "tileX": 12.124356,
-      "tileY": 12.0,
+      "tileX": 17.320508,
+      "tileY": 15.0,
       "landmass": 2,
-      "tileColumn": 7,
-      "tileRow": 8,
+      "tileColumn": 10,
+      "tileRow": 10,
       "coastDistance": 9.19183,
       "coldNorthShare": 0.0
     },
@@ -4092,11 +4092,11 @@
       "x": 2.432157109872057,
       "y": -0.07954070782589695,
       "baselineWinner": "LDP",
-      "tileX": 17.320508,
-      "tileY": 15.0,
+      "tileX": 16.454483,
+      "tileY": 16.5,
       "landmass": 2,
-      "tileColumn": 10,
-      "tileRow": 10,
+      "tileColumn": 9,
+      "tileRow": 11,
       "coastDistance": 2.98582,
       "coldNorthShare": 0.0
     },
@@ -4124,11 +4124,11 @@
       "x": 1.2298435075074847,
       "y": 2.0052689542971356,
       "baselineWinner": "CON",
-      "tileX": 10.392305,
-      "tileY": 15.0,
+      "tileX": 12.124356,
+      "tileY": 21.0,
       "landmass": 2,
-      "tileColumn": 6,
-      "tileRow": 10,
+      "tileColumn": 7,
+      "tileRow": 14,
       "coastDistance": 33.5124,
       "coldNorthShare": 0.0
     },
@@ -4156,11 +4156,11 @@
       "x": 3.6447427012998177,
       "y": 1.5969699326321316,
       "baselineWinner": "LDP",
-      "tileX": 11.25833,
-      "tileY": 13.5,
+      "tileX": 9.526279,
+      "tileY": 16.5,
       "landmass": 2,
-      "tileColumn": 6,
-      "tileRow": 9,
+      "tileColumn": 5,
+      "tileRow": 11,
       "coastDistance": 21.72497,
       "coldNorthShare": 0.0
     },
@@ -4188,11 +4188,11 @@
       "x": 2.8947427012998177,
       "y": 1.4669699326321315,
       "baselineWinner": "LDP",
-      "tileX": 16.454483,
-      "tileY": 16.5,
+      "tileX": 12.990381,
+      "tileY": 22.5,
       "landmass": 2,
-      "tileColumn": 9,
-      "tileRow": 11,
+      "tileColumn": 7,
+      "tileRow": 15,
       "coastDistance": 8.35331,
       "coldNorthShare": 0.0
     },
@@ -4252,11 +4252,11 @@
       "x": 4.000756132960334,
       "y": -0.35180827872292586,
       "baselineWinner": "LDP",
-      "tileX": 9.526279,
-      "tileY": 16.5,
+      "tileX": 6.062178,
+      "tileY": 25.5,
       "landmass": 2,
-      "tileColumn": 5,
-      "tileRow": 11,
+      "tileColumn": 3,
+      "tileRow": 17,
       "coastDistance": 28.83799,
       "coldNorthShare": 0.0
     },
@@ -4284,11 +4284,11 @@
       "x": 3.6511721031321556,
       "y": 1.4066519987443975,
       "baselineWinner": "LDP",
-      "tileX": 10.392305,
-      "tileY": 18.0,
+      "tileX": 9.526279,
+      "tileY": 25.5,
       "landmass": 2,
-      "tileColumn": 6,
-      "tileRow": 12,
+      "tileColumn": 5,
+      "tileRow": 17,
       "coastDistance": 30.97665,
       "coldNorthShare": 0.0
     },
@@ -4444,11 +4444,11 @@
       "x": -1.8552308009904177,
       "y": -4.157956977558097,
       "baselineWinner": "GRN",
-      "tileX": 11.25833,
-      "tileY": 19.5,
+      "tileX": 10.392305,
+      "tileY": 18.0,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 13,
+      "tileRow": 12,
       "coastDistance": 12.60017,
       "coldNorthShare": 0.0
     },
@@ -4540,10 +4540,10 @@
       "x": -0.2572924256081519,
       "y": -0.8863775937167822,
       "baselineWinner": "CA",
-      "tileX": 6.928203,
+      "tileX": 5.196152,
       "tileY": 21.0,
       "landmass": 2,
-      "tileColumn": 4,
+      "tileColumn": 3,
       "tileRow": 14,
       "coastDistance": 2.66441,
       "coldNorthShare": 0.0
@@ -4572,11 +4572,11 @@
       "x": 0.4591528690507096,
       "y": -2.6144653404496503,
       "baselineWinner": "CA",
-      "tileX": 6.928203,
-      "tileY": 24.0,
+      "tileX": 6.062178,
+      "tileY": 22.5,
       "landmass": 2,
-      "tileColumn": 4,
-      "tileRow": 16,
+      "tileColumn": 3,
+      "tileRow": 15,
       "coastDistance": 3.91498,
       "coldNorthShare": 0.0
     },
@@ -4636,11 +4636,11 @@
       "x": 3.0620986232164307,
       "y": 1.6207687097607133,
       "baselineWinner": "LDP",
-      "tileX": 7.794229,
-      "tileY": 22.5,
+      "tileX": 6.928203,
+      "tileY": 21.0,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 15,
+      "tileRow": 14,
       "coastDistance": 9.55882,
       "coldNorthShare": 0.0
     },
@@ -4732,11 +4732,11 @@
       "x": 3.7988755289725025,
       "y": 2.0757408588668027,
       "baselineWinner": "LDP",
-      "tileX": 9.526279,
-      "tileY": 22.5,
+      "tileX": 10.392305,
+      "tileY": 21.0,
       "landmass": 2,
-      "tileColumn": 5,
-      "tileRow": 15,
+      "tileColumn": 6,
+      "tileRow": 14,
       "coastDistance": 15.85394,
       "coldNorthShare": 0.0
     },
@@ -4796,11 +4796,11 @@
       "x": 0.7251710677341278,
       "y": 0.4394877215682781,
       "baselineWinner": "CA",
-      "tileX": 10.392305,
-      "tileY": 21.0,
+      "tileX": 7.794229,
+      "tileY": 25.5,
       "landmass": 2,
-      "tileColumn": 6,
-      "tileRow": 14,
+      "tileColumn": 4,
+      "tileRow": 17,
       "coastDistance": 15.25508,
       "coldNorthShare": 0.0
     },
@@ -4828,11 +4828,11 @@
       "x": 3.3772330422297125,
       "y": 0.9746644401285041,
       "baselineWinner": "LDP",
-      "tileX": 12.124356,
-      "tileY": 21.0,
+      "tileX": 11.25833,
+      "tileY": 19.5,
       "landmass": 2,
-      "tileColumn": 7,
-      "tileRow": 14,
+      "tileColumn": 6,
+      "tileRow": 13,
       "coastDistance": 8.21187,
       "coldNorthShare": 0.0
     },
@@ -4892,11 +4892,11 @@
       "x": 3.3379013767835697,
       "y": 1.4792312902392868,
       "baselineWinner": "LDP",
-      "tileX": 6.062178,
-      "tileY": 25.5,
+      "tileX": 5.196152,
+      "tileY": 24.0,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 17,
+      "tileRow": 16,
       "coastDistance": 2.77262,
       "coldNorthShare": 0.0
     },
@@ -4925,10 +4925,10 @@
       "y": 0.5637131039131371,
       "baselineWinner": "LDP",
       "tileX": 6.928203,
-      "tileY": 27.0,
+      "tileY": 24.0,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 18,
+      "tileRow": 16,
       "coastDistance": 5.20498,
       "coldNorthShare": 0.0
     },
@@ -4956,11 +4956,11 @@
       "x": 3.2938962738492763,
       "y": 0.8680665386714413,
       "baselineWinner": "LDP",
-      "tileX": 8.660254,
-      "tileY": 24.0,
+      "tileX": 9.526279,
+      "tileY": 22.5,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 16,
+      "tileRow": 15,
       "coastDistance": 11.92087,
       "coldNorthShare": 0.0
     },
@@ -4989,10 +4989,10 @@
       "y": 1.4778561912511154,
       "baselineWinner": "LDP",
       "tileX": 7.794229,
-      "tileY": 25.5,
+      "tileY": 22.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 17,
+      "tileRow": 15,
       "coastDistance": 5.87428,
       "coldNorthShare": 0.0
     },
@@ -5020,11 +5020,11 @@
       "x": 3.4699357293805626,
       "y": 0.7482544899322131,
       "baselineWinner": "LDP",
-      "tileX": 9.526279,
-      "tileY": 25.5,
+      "tileX": 8.660254,
+      "tileY": 24.0,
       "landmass": 2,
       "tileColumn": 5,
-      "tileRow": 17,
+      "tileRow": 16,
       "coastDistance": 8.05789,
       "coldNorthShare": 0.0
     },
@@ -5052,11 +5052,11 @@
       "x": 3.999243867039666,
       "y": -0.041811967371024106,
       "baselineWinner": "LDP",
-      "tileX": 10.392305,
-      "tileY": 24.0,
+      "tileX": 6.928203,
+      "tileY": 27.0,
       "landmass": 2,
-      "tileColumn": 6,
-      "tileRow": 16,
+      "tileColumn": 4,
+      "tileRow": 18,
       "coastDistance": 5.11154,
       "coldNorthShare": 0.0
     },
@@ -5084,11 +5084,11 @@
       "x": 0.86581734508351,
       "y": -0.4634489502949686,
       "baselineWinner": "CA",
-      "tileX": 11.25833,
-      "tileY": 25.5,
+      "tileX": 10.392305,
+      "tileY": 24.0,
       "landmass": 2,
       "tileColumn": 6,
-      "tileRow": 17,
+      "tileRow": 16,
       "coastDistance": 3.82551,
       "coldNorthShare": 0.0
     },
@@ -5148,11 +5148,11 @@
       "x": 4.119259617130936,
       "y": -0.06534380142131077,
       "baselineWinner": "LDP",
-      "tileX": 12.990381,
-      "tileY": 22.5,
+      "tileX": 11.25833,
+      "tileY": 25.5,
       "landmass": 2,
-      "tileColumn": 7,
-      "tileRow": 15,
+      "tileColumn": 6,
+      "tileRow": 17,
       "coastDistance": 3.01851,
       "coldNorthShare": 0.0
     },
@@ -5276,10 +5276,10 @@
       "x": 0.9550577016367703,
       "y": -2.3645494115186474,
       "baselineWinner": "CA",
-      "tileX": 47.631397,
+      "tileX": 45.899346,
       "tileY": 19.5,
       "landmass": 3,
-      "tileColumn": 27,
+      "tileColumn": 26,
       "tileRow": 13,
       "coastDistance": 23.97537,
       "coldNorthShare": 0.0
@@ -5340,11 +5340,11 @@
       "x": -0.8661972650988022,
       "y": -0.0031240393421760673,
       "baselineWinner": "CA",
-      "tileX": 48.497423,
-      "tileY": 21.0,
+      "tileX": 47.631397,
+      "tileY": 19.5,
       "landmass": 3,
-      "tileColumn": 28,
-      "tileRow": 14,
+      "tileColumn": 27,
+      "tileRow": 13,
       "coastDistance": 12.20085,
       "coldNorthShare": 0.0
     },
@@ -5404,11 +5404,11 @@
       "x": 0.9698685592170293,
       "y": -0.5161440139297846,
       "baselineWinner": "CA",
-      "tileX": 49.363448,
-      "tileY": 22.5,
+      "tileX": 46.765372,
+      "tileY": 21.0,
       "landmass": 3,
-      "tileColumn": 28,
-      "tileRow": 15,
+      "tileColumn": 27,
+      "tileRow": 14,
       "coastDistance": 6.65314,
       "coldNorthShare": 0.0
     },
@@ -5436,11 +5436,11 @@
       "x": -2.2754694118515495,
       "y": -0.9697191164686845,
       "baselineWinner": "SDP",
-      "tileX": 52.82755,
-      "tileY": 25.5,
+      "tileX": 49.363448,
+      "tileY": 22.5,
       "landmass": 3,
-      "tileColumn": 30,
-      "tileRow": 17,
+      "tileColumn": 28,
+      "tileRow": 15,
       "coastDistance": 2.28565,
       "coldNorthShare": 0.0
     },
@@ -5468,11 +5468,11 @@
       "x": -2.206344602686208,
       "y": -0.9016100126343658,
       "baselineWinner": "SDP",
-      "tileX": 50.229473,
-      "tileY": 24.0,
+      "tileX": 48.497423,
+      "tileY": 21.0,
       "landmass": 3,
-      "tileColumn": 29,
-      "tileRow": 16,
+      "tileColumn": 28,
+      "tileRow": 14,
       "coastDistance": 5.70091,
       "coldNorthShare": 0.0
     },
@@ -5532,11 +5532,11 @@
       "x": -0.27902478461886765,
       "y": 2.0850530453169656,
       "baselineWinner": "CA",
-      "tileX": 40.703194,
-      "tileY": 25.5,
+      "tileX": 39.837169,
+      "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 17,
+      "tileRow": 18,
       "coastDistance": 24.45692,
       "coldNorthShare": 0.0
     },
@@ -5564,11 +5564,11 @@
       "x": 3.8895219944267305,
       "y": 1.4716307649115505,
       "baselineWinner": "LDP",
-      "tileX": 42.435245,
-      "tileY": 22.5,
+      "tileX": 40.703194,
+      "tileY": 25.5,
       "landmass": 3,
-      "tileColumn": 24,
-      "tileRow": 15,
+      "tileColumn": 23,
+      "tileRow": 17,
       "coastDistance": 42.40863,
       "coldNorthShare": 0.0
     },
@@ -5596,11 +5596,11 @@
       "x": 1.2280553245188237,
       "y": -0.2357138005311226,
       "baselineWinner": "CA",
-      "tileX": 46.765372,
-      "tileY": 21.0,
+      "tileX": 50.229473,
+      "tileY": 24.0,
       "landmass": 3,
-      "tileColumn": 27,
-      "tileRow": 14,
+      "tileColumn": 29,
+      "tileRow": 16,
       "coastDistance": 11.43927,
       "coldNorthShare": 0.0
     },
@@ -5692,11 +5692,11 @@
       "x": -0.09484492703041036,
       "y": -2.56149044434764,
       "baselineWinner": "CA",
-      "tileX": 45.899346,
-      "tileY": 19.5,
+      "tileX": 45.033321,
+      "tileY": 21.0,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 13,
+      "tileRow": 14,
       "coastDistance": 24.84716,
       "coldNorthShare": 0.0
     },
@@ -5724,11 +5724,11 @@
       "x": 1.941803860283031,
       "y": -0.9186151797861938,
       "baselineWinner": "CA",
-      "tileX": 41.569219,
-      "tileY": 24.0,
+      "tileX": 42.435245,
+      "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 16,
+      "tileRow": 15,
       "coastDistance": 41.38659,
       "coldNorthShare": 0.0
     },
@@ -5756,11 +5756,11 @@
       "x": -0.035661431400199034,
       "y": 2.197493940800916,
       "baselineWinner": "CA",
-      "tileX": 45.033321,
-      "tileY": 21.0,
+      "tileX": 51.961524,
+      "tileY": 27.0,
       "landmass": 3,
-      "tileColumn": 26,
-      "tileRow": 14,
+      "tileColumn": 30,
+      "tileRow": 18,
       "coastDistance": 39.1214,
       "coldNorthShare": 0.0
     },
@@ -5820,11 +5820,11 @@
       "x": 2.867952398131844,
       "y": 1.3641297508494206,
       "baselineWinner": "LDP",
-      "tileX": 38.971143,
-      "tileY": 28.5,
+      "tileX": 36.373067,
+      "tileY": 33.0,
       "landmass": 3,
-      "tileColumn": 22,
-      "tileRow": 19,
+      "tileColumn": 21,
+      "tileRow": 22,
       "coastDistance": 7.55118,
       "coldNorthShare": 0.0
     },
@@ -5852,11 +5852,11 @@
       "x": 0.25599869855854407,
       "y": -1.0461101561181898,
       "baselineWinner": "CA",
-      "tileX": 41.569219,
-      "tileY": 27.0,
+      "tileX": 40.703194,
+      "tileY": 28.5,
       "landmass": 3,
-      "tileColumn": 24,
-      "tileRow": 18,
+      "tileColumn": 23,
+      "tileRow": 19,
       "coastDistance": 24.77699,
       "coldNorthShare": 0.0
     },
@@ -5980,11 +5980,11 @@
       "x": 3.319093016770136,
       "y": -1.1694706303833635,
       "baselineWinner": "LDP",
-      "tileX": 51.961524,
-      "tileY": 27.0,
+      "tileX": 52.82755,
+      "tileY": 25.5,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 18,
+      "tileRow": 17,
       "coastDistance": 4.00392,
       "coldNorthShare": 0.0
     },
@@ -6044,11 +6044,11 @@
       "x": 3.033347841355635,
       "y": 0.45785906968868084,
       "baselineWinner": "LDP",
-      "tileX": 39.837169,
-      "tileY": 27.0,
+      "tileX": 38.971143,
+      "tileY": 28.5,
       "landmass": 3,
-      "tileColumn": 23,
-      "tileRow": 18,
+      "tileColumn": 22,
+      "tileRow": 19,
       "coastDistance": 12.91297,
       "coldNorthShare": 0.0
     },
@@ -6076,11 +6076,11 @@
       "x": 1.3794877600651287,
       "y": 3.0641582744163203,
       "baselineWinner": "CON",
-      "tileX": 42.435245,
-      "tileY": 25.5,
+      "tileX": 52.82755,
+      "tileY": 28.5,
       "landmass": 3,
-      "tileColumn": 24,
-      "tileRow": 17,
+      "tileColumn": 30,
+      "tileRow": 19,
       "coastDistance": 25.70701,
       "coldNorthShare": 0.0
     },
@@ -6108,10 +6108,10 @@
       "x": 2.3517861174533676,
       "y": -0.2234795205990353,
       "baselineWinner": "LDP",
-      "tileX": 43.30127,
+      "tileX": 41.569219,
       "tileY": 24.0,
       "landmass": 3,
-      "tileColumn": 25,
+      "tileColumn": 24,
       "tileRow": 16,
       "coastDistance": 18.06566,
       "coldNorthShare": 0.0
@@ -6140,11 +6140,11 @@
       "x": 2.6666521586443652,
       "y": 0.4085206842173692,
       "baselineWinner": "LDP",
-      "tileX": 43.30127,
-      "tileY": 27.0,
+      "tileX": 42.435245,
+      "tileY": 25.5,
       "landmass": 3,
-      "tileColumn": 25,
-      "tileRow": 18,
+      "tileColumn": 24,
+      "tileRow": 17,
       "coastDistance": 15.01668,
       "coldNorthShare": 0.0
     },
@@ -6172,10 +6172,10 @@
       "x": 0.7501314407829707,
       "y": -0.29747623216416536,
       "baselineWinner": "CA",
-      "tileX": 45.033321,
+      "tileX": 43.30127,
       "tileY": 24.0,
       "landmass": 3,
-      "tileColumn": 26,
+      "tileColumn": 25,
       "tileRow": 16,
       "coastDistance": 12.58735,
       "coldNorthShare": 0.0
@@ -6268,10 +6268,10 @@
       "x": 1.9958571106037306,
       "y": 0.6453234287571898,
       "baselineWinner": "CA",
-      "tileX": 52.82755,
+      "tileX": 51.095499,
       "tileY": 28.5,
       "landmass": 3,
-      "tileColumn": 30,
+      "tileColumn": 29,
       "tileRow": 19,
       "coastDistance": 3.78463,
       "coldNorthShare": 0.0
@@ -6396,11 +6396,11 @@
       "x": -0.6944938261661335,
       "y": 0.09751118029875439,
       "baselineWinner": "CA",
-      "tileX": 40.703194,
-      "tileY": 31.5,
+      "tileX": 41.569219,
+      "tileY": 30.0,
       "landmass": 3,
-      "tileColumn": 23,
-      "tileRow": 21,
+      "tileColumn": 24,
+      "tileRow": 20,
       "coastDistance": 10.41307,
       "coldNorthShare": 0.0
     },
@@ -6428,11 +6428,11 @@
       "x": -0.33138930090964785,
       "y": 2.290499315439493,
       "baselineWinner": "CA",
-      "tileX": 40.703194,
-      "tileY": 28.5,
+      "tileX": 42.435245,
+      "tileY": 31.5,
       "landmass": 3,
-      "tileColumn": 23,
-      "tileRow": 19,
+      "tileColumn": 24,
+      "tileRow": 21,
       "coastDistance": 18.52097,
       "coldNorthShare": 0.0
     },
@@ -6492,11 +6492,11 @@
       "x": -2.1336553973137917,
       "y": -1.1720102334595839,
       "baselineWinner": "SDP",
-      "tileX": 44.167296,
-      "tileY": 28.5,
+      "tileX": 43.30127,
+      "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 19,
+      "tileRow": 18,
       "coastDistance": 6.19918,
       "coldNorthShare": 0.0
     },
@@ -6524,11 +6524,11 @@
       "x": -2.241440588830572,
       "y": -1.1743646295799892,
       "baselineWinner": "SDP",
-      "tileX": 45.899346,
-      "tileY": 25.5,
+      "tileX": 45.033321,
+      "tileY": 24.0,
       "landmass": 3,
       "tileColumn": 26,
-      "tileRow": 17,
+      "tileRow": 16,
       "coastDistance": 8.2449,
       "coldNorthShare": 0.0
     },
@@ -6588,10 +6588,10 @@
       "x": -1.782861255456573,
       "y": -4.041674712487714,
       "baselineWinner": "GRN",
-      "tileX": 47.631397,
+      "tileX": 45.899346,
       "tileY": 25.5,
       "landmass": 3,
-      "tileColumn": 27,
+      "tileColumn": 26,
       "tileRow": 17,
       "coastDistance": 6.58389,
       "coldNorthShare": 0.0
@@ -6620,11 +6620,11 @@
       "x": -2.0985594111694277,
       "y": -0.8992556165139604,
       "baselineWinner": "SDP",
-      "tileX": 48.497423,
-      "tileY": 27.0,
+      "tileX": 47.631397,
+      "tileY": 25.5,
       "landmass": 3,
-      "tileColumn": 28,
-      "tileRow": 18,
+      "tileColumn": 27,
+      "tileRow": 17,
       "coastDistance": 3.78054,
       "coldNorthShare": 0.0
     },
@@ -6652,10 +6652,10 @@
       "x": 1.28668598251847,
       "y": -0.04552451503898064,
       "baselineWinner": "CA",
-      "tileX": 50.229473,
+      "tileX": 48.497423,
       "tileY": 27.0,
       "landmass": 3,
-      "tileColumn": 29,
+      "tileColumn": 28,
       "tileRow": 18,
       "coastDistance": 2.84631,
       "coldNorthShare": 0.0
@@ -6684,11 +6684,11 @@
       "x": -2.0103153796249,
       "y": -0.9784935557983775,
       "baselineWinner": "SDP",
-      "tileX": 51.095499,
-      "tileY": 28.5,
+      "tileX": 50.229473,
+      "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 19,
+      "tileRow": 18,
       "coastDistance": 2.12696,
       "coldNorthShare": 0.0
     },
@@ -6716,10 +6716,10 @@
       "x": -0.3440486925971554,
       "y": -0.8130684585103278,
       "baselineWinner": "CA",
-      "tileX": 36.373067,
+      "tileX": 38.105118,
       "tileY": 33.0,
       "landmass": 3,
-      "tileColumn": 21,
+      "tileColumn": 22,
       "tileRow": 22,
       "coastDistance": 1.94627,
       "coldNorthShare": 0.0
@@ -6748,10 +6748,10 @@
       "x": 0.7462741267689444,
       "y": -0.5430917276670919,
       "baselineWinner": "CA",
-      "tileX": 38.105118,
+      "tileX": 39.837169,
       "tileY": 33.0,
       "landmass": 3,
-      "tileColumn": 22,
+      "tileColumn": 23,
       "tileRow": 22,
       "coastDistance": 2.70076,
       "coldNorthShare": 0.0
@@ -6780,11 +6780,11 @@
       "x": -0.8063649180018498,
       "y": 0.0778709670089224,
       "baselineWinner": "CA",
-      "tileX": 39.837169,
-      "tileY": 33.0,
+      "tileX": 40.703194,
+      "tileY": 31.5,
       "landmass": 3,
       "tileColumn": 23,
-      "tileRow": 22,
+      "tileRow": 21,
       "coastDistance": 3.4833,
       "coldNorthShare": 0.0
     },
@@ -6812,11 +6812,11 @@
       "x": -1.4237466932618998,
       "y": 1.4959503557599312,
       "baselineWinner": "CA",
-      "tileX": 41.569219,
-      "tileY": 30.0,
+      "tileX": 42.435245,
+      "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 20,
+      "tileRow": 19,
       "coastDistance": 10.35331,
       "coldNorthShare": 0.0
     },
@@ -6844,11 +6844,11 @@
       "x": 1.4133140174815302,
       "y": -0.3480957310549693,
       "baselineWinner": "CA",
-      "tileX": 42.435245,
-      "tileY": 31.5,
+      "tileX": 43.30127,
+      "tileY": 30.0,
       "landmass": 3,
-      "tileColumn": 24,
-      "tileRow": 21,
+      "tileColumn": 25,
+      "tileRow": 20,
       "coastDistance": 6.23763,
       "coldNorthShare": 0.0
     },
@@ -6876,11 +6876,11 @@
       "x": 0.9737258732310555,
       "y": -0.27052851842685793,
       "baselineWinner": "CA",
-      "tileX": 42.435245,
-      "tileY": 28.5,
+      "tileX": 41.569219,
+      "tileY": 27.0,
       "landmass": 3,
       "tileColumn": 24,
-      "tileRow": 19,
+      "tileRow": 18,
       "coastDistance": 4.46505,
       "coldNorthShare": 0.0
     },
@@ -6908,11 +6908,11 @@
       "x": -2.3296846203751,
       "y": -1.0951266902955723,
       "baselineWinner": "SDP",
-      "tileX": 43.30127,
-      "tileY": 30.0,
+      "tileX": 44.167296,
+      "tileY": 28.5,
       "landmass": 3,
       "tileColumn": 25,
-      "tileRow": 20,
+      "tileRow": 19,
       "coastDistance": 2.40185,
       "coldNorthShare": 0.0
     },
@@ -7132,11 +7132,11 @@
       "x": 1.1815183218442293,
       "y": 2.588551446597501,
       "baselineWinner": "CON",
-      "tileX": 51.961524,
-      "tileY": 15.0,
+      "tileX": 51.095499,
+      "tileY": 16.5,
       "landmass": 3,
-      "tileColumn": 30,
-      "tileRow": 10,
+      "tileColumn": 29,
+      "tileRow": 11,
       "coastDistance": 20.47699,
       "coldNorthShare": 0.8565
     },
@@ -7356,10 +7356,10 @@
       "x": -0.22579671662395742,
       "y": 2.3799602890554143,
       "baselineWinner": "CA",
-      "tileX": 53.693575,
+      "tileX": 51.961524,
       "tileY": 15.0,
       "landmass": 3,
-      "tileColumn": 31,
+      "tileColumn": 30,
       "tileRow": 10,
       "coastDistance": 31.46889,
       "coldNorthShare": 0.0
@@ -7388,11 +7388,11 @@
       "x": 1.411598314864413,
       "y": -0.025551115675494868,
       "baselineWinner": "CA",
-      "tileX": 54.5596,
-      "tileY": 16.5,
+      "tileX": 53.693575,
+      "tileY": 15.0,
       "landmass": 3,
       "tileColumn": 31,
-      "tileRow": 11,
+      "tileRow": 10,
       "coastDistance": 4.99478,
       "coldNorthShare": 0.0
     },
@@ -7548,11 +7548,11 @@
       "x": 0.8699247203932239,
       "y": -0.7838347044120174,
       "baselineWinner": "CA",
-      "tileX": 51.095499,
-      "tileY": 16.5,
+      "tileX": 50.229473,
+      "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 11,
+      "tileRow": 12,
       "coastDistance": 30.952,
       "coldNorthShare": 0.0
     },
@@ -7612,11 +7612,11 @@
       "x": 1.1858283326068229,
       "y": 1.037416247049181,
       "baselineWinner": "CA",
-      "tileX": 53.693575,
-      "tileY": 18.0,
+      "tileX": 54.5596,
+      "tileY": 16.5,
       "landmass": 3,
       "tileColumn": 31,
-      "tileRow": 12,
+      "tileRow": 11,
       "coastDistance": 5.50044,
       "coldNorthShare": 0.0
     },
@@ -7676,11 +7676,11 @@
       "x": 3.5556919765482764,
       "y": -2.559818239497188,
       "baselineWinner": "LDP",
-      "tileX": 54.5596,
-      "tileY": 19.5,
+      "tileX": 53.693575,
+      "tileY": 18.0,
       "landmass": 3,
       "tileColumn": 31,
-      "tileRow": 13,
+      "tileRow": 12,
       "coastDistance": 3.72926,
       "coldNorthShare": 0.0
     },
@@ -7740,11 +7740,11 @@
       "x": 0.12163717592562236,
       "y": -2.4820531317917185,
       "baselineWinner": "CA",
-      "tileX": 50.229473,
-      "tileY": 18.0,
+      "tileX": 51.095499,
+      "tileY": 19.5,
       "landmass": 3,
       "tileColumn": 29,
-      "tileRow": 12,
+      "tileRow": 13,
       "coastDistance": 10.42614,
       "coldNorthShare": 0.0
     },
@@ -7772,11 +7772,11 @@
       "x": 0.5044059397402684,
       "y": -1.0727186086832414,
       "baselineWinner": "CA",
-      "tileX": 51.095499,
-      "tileY": 19.5,
+      "tileX": 51.961524,
+      "tileY": 21.0,
       "landmass": 3,
-      "tileColumn": 29,
-      "tileRow": 13,
+      "tileColumn": 30,
+      "tileRow": 14,
       "coastDistance": 12.13182,
       "coldNorthShare": 0.0
     },
@@ -7836,11 +7836,11 @@
       "x": 1.0470643516533842,
       "y": -0.381640879107218,
       "baselineWinner": "CA",
-      "tileX": 55.425626,
-      "tileY": 21.0,
+      "tileX": 54.5596,
+      "tileY": 19.5,
       "landmass": 3,
-      "tileColumn": 32,
-      "tileRow": 14,
+      "tileColumn": 31,
+      "tileRow": 13,
       "coastDistance": 4.34392,
       "coldNorthShare": 0.0
     },
@@ -7932,11 +7932,11 @@
       "x": 1.2884016851355873,
       "y": -0.3680691304184551,
       "baselineWinner": "CA",
-      "tileX": 51.095499,
-      "tileY": 22.5,
+      "tileX": 51.961524,
+      "tileY": 24.0,
       "landmass": 3,
-      "tileColumn": 29,
-      "tileRow": 15,
+      "tileColumn": 30,
+      "tileRow": 16,
       "coastDistance": 4.2276,
       "coldNorthShare": 0.0
     },
@@ -7964,11 +7964,11 @@
       "x": -0.5888955223926143,
       "y": 0.027861875245561933,
       "baselineWinner": "CA",
-      "tileX": 51.961524,
-      "tileY": 21.0,
+      "tileX": 51.095499,
+      "tileY": 22.5,
       "landmass": 3,
-      "tileColumn": 30,
-      "tileRow": 14,
+      "tileColumn": 29,
+      "tileRow": 15,
       "coastDistance": 5.28455,
       "coldNorthShare": 0.0
     },
@@ -8060,11 +8060,11 @@
       "x": 2.5418010183455855,
       "y": -0.019499585571531697,
       "baselineWinner": "LDP",
-      "tileX": 51.961524,
-      "tileY": 24.0,
+      "tileX": 52.82755,
+      "tileY": 22.5,
       "landmass": 3,
       "tileColumn": 30,
-      "tileRow": 16,
+      "tileRow": 15,
       "coastDistance": 2.82982,
       "coldNorthShare": 0.0
     },
@@ -8092,10 +8092,10 @@
       "x": 2.476957758049354,
       "y": -1.9770916392934603,
       "baselineWinner": "LDP",
-      "tileX": 52.82755,
+      "tileX": 54.5596,
       "tileY": 22.5,
       "landmass": 3,
-      "tileColumn": 30,
+      "tileColumn": 31,
       "tileRow": 15,
       "coastDistance": 3.57792,
       "coldNorthShare": 0.0
@@ -8156,11 +8156,11 @@
       "x": 4.28914506151666,
       "y": -1.1636097997310697,
       "baselineWinner": "LDP",
-      "tileX": 54.5596,
-      "tileY": 22.5,
+      "tileX": 55.425626,
+      "tileY": 21.0,
       "landmass": 3,
-      "tileColumn": 31,
-      "tileRow": 15,
+      "tileColumn": 32,
+      "tileRow": 14,
       "coastDistance": 4.1946,
       "coldNorthShare": 0.0
     },
@@ -8476,11 +8476,11 @@
       "x": 2.558198981654414,
       "y": -0.37412066052241827,
       "baselineWinner": "LDP",
-      "tileX": 9.526279,
-      "tileY": 10.5,
+      "tileX": 10.392305,
+      "tileY": 9.0,
       "landmass": 2,
-      "tileColumn": 5,
-      "tileRow": 7,
+      "tileColumn": 6,
+      "tileRow": 6,
       "coastDistance": 5.56064,
       "coldNorthShare": 0.64716
     },
@@ -8540,10 +8540,10 @@
       "x": 2.0417620796279046,
       "y": -1.7580785181611691,
       "baselineWinner": "LDP",
-      "tileX": 7.794229,
+      "tileX": 9.526279,
       "tileY": 10.5,
       "landmass": 2,
-      "tileColumn": 4,
+      "tileColumn": 5,
       "tileRow": 7,
       "coastDistance": 2.53109,
       "coldNorthShare": 0.32288
@@ -8604,10 +8604,10 @@
       "x": 2.429066148888103,
       "y": -0.3417292941570994,
       "baselineWinner": "LDP",
-      "tileX": 10.392305,
+      "tileX": 12.124356,
       "tileY": 9.0,
       "landmass": 2,
-      "tileColumn": 6,
+      "tileColumn": 7,
       "tileRow": 6,
       "coastDistance": 5.12358,
       "coldNorthShare": 0.01487
@@ -8636,11 +8636,11 @@
       "x": 3.1304766362534404,
       "y": 1.737527336389561,
       "baselineWinner": "LDP",
-      "tileX": 5.196152,
-      "tileY": 12.0,
+      "tileX": 7.794229,
+      "tileY": 10.5,
       "landmass": 2,
-      "tileColumn": 3,
-      "tileRow": 8,
+      "tileColumn": 4,
+      "tileRow": 7,
       "coastDistance": 4.55804,
       "coldNorthShare": 0.0
     },
@@ -8668,10 +8668,10 @@
       "x": 4.92184681726583,
       "y": -0.02821974201841959,
       "baselineWinner": "LDP",
-      "tileX": 6.928203,
+      "tileX": 8.660254,
       "tileY": 12.0,
       "landmass": 2,
-      "tileColumn": 4,
+      "tileColumn": 5,
       "tileRow": 8,
       "coastDistance": 11.83784,
       "coldNorthShare": 0.0
@@ -8700,11 +8700,11 @@
       "x": 3.0008658941965116,
       "y": 1.175691989001533,
       "baselineWinner": "LDP",
-      "tileX": 8.660254,
-      "tileY": 12.0,
+      "tileX": 11.25833,
+      "tileY": 10.5,
       "landmass": 2,
-      "tileColumn": 5,
-      "tileRow": 8,
+      "tileColumn": 6,
+      "tileRow": 7,
       "coastDistance": 20.76492,
       "coldNorthShare": 0.0
     },
@@ -8732,11 +8732,11 @@
       "x": -0.22163717592562238,
       "y": -2.391567114302231,
       "baselineWinner": "CA",
-      "tileX": 6.062178,
-      "tileY": 13.5,
+      "tileX": 5.196152,
+      "tileY": 12.0,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 9,
+      "tileRow": 8,
       "coastDistance": 9.00761,
       "coldNorthShare": 0.0
     },
@@ -8764,11 +8764,11 @@
       "x": 1.1228874323421016,
       "y": -2.1739476747072395,
       "baselineWinner": "CA",
-      "tileX": 9.526279,
-      "tileY": 13.5,
+      "tileX": 12.990381,
+      "tileY": 10.5,
       "landmass": 2,
-      "tileColumn": 5,
-      "tileRow": 9,
+      "tileColumn": 7,
+      "tileRow": 7,
       "coastDistance": 34.17457,
       "coldNorthShare": 0.0
     },
@@ -8796,11 +8796,11 @@
       "x": 3.8552572987001823,
       "y": 1.3694098212739187,
       "baselineWinner": "LDP",
-      "tileX": 7.794229,
-      "tileY": 13.5,
+      "tileX": 12.124356,
+      "tileY": 12.0,
       "landmass": 2,
-      "tileColumn": 4,
-      "tileRow": 9,
+      "tileColumn": 7,
+      "tileRow": 8,
       "coastDistance": 23.9097,
       "coldNorthShare": 0.0
     },
@@ -8828,11 +8828,11 @@
       "x": -0.9433940010429548,
       "y": -0.005832085024728491,
       "baselineWinner": "CA",
-      "tileX": 6.928203,
-      "tileY": 15.0,
+      "tileX": 10.392305,
+      "tileY": 12.0,
       "landmass": 2,
-      "tileColumn": 4,
-      "tileRow": 10,
+      "tileColumn": 6,
+      "tileRow": 8,
       "coastDistance": 7.48009,
       "coldNorthShare": 0.0
     },
@@ -8861,10 +8861,10 @@
       "y": -0.10376397107715421,
       "baselineWinner": "CA",
       "tileX": 6.062178,
-      "tileY": 16.5,
+      "tileY": 13.5,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 11,
+      "tileRow": 9,
       "coastDistance": 5.07699,
       "coldNorthShare": 0.0
     },
@@ -8892,11 +8892,11 @@
       "x": 4.175408530913832,
       "y": 1.808429056030826,
       "baselineWinner": "LDP",
-      "tileX": 8.660254,
-      "tileY": 15.0,
+      "tileX": 6.928203,
+      "tileY": 12.0,
       "landmass": 2,
-      "tileColumn": 5,
-      "tileRow": 10,
+      "tileColumn": 4,
+      "tileRow": 8,
       "coastDistance": 18.37364,
       "coldNorthShare": 0.0
     },
@@ -8924,11 +8924,11 @@
       "x": 3.1765638050192386,
       "y": -1.4208422788553636,
       "baselineWinner": "LDP",
-      "tileX": 5.196152,
-      "tileY": 18.0,
+      "tileX": 6.928203,
+      "tileY": 15.0,
       "landmass": 2,
-      "tileColumn": 3,
-      "tileRow": 12,
+      "tileColumn": 4,
+      "tileRow": 10,
       "coastDistance": 6.2913,
       "coldNorthShare": 0.0
     },
@@ -8957,10 +8957,10 @@
       "y": -1.201681598611665,
       "baselineWinner": "LDP",
       "tileX": 7.794229,
-      "tileY": 16.5,
+      "tileY": 13.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 11,
+      "tileRow": 9,
       "coastDistance": 19.05608,
       "coldNorthShare": 0.0
     },
@@ -8988,11 +8988,11 @@
       "x": 0.5446243637135451,
       "y": -2.580143017657746,
       "baselineWinner": "CA",
-      "tileX": 5.196152,
-      "tileY": 24.0,
+      "tileX": 4.330127,
+      "tileY": 19.5,
       "landmass": 2,
-      "tileColumn": 3,
-      "tileRow": 16,
+      "tileColumn": 2,
+      "tileRow": 13,
       "coastDistance": 2.61755,
       "coldNorthShare": 0.0
     },
@@ -9020,11 +9020,11 @@
       "x": 1.8277075314314026,
       "y": 0.04892912698665144,
       "baselineWinner": "CA",
-      "tileX": 4.330127,
-      "tileY": 19.5,
+      "tileX": 6.062178,
+      "tileY": 16.5,
       "landmass": 2,
-      "tileColumn": 2,
-      "tileRow": 13,
+      "tileColumn": 3,
+      "tileRow": 11,
       "coastDistance": 2.54169,
       "coldNorthShare": 0.0
     },
@@ -9053,10 +9053,10 @@
       "y": -0.8262533893894135,
       "baselineWinner": "CA",
       "tileX": 5.196152,
-      "tileY": 21.0,
+      "tileY": 18.0,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 14,
+      "tileRow": 12,
       "coastDistance": 7.37097,
       "coldNorthShare": 0.0
     },
@@ -9084,11 +9084,11 @@
       "x": 4.221364902179083,
       "y": -0.8719386474822847,
       "baselineWinner": "LDP",
-      "tileX": 6.928203,
-      "tileY": 18.0,
+      "tileX": 7.794229,
+      "tileY": 16.5,
       "landmass": 2,
       "tileColumn": 4,
-      "tileRow": 12,
+      "tileRow": 11,
       "coastDistance": 11.21776,
       "coldNorthShare": 0.0
     },
@@ -9116,11 +9116,11 @@
       "x": 0.9973894851661923,
       "y": -2.6565797651208944,
       "baselineWinner": "CA",
-      "tileX": 6.062178,
-      "tileY": 19.5,
+      "tileX": 6.928203,
+      "tileY": 18.0,
       "landmass": 2,
-      "tileColumn": 3,
-      "tileRow": 13,
+      "tileColumn": 4,
+      "tileRow": 12,
       "coastDistance": 13.85109,
       "coldNorthShare": 0.0
     },
@@ -9149,10 +9149,10 @@
       "y": 1.2583132152346086,
       "baselineWinner": "LDP",
       "tileX": 6.062178,
-      "tileY": 22.5,
+      "tileY": 19.5,
       "landmass": 2,
       "tileColumn": 3,
-      "tileRow": 15,
+      "tileRow": 13,
       "coastDistance": 19.46005,
       "coldNorthShare": 0.0
     },
@@ -9756,11 +9756,11 @@
       "x": 2.4656303839747564,
       "y": -0.07363057037233497,
       "baselineWinner": "LDP",
-      "tileX": 75.34421,
-      "tileY": 25.5,
+      "tileX": 76.210236,
+      "tileY": 27.0,
       "landmass": 4,
-      "tileColumn": 43,
-      "tileRow": 17,
+      "tileColumn": 44,
+      "tileRow": 18,
       "coastDistance": 15.01373,
       "coldNorthShare": 0.0
     },
@@ -9788,11 +9788,11 @@
       "x": 2.3373863282971628,
       "y": -0.09089208108941355,
       "baselineWinner": "LDP",
-      "tileX": 76.210236,
-      "tileY": 27.0,
+      "tileX": 75.34421,
+      "tileY": 25.5,
       "landmass": 4,
-      "tileColumn": 44,
-      "tileRow": 18,
+      "tileColumn": 43,
+      "tileRow": 17,
       "coastDistance": 11.69224,
       "coldNorthShare": 0.0
     },
@@ -9841,7 +9841,7 @@
       "centroidY": 314.8636469599004,
       "sourceArea": 208.125,
       "rasterId": 305,
-      "locality": "Kroana City",
+      "locality": "Davenport",
       "metroShare": 0.43369,
       "urbanCoreShare": 0.30741,
       "dominantCityShare": 0.43344,
@@ -10620,11 +10620,11 @@
       "x": 4.011411182306126,
       "y": -1.0290113833522203,
       "baselineWinner": "LDP",
-      "tileX": 104.789074,
-      "tileY": 13.5,
+      "tileX": 103.923048,
+      "tileY": 15.0,
       "landmass": 1,
       "tileColumn": 60,
-      "tileRow": 9,
+      "tileRow": 10,
       "coastDistance": 5.87264,
       "coldNorthShare": 1.0
     },
@@ -10652,11 +10652,11 @@
       "x": -1.590335613552339,
       "y": 1.2345060898967737,
       "baselineWinner": "CA",
-      "tileX": 103.923048,
-      "tileY": 15.0,
+      "tileX": 104.789074,
+      "tileY": 13.5,
       "landmass": 1,
       "tileColumn": 60,
-      "tileRow": 10,
+      "tileRow": 9,
       "coastDistance": 22.17297,
       "coldNorthShare": 1.0
     },
@@ -10748,11 +10748,11 @@
       "x": 1.2685708618791371,
       "y": 1.9439159679403883,
       "baselineWinner": "CON",
-      "tileX": 101.324972,
-      "tileY": 16.5,
+      "tileX": 97.860871,
+      "tileY": 19.5,
       "landmass": 1,
-      "tileColumn": 58,
-      "tileRow": 11,
+      "tileColumn": 56,
+      "tileRow": 13,
       "coastDistance": 15.82756,
       "coldNorthShare": 0.05615
     },
@@ -10908,11 +10908,11 @@
       "x": 3.13437703338697,
       "y": 1.5013209435734918,
       "baselineWinner": "LDP",
-      "tileX": 103.923048,
-      "tileY": 18.0,
+      "tileX": 104.789074,
+      "tileY": 19.5,
       "landmass": 1,
       "tileColumn": 60,
-      "tileRow": 12,
+      "tileRow": 13,
       "coastDistance": 19.11248,
       "coldNorthShare": 0.0
     },
@@ -10972,11 +10972,11 @@
       "x": 1.5141716673931773,
       "y": 0.808963506856869,
       "baselineWinner": "CA",
-      "tileX": 100.458947,
-      "tileY": 18.0,
+      "tileX": 101.324972,
+      "tileY": 16.5,
       "landmass": 1,
       "tileColumn": 58,
-      "tileRow": 12,
+      "tileRow": 11,
       "coastDistance": 11.92529,
       "coldNorthShare": 0.0
     },
@@ -11004,10 +11004,10 @@
       "x": 1.1377634166298998,
       "y": -2.693958143347027,
       "baselineWinner": "CA",
-      "tileX": 97.860871,
+      "tileX": 99.592921,
       "tileY": 19.5,
       "landmass": 1,
-      "tileColumn": 56,
+      "tileColumn": 57,
       "tileRow": 13,
       "coastDistance": 2.71852,
       "coldNorthShare": 0.0
@@ -11036,11 +11036,11 @@
       "x": 0.5875427591896335,
       "y": -2.6184916317589484,
       "baselineWinner": "CA",
-      "tileX": 99.592921,
-      "tileY": 19.5,
+      "tileX": 100.458947,
+      "tileY": 18.0,
       "landmass": 1,
-      "tileColumn": 57,
-      "tileRow": 13,
+      "tileColumn": 58,
+      "tileRow": 12,
       "coastDistance": 2.93997,
       "coldNorthShare": 0.0
     },
@@ -11100,11 +11100,11 @@
       "x": 4.700170789198544,
       "y": -0.1885465578074999,
       "baselineWinner": "LDP",
-      "tileX": 104.789074,
-      "tileY": 19.5,
+      "tileX": 103.923048,
+      "tileY": 18.0,
       "landmass": 1,
       "tileColumn": 60,
-      "tileRow": 13,
+      "tileRow": 12,
       "coastDistance": 4.69371,
       "coldNorthShare": 0.0
     },
@@ -12220,11 +12220,11 @@
       "x": 3.9491465401287753,
       "y": 1.501646733530949,
       "baselineWinner": "LDP",
-      "tileX": 78.808312,
-      "tileY": 25.5,
+      "tileX": 81.406388,
+      "tileY": 27.0,
       "landmass": 4,
-      "tileColumn": 45,
-      "tileRow": 17,
+      "tileColumn": 47,
+      "tileRow": 18,
       "coastDistance": 37.94288,
       "coldNorthShare": 0.0379
     },
@@ -12316,11 +12316,11 @@
       "x": 4.001124471027497,
       "y": 1.7306388950392475,
       "baselineWinner": "LDP",
-      "tileX": 77.942286,
-      "tileY": 27.0,
+      "tileX": 78.808312,
+      "tileY": 25.5,
       "landmass": 4,
       "tileColumn": 45,
-      "tileRow": 18,
+      "tileRow": 17,
       "coastDistance": 11.08942,
       "coldNorthShare": 0.0
     },
@@ -12412,11 +12412,11 @@
       "x": 2.86562296661303,
       "y": 1.2050588103325583,
       "baselineWinner": "LDP",
-      "tileX": 77.076261,
-      "tileY": 28.5,
+      "tileX": 77.942286,
+      "tileY": 27.0,
       "landmass": 4,
-      "tileColumn": 44,
-      "tileRow": 19,
+      "tileColumn": 45,
+      "tileRow": 18,
       "coastDistance": 8.26048,
       "coldNorthShare": 0.0
     },
@@ -12444,11 +12444,11 @@
       "x": 0.6958283326068229,
       "y": -0.29258375295081895,
       "baselineWinner": "CA",
-      "tileX": 81.406388,
-      "tileY": 27.0,
+      "tileX": 78.808312,
+      "tileY": 28.5,
       "landmass": 4,
-      "tileColumn": 47,
-      "tileRow": 18,
+      "tileColumn": 45,
+      "tileRow": 19,
       "coastDistance": 7.13694,
       "coldNorthShare": 0.0
     },
@@ -12508,10 +12508,10 @@
       "x": 1.024171667393177,
       "y": -0.5210364931431309,
       "baselineWinner": "CA",
-      "tileX": 78.808312,
+      "tileX": 77.076261,
       "tileY": 28.5,
       "landmass": 4,
-      "tileColumn": 45,
+      "tileColumn": 44,
       "tileRow": 19,
       "coastDistance": 4.4564,
       "coldNorthShare": 0.0
@@ -12901,7 +12901,7 @@
       "coldNorthShare": 1.0
     }
   ],
-  "layoutVersion": 2,
+  "layoutVersion": 3,
   "stateBorders": [
     {
       "a": [
@@ -13003,40 +13003,12 @@
     },
     {
       "a": [
-        44.167296,
-        11.5
+        45.033321,
+        13.0
       ],
       "b": [
         45.033321,
-        11.0
-      ],
-      "states": [
-        "NX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        45.033321,
-        11.0
-      ],
-      "b": [
-        45.899346,
-        11.5
-      ],
-      "states": [
-        "NX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        45.899346,
-        11.5
-      ],
-      "b": [
-        45.899346,
-        12.5
+        14.0
       ],
       "states": [
         "ET",
@@ -13046,15 +13018,15 @@
     },
     {
       "a": [
-        45.033321,
-        13.0
+        44.167296,
+        14.5
       ],
       "b": [
-        45.899346,
-        12.5
+        45.033321,
+        14.0
       ],
       "states": [
-        "ET",
+        "AX",
         "NX"
       ],
       "coast": false
@@ -13181,36 +13153,6 @@
       "b": [
         44.167296,
         15.5
-      ],
-      "states": [
-        "AX",
-        "NX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        45.033321,
-        13.0
-      ],
-      "b": [
-        45.033321,
-        14.0
-      ],
-      "states": [
-        "ET",
-        "NX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        44.167296,
-        14.5
-      ],
-      "b": [
-        45.033321,
-        14.0
       ],
       "states": [
         "AX",
@@ -13481,34 +13423,6 @@
     },
     {
       "a": [
-        30.310889,
-        20.5
-      ],
-      "b": [
-        30.310889,
-        21.5
-      ],
-      "states": [
-        "NX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        30.310889,
-        20.5
-      ],
-      "b": [
-        31.176915,
-        20.0
-      ],
-      "states": [
-        "NX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
         31.176915,
         19.0
       ],
@@ -13635,6 +13549,36 @@
     },
     {
       "a": [
+        39.837169,
+        25.0
+      ],
+      "b": [
+        39.837169,
+        26.0
+      ],
+      "states": [
+        "AX",
+        "NX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        38.971143,
+        26.5
+      ],
+      "b": [
+        39.837169,
+        26.0
+      ],
+      "states": [
+        "AX",
+        "NX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
         40.703194,
         23.5
       ],
@@ -13777,6 +13721,34 @@
     },
     {
       "a": [
+        30.310889,
+        20.5
+      ],
+      "b": [
+        30.310889,
+        21.5
+      ],
+      "states": [
+        "NX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        30.310889,
+        20.5
+      ],
+      "b": [
+        31.176915,
+        20.0
+      ],
+      "states": [
+        "NX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
         23.382686,
         27.5
       ],
@@ -13819,33 +13791,17 @@
     },
     {
       "a": [
-        39.837169,
-        25.0
+        24.248711,
+        28.0
       ],
       "b": [
-        39.837169,
-        26.0
+        24.248711,
+        29.0
       ],
       "states": [
-        "AX",
         "NX"
       ],
-      "coast": false
-    },
-    {
-      "a": [
-        38.971143,
-        26.5
-      ],
-      "b": [
-        39.837169,
-        26.0
-      ],
-      "states": [
-        "AX",
-        "NX"
-      ],
-      "coast": false
+      "coast": true
     },
     {
       "a": [
@@ -13879,20 +13835,6 @@
     },
     {
       "a": [
-        24.248711,
-        28.0
-      ],
-      "b": [
-        24.248711,
-        29.0
-      ],
-      "states": [
-        "NX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
         27.712813,
         31.0
       ],
@@ -13907,54 +13849,40 @@
     },
     {
       "a": [
-        23.382686,
-        30.5
-      ],
-      "b": [
-        24.248711,
-        31.0
-      ],
-      "states": [
-        "NX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        23.382686,
-        29.5
-      ],
-      "b": [
-        23.382686,
-        30.5
-      ],
-      "states": [
-        "NX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        23.382686,
-        29.5
-      ],
-      "b": [
-        24.248711,
-        29.0
-      ],
-      "states": [
-        "NX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
         28.578838,
         30.5
       ],
       "b": [
         29.444864,
         31.0
+      ],
+      "states": [
+        "NX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        29.444864,
+        32.0
+      ],
+      "b": [
+        30.310889,
+        32.5
+      ],
+      "states": [
+        "NX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        29.444864,
+        31.0
+      ],
+      "b": [
+        29.444864,
+        32.0
       ],
       "states": [
         "NX"
@@ -14021,12 +13949,12 @@
     },
     {
       "a": [
-        24.248711,
-        31.0
+        44.167296,
+        11.5
       ],
       "b": [
-        24.248711,
-        32.0
+        45.033321,
+        11.0
       ],
       "states": [
         "NX"
@@ -14035,12 +13963,12 @@
     },
     {
       "a": [
-        29.444864,
-        32.0
+        45.033321,
+        11.0
       ],
       "b": [
-        30.310889,
-        32.5
+        45.899346,
+        11.5
       ],
       "states": [
         "NX"
@@ -14049,11 +13977,83 @@
     },
     {
       "a": [
-        29.444864,
+        45.899346,
+        11.5
+      ],
+      "b": [
+        45.899346,
+        12.5
+      ],
+      "states": [
+        "ET",
+        "NX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        45.033321,
+        13.0
+      ],
+      "b": [
+        45.899346,
+        12.5
+      ],
+      "states": [
+        "ET",
+        "NX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        23.382686,
+        30.5
+      ],
+      "b": [
+        24.248711,
+        31.0
+      ],
+      "states": [
+        "NX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        23.382686,
+        29.5
+      ],
+      "b": [
+        23.382686,
+        30.5
+      ],
+      "states": [
+        "NX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        23.382686,
+        29.5
+      ],
+      "b": [
+        24.248711,
+        29.0
+      ],
+      "states": [
+        "NX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        24.248711,
         31.0
       ],
       "b": [
-        29.444864,
+        24.248711,
         32.0
       ],
       "states": [
@@ -14376,6 +14376,90 @@
     },
     {
       "a": [
+        18.186533,
+        8.5
+      ],
+      "b": [
+        19.052559,
+        8.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        22.51666,
+        8.0
+      ],
+      "b": [
+        23.382686,
+        8.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        23.382686,
+        8.5
+      ],
+      "b": [
+        23.382686,
+        9.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        16.454483,
+        8.5
+      ],
+      "b": [
+        16.454483,
+        9.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        16.454483,
+        8.5
+      ],
+      "b": [
+        17.320508,
+        8.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        17.320508,
+        8.0
+      ],
+      "b": [
+        18.186533,
+        8.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
         19.052559,
         7.0
       ],
@@ -14418,76 +14502,6 @@
     },
     {
       "a": [
-        22.51666,
-        8.0
-      ],
-      "b": [
-        23.382686,
-        8.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        23.382686,
-        8.5
-      ],
-      "b": [
-        23.382686,
-        9.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        16.454483,
-        8.5
-      ],
-      "b": [
-        16.454483,
-        9.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        16.454483,
-        8.5
-      ],
-      "b": [
-        17.320508,
-        8.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        17.320508,
-        8.0
-      ],
-      "b": [
-        18.186533,
-        8.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
         23.382686,
         9.5
       ],
@@ -14516,12 +14530,112 @@
     },
     {
       "a": [
+        10.392305,
+        13.0
+      ],
+      "b": [
+        11.25833,
+        12.5
+      ],
+      "states": [
+        "EW",
+        "EX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        11.25833,
+        12.5
+      ],
+      "b": [
+        12.124356,
+        13.0
+      ],
+      "states": [
+        "EW",
+        "EX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        12.124356,
+        13.0
+      ],
+      "b": [
+        12.124356,
+        14.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        23.382686,
+        12.5
+      ],
+      "b": [
+        24.248711,
+        13.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        24.248711,
+        11.0
+      ],
+      "b": [
+        25.114737,
+        11.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        25.114737,
+        11.5
+      ],
+      "b": [
+        25.114737,
+        12.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        24.248711,
+        13.0
+      ],
+      "b": [
+        25.114737,
+        12.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
         18.186533,
-        8.5
+        15.5
       ],
       "b": [
         19.052559,
-        8.0
+        16.0
       ],
       "states": [
         "EW"
@@ -14530,12 +14644,12 @@
     },
     {
       "a": [
-        23.382686,
-        12.5
+        19.052559,
+        16.0
       ],
       "b": [
-        24.248711,
-        13.0
+        19.918584,
+        15.5
       ],
       "states": [
         "EW"
@@ -14544,87 +14658,48 @@
     },
     {
       "a": [
-        24.248711,
-        11.0
-      ],
-      "b": [
-        25.114737,
-        11.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        25.114737,
-        11.5
-      ],
-      "b": [
-        25.114737,
-        12.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        24.248711,
+        8.660254,
         13.0
       ],
       "b": [
-        25.114737,
+        8.660254,
+        14.0
+      ],
+      "states": [
+        "EW",
+        "EX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        8.660254,
+        13.0
+      ],
+      "b": [
+        9.526279,
         12.5
       ],
       "states": [
-        "EW"
+        "EW",
+        "EX"
       ],
-      "coast": true
+      "coast": false
     },
     {
       "a": [
-        15.588457,
-        11.0
+        9.526279,
+        12.5
       ],
       "b": [
-        16.454483,
-        11.5
+        10.392305,
+        13.0
       ],
       "states": [
-        "EW"
+        "EW",
+        "EX"
       ],
-      "coast": true
-    },
-    {
-      "a": [
-        15.588457,
-        10.0
-      ],
-      "b": [
-        15.588457,
-        11.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        15.588457,
-        10.0
-      ],
-      "b": [
-        16.454483,
-        9.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
+      "coast": false
     },
     {
       "a": [
@@ -14740,12 +14815,12 @@
     },
     {
       "a": [
-        11.25833,
-        8.5
+        7.794229,
+        15.5
       ],
       "b": [
-        11.25833,
-        9.5
+        8.660254,
+        16.0
       ],
       "states": [
         "EW",
@@ -14755,12 +14830,12 @@
     },
     {
       "a": [
-        11.25833,
-        8.5
+        7.794229,
+        14.5
       ],
       "b": [
-        12.124356,
-        8.0
+        7.794229,
+        15.5
       ],
       "states": [
         "EW",
@@ -14770,68 +14845,55 @@
     },
     {
       "a": [
-        12.124356,
-        8.0
+        7.794229,
+        14.5
       ],
       "b": [
-        12.990381,
-        8.5
+        8.660254,
+        14.0
       ],
       "states": [
-        "EW"
+        "EW",
+        "EX"
       ],
-      "coast": true
+      "coast": false
     },
     {
       "a": [
-        12.990381,
-        8.5
-      ],
-      "b": [
-        12.990381,
-        9.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        12.990381,
-        9.5
-      ],
-      "b": [
-        13.856406,
-        10.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        13.856406,
-        10.0
-      ],
-      "b": [
-        13.856406,
+        15.588457,
         11.0
       ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        12.990381,
+      "b": [
+        16.454483,
         11.5
       ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        15.588457,
+        10.0
+      ],
       "b": [
-        13.856406,
+        15.588457,
         11.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        15.588457,
+        10.0
+      ],
+      "b": [
+        16.454483,
+        9.5
       ],
       "states": [
         "EW"
@@ -14846,137 +14908,6 @@
       "b": [
         17.320508,
         14.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        9.526279,
-        12.5
-      ],
-      "b": [
-        10.392305,
-        13.0
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        9.526279,
-        11.5
-      ],
-      "b": [
-        9.526279,
-        12.5
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        9.526279,
-        11.5
-      ],
-      "b": [
-        10.392305,
-        11.0
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        10.392305,
-        10.0
-      ],
-      "b": [
-        10.392305,
-        11.0
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        10.392305,
-        10.0
-      ],
-      "b": [
-        11.25833,
-        9.5
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        18.186533,
-        15.5
-      ],
-      "b": [
-        19.052559,
-        16.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        19.052559,
-        16.0
-      ],
-      "b": [
-        19.918584,
-        15.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        12.990381,
-        11.5
-      ],
-      "b": [
-        12.990381,
-        12.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        12.124356,
-        13.0
-      ],
-      "b": [
-        12.990381,
-        12.5
       ],
       "states": [
         "EW"
@@ -15027,65 +14958,6 @@
     },
     {
       "a": [
-        9.526279,
-        14.5
-      ],
-      "b": [
-        9.526279,
-        15.5
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        9.526279,
-        14.5
-      ],
-      "b": [
-        10.392305,
-        14.0
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        10.392305,
-        13.0
-      ],
-      "b": [
-        10.392305,
-        14.0
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        12.124356,
-        13.0
-      ],
-      "b": [
-        12.124356,
-        14.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
         15.588457,
         16.0
       ],
@@ -15128,26 +15000,12 @@
     },
     {
       "a": [
-        12.124356,
-        14.0
+        12.990381,
+        20.5
       ],
       "b": [
         12.990381,
-        14.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        12.990381,
-        14.5
-      ],
-      "b": [
-        12.990381,
-        15.5
+        21.5
       ],
       "states": [
         "EW"
@@ -15171,275 +15029,54 @@
     },
     {
       "a": [
-        8.660254,
-        16.0
+        12.124356,
+        23.0
       ],
       "b": [
-        9.526279,
-        15.5
+        12.990381,
+        23.5
       ],
       "states": [
-        "EW",
-        "EX"
+        "EW"
       ],
-      "coast": false
+      "coast": true
     },
     {
       "a": [
         12.990381,
-        15.5
-      ],
-      "b": [
-        13.856406,
-        16.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        14.722432,
-        18.5
-      ],
-      "b": [
-        15.588457,
-        19.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        16.454483,
-        17.5
-      ],
-      "b": [
-        16.454483,
-        18.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        15.588457,
-        19.0
-      ],
-      "b": [
-        16.454483,
-        18.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        13.856406,
-        16.0
-      ],
-      "b": [
-        14.722432,
-        15.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        14.722432,
-        15.5
-      ],
-      "b": [
-        15.588457,
-        16.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        13.856406,
-        19.0
-      ],
-      "b": [
-        14.722432,
-        18.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        6.062178,
         21.5
       ],
       "b": [
-        6.928203,
+        13.856406,
         22.0
       ],
       "states": [
-        "EW",
-        "EX"
+        "EW"
       ],
-      "coast": false
+      "coast": true
     },
     {
       "a": [
-        6.062178,
-        20.5
-      ],
-      "b": [
-        6.062178,
-        21.5
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        6.062178,
-        20.5
-      ],
-      "b": [
-        6.928203,
-        20.0
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        6.062178,
-        23.5
-      ],
-      "b": [
-        6.062178,
-        24.5
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        6.062178,
-        23.5
-      ],
-      "b": [
-        6.928203,
-        23.0
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        6.928203,
-        19.0
-      ],
-      "b": [
-        6.928203,
-        20.0
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        6.928203,
-        19.0
-      ],
-      "b": [
-        7.794229,
-        18.5
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        6.928203,
+        13.856406,
         22.0
       ],
       "b": [
-        6.928203,
+        13.856406,
         23.0
       ],
       "states": [
-        "EW",
-        "EX"
+        "EW"
       ],
-      "coast": false
-    },
-    {
-      "a": [
-        7.794229,
-        17.5
-      ],
-      "b": [
-        7.794229,
-        18.5
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        7.794229,
-        17.5
-      ],
-      "b": [
-        8.660254,
-        17.0
-      ],
-      "states": [
-        "EW",
-        "EX"
-      ],
-      "coast": false
+      "coast": true
     },
     {
       "a": [
         12.990381,
-        20.5
+        23.5
       ],
       "b": [
-        12.990381,
-        21.5
+        13.856406,
+        23.0
       ],
       "states": [
         "EW"
@@ -15448,12 +15085,12 @@
     },
     {
       "a": [
-        13.856406,
-        19.0
+        12.124356,
+        14.0
       ],
       "b": [
-        13.856406,
-        20.0
+        12.990381,
+        14.5
       ],
       "states": [
         "EW"
@@ -15463,11 +15100,11 @@
     {
       "a": [
         12.990381,
-        20.5
+        14.5
       ],
       "b": [
-        13.856406,
-        20.0
+        12.990381,
+        15.5
       ],
       "states": [
         "EW"
@@ -15504,18 +15141,360 @@
     },
     {
       "a": [
-        5.196152,
-        25.0
+        8.660254,
+        26.0
       ],
       "b": [
-        6.062178,
-        24.5
+        9.526279,
+        26.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        9.526279,
+        26.5
+      ],
+      "b": [
+        10.392305,
+        26.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        12.990381,
+        15.5
+      ],
+      "b": [
+        13.856406,
+        16.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        14.722432,
+        18.5
+      ],
+      "b": [
+        15.588457,
+        19.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        16.454483,
+        17.5
+      ],
+      "b": [
+        16.454483,
+        18.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        15.588457,
+        19.0
+      ],
+      "b": [
+        16.454483,
+        18.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        13.856406,
+        16.0
+      ],
+      "b": [
+        14.722432,
+        15.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        14.722432,
+        15.5
+      ],
+      "b": [
+        15.588457,
+        16.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        13.856406,
+        19.0
+      ],
+      "b": [
+        14.722432,
+        18.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        4.330127,
+        21.5
+      ],
+      "b": [
+        5.196152,
+        22.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        4.330127,
+        20.5
+      ],
+      "b": [
+        4.330127,
+        21.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        4.330127,
+        20.5
+      ],
+      "b": [
+        5.196152,
+        20.0
       ],
       "states": [
         "EW",
         "EX"
       ],
       "coast": false
+    },
+    {
+      "a": [
+        5.196152,
+        20.0
+      ],
+      "b": [
+        6.062178,
+        20.5
+      ],
+      "states": [
+        "EW",
+        "EX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        5.196152,
+        22.0
+      ],
+      "b": [
+        5.196152,
+        23.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        6.928203,
+        19.0
+      ],
+      "b": [
+        6.928203,
+        20.0
+      ],
+      "states": [
+        "EW",
+        "EX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        6.928203,
+        19.0
+      ],
+      "b": [
+        7.794229,
+        18.5
+      ],
+      "states": [
+        "EW",
+        "EX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        6.062178,
+        20.5
+      ],
+      "b": [
+        6.928203,
+        20.0
+      ],
+      "states": [
+        "EW",
+        "EX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        7.794229,
+        17.5
+      ],
+      "b": [
+        7.794229,
+        18.5
+      ],
+      "states": [
+        "EW",
+        "EX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        7.794229,
+        17.5
+      ],
+      "b": [
+        8.660254,
+        17.0
+      ],
+      "states": [
+        "EW",
+        "EX"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        7.794229,
+        26.5
+      ],
+      "b": [
+        8.660254,
+        26.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        13.856406,
+        19.0
+      ],
+      "b": [
+        13.856406,
+        20.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        12.990381,
+        20.5
+      ],
+      "b": [
+        13.856406,
+        20.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        4.330127,
+        24.5
+      ],
+      "b": [
+        5.196152,
+        25.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        4.330127,
+        23.5
+      ],
+      "b": [
+        4.330127,
+        24.5
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        4.330127,
+        23.5
+      ],
+      "b": [
+        5.196152,
+        23.0
+      ],
+      "states": [
+        "EW"
+      ],
+      "coast": true
     },
     {
       "a": [
@@ -15575,40 +15554,12 @@
     },
     {
       "a": [
-        7.794229,
-        26.5
+        11.25833,
+        23.5
       ],
       "b": [
-        8.660254,
-        26.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        8.660254,
-        26.0
-      ],
-      "b": [
-        9.526279,
-        26.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        9.526279,
-        26.5
-      ],
-      "b": [
-        10.392305,
-        26.0
+        11.25833,
+        24.5
       ],
       "states": [
         "EW"
@@ -15621,8 +15572,8 @@
         23.5
       ],
       "b": [
-        11.25833,
-        24.5
+        12.124356,
+        23.0
       ],
       "states": [
         "EW"
@@ -15679,76 +15630,6 @@
       "b": [
         12.124356,
         26.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        11.25833,
-        23.5
-      ],
-      "b": [
-        12.124356,
-        23.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        12.124356,
-        23.0
-      ],
-      "b": [
-        12.990381,
-        23.5
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        12.990381,
-        21.5
-      ],
-      "b": [
-        13.856406,
-        22.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        13.856406,
-        22.0
-      ],
-      "b": [
-        13.856406,
-        23.0
-      ],
-      "states": [
-        "EW"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        12.990381,
-        23.5
-      ],
-      "b": [
-        13.856406,
-        23.0
       ],
       "states": [
         "EW"
@@ -15847,36 +15728,6 @@
     },
     {
       "a": [
-        48.497423,
-        20.0
-      ],
-      "b": [
-        49.363448,
-        20.5
-      ],
-      "states": [
-        "AX",
-        "ET"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        49.363448,
-        20.5
-      ],
-      "b": [
-        49.363448,
-        21.5
-      ],
-      "states": [
-        "AX",
-        "ET"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
         45.899346,
         15.5
       ],
@@ -15937,12 +15788,12 @@
     },
     {
       "a": [
-        51.961524,
-        25.0
+        48.497423,
+        20.0
       ],
       "b": [
-        52.82755,
-        24.5
+        49.363448,
+        20.5
       ],
       "states": [
         "AX",
@@ -15952,46 +15803,18 @@
     },
     {
       "a": [
-        52.82755,
-        24.5
+        49.363448,
+        20.5
       ],
       "b": [
-        53.693575,
-        25.0
+        49.363448,
+        21.5
       ],
       "states": [
         "AX",
         "ET"
       ],
       "coast": false
-    },
-    {
-      "a": [
-        53.693575,
-        25.0
-      ],
-      "b": [
-        53.693575,
-        26.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        52.82755,
-        26.5
-      ],
-      "b": [
-        53.693575,
-        26.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
     },
     {
       "a": [
@@ -16025,21 +15848,6 @@
     },
     {
       "a": [
-        51.095499,
-        24.5
-      ],
-      "b": [
-        51.961524,
-        25.0
-      ],
-      "states": [
-        "AX",
-        "ET"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
         52.82755,
         26.5
       ],
@@ -16054,171 +15862,18 @@
     },
     {
       "a": [
-        51.961524,
-        29.0
-      ],
-      "b": [
-        52.82755,
-        29.5
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        52.82755,
-        27.5
-      ],
-      "b": [
-        53.693575,
-        28.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        53.693575,
-        28.0
-      ],
-      "b": [
-        53.693575,
-        29.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        52.82755,
-        29.5
-      ],
-      "b": [
-        53.693575,
-        29.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        40.703194,
-        32.5
-      ],
-      "b": [
-        41.569219,
-        32.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        44.167296,
-        29.5
-      ],
-      "b": [
-        45.033321,
-        29.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        47.631397,
-        27.5
-      ],
-      "b": [
-        48.497423,
-        28.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        48.497423,
-        28.0
-      ],
-      "b": [
-        49.363448,
-        27.5
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        49.363448,
-        27.5
-      ],
-      "b": [
-        50.229473,
-        28.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        50.229473,
-        29.0
-      ],
-      "b": [
         51.095499,
-        29.5
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        50.229473,
-        28.0
-      ],
-      "b": [
-        50.229473,
-        29.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        51.095499,
-        29.5
+        24.5
       ],
       "b": [
         51.961524,
-        29.0
+        25.0
       ],
       "states": [
-        "AX"
+        "AX",
+        "ET"
       ],
-      "coast": true
+      "coast": false
     },
     {
       "a": [
@@ -16250,6 +15905,246 @@
     },
     {
       "a": [
+        51.961524,
+        25.0
+      ],
+      "b": [
+        52.82755,
+        24.5
+      ],
+      "states": [
+        "AX",
+        "ET"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        52.82755,
+        24.5
+      ],
+      "b": [
+        53.693575,
+        25.0
+      ],
+      "states": [
+        "AX",
+        "ET"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        53.693575,
+        25.0
+      ],
+      "b": [
+        53.693575,
+        26.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        52.82755,
+        26.5
+      ],
+      "b": [
+        53.693575,
+        26.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        51.961524,
+        29.0
+      ],
+      "b": [
+        52.82755,
+        29.5
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        52.82755,
+        27.5
+      ],
+      "b": [
+        53.693575,
+        28.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        53.693575,
+        28.0
+      ],
+      "b": [
+        53.693575,
+        29.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        52.82755,
+        29.5
+      ],
+      "b": [
+        53.693575,
+        29.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        50.229473,
+        29.0
+      ],
+      "b": [
+        51.095499,
+        29.5
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        50.229473,
+        28.0
+      ],
+      "b": [
+        50.229473,
+        29.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        51.095499,
+        29.5
+      ],
+      "b": [
+        51.961524,
+        29.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        41.569219,
+        32.0
+      ],
+      "b": [
+        42.435245,
+        32.5
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        43.30127,
+        31.0
+      ],
+      "b": [
+        43.30127,
+        32.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        42.435245,
+        32.5
+      ],
+      "b": [
+        43.30127,
+        32.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        47.631397,
+        27.5
+      ],
+      "b": [
+        48.497423,
+        28.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        48.497423,
+        28.0
+      ],
+      "b": [
+        49.363448,
+        27.5
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        49.363448,
+        27.5
+      ],
+      "b": [
+        50.229473,
+        28.0
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
         37.239092,
         33.5
       ],
@@ -16320,39 +16215,11 @@
     },
     {
       "a": [
+        40.703194,
+        32.5
+      ],
+      "b": [
         41.569219,
-        32.0
-      ],
-      "b": [
-        42.435245,
-        32.5
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        43.30127,
-        31.0
-      ],
-      "b": [
-        43.30127,
-        32.0
-      ],
-      "states": [
-        "AX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        42.435245,
-        32.5
-      ],
-      "b": [
-        43.30127,
         32.0
       ],
       "states": [
@@ -16382,6 +16249,20 @@
       "b": [
         44.167296,
         30.5
+      ],
+      "states": [
+        "AX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        44.167296,
+        29.5
+      ],
+      "b": [
+        45.033321,
+        29.0
       ],
       "states": [
         "AX"
@@ -16558,34 +16439,6 @@
     },
     {
       "a": [
-        51.095499,
-        14.5
-      ],
-      "b": [
-        51.961524,
-        14.0
-      ],
-      "states": [
-        "ET"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        51.961524,
-        14.0
-      ],
-      "b": [
-        52.82755,
-        14.5
-      ],
-      "states": [
-        "ET"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
         54.5596,
         14.5
       ],
@@ -16671,6 +16524,34 @@
     },
     {
       "a": [
+        51.095499,
+        14.5
+      ],
+      "b": [
+        51.961524,
+        14.0
+      ],
+      "states": [
+        "ET"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        51.961524,
+        14.0
+      ],
+      "b": [
+        52.82755,
+        14.5
+      ],
+      "states": [
+        "ET"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
         52.82755,
         14.5
       ],
@@ -16700,6 +16581,36 @@
     {
       "a": [
         55.425626,
+        17.0
+      ],
+      "b": [
+        56.291651,
+        17.5
+      ],
+      "states": [
+        "ET",
+        "KR"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        56.291651,
+        17.5
+      ],
+      "b": [
+        56.291651,
+        18.5
+      ],
+      "states": [
+        "ET",
+        "KR"
+      ],
+      "coast": false
+    },
+    {
+      "a": [
+        55.425626,
         16.0
       ],
       "b": [
@@ -16714,36 +16625,6 @@
     },
     {
       "a": [
-        55.425626,
-        17.0
-      ],
-      "b": [
-        56.291651,
-        17.5
-      ],
-      "states": [
-        "ET",
-        "KR"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        56.291651,
-        17.5
-      ],
-      "b": [
-        56.291651,
-        18.5
-      ],
-      "states": [
-        "ET",
-        "KR"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
         56.291651,
         18.5
       ],
@@ -16780,21 +16661,6 @@
       "b": [
         57.157677,
         20.0
-      ],
-      "states": [
-        "ET",
-        "KR"
-      ],
-      "coast": false
-    },
-    {
-      "a": [
-        56.291651,
-        20.5
-      ],
-      "b": [
-        56.291651,
-        21.5
       ],
       "states": [
         "ET",
@@ -16858,6 +16724,21 @@
         "ET"
       ],
       "coast": true
+    },
+    {
+      "a": [
+        56.291651,
+        20.5
+      ],
+      "b": [
+        56.291651,
+        21.5
+      ],
+      "states": [
+        "ET",
+        "KR"
+      ],
+      "coast": false
     },
     {
       "a": [
@@ -17169,34 +17050,6 @@
     },
     {
       "a": [
-        6.928203,
-        10.0
-      ],
-      "b": [
-        6.928203,
-        11.0
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        6.928203,
-        10.0
-      ],
-      "b": [
-        7.794229,
-        9.5
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
         7.794229,
         8.5
       ],
@@ -17211,6 +17064,62 @@
     },
     {
       "a": [
+        12.124356,
+        8.0
+      ],
+      "b": [
+        12.990381,
+        8.5
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        12.990381,
+        8.5
+      ],
+      "b": [
+        12.990381,
+        9.5
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        6.928203,
+        10.0
+      ],
+      "b": [
+        6.928203,
+        11.0
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        6.928203,
+        10.0
+      ],
+      "b": [
+        7.794229,
+        9.5
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
         4.330127,
         12.5
       ],
@@ -17259,6 +17168,104 @@
       "b": [
         6.062178,
         11.5
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        12.990381,
+        9.5
+      ],
+      "b": [
+        13.856406,
+        10.0
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        13.856406,
+        10.0
+      ],
+      "b": [
+        13.856406,
+        11.0
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        12.990381,
+        11.5
+      ],
+      "b": [
+        13.856406,
+        11.0
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        12.990381,
+        11.5
+      ],
+      "b": [
+        12.990381,
+        12.5
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        12.124356,
+        13.0
+      ],
+      "b": [
+        12.990381,
+        12.5
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        5.196152,
+        14.0
+      ],
+      "b": [
+        6.062178,
+        14.5
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        5.196152,
+        13.0
+      ],
+      "b": [
+        5.196152,
+        14.0
       ],
       "states": [
         "EX"
@@ -17281,40 +17288,54 @@
     },
     {
       "a": [
-        5.196152,
-        14.0
-      ],
-      "b": [
-        6.062178,
-        14.5
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        5.196152,
-        13.0
-      ],
-      "b": [
-        5.196152,
-        14.0
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
         6.062178,
         14.5
       ],
       "b": [
         6.062178,
         15.5
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        3.464102,
+        20.0
+      ],
+      "b": [
+        4.330127,
+        20.5
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        3.464102,
+        19.0
+      ],
+      "b": [
+        3.464102,
+        20.0
+      ],
+      "states": [
+        "EX"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        3.464102,
+        19.0
+      ],
+      "b": [
+        4.330127,
+        18.5
       ],
       "states": [
         "EX"
@@ -17371,132 +17392,6 @@
       "b": [
         5.196152,
         17.0
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        4.330127,
-        24.5
-      ],
-      "b": [
-        5.196152,
-        25.0
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        4.330127,
-        23.5
-      ],
-      "b": [
-        4.330127,
-        24.5
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        4.330127,
-        23.5
-      ],
-      "b": [
-        5.196152,
-        23.0
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        3.464102,
-        20.0
-      ],
-      "b": [
-        4.330127,
-        20.5
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        3.464102,
-        19.0
-      ],
-      "b": [
-        3.464102,
-        20.0
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        3.464102,
-        19.0
-      ],
-      "b": [
-        4.330127,
-        18.5
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        4.330127,
-        21.5
-      ],
-      "b": [
-        5.196152,
-        22.0
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        4.330127,
-        20.5
-      ],
-      "b": [
-        4.330127,
-        21.5
-      ],
-      "states": [
-        "EX"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        5.196152,
-        22.0
-      ],
-      "b": [
-        5.196152,
-        23.0
       ],
       "states": [
         "EX"
@@ -17983,34 +17878,6 @@
     },
     {
       "a": [
-        74.478185,
-        25.0
-      ],
-      "b": [
-        75.34421,
-        24.5
-      ],
-      "states": [
-        "KR"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        75.34421,
-        24.5
-      ],
-      "b": [
-        76.210236,
-        25.0
-      ],
-      "states": [
-        "KR"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
         75.34421,
         27.5
       ],
@@ -18053,6 +17920,34 @@
         "QL"
       ],
       "coast": false
+    },
+    {
+      "a": [
+        74.478185,
+        25.0
+      ],
+      "b": [
+        75.34421,
+        24.5
+      ],
+      "states": [
+        "KR"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        75.34421,
+        24.5
+      ],
+      "b": [
+        76.210236,
+        25.0
+      ],
+      "states": [
+        "KR"
+      ],
+      "coast": true
     },
     {
       "a": [
@@ -18858,90 +18753,6 @@
     },
     {
       "a": [
-        100.458947,
-        16.0
-      ],
-      "b": [
-        101.324972,
-        15.5
-      ],
-      "states": [
-        "LQ"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        98.726896,
-        16.0
-      ],
-      "b": [
-        98.726896,
-        17.0
-      ],
-      "states": [
-        "LQ"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        98.726896,
-        16.0
-      ],
-      "b": [
-        99.592921,
-        15.5
-      ],
-      "states": [
-        "LQ"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        99.592921,
-        15.5
-      ],
-      "b": [
-        100.458947,
-        16.0
-      ],
-      "states": [
-        "LQ"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        97.860871,
-        17.5
-      ],
-      "b": [
-        97.860871,
-        18.5
-      ],
-      "states": [
-        "LQ"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        97.860871,
-        17.5
-      ],
-      "b": [
-        98.726896,
-        17.0
-      ],
-      "states": [
-        "LQ"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
         96.994845,
         20.0
       ],
@@ -18999,11 +18810,25 @@
     {
       "a": [
         98.726896,
-        20.0
+        16.0
+      ],
+      "b": [
+        98.726896,
+        17.0
+      ],
+      "states": [
+        "LQ"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        98.726896,
+        16.0
       ],
       "b": [
         99.592921,
-        20.5
+        15.5
       ],
       "states": [
         "LQ"
@@ -19013,11 +18838,11 @@
     {
       "a": [
         99.592921,
-        20.5
+        15.5
       ],
       "b": [
         100.458947,
-        20.0
+        16.0
       ],
       "states": [
         "LQ"
@@ -19045,6 +18870,76 @@
       ],
       "b": [
         105.655099,
+        20.0
+      ],
+      "states": [
+        "LQ"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        97.860871,
+        17.5
+      ],
+      "b": [
+        97.860871,
+        18.5
+      ],
+      "states": [
+        "LQ"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        97.860871,
+        17.5
+      ],
+      "b": [
+        98.726896,
+        17.0
+      ],
+      "states": [
+        "LQ"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        100.458947,
+        16.0
+      ],
+      "b": [
+        101.324972,
+        15.5
+      ],
+      "states": [
+        "LQ"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        98.726896,
+        20.0
+      ],
+      "b": [
+        99.592921,
+        20.5
+      ],
+      "states": [
+        "LQ"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        99.592921,
+        20.5
+      ],
+      "b": [
+        100.458947,
         20.0
       ],
       "states": [
@@ -19849,6 +19744,146 @@
       ],
       "states": [
         "AK"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        80.540363,
+        27.5
+      ],
+      "b": [
+        81.406388,
+        28.0
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        81.406388,
+        26.0
+      ],
+      "b": [
+        82.272413,
+        26.5
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        82.272413,
+        26.5
+      ],
+      "b": [
+        82.272413,
+        27.5
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        81.406388,
+        28.0
+      ],
+      "b": [
+        82.272413,
+        27.5
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        79.674337,
+        25.0
+      ],
+      "b": [
+        80.540363,
+        24.5
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        80.540363,
+        24.5
+      ],
+      "b": [
+        81.406388,
+        25.0
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        81.406388,
+        25.0
+      ],
+      "b": [
+        81.406388,
+        26.0
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        73.612159,
+        30.5
+      ],
+      "b": [
+        74.478185,
+        31.0
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        73.612159,
+        29.5
+      ],
+      "b": [
+        73.612159,
+        30.5
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        74.478185,
+        31.0
+      ],
+      "b": [
+        75.34421,
+        30.5
+      ],
+      "states": [
+        "QL"
       ],
       "coast": true
     },
@@ -19883,179 +19918,11 @@
     {
       "a": [
         79.674337,
-        25.0
-      ],
-      "b": [
-        80.540363,
-        24.5
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        80.540363,
-        24.5
-      ],
-      "b": [
-        81.406388,
-        25.0
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        81.406388,
-        25.0
-      ],
-      "b": [
-        81.406388,
-        26.0
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        73.612159,
-        30.5
-      ],
-      "b": [
-        74.478185,
-        31.0
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        73.612159,
-        29.5
-      ],
-      "b": [
-        73.612159,
-        30.5
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        74.478185,
-        31.0
-      ],
-      "b": [
-        75.34421,
-        30.5
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        79.674337,
         28.0
       ],
       "b": [
         80.540363,
         27.5
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        80.540363,
-        27.5
-      ],
-      "b": [
-        81.406388,
-        28.0
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        81.406388,
-        26.0
-      ],
-      "b": [
-        82.272413,
-        26.5
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        82.272413,
-        26.5
-      ],
-      "b": [
-        82.272413,
-        27.5
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        81.406388,
-        28.0
-      ],
-      "b": [
-        82.272413,
-        27.5
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        75.34421,
-        30.5
-      ],
-      "b": [
-        76.210236,
-        31.0
-      ],
-      "states": [
-        "QL"
-      ],
-      "coast": true
-    },
-    {
-      "a": [
-        76.210236,
-        31.0
-      ],
-      "b": [
-        77.076261,
-        30.5
       ],
       "states": [
         "QL"
@@ -20084,6 +19951,34 @@
       "b": [
         79.674337,
         29.0
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        75.34421,
+        30.5
+      ],
+      "b": [
+        76.210236,
+        31.0
+      ],
+      "states": [
+        "QL"
+      ],
+      "coast": true
+    },
+    {
+      "a": [
+        76.210236,
+        31.0
+      ],
+      "b": [
+        77.076261,
+        30.5
       ],
       "states": [
         "QL"
@@ -20511,8 +20406,8 @@
     {
       "code": "EX",
       "landmass": 2,
-      "x": 7.794229,
-      "y": 13.5
+      "x": 9.526279,
+      "y": 10.5
     },
     {
       "code": "KR",
@@ -20614,6 +20509,11 @@
     ],
     "wealthy_business_centres": [
       "Westhaven"
-    ]
+    ],
+    "all_cities_connected_in_cartogram": true,
+    "locality_overrides": {
+      "KR-22": "Davenport"
+    },
+    "extary_erewen_border": "Five marked tiles exchanged each way; state entitlements unchanged"
   }
 }
