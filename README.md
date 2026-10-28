@@ -70,6 +70,28 @@ colour (`#246d78`), reflecting waterfront neighbourhoods in major cities.
 Only the name and family classification changed; both district compass
 positions, the type centre, type count and election calculations are unchanged.
 
+## Rural and resource district centres
+
+| District type | Economic centre | Cultural centre | Change |
+| --- | ---: | ---: | --- |
+| Traditional dairy and livestock | 1.23 | 2.47319 | +0.50 traditional |
+| Export wine, orchard and specialty crops | 4.00 | 0.20319 | +0.40 traditional |
+| Remote island and fishing communities | 0.52 | 2.46319 | +0.50 liberal |
+| Remote mining and extractive | 0.37 | 2.67319 | −0.70 socialist |
+
+The dairy/livestock type now uses the full **0.20 maximum fixed offset**.
+The existing boundary-cap rule also allows island/fishing offsets to expand
+from about 0.05288 to 0.20 after its shift. The dairy offsets previously reached
+about 0.04842. All four updated types now reach 0.20; paired offsets keep their
+type means exact. The 0.20 setting measures maximum distance from the type
+centre in compass units. The separate election-level variance multiplier is
+unchanged. These edits affect 24 district positions, with all type counts,
+district identities, geography, baseline seats and national PR inputs preserved.
+
+The university impact report below records the earlier university-only update.
+Its analysis script reconstructs that frozen model from the saved input data
+so the historical comparison remains reproducible after these later edits.
+
 ## University district economic centre
 
 Major university and student districts (type 8, six districts) now have an

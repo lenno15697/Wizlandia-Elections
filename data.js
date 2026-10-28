@@ -319,14 +319,14 @@ const data = {
       "name": "Export wine, orchard and specialty-crop districts",
       "count": 8,
       "x": 4,
-      "y": -0.19681012304697498
+      "y": 0.203189876953025
     },
     {
       "id": 36,
       "name": "Traditional dairy and livestock districts",
       "count": 8,
       "x": 1.23,
-      "y": 1.973189876953025
+      "y": 2.473189876953025
     },
     {
       "id": 37,
@@ -346,7 +346,7 @@ const data = {
       "id": 39,
       "name": "Remote mining and extractive districts",
       "count": 6,
-      "x": 1.07,
+      "x": 0.37,
       "y": 2.673189876953025
     },
     {
@@ -416,7 +416,7 @@ const data = {
       "id": 49,
       "name": "Remote island and fishing communities",
       "count": 2,
-      "x": 0.02,
+      "x": 0.52,
       "y": 2.463189876953025
     },
     {

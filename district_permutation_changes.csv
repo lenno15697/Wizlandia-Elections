@@ -32,8 +32,8 @@ NX-77,ET-21,Sorenvia,9,Cosmopolitan merchant and migrant districts,44,Officer-fa
 QL-05,QL-12,Queloria,9,Cosmopolitan merchant and migrant districts,6,Mixed urban service-worker districts,09-01,06-10,2.527524213811741,-1.8262538989240458,-0.27476919900958213,-0.5756632685358523
 QL-12,QL-05,Atlantis,6,Mixed urban service-worker districts,9,Cosmopolitan merchant and migrant districts,06-10,09-01,-0.27476919900958213,-0.5756632685358523,2.527524213811741,-1.8262538989240458
 WT-02,WT-15,Alegow,31,Declining former industrial towns,27,Logistics and warehousing towns,31-06,27-10,-1.309664386447661,1.4518736640092764,0.47183245232840104,0.5314152663290417
-WT-09,WT-12,East Harbour,49,Remote island and fishing communities,18,Diverse first-home buyer suburbs,49-01,18-07,0.008898030376125462,2.41148994060509,1.9917142212074612,-0.8925430194386453
+WT-09,WT-12,East Harbour,49,Remote island and fishing communities,18,Diverse first-home buyer suburbs,49-01,18-07,0.4780095241997572,2.2676475543165453,1.9917142212074612,-0.8925430194386453
 WT-11,LQ-16,East Harbour,4,Creative and gentrifying inner districts,45,Port trading and import-export districts,04-10,45-04,0.4324572408103665,-2.675128614335001,1.9722924685685972,0.11745062691939859
-WT-12,WT-09,East Harbour,18,Diverse first-home buyer suburbs,49,Remote island and fishing communities,18-07,49-01,1.9917142212074612,-0.8925430194386453,0.008898030376125462,2.41148994060509
+WT-12,WT-09,East Harbour,18,Diverse first-home buyer suburbs,49,Remote island and fishing communities,18-07,49-01,1.9917142212074612,-0.8925430194386453,0.4780095241997572,2.2676475543165453
 WT-14,EW-58,Wittan,28,Regional university and college towns,23,Diversified regional-city centres,28-08,23-09,-0.1581675476715989,-2.2685847336709584,0.86581734508351,-0.4634489502949686
 WT-15,WT-02,Wittan,27,Logistics and warehousing towns,31,Declining former industrial towns,27-10,31-06,0.47183245232840104,0.5314152663290417,-1.309664386447661,1.4518736640092764

@@ -1,5 +1,7 @@
 # University district economic-position change — impact analysis
 
+This is the historical comparison for the university-only update. Subsequent dairy, wine/orchard, island/fishing and mining shifts are excluded. The accompanying analysis script reconstructs the saved model inputs so these results remain reproducible.
+
 The economic centre of Major university and student districts (type 8) moves from **−1.94 to −0.05**, a **+1.89** shift. Regional university and college towns (type 28) already have economic centre −0.05. The major-university cultural centre remains **−3.976810123046975**, compared with **−2.4368101230469748** for regional university towns: major universities remain 1.54 units more progressive culturally.
 
 All six university districts move horizontally. Their cultural coordinates, individual paired offsets, IDs, state/locality assignments, populations, map tiles, type counts and family colours remain unchanged. The other 394 district positions and the other 49 district types are unchanged.

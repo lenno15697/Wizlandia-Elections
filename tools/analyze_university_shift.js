@@ -1,7 +1,13 @@
 'use strict';
 // Matched before/after elections: replay the same shocks and PR allocation.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),vm=require('node:vm');
-const D=require('../data.js'),E=require('../engine.js'),snapshot=require('../analysis/university_shift_before.json');
+const snapshot=require('../analysis/university_shift_before.json'),geography=require('../district-geography.js');
+// Reconstruct the university-only update, preserving its historical comparison
+// when unrelated district types are subsequently edited in the live simulator.
+const D={...snapshot.beforeData,types:snapshot.beforeData.types.map(t=>t.id===8?{...t,x:snapshot.newTypeCentre[0],y:snapshot.newTypeCentre[1]}:{...t})};
+const modelContext={module:{exports:{}},require(name){if(name==='./data.js')return D;if(name==='./district-geography.js')return geography;throw new Error('Unexpected model dependency: '+name);}};
+vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../engine.js'),'utf8'),modelContext);
+const E=modelContext.module.exports;
 const samples=Number(process.argv[2]||snapshot.samples),seed=Number(process.argv[3]||snapshot.seed);
 assert.ok(Number.isInteger(samples)&&samples>0);assert.ok(Number.isInteger(seed)&&seed>=0&&seed<=4294967295);
 const codes=D.parties.map(p=>p.code),positions=E.districts(),indexById=new Map(positions.map((d,i)=>[d.id,i]));

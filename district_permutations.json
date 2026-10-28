@@ -121,7 +121,7 @@
     "coldNorthShare"
   ],
   "identityHash": "cabd9271bb3b2016407f85e4ff1c98a16b6ee1a8ffdb2c741fb8813eeb2ff4c5",
-  "unaffectedPoliticalHash": "585fd471435b32ecfde51637c3f441a0269953a10b351e98b9834403830727e3",
+  "unaffectedPoliticalHash": "5462bbe3a808d1c013b486ff26b193f0c0d2dbd23f7a3772af4a7e84b638717c",
   "typeCountsBefore": {
     "1": 8,
     "2": 8,
@@ -909,8 +909,8 @@
         "typeName": "Remote island and fishing communities",
         "family": "Specialised",
         "legacyId": "49-01",
-        "x": 0.008898030376125462,
-        "y": 2.41148994060509,
+        "x": 0.4780095241997572,
+        "y": 2.2676475543165453,
         "baselineWinner": "CON"
       },
       "after": {
@@ -962,8 +962,8 @@
         "typeName": "Remote island and fishing communities",
         "family": "Specialised",
         "legacyId": "49-01",
-        "x": 0.008898030376125462,
-        "y": 2.41148994060509,
+        "x": 0.4780095241997572,
+        "y": 2.2676475543165453,
         "baselineWinner": "CON"
       }
     },
@@ -1684,6 +1684,98 @@
       "culturalCoordinatesUnchanged": true,
       "pairedOffsetsUnchanged": true,
       "nationalPRDistributionUnchanged": true
+    },
+    {
+      "type": 36,
+      "name": "Traditional dairy and livestock districts",
+      "oldCentre": [
+        1.23,
+        1.973189876953025
+      ],
+      "centre": [
+        1.23,
+        2.473189876953025
+      ],
+      "districtCount": 8,
+      "districts": [
+        "EW-28",
+        "AX-07",
+        "LX-04",
+        "LX-05",
+        "LX-07",
+        "LX-13",
+        "LX-18",
+        "LQ-06"
+      ],
+      "previousMaximumOffset": 0.04842182498604945,
+      "maximumOffset": 0.2000000000000001
+    },
+    {
+      "type": 35,
+      "name": "Export wine, orchard and specialty-crop districts",
+      "oldCentre": [
+        4,
+        -0.19681012304697498
+      ],
+      "centre": [
+        4,
+        0.203189876953025
+      ],
+      "districtCount": 8,
+      "districts": [
+        "NX-58",
+        "NX-69",
+        "NX-87",
+        "EW-32",
+        "EW-34",
+        "EW-57",
+        "EW-60",
+        "LQ-08"
+      ],
+      "previousMaximumOffset": 0.1999999999999999,
+      "maximumOffset": 0.1999999999999999
+    },
+    {
+      "type": 49,
+      "name": "Remote island and fishing communities",
+      "oldCentre": [
+        0.02,
+        2.463189876953025
+      ],
+      "centre": [
+        0.52,
+        2.463189876953025
+      ],
+      "districtCount": 2,
+      "districts": [
+        "WT-12",
+        "IL-01"
+      ],
+      "previousMaximumOffset": 0.05287851310229893,
+      "maximumOffset": 0.1999999999999999
+    },
+    {
+      "type": 39,
+      "name": "Remote mining and extractive districts",
+      "oldCentre": [
+        1.07,
+        2.673189876953025
+      ],
+      "centre": [
+        0.37,
+        2.673189876953025
+      ],
+      "districtCount": 6,
+      "districts": [
+        "ET-05",
+        "WT-06",
+        "IL-03",
+        "IL-04",
+        "IL-06",
+        "IL-08"
+      ],
+      "previousMaximumOffset": 0.2,
+      "maximumOffset": 0.19999999999999993
     }
   ]
 }

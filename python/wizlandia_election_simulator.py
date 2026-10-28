@@ -257,11 +257,11 @@ DISTRICT_ROWS = [
     (32, "Rail-connected commuter towns", 6, 0.37, -1.176810123046975),
     (33, "Productive commercial farming districts", 12, 3.75, 1.4831898769530252),
     (34, "Mixed farming and rural-service districts", 8, 3, 1.353189876953025),
-    (35, "Export wine, orchard and specialty-crop districts", 8, 4, -0.19681012304697498),
-    (36, "Traditional dairy and livestock districts", 8, 1.23, 1.973189876953025),
+    (35, "Export wine, orchard and specialty-crop districts", 8, 4, 0.203189876953025),
+    (36, "Traditional dairy and livestock districts", 8, 1.23, 2.473189876953025),
     (37, "Declining smallholder farming districts", 8, -0.19, 2.183189876953025),
     (38, "Forestry and timber communities", 6, 0.3, 1.623189876953025),
-    (39, "Remote mining and extractive districts", 6, 1.07, 2.673189876953025),
+    (39, "Remote mining and extractive districts", 6, 0.37, 2.673189876953025),
     (40, "Scenic countryside and amenity-migration districts", 6, 0.93, -2.226810123046975),
     (41, "Rural commuter belts", 6, 2.60, 1.133189876953025),
     (42, "Strongly religious agricultural districts", 4, 1.23, 3.023189876953025),
@@ -271,7 +271,7 @@ DISTRICT_ROWS = [
     (46, "Resort-business and tourism-owner districts", 4, 3.8, -1.456810123046975),
     (47, "Seasonal-worker and hospitality districts", 2, -1.92, -1.876810123046975),
     (48, "Wealthy retirement enclaves", 2, 3.9, 1.903189876953025),
-    (49, "Remote island and fishing communities", 2, 0.02, 2.463189876953025),
+    (49, "Remote island and fishing communities", 2, 0.52, 2.463189876953025),
     (50, "Upscale waterfront and marina districts", 2, 5.4, -2.016810123046975),
 ]
 
