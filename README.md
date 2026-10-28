@@ -4,9 +4,22 @@ A standalone GitHub Pages election website inspired by the sidebar, parliament d
 
 ## Current update: fixed variation and geographic districts
 
+
+The **Compass** tab is a party-bubble compass inspired by Thermidor's presentation.
+Party coordinates retain their Wizlandia economic and cultural meanings. Bubble
+area is proportional to `log(1 + seats)` using the selected Combined, Electoral
+Districts or PR List component; zero-seat parties have hollow markers. Bubble
+clicks, keyboard activation, seat cards and sidebar parties all use the same
+selection, including coalition highlights and fading. SVG export is available.
+
+The former compass has moved unchanged to **Districts Median Position**, after
+History. It retains the density overlay and contours, all 400 district medians,
+party crosses, national median star, density/district controls and hover details.
+
+
 Within-type variation is fixed at **0.20**. The variation slider is removed, and loading an older configuration cannot override this setting. The economic, cultural and variance-multiplier sliders remain available. The existing party-boundary caps still apply, so 0.20 is a maximum offset rather than the standard deviation of every type.
 
-The **Electoral Districts** view displays the 400-seat cartogram in place of the Assembly diagram. Combined retains its Assembly diagram. PR List instead shows a vertical chart of national vote shares, using the fixed left-to-right party order, original party colours and percentage labels on the y-axis. The chart updates with the election, supports dark mode and exports as SVG. The separate lower Cartogram tab has been removed. All states shows nationwide district seat totals for every party that won a seat. Selecting a state zooms the map and shows that state’s winning-party totals instead. Both summaries use the current election, ordered by seats won. Each state’s results sit to the left of its map on wide screens, with the map shifted right; smaller screens stack the results above the map. Individual state cartograms render at two-thirds of their previous width and height. The nationwide cartogram remains its original size. The separate colour legend is removed from all map views. Colour by current winner, type family or state; click a tile for its ID, locality and full type name.
+The **Electoral Districts** view displays the 400-seat cartogram in place of the Assembly diagram. Combined retains its Assembly diagram. PR List instead shows a vertical chart of national vote shares, using the fixed left-to-right party order, original party colours and percentage labels on the y-axis. The chart updates with the election, supports dark mode and exports as SVG. The separate lower Cartogram tab has been removed. All states shows nationwide district seat totals for every party that won a seat. Selecting a state zooms the map and shows that state’s winning-party totals instead. Both summaries use the current election, ordered by seats won. Each state’s results sit to the left of its map on wide screens, with the map shifted right; smaller screens stack the results above the map. Individual state cartograms render at two-thirds of their previous width and height. The nationwide cartogram remains its original size. District type family mode includes a labelled colour key for all five families, on both nationwide and individual state maps. Colour by current winner, type family or state; click a tile for its ID, locality and full type name.
 
 The Extary–Erewen border follows the ten marked tiles: five move into Extary's schematic territory and five into Erewen's. Their entitlements remain 30 and 60. Every one of the 49 named cities now has one connected group of tiles, including cities spanning two states. KR-22 is assigned to Davenport on its own island, rather than the capital across the strait. All 50 type counts, individual offsets, district populations and underlying geographic polygons are preserved.
 
@@ -60,7 +73,7 @@ To try it locally, open `index.html` in a browser. Alternatively, run `python3 -
 - Three selectable seat views: **Electoral Districts (400, cartogram)**, **PR List (400, vote-share chart)** and **Combined (800)**. The combined majority threshold is **401**.
 - The specified left-to-right order: **SWP, UPL, SDP, Green, CA, LDP, Conservative, Libertarian, NF**.
 - All nine original party colours, and a results table showing district, PR and combined seat counts together.
-- National vote shares and a political compass with lightly shaded party regions, voter density and solid contour lines.
+- National vote shares, a linked party-bubble Compass, and a separate Districts Median Position plot with party regions, voter density and contours.
 - 400 individually positioned districts, with searchable results and a competitiveness sort.
 - Coalition selection and minimal winning coalition combinations.
 - Seeded single draws and batches of up to 100 elections, a batch summary and restorable run history; summaries follow the selected component.
@@ -155,7 +168,7 @@ Coalition combinations are arithmetic possibilities, including combinations part
 | `styles.css` | Responsive design and themes |
 | `data.js` | Exported parties, district types, Gaussian mixture and quadrature constants |
 | `engine.js` | Pure election mathematics, fixed district offsets and seeded shocks |
-| `app.js` | UI, SVG parliament, compass, history, exports and configuration |
+| `app.js` | UI, SVG Assembly and party compass, district-median plot, history and exports |
 | `python/wizlandia_election_simulator.py` | Updated standalone Python version |
 | `tools/export_data.py` | Regenerate `data.js` from the Python constants |
 | `tools/check_parity.py` | Compare browser calculations with Python/SciPy and refresh reference fixtures |
@@ -274,7 +287,7 @@ largest first.
 Run `node tests/coalition-priority.test.js` to check all tiers, the cordon,
 ranking, the four-suggestion limit, and the empty state.
 
-Validation includes 156 cartogram renders, 184 Assembly layouts, and full-app event checks. Browser review confirms the PR chart’s fixed party order, percentage labels and live updates. Measured map dimensions are two-thirds of their previous size for all 12 states, with the nationwide dimensions unchanged. The original election calibration and geographic assignments are preserved.
+Validation includes 156 cartogram renders, 184 Assembly layouts, and full-app event checks. Browser review confirms the PR chart’s fixed party order, percentage labels and live updates. Party-compass checks cover logarithmic sizing, zero-seat markers, all three seat components, two-way dot/card selection, keyboard activation, dark mode, and the relocated original density plot. Measured map dimensions are two-thirds of their previous size for all 12 states, with the nationwide dimensions unchanged. The original election calibration and geographic assignments are preserved.
 
 The coastline-based update samples the five landmass silhouettes on a common hex lattice, balances exact state tile capacities, repairs state-piece connectivity, and transports the existing district anchors within their own state and landmass. It changes no district population, type, compass point, model index or ID. The new `stateBorders` metadata deduplicates shared edges on an integer lattice.
 

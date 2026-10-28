@@ -25,7 +25,6 @@ function render(){
   if(!isCombined&&activeTab==='coalitions')showTab('overview');
   for(const button of document.querySelectorAll('[data-component]')){const active=button.dataset.component===view;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));}
   $('component-note').textContent=v.description;
-  $('median').textContent=`(${current.median[0].toFixed(2)}, ${current.median[1].toFixed(2)})`;
   $('ticker').textContent=isCombined?`${v.label} · ${p.code} ${lead.n} · ${current.parties[second.i].code} ${second.n} · ${majority?'Majority':'No overall majority'}`:`${v.label} · ${v.total} seats`;
   $('party-list').innerHTML=displayOrder.map(i=>{const p=current.parties[i],muted=selected.size&&!selected.has(i);return`<button type="button" class="party-line${muted?' is-muted':''}" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" aria-label="${esc(p.name)}, ${seats[i]} ${v.noun} seats. Select party." title="${esc(p.name)}: ${esc(p.description)}">${swatch(p)}<strong>${p.code}</strong><span class="line-name">${esc(p.name)}</span><span class="line-vote">${pct(current.votes[i])}</span></button>`;}).join('');
   $('party-cards').innerHTML=displayOrder.map(i=>{const p=current.parties[i],share=seats[i]/v.total*100;return`<button class="party-card${selected.size&&!selected.has(i)?' is-muted':''}" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" title="${esc(p.name)} · ${current.districtSeats[i]} district + ${current.prSeats[i]} PR = ${current.combinedSeats[i]} combined seats. Click to select." aria-label="${esc(p.name)}, ${seats[i]} ${v.noun} seats; ${current.districtSeats[i]} district plus ${current.prSeats[i]} PR equals ${current.combinedSeats[i]} combined. ${pct(current.votes[i])} votes. Select for coalition."><span class="code">${p.code}</span><span class="seat">${seats[i]}</span><span class="seat-share">${share.toFixed(1)}% seats</span><span class="vote">${pct(current.votes[i])} vote</span><span class="card-bar" aria-hidden="true"><span style="width:${share}%;background:${p.color}"></span></span></button>`;}).join('');
@@ -39,7 +38,7 @@ function render(){
   $('history-context').textContent=(isCombined?`Largest party and majority status use the Combined view (${v.total} seats; majority ${v.majority}).`:`Largest party uses the ${v.label} view (${v.total} seats).`)+` Select a run to restore it. History is kept in this tab until the page is closed or refreshed.`;
   $('assembly-panel').hidden=view!=='combined';$('panel-cartogram').hidden=view!=='district';$('panel-votes').hidden=view!=='pr';
   renderSummary();if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else renderParliament();renderHistory();
-  if(activeTab==='districts')renderDistricts();if(activeTab==='compass')drawCompass();if(activeTab==='coalitions')renderCoalitions();
+  if(activeTab==='districts')renderDistricts();if(activeTab==='compass')renderPartyCompass();if(activeTab==='medians')drawDistrictMedians();if(activeTab==='coalitions')renderCoalitions();
 }
 function coalitionTier(codes){
   const mainstream=['LDP','CA','SDP','CON','GRN','LIB'];
@@ -161,6 +160,8 @@ function renderVoteShare(){
 }
 function renderCartogram(){
   const mode=$('cartogram-color').value,stateFilter=$('cartogram-state').value;
+  const familyKey=$('cartogram-family-key');familyKey.hidden=mode!=='family';
+  familyKey.innerHTML=mode==='family'?'<strong>District type family</strong>'+Object.entries(H.familyColors).map(([name,color])=>`<span><i class="family-key-swatch" style="background:${color}" aria-hidden="true"></i>${esc(name)}</span>`).join(''):'';
   const rows=current.rows.filter(d=>stateFilter==='all'||d.stateCode===stateFilter),states=H.states.filter(s=>stateFilter==='all'||s.code===stateFilter);
   const xs=rows.map(d=>d.tileX),ys=rows.map(d=>d.tileY),x0=Math.min(...xs)-2,y0=Math.min(...ys)-2,w=Math.max(...xs)-x0+2,h=Math.max(...ys)-y0+2;
   const dark=document.body.classList.contains('dark'),surface=dark?'#232836':'#f7f7f4';
@@ -196,7 +197,7 @@ function renderDistricts(){
   rows.sort((a,b)=>a.stateIndex-b.stateIndex||a.id.localeCompare(b.id));
   if($('district-sort').value==='close')rows.sort((a,b)=>a.distanceGap-b.distanceGap||a.id.localeCompare(b.id));
   $('district-count').textContent=`${rows.length} of 400`;
-  $('district-body').innerHTML=rows.map(d=>`<tr><td><strong>${d.id}</strong></td><td>${esc(d.state)}<br><small>${esc(d.locality)}</small></td><td>${d.population.toLocaleString()}</td><td title="${esc(d.name)}">${esc(d.name)}</td><td>${d.x.toFixed(3)}</td><td>${d.y.toFixed(3)}</td><td>${swatch(current.parties[d.winner])} ${current.parties[d.winner].code}</td><td>${current.parties[d.runner].code}</td><td>${d.distanceGap.toFixed(4)}</td></tr>`).join('');
+  $('district-body').innerHTML=rows.map(d=>`<tr><td><strong>${d.id}</strong></td><td>${esc(d.state)}<br><small>${esc(d.locality)}</small></td><td>${d.population.toLocaleString()}</td><td title="${esc(d.name)}">${esc(d.name)}</td><td>${swatch(current.parties[d.winner])} ${current.parties[d.winner].code}</td><td>${current.parties[d.runner].code}</td></tr>`).join('');
 }
 function renderCoalitions(){
   if(view!=='combined'){$('coalition-options').innerHTML='';return;}
@@ -224,7 +225,51 @@ function showTab(name){
   if(name==='coalitions'&&view!=='combined')name='overview';
   activeTab=name;
   for(const tab of document.querySelectorAll('[data-tab]')){const active=tab.dataset.tab===name;tab.setAttribute('aria-selected',active);tab.tabIndex=active?0:-1;$('panel-'+tab.dataset.tab).hidden=!active;}
-  if(name==='compass')drawCompass();if(name==='districts')renderDistricts();if(name==='coalitions')renderCoalitions();
+  if(name==='compass')renderPartyCompass();if(name==='medians')drawDistrictMedians();if(name==='districts')renderDistricts();if(name==='coalitions')renderCoalitions();
+}
+function renderPartyCompass(){
+  const v=shown(),seats=v.seats,style=getComputedStyle(document.body),dark=document.body.classList.contains('dark');
+  const ink=style.getPropertyValue('--text').trim(),muted=style.getPropertyValue('--muted').trim(),border=style.getPropertyValue('--border').trim(),surface=style.getPropertyValue('--surface').trim(),soft=style.getPropertyValue('--soft').trim();
+  const left=90,top=40,size=800,bound=Math.max(12,2*Math.ceil((Math.max(...current.parties.flatMap(p=>[Math.abs(p.x),Math.abs(p.y)]))+2)/2));
+  const px=x=>left+(x+bound)*size/(2*bound),py=y=>top+(bound-y)*size/(2*bound);
+  const label=(x,y,text,anchor='middle',weight=400,font=18)=>`<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="system-ui,sans-serif" font-size="${font}" font-weight="${weight}" fill="${muted}">${esc(text)}</text>`;
+  let artwork=`<rect width="980" height="940" fill="${surface}"/><rect x="${left}" y="${top}" width="${size}" height="${size}" rx="18" fill="${soft}" stroke="${border}" stroke-width="2"/>`;
+  for(let n=-bound+2;n<bound;n+=2){
+    if(n===0)continue;
+    artwork+=`<path d="M${px(n)},${top}V${top+size}M${left},${py(n)}H${left+size}" fill="none" stroke="${border}" stroke-width="1" opacity=".65"/>`;
+  }
+  artwork+=`<path d="M${px(0)},${top}V${top+size}M${left},${py(0)}H${left+size}" fill="none" stroke="${border}" stroke-width="3"/>`;
+  for(const n of [-bound,0,bound])artwork+=label(px(n),top+size+30,n)+label(left-18,py(n)+6,n,'end');
+  artwork+=label(left+14,py(0)-15,'Interventionist','start',650,19)+label(left+size-14,py(0)-15,'Market liberal','end',650,19);
+  artwork+=label(px(0)+15,top+32,'Traditional','start',650,20)+label(px(0)+15,top+size-18,'Liberal','start',650,20);
+  artwork+=label(left+size/2,910,'Economic position');
+  artwork+=`<text transform="translate(26 ${top+size/2}) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="${muted}">Cultural position</text>`;
+  const nodes=current.parties.map((p,i)=>({p,i,x:px(p.x),y:py(p.y),r:seats[i]>0?17*Math.sqrt(Math.log1p(seats[i])):6}));
+  const ordered=displayOrder.slice().sort((a,b)=>seats[b]-seats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b)),placed=[];
+  const labelPositions=new Map();
+  for(const i of ordered){
+    const node=nodes[i],{p,x,y,r}=node,w=(p.code.length+1+String(seats[i]).length)*11.2,h=22,gap=11;
+    const candidates=[{x:x+r+gap,y:y+6,anchor:'start'},{x:x-r-gap,y:y+6,anchor:'end'},{x,y:y-r-gap,anchor:'middle'},{x,y:y+r+gap+h-5,anchor:'middle'},{x:x+r*.7+gap,y:y-r*.7-gap,anchor:'start'},{x:x-r*.7-gap,y:y-r*.7-gap,anchor:'end'},{x:x+r*.7+gap,y:y+r*.7+gap+h-5,anchor:'start'},{x:x-r*.7-gap,y:y+r*.7+gap+h-5,anchor:'end'}];
+    let best=null;
+    candidates.forEach((c,rank)=>{
+      const box={x:c.x-(c.anchor==='middle'?w/2:c.anchor==='end'?w:0),y:c.y-h+3,w,h};
+      let score=rank+1000*(Math.max(0,left+4-box.x)+Math.max(0,box.x+w-left-size+4)+Math.max(0,top+4-box.y)+Math.max(0,box.y+h-top-size+4));
+      for(const other of nodes){const nearX=Math.max(box.x,Math.min(other.x,box.x+w)),nearY=Math.max(box.y,Math.min(other.y,box.y+h));if(Math.hypot(nearX-other.x,nearY-other.y)<other.r+5)score+=10000;}
+      for(const other of placed)score+=Math.max(0,Math.min(box.x+w,other.x+other.w)-Math.max(box.x,other.x))*Math.max(0,Math.min(box.y+h,other.y+other.h)-Math.max(box.y,other.y))*10;
+      if(!best||score<best.score)best={...c,box,score};
+    });
+    placed.push(best.box);labelPositions.set(i,best);
+  }
+  // Large bubbles are painted first so smaller and zero-seat markers stay usable.
+  for(const i of ordered){
+    const {p,x,y,r}=nodes[i],chosen=selected.has(i),faded=selected.size&&!chosen,pos=labelPositions.get(i);
+    const description=`${p.name}, ${seats[i]} ${v.noun} seats. Economy ${p.x.toFixed(2)}, culture ${p.y.toFixed(2)}. Select party.`;
+    artwork+=`<g class="party-compass-node" data-party="${i}" data-compass-code="${p.code}" data-seats="${seats[i]}" data-radius="${r}" role="button" tabindex="0" aria-pressed="${chosen}" aria-label="${esc(description)}" opacity="${faded?.24:1}"><title>${esc(description)}</title><circle cx="${x}" cy="${y}" r="${Math.max(12,r)}" fill="transparent"/>`;
+    if(chosen)artwork+=`<circle class="party-compass-halo" cx="${x}" cy="${y}" r="${r+10}" fill="${p.color}" fill-opacity=".18" stroke="${p.color}" stroke-width="2"/>`;
+    artwork+=`<circle class="party-compass-dot" cx="${x}" cy="${y}" r="${r}" fill="${seats[i]>0?p.color:soft}" stroke="${seats[i]>0?(dark?'#e9e9ed':'#ffffff'):p.color}" stroke-width="${seats[i]>0?3:3.5}"/><text x="${pos.x}" y="${pos.y}" text-anchor="${pos.anchor}" font-family="ui-monospace,monospace" font-size="18" fill="${ink}"><tspan font-weight="750">${p.code}</tspan><tspan fill="${muted}"> ${seats[i]}</tspan></text></g>`;
+  }
+  $('party-compass').innerHTML=`<svg id="party-compass-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 940" role="group" aria-label="Party compass showing ${v.label} seats"><title>Wizlandia party compass · ${v.label} seats</title>${artwork}</svg>`;
+  $('party-compass-note').textContent=`${v.label} seats · Bubble area scales with log(1 + seats). Hollow dots indicate zero seats. Select dots or seat cards to highlight parties.`;
 }
 function clippedRegion(index){
   let polygon=[[-12,-10],[12,-10],[12,10],[-12,10]];const p=current.parties[index];
@@ -238,7 +283,7 @@ function clippedRegion(index){
     });polygon=out;
   });return polygon;
 }
-function drawCompass(){
+function drawDistrictMedians(){
   const canvas=$('compass'),c=canvas.getContext('2d'),dark=document.body.classList.contains('dark');
   const x0=65,y0=28,w=780,h=650,px=x=>x0+(x+12)*w/24,py=y=>y0+(10-y)*h/20;
   const ink=getComputedStyle(document.body).getPropertyValue('--text').trim(),muted=getComputedStyle(document.body).getPropertyValue('--muted').trim();
@@ -316,7 +361,8 @@ $('batch').onclick=async()=>{
   }catch(e){notice(e.message);}finally{busy=false;$('batch').disabled=$('run').disabled=false;$('batch').textContent=`Draw ${n} elections`;}
 };
 function toggleParty(event){const card=event.target.closest('[data-party]');if(!card)return;const i=Number(card.dataset.party),source=event.currentTarget.id,restoreFocus=document.activeElement===card;selected.has(i)?selected.delete(i):selected.add(i);render();if(restoreFocus)$(source).querySelector(`[data-party="${i}"]`)?.focus({preventScroll:true});}
-$('party-cards').onclick=toggleParty;$('party-list').onclick=toggleParty;
+$('party-cards').onclick=toggleParty;$('party-list').onclick=toggleParty;$('party-compass').onclick=toggleParty;
+$('party-compass').onkeydown=event=>{if(['Enter',' '].includes(event.key)&&event.target.closest('[data-party]')){event.preventDefault();toggleParty(event);}else if(event.key==='Escape')clearSelection();};
 function clearSelection(){selected.clear();render();}
 $('clear-coalition').onclick=clearSelection;$('summary-clear').onclick=clearSelection;$('seat-order').onchange=renderParliament;$('diagram-layout').onchange=renderParliament;
 for(const button of document.querySelectorAll('[data-tab]')){
@@ -328,7 +374,7 @@ $('district-party').innerHTML='<option value="all">All parties</option>'+display
 function chooseCoalition(event){const b=event.target.closest('[data-coalition]');if(!b)return;selected=new Set(b.dataset.coalition.split(',').map(Number));render();}
 $('coalition-options').onclick=chooseCoalition;$('summary-paths').onclick=chooseCoalition;
 $('history-body').onclick=event=>{const b=event.target.closest('[data-history]');if(b){const h=history.find(h=>h.id===Number(b.dataset.history));if(h){setMode('manual');restore(h.result);notice(`${h.label} restored.`);}}};
-for(const id of ['show-density','show-districts'])$(id).onchange=drawCompass;
+for(const id of ['show-density','show-districts'])$(id).onchange=drawDistrictMedians;
 $('compass').addEventListener('mousemove',event=>{
   const rect=$('compass').getBoundingClientRect(),x=(event.clientX-rect.left)*900/rect.width,y=(event.clientY-rect.top)*760/rect.height;
   let best=null,distance=12;
@@ -338,6 +384,7 @@ $('compass').addEventListener('mousemove',event=>{
   tip.style.left=Math.max(0,Math.min(event.clientX-rect.left+12,rect.width-245))+'px';tip.style.top=Math.max(0,event.clientY-rect.top-65)+'px';
 });$('compass').onmouseleave=()=>$('tooltip').hidden=true;
 $('export-svg').onclick=()=>download(`wizlandia-${view}-${$('diagram-layout').value}.svg`,new XMLSerializer().serializeToString($('parliament-svg')),'image/svg+xml');
+$('export-party-compass').onclick=()=>download('wizlandia-party-compass.svg',new XMLSerializer().serializeToString($('party-compass-svg')),'image/svg+xml');
 $('export-votes').onclick=()=>download('wizlandia-pr-vote-share.svg',new XMLSerializer().serializeToString($('vote-share-svg')),'image/svg+xml');
 $('export-results').onclick=()=>download('wizlandia-results.csv',csv(resultRows([current])),'text/csv;charset=utf-8');
 $('export-history').onclick=()=>download('wizlandia-election-history.csv',csv(resultRows(history)),'text/csv;charset=utf-8');
@@ -368,7 +415,7 @@ $('party-form').onsubmit=event=>{event.preventDefault();try{
   const parties=state.parties.map((p,i)=>({...p,x:Number($('party-x-'+i).value),y:Number($('party-y-'+i).value)}));E.validateParties(parties);
   const result=E.evaluate(state.economic,state.cultural,state.variance,state.spread,parties);restore(result);$('parties-dialog').close();notice('Party positions updated.');
 }catch(e){$('party-error').textContent=e.message;}};
-function applyTheme(dark){document.body.classList.toggle('dark',dark);$('theme').textContent=dark?'☀ Light':'◐ Dark';if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else renderParliament();if(activeTab==='compass')drawCompass();}
+function applyTheme(dark){document.body.classList.toggle('dark',dark);$('theme').textContent=dark?'☀ Light':'◐ Dark';if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else renderParliament();if(activeTab==='compass')renderPartyCompass();if(activeTab==='medians')drawDistrictMedians();}
 let initialDark=false;try{initialDark=localStorage.getItem('wizlandia-theme')==='dark';}catch(e){}
 $('theme').onclick=()=>{const dark=!document.body.classList.contains('dark');try{localStorage.setItem('wizlandia-theme',dark?'dark':'light');}catch(e){}applyTheme(dark);};
 for(const id of ['cartogram-state','district-state'])$(id).innerHTML='<option value="all">All states</option>'+H.states.map(s=>`<option value="${s.code}">${esc(s.name)} (${s.districts})</option>`).join('');

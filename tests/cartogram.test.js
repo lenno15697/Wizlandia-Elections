@@ -54,6 +54,9 @@ for(const shifts of [[0,0,1],[.3,-.25,1],[-1,1,2],[1,-1,.5]])for(const color of 
  if(!$('cartogram-detail').hidden){assert.ok(!/T[0-9]{2}\s*[·<]/.test($('cartogram-detail').innerHTML));assert.ok($('cartogram-detail').innerHTML.includes(byId.get('NX-01').typeName));}const expected=state==='all'?400:H.states.find(s=>s.code===state).districts;
  assert.equal((out.match(/data-district=/g)||[]).length,expected);
  assert.ok(!/NaN|undefined|Infinity/.test(out));
+ assert.equal($('cartogram-family-key').hidden,color!=='family');
+ if(color==='family')for(const [name,fill] of Object.entries(H.familyColors)){assert.ok($('cartogram-family-key').innerHTML.includes(name));assert.ok($('cartogram-family-key').innerHTML.includes(fill));}
+ else assert.equal($('cartogram-family-key').innerHTML,'');
  assert.equal($('cartogram-state-results').hidden,false);
  {
    const result=$('cartogram-state-results').innerHTML;

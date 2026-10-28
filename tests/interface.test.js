@@ -30,8 +30,15 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  assert.match(get('ticker').textContent,/Combined/);
  assert.equal(get('runs').value,'20');assert.ok(!nodes.has('tab-cartogram'));assert.ok(!nodes.has('cartogram-legend'));
  assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);assert.equal(get('panel-votes').hidden,true);
+ assert.ok(html.indexOf('id="tab-medians"')>html.indexOf('id="tab-history"'));assert.match(html,/id="panel-medians"[\s\S]*?<canvas id="compass"/);
+ const checkCompass=seats=>{const svg=get('party-compass').innerHTML,bubbles=[...svg.matchAll(/data-party="(\d+)" data-compass-code="([^"]+)" data-seats="(\d+)" data-radius="([^"]+)"/g)];assert.equal(bubbles.length,9);for(const [,index,code,count,radius] of bubbles){const i=Number(index),n=Number(count),r=Number(radius);assert.equal(code,D.parties[i].code);assert.equal(n,seats[i]);if(n)assert.ok(Math.abs(r*r-289*Math.log1p(n))<1e-9,'Bubble area must be proportional to log(1 + seats)');else assert.equal(r,6);}return svg;};
+ get('tab-compass').onclick();checkCompass(E.evaluate().combinedSeats);assert.equal(get('panel-medians').hidden,true);
+ const partyEvent=(container,i)=>({target:{closest:()=>({dataset:{party:String(i)}})},currentTarget:get(container)});
+ get('party-compass').onclick(partyEvent('party-compass',0));assert.match(get('party-cards').innerHTML,/data-party="0" aria-pressed="true"/);assert.match(get('party-compass').innerHTML,/data-party="0"[^>]*aria-pressed="true"/);
+ get('party-cards').onclick(partyEvent('party-cards',0));assert.match(get('party-compass').innerHTML,/data-party="0"[^>]*aria-pressed="false"/);
+ get('party-compass').onkeydown({...partyEvent('party-compass',4),key:'Enter',preventDefault(){}});assert.match(get('party-cards').innerHTML,/data-party="4" aria-pressed="true"/);get('clear-coalition').onclick();
  get('view-district').onclick();assert.equal(get('assembly-panel').hidden,true);assert.equal(get('panel-cartogram').hidden,false);assert.equal(get('cartogram-detail').hidden,true);assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,400);
- assert.equal(get('cartogram-state-results').hidden,false);assert.match(get('cartogram-state-results').innerHTML,/Nationwide/);assert.match(get('cartogram-state-results').innerHTML,/400 district seats/);
+ checkCompass(E.evaluate().districtSeats);assert.equal(get('cartogram-state-results').hidden,false);assert.match(get('cartogram-state-results').innerHTML,/Nationwide/);assert.match(get('cartogram-state-results').innerHTML,/400 district seats/);
  get('cartogram-state').value='AK';get('cartogram-state').listeners.change();assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,15);
  assert.ok(get('cartogram-layout').classList.contains('is-focused'));
  assert.match(get('cartogram-state-results').innerHTML,/Akro/);assert.match(get('cartogram-state-results').innerHTML,/15 district seats/);
@@ -42,6 +49,7 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  const expected=E.evaluate(.3,0,1),chunk=get('cartogram').innerHTML;
  for(const r of expected.rows){assert.ok(chunk.split(`data-district="${r.id}"`)[1].split('</g>')[0].includes(`fill="${D.parties[r.winner].color}"`));}
  get('view-pr').onclick();assert.equal(get('assembly-panel').hidden,true);assert.equal(get('panel-cartogram').hidden,true);assert.equal(get('panel-votes').hidden,false);assert.ok(all.filter(n=>Object.hasOwn(n.attributes,'data-combined-only')).every(n=>n.hidden));
+ checkCompass(expected.prSeats);
  const svg=get('vote-share-chart').innerHTML,bars=[...svg.matchAll(/data-vote-party="([^"]+)" data-share="([^"]+)"/g)];
  assert.equal(bars.length,9);assert.ok(svg.includes('Percentage of the vote'));assert.ok(!svg.includes('<circle'));
  assert.deepEqual(bars.map(m=>m[1]),D.displayOrder.map(i=>D.parties[i].code));
@@ -54,5 +62,5 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  get('load-config').files=[{size:1000,text:async()=>JSON.stringify(config)}];await get('load-config').onchange({target:get('load-config')});
  assert.equal(get('notice').textContent,'Configuration loaded.');get('save-config').onclick();assert.equal(JSON.parse(await lastBlob.text()).spread,.2);
  get('theme').onclick();get('view-district').onclick();assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,400);
- console.log('Interface event checks passed: full app startup, fixed variation, live vote-share chart, political party order, map, tile inspection, state zoom/filter, Combined-only majority, 400-row export, old config normalization and theme switch.');
+ console.log('Interface event checks passed: full app startup, fixed variation, logarithmic party compass, two-way mouse and keyboard selection, relocated medians tab, live vote-share chart, political party order, map, tile inspection, state zoom/filter, Combined-only majority, 400-row export, old config normalization and theme switch.');
 })().catch(e=>{console.error(e);process.exitCode=1});
