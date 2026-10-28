@@ -68,6 +68,8 @@ All 50 original types, their counts, compass centres and model generation indice
 5. Open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then **main** and **/(root)**. Click **Save**.
 6. Once GitHub completes deployment, use the published URL shown on that page. For a project repository it normally has the form `https://YOUR_USERNAME.github.io/WizlandiaElections/`.
 
+Stylesheet and script URLs in `index.html` include content-version query strings. This makes browsers fetch the current files after an update, rather than mixing new History headers with a cached older script. Upload `index.html` with each update; when changing a referenced asset, refresh its version token as well.
+
 No npm install, bundler, server, API key or external CDN is needed. The runtime assets use relative paths so project repository subdirectories work.
 
 Official instructions: [GitHub Pages publishing sources](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
