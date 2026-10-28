@@ -28,14 +28,16 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
 (async()=>{
  const get=id=>nodes.get(id);
  assert.match(get('ticker').textContent,/Combined/);
- assert.equal(get('runs').value,'20');assert.ok(!nodes.has('tab-cartogram'));
+ assert.equal(get('runs').value,'20');assert.ok(!nodes.has('tab-cartogram'));assert.ok(!nodes.has('cartogram-legend'));
  assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);
  get('view-district').onclick();assert.equal(get('assembly-panel').hidden,true);assert.equal(get('panel-cartogram').hidden,false);assert.equal(get('cartogram-detail').hidden,true);assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,400);
+ assert.equal(get('cartogram-state-results').hidden,false);assert.match(get('cartogram-state-results').innerHTML,/Nationwide/);assert.match(get('cartogram-state-results').innerHTML,/400 district seats/);
  get('cartogram-state').value='AK';get('cartogram-state').listeners.change();assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,15);
+ assert.ok(get('cartogram-layout').classList.contains('is-focused'));
  assert.match(get('cartogram-state-results').innerHTML,/Akro/);assert.match(get('cartogram-state-results').innerHTML,/15 district seats/);
  get('cartogram').onclick({target:{closest:()=>({dataset:{district:'AK-01'}})}});assert.match(get('cartogram-detail').innerHTML,/AK-01/);assert.equal(get('cartogram-detail').hidden,false);assert.ok(!/T[0-9]{2}\s*[·<]/.test(get('cartogram-detail').innerHTML));
  get('cartogram-detail').onclick({target:{closest:()=>({})}});assert.equal(get('cartogram-detail').hidden,true);
- get('cartogram-state').value='all';get('cartogram-state').listeners.change();
+ get('cartogram-state').value='all';get('cartogram-state').listeners.change();assert.ok(!get('cartogram-layout').classList.contains('is-focused'));
  get('economic').value='.30';get('economic').listeners.input();
  const expected=E.evaluate(.3,0,1),chunk=get('cartogram').innerHTML;
  for(const r of expected.rows){assert.ok(chunk.split(`data-district="${r.id}"`)[1].split('</g>')[0].includes(`fill="${D.parties[r.winner].color}"`));}

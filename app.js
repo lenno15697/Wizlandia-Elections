@@ -158,15 +158,12 @@ function renderCartogram(){
   for(const s of H.stateLabels.filter(s=>stateFilter==='all'||s.code===stateFilter))artwork+=`<text x="${s.x}" y="${s.y}" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size=".84" font-weight="700" fill="#111111" stroke="#ffffff" stroke-width=".20" paint-order="stroke" pointer-events="none">${s.code}</text>`;
   $('cartogram').innerHTML=`<svg id="cartogram-svg" xmlns="http://www.w3.org/2000/svg" viewBox="${x0} ${y0} ${w} ${h}" role="group" aria-label="Wizlandia 400 electoral district cartogram"><title>Wizlandia electoral districts · ${mode} · ${stateFilter==='all'?'All states':stateFilter}</title>${artwork}</svg>`;
   document.querySelector('.cartogram-scroll').classList.toggle('is-focused',stateFilter!=='all');
-  const legend=mode==='winner'?displayOrder.map(i=>[current.parties[i].code,current.parties[i].color]):mode==='family'?Object.entries(H.familyColors):states.map(s=>[`${s.code} · ${s.name}`,s.color]);
-  $('cartogram-legend').innerHTML=legend.map(([name,color])=>`<span><i class="swatch" style="background:${color}"></i>${esc(name)}</span>`).join('');
-  const results=$('cartogram-state-results');results.hidden=stateFilter==='all';
-  if(stateFilter==='all')results.innerHTML='';
-  else{
-    const counts=current.parties.map((_,i)=>rows.filter(d=>d.winner===i).length);
-    const winners=largestPartiesFirst(displayOrder.filter(i=>counts[i]>0),counts);
-    results.innerHTML=`<div class="state-results-heading"><strong>${esc(states[0].name)}</strong><span>${rows.length} district seats</span></div><div class="state-party-results">${winners.map(i=>{const p=current.parties[i];return`<div class="state-party-result" style="--party:${p.color}">${swatch(p)}<span>${esc(p.name)}</span><strong>${counts[i]}</strong></div>`;}).join('')}</div>`;
-  }
+  $('cartogram-layout').classList.toggle('is-focused',stateFilter!=='all');
+  const results=$('cartogram-state-results');results.hidden=false;
+  const counts=current.parties.map((_,i)=>rows.filter(d=>d.winner===i).length);
+  const winners=largestPartiesFirst(displayOrder.filter(i=>counts[i]>0),counts);
+  const heading=stateFilter==='all'?'Nationwide':states[0].name;
+  results.innerHTML=`<div class="state-results-heading"><strong>${esc(heading)}</strong><span>${rows.length} district seats</span></div><div class="state-party-results">${winners.map(i=>{const p=current.parties[i];return`<div class="state-party-result" style="--party:${p.color}">${swatch(p)}<span>${esc(p.name)}</span><strong>${counts[i]}</strong></div>`;}).join('')}</div>`;
   const d=rows.find(d=>d.id===inspectedDistrict);
   $('cartogram-detail').hidden=!d;
   if(d){const p=current.parties[d.winner];$('cartogram-detail').innerHTML=`<button type="button" class="text-button district-detail-close" data-close-district aria-label="Close district details">×</button><strong>${d.id} · ${esc(d.locality)}</strong><p class="district-type-name">${esc(d.name)}</p><p>${esc(d.state)} · ${d.population.toLocaleString()} estimated residents</p><p>${swatch(p)} ${esc(p.name)}</p>`;}

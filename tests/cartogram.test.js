@@ -54,10 +54,11 @@ for(const shifts of [[0,0,1],[.3,-.25,1],[-1,1,2],[1,-1,.5]])for(const color of 
  if(!$('cartogram-detail').hidden){assert.ok(!/T[0-9]{2}\s*[·<]/.test($('cartogram-detail').innerHTML));assert.ok($('cartogram-detail').innerHTML.includes(byId.get('NX-01').typeName));}const expected=state==='all'?400:H.states.find(s=>s.code===state).districts;
  assert.equal((out.match(/data-district=/g)||[]).length,expected);
  assert.ok(!/NaN|undefined|Infinity/.test(out));
- assert.equal($('cartogram-state-results').hidden,state==='all');
- if(state!=='all'){
+ assert.equal($('cartogram-state-results').hidden,false);
+ {
    const result=$('cartogram-state-results').innerHTML;
-   const subset=current.rows.filter(d=>d.stateCode===state);
+   const subset=current.rows.filter(d=>state==='all'||d.stateCode===state);
+   assert.ok(result.includes(state==='all'?'<strong>Nationwide</strong>':`<strong>${H.states.find(s=>s.code===state).name}</strong>`));
    for(let i=0;i<current.parties.length;i++){
      const n=subset.filter(d=>d.winner===i).length,p=current.parties[i];
      if(n)assert.ok(result.includes(`<span>${p.name}</span><strong>${n}</strong>`));
