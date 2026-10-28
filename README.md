@@ -6,7 +6,7 @@ A standalone GitHub Pages election website inspired by the sidebar, parliament d
 
 Within-type variation is fixed at **0.20**. The variation slider is removed, and loading an older configuration cannot override this setting. The economic, cultural and variance-multiplier sliders remain available. The existing party-boundary caps still apply, so 0.20 is a maximum offset rather than the standard deviation of every type.
 
-The **Electoral Districts** view displays the 400-seat cartogram in place of the Assembly diagram. Combined and PR List retain their Assembly diagrams. In PR List, the summary card aligns with the top of the diagram, and the hemicycle viewport includes every seat in full. The separate lower Cartogram tab has been removed. All states shows nationwide district seat totals for every party that won a seat. Selecting a state zooms the map and shows that state’s winning-party totals instead. Both summaries use the current election, ordered by seats won. Each state’s results sit to the left of its map on wide screens, with the map shifted right; smaller screens stack the results above the map. The separate colour legend is removed from all map views. Colour by current winner, type family or state; click a tile for its ID, locality and full type name.
+The **Electoral Districts** view displays the 400-seat cartogram in place of the Assembly diagram. Combined retains its Assembly diagram. PR List instead shows a vertical chart of national vote shares, using the fixed left-to-right party order, original party colours and percentage labels on the y-axis. The chart updates with the election, supports dark mode and exports as SVG. The separate lower Cartogram tab has been removed. All states shows nationwide district seat totals for every party that won a seat. Selecting a state zooms the map and shows that state’s winning-party totals instead. Both summaries use the current election, ordered by seats won. Each state’s results sit to the left of its map on wide screens, with the map shifted right; smaller screens stack the results above the map. Individual state cartograms render at two-thirds of their previous width and height. The nationwide cartogram remains its original size. The separate colour legend is removed from all map views. Colour by current winner, type family or state; click a tile for its ID, locality and full type name.
 
 The Extary–Erewen border follows the ten marked tiles: five move into Extary's schematic territory and five into Erewen's. Their entitlements remain 30 and 60. Every one of the 49 named cities now has one connected group of tiles, including cities spanning two states. KR-22 is assigned to Davenport on its own island, rather than the capital across the strait. All 50 type counts, individual offsets, district populations and underlying geographic polygons are preserved.
 
@@ -57,7 +57,7 @@ To try it locally, open `index.html` in a browser. Alternatively, run `python3 -
 
 - Economic and cultural sliders in **[−1.00, +1.00]**.
 - Variance multiplier in **[0.50, 2.00]**.
-- Three selectable seat views: **Electoral Districts (400, cartogram)**, **PR List (400)** and **Combined (800)**. The combined majority threshold is **401**.
+- Three selectable seat views: **Electoral Districts (400, cartogram)**, **PR List (400, vote-share chart)** and **Combined (800)**. The combined majority threshold is **401**.
 - The specified left-to-right order: **SWP, UPL, SDP, Green, CA, LDP, Conservative, Libertarian, NF**.
 - All nine original party colours, and a results table showing district, PR and combined seat counts together.
 - National vote shares and a political compass with lightly shaded party regions, voter density and solid contour lines.
@@ -65,7 +65,7 @@ To try it locally, open `index.html` in a browser. Alternatively, run `python3 -
 - Coalition selection and minimal winning coalition combinations.
 - Seeded single draws and batches of up to 100 elections, a batch summary and restorable run history; summaries follow the selected component.
 - Editable party coordinates for exploratory scenarios.
-- JSON configuration save/load; results, districts and history CSV downloads; parliament SVG download.
+- JSON configuration save/load; results, districts and history CSV downloads; Assembly, vote-share chart and cartogram SVG downloads.
 - Light and dark themes, keyboard-operable controls and a responsive layout.
 - An updated Python simulator in `python/wizlandia_election_simulator.py`.
 
@@ -108,7 +108,7 @@ The Assembly combines **400 district seats and 400 nationwide PR seats**, for a 
 
 PR uses **Hare quota / largest remainder** on the simulated national vote shares, with **no electoral threshold**. Multiply each party's normalized vote share by 400, assign the integer part, then award remaining seats by descending fractional remainder. Exact remainder ties follow canonical model code order (LDP, CA, SDP, CON, GRN, NF, LIB, UPL, SWP). This tie rule is separate from the requested visual display order.
 
-The view buttons appear as Combined, Electoral Districts, and PR List. The Combined view opens by default. Switching views updates the main map or Assembly diagram, seat totals, party cards, representation comparisons and history summaries. The Combined view also shows coalition tools and majority information. The overview table always shows all three seat columns. CSV exports contain all three components, and the SVG export uses the selected view. Editing party compass positions does not reorder the fixed left-to-right display.
+The view buttons appear as Combined, Electoral Districts, and PR List. The Combined view opens by default. Switching views updates the main map, vote-share chart or Assembly diagram, seat totals, party cards, representation comparisons and history summaries. The Combined view also shows coalition tools and majority information. The overview table always shows all three seat columns. CSV exports contain all three components, and the SVG export uses the selected view. Editing party compass positions does not reorder the fixed left-to-right display.
 
 Baseline seat allocation:
 
@@ -194,7 +194,9 @@ The Python GUI also opens with Combined seats and has District, PR and Combined 
 
 ## Assembly diagrams and seat cards
 
-The Layout control offers Hemicycle and Westminster in all three seat views.
+The Combined view offers Hemicycle and Westminster layouts. The PR List view
+shows national vote percentages as vertical bars, and Electoral Districts shows
+the cartogram.
 Hemicycle restores the old evenly spaced concentric arcs: 14 rings for 800
 seats and 10 for 400. Ring capacities scale with circumference; the 800-seat
 layout matches the supplied old screenshot. Tiny disconnected party blocks
@@ -203,9 +205,7 @@ position, party total and within-ring display order. The normal baseline colour
 assignment is unchanged from the old layout.
 
 Westminster uses two facing benches. Selecting party cards moves those parties
-to the government bench; clearing the selection moves them back. The component
-views use neutral Selected parties / Other parties labels and show no majority
-threshold. Westminster always orders parties largest first within each bench;
+to the government bench; clearing the selection moves them back. Westminster always orders parties largest first within each bench;
 the Seat order control is shown only for the hemicycle. Layout and seat-order choices
 are included in configuration saves. SVG export uses the displayed diagram.
 
@@ -213,8 +213,8 @@ Seat Distribution uses cards with a coloured left border, a large coloured seat
 total, seat share above vote share, and a proportional share bar. Hover over a
 card for the district/PR breakdown.
 
-For this update, replace `app.js`, `diagrams.js`, `data.js` and
-`district-geography.js` at repository root. The ZIP also contains the updated
+For this update, replace `index.html`, `app.js` and `styles.css` at repository
+root. The ZIP also contains the updated
 Python model, district register and geographic metadata.
 
 Run `node tests/diagrams.test.js` for geometry and colour-assignment checks and
@@ -236,8 +236,9 @@ coalition, including a coloured badge, seat total, vote share, and seat meter.
 Combined also shows the majority threshold and up to four clickable ways to
 form a majority across all eligible parties. These suggestions follow the coalition preference tiers below and exclude
 NF, UPL, and SWP. The separate Minimal winning coalitions tab remains an
-arithmetic list of all coalitions. The Electoral Districts and PR
-List boxes show party totals without majority claims or thresholds.
+arithmetic list of all coalitions. The Electoral Districts view shows winning-party totals for the selected state
+or nationwide. PR List displays vote percentages, with PR seat totals retained
+in the party cards below.
 
 Run `node tests/selection.test.js` to check the summary and coalition suggestions,
 including zero-seat parties and all three seat views.
@@ -273,7 +274,7 @@ largest first.
 Run `node tests/coalition-priority.test.js` to check all tiers, the cordon,
 ranking, the four-suggestion limit, and the empty state.
 
-Validation for this update includes Python/JavaScript parity across 58 election scenarios, 156 cartogram renders across states and colour modes, connected state tile groups, and full-app event checks using a lightweight DOM harness. Browser layout testing was unavailable because the installed Chromium binary was incomplete; the PDF atlas was rendered and visually reviewed.
+Validation includes 156 cartogram renders, 184 Assembly layouts, and full-app event checks. Browser review confirms the PR chart’s fixed party order, percentage labels and live updates. Measured map dimensions are two-thirds of their previous size for all 12 states, with the nationwide dimensions unchanged. The original election calibration and geographic assignments are preserved.
 
 The coastline-based update samples the five landmass silhouettes on a common hex lattice, balances exact state tile capacities, repairs state-piece connectivity, and transports the existing district anchors within their own state and landmass. It changes no district population, type, compass point, model index or ID. The new `stateBorders` metadata deduplicates shared edges on an integer lattice.
 
@@ -309,3 +310,24 @@ three, and Ravenna, Erewenton, Westhaven, Kroana City and Luqur Bay one each.
 Every capital other than Lorenvia has at most one; several have none because
 the original national total remains eight. All type counts, compass centres,
 paired offsets, district boundaries, populations and map positions are retained.
+
+
+## Compass-position permutation
+
+Twelve districts exchange their existing compass positions in five disjoint
+cycles, without changing any district's type, geography, population or tile.
+Each arrow below means the left district receives the right district's previous
+position; two-way arrows indicate swaps.
+
+- NX-04 ↔ AX-45
+- NX-44 ← AK-08 ← EW-38 ← NX-31 ← NX-44
+- EW-36 ↔ AK-14
+- LQ-01 ↔ EW-13 (LQ-01 was confirmed in place of LQ-04)
+- QL-05 ↔ NX-07
+
+`compass_permutation_changes.csv` records the old and new coordinates and model
+indices. All 400 original positions and deterministic model indices occur once,
+and each type's position multiset is unchanged. National results are unchanged
+for every election configuration; state and individual district results may
+change. `district-geography.js` is the only runtime file to replace for this
+update. The atlas's baseline colours and type-family maps are unchanged.

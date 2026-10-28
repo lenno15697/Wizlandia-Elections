@@ -29,7 +29,7 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  const get=id=>nodes.get(id);
  assert.match(get('ticker').textContent,/Combined/);
  assert.equal(get('runs').value,'20');assert.ok(!nodes.has('tab-cartogram'));assert.ok(!nodes.has('cartogram-legend'));
- assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);
+ assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);assert.equal(get('panel-votes').hidden,true);
  get('view-district').onclick();assert.equal(get('assembly-panel').hidden,true);assert.equal(get('panel-cartogram').hidden,false);assert.equal(get('cartogram-detail').hidden,true);assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,400);
  assert.equal(get('cartogram-state-results').hidden,false);assert.match(get('cartogram-state-results').innerHTML,/Nationwide/);assert.match(get('cartogram-state-results').innerHTML,/400 district seats/);
  get('cartogram-state').value='AK';get('cartogram-state').listeners.change();assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,15);
@@ -41,17 +41,18 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  get('economic').value='.30';get('economic').listeners.input();
  const expected=E.evaluate(.3,0,1),chunk=get('cartogram').innerHTML;
  for(const r of expected.rows){assert.ok(chunk.split(`data-district="${r.id}"`)[1].split('</g>')[0].includes(`fill="${D.parties[r.winner].color}"`));}
- get('view-pr').onclick();assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);assert.ok(all.filter(n=>Object.hasOwn(n.attributes,'data-combined-only')).every(n=>n.hidden));
- assert.ok(get('assembly-panel').classList.contains('is-pr'));
- const svg=get('hemicycle').innerHTML,bounds=svg.match(/viewBox="([^"]+)"/)[1].split(' ').map(Number),circles=[...svg.matchAll(/<circle[^>]*cx="([^"]+)" cy="([^"]+)" r="([^"]+)"/g)];
- assert.equal(circles.length,400);
- for(const [,cx,cy,r] of circles){const x=Number(cx),y=Number(cy),radius=Number(r);assert.ok(x-radius>=bounds[0]&&x+radius<=bounds[0]+bounds[2]&&y-radius>=bounds[1]&&y+radius<=bounds[1]+bounds[3],'Every PR seat must fit fully inside the exported SVG viewport');}
- get('view-combined').onclick();assert.ok(!get('assembly-panel').classList.contains('is-pr'));
+ get('view-pr').onclick();assert.equal(get('assembly-panel').hidden,true);assert.equal(get('panel-cartogram').hidden,true);assert.equal(get('panel-votes').hidden,false);assert.ok(all.filter(n=>Object.hasOwn(n.attributes,'data-combined-only')).every(n=>n.hidden));
+ const svg=get('vote-share-chart').innerHTML,bars=[...svg.matchAll(/data-vote-party="([^"]+)" data-share="([^"]+)"/g)];
+ assert.equal(bars.length,9);assert.ok(svg.includes('Percentage of the vote'));assert.ok(!svg.includes('<circle'));
+ assert.deepEqual(bars.map(m=>m[1]),D.displayOrder.map(i=>D.parties[i].code));
+ bars.forEach((m,rank)=>assert.ok(Math.abs(Number(m[2])-100*expected.votes[D.displayOrder[rank]])<1e-10,'PR chart must show actual vote shares rather than rounded seat shares'));
+ get('theme').onclick();assert.equal((get('vote-share-chart').innerHTML.match(/data-vote-party=/g)||[]).length,9);
+ get('view-combined').onclick();assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-votes').hidden,true);
  get('tab-districts').onclick();get('district-state').value='IL';get('district-state').listeners.input();assert.equal((get('district-body').innerHTML.match(/<tr>/g)||[]).length,9);
  get('export-districts').onclick();assert.equal((await lastBlob.text()).trim().split('\n').length,401);
  const config={version:1,economic:.1,cultural:.2,variance:1,spread:0,seed:1,runs:3,parties:D.parties.map(({code,x,y})=>({code,x,y}))};
  get('load-config').files=[{size:1000,text:async()=>JSON.stringify(config)}];await get('load-config').onchange({target:get('load-config')});
  assert.equal(get('notice').textContent,'Configuration loaded.');get('save-config').onclick();assert.equal(JSON.parse(await lastBlob.text()).spread,.2);
  get('theme').onclick();get('view-district').onclick();assert.equal((get('cartogram').innerHTML.match(/data-district=/g)||[]).length,400);
- console.log('Interface event checks passed: full app startup, fixed variation, live map, tile inspection, state zoom/filter, Combined-only majority, 400-row export, old config normalization and theme switch.');
+ console.log('Interface event checks passed: full app startup, fixed variation, live vote-share chart, political party order, map, tile inspection, state zoom/filter, Combined-only majority, 400-row export, old config normalization and theme switch.');
 })().catch(e=>{console.error(e);process.exitCode=1});

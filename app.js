@@ -37,8 +37,8 @@ function render(){
   $('coalition-kicker').textContent=isCombined?`${v.label} · The road to ${v.majority}`:v.label;
   $('coalition-copy').textContent=isCombined?`Each combination reaches ${v.majority} of ${v.total} ${v.noun} seats and loses its majority if any member leaves. These are arithmetic possibilities, without political compatibility restrictions.`:'';
   $('history-context').textContent=(isCombined?`Largest party and majority status use the Combined view (${v.total} seats; majority ${v.majority}).`:`Largest party uses the ${v.label} view (${v.total} seats).`)+` Select a run to restore it. History is kept in this tab until the page is closed or refreshed.`;
-  $('assembly-panel').hidden=view==='district';$('panel-cartogram').hidden=view!=='district';
-  renderSummary();if(view==='district')renderCartogram();else renderParliament();renderHistory();
+  $('assembly-panel').hidden=view!=='combined';$('panel-cartogram').hidden=view!=='district';$('panel-votes').hidden=view!=='pr';
+  renderSummary();if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else renderParliament();renderHistory();
   if(activeTab==='districts')renderDistricts();if(activeTab==='compass')drawCompass();if(activeTab==='coalitions')renderCoalitions();
 }
 function coalitionTier(codes){
@@ -99,7 +99,6 @@ function renderSummary(){
 
 function renderParliament(){
   const v=shown(),seats=v.seats,isCombined=view==='combined',westminster=$('diagram-layout').value==='westminster';
-  $('assembly-panel').classList.toggle('is-pr',view==='pr');
   $('seat-order').hidden=westminster;$('seat-order-label').hidden=westminster;
   let order=displayOrder.slice();
   if(westminster||$('seat-order').value==='size')order=largestPartiesFirst(order,seats);
@@ -139,6 +138,26 @@ function renderParliament(){
   }
   const layout=westminster?'Westminster':'Hemicycle';
   $('hemicycle').innerHTML=`<svg id="parliament-svg" xmlns="http://www.w3.org/2000/svg" viewBox="${westminster?`0 0 ${geometry.width} ${geometry.height}`:`120 0 660 ${geometry.height}`}" role="img" aria-label="${v.label} ${layout} Assembly diagram with ${v.total} seats" aria-describedby="diagram-hint"><title>Wizlandia ${v.label} Assembly · ${layout} · ${order.map(i=>`${current.parties[i].code} ${seats[i]}`).join(', ')}</title>${artwork}</svg>`;
+}
+function renderVoteShare(){
+  const style=getComputedStyle(document.body),ink=style.getPropertyValue('--text').trim(),muted=style.getPropertyValue('--muted').trim(),border=style.getPropertyValue('--border').trim(),surface=style.getPropertyValue('--surface').trim();
+  const width=960,height=450,left=96,right=24,top=34,bottom=66,plotWidth=width-left-right,plotHeight=height-top-bottom,baseline=height-bottom;
+  const shares=current.votes.map(v=>v*100),maximum=Math.max(...shares),step=maximum<=20?5:maximum<=45?10:20;
+  const ceiling=Math.min(100,Math.max(step,Math.ceil(maximum*1.15/step)*step));
+  const label=(x,y,text,size=14,color=muted,anchor='middle')=>`<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="system-ui,sans-serif" font-size="${size}" fill="${color}">${esc(text)}</text>`;
+  let artwork=`<rect width="${width}" height="${height}" fill="${surface}"/>`;
+  for(let value=0;value<=ceiling;value+=step){
+    const y=baseline-value/ceiling*plotHeight;
+    artwork+=`<line x1="${left}" x2="${width-right}" y1="${y}" y2="${y}" stroke="${border}" stroke-width="1"/>`+label(left-14,y+5,`${value}%`,14,muted,'end');
+  }
+  artwork+=`<text transform="translate(24 ${top+plotHeight/2}) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" fill="${ink}">Percentage of the vote</text>`;
+  const slot=plotWidth/displayOrder.length,barWidth=slot*.64;
+  for(const [rank,i] of displayOrder.entries()){
+    const p=current.parties[i],share=shares[i],barHeight=share/ceiling*plotHeight,x=left+rank*slot+(slot-barWidth)/2,y=baseline-barHeight;
+    const faded=selected.size&&!selected.has(i),text=`${p.name}: ${share.toFixed(1)}% of the vote`;
+    artwork+=`<g data-vote-party="${p.code}" data-share="${share}" opacity="${faded?.3:1}"><title>${esc(text)}</title><rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" fill="${p.color}" rx="2"/>${label(x+barWidth/2,Math.max(top-8,y-10),`${share.toFixed(1)}%`,16,ink)}${label(x+barWidth/2,baseline+28,p.code,16,ink)}</g>`;
+  }
+  $('vote-share-chart').innerHTML=`<svg id="vote-share-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="National vote share by party, ordered left to right" aria-describedby="vote-share-description"><title>Wizlandia PR List vote share</title><desc id="vote-share-description">${displayOrder.map(i=>`${current.parties[i].name}: ${shares[i].toFixed(1)}%`).join('; ')}</desc>${artwork}</svg>`;
 }
 function renderCartogram(){
   const mode=$('cartogram-color').value,stateFilter=$('cartogram-state').value;
@@ -319,6 +338,7 @@ $('compass').addEventListener('mousemove',event=>{
   tip.style.left=Math.max(0,Math.min(event.clientX-rect.left+12,rect.width-245))+'px';tip.style.top=Math.max(0,event.clientY-rect.top-65)+'px';
 });$('compass').onmouseleave=()=>$('tooltip').hidden=true;
 $('export-svg').onclick=()=>download(`wizlandia-${view}-${$('diagram-layout').value}.svg`,new XMLSerializer().serializeToString($('parliament-svg')),'image/svg+xml');
+$('export-votes').onclick=()=>download('wizlandia-pr-vote-share.svg',new XMLSerializer().serializeToString($('vote-share-svg')),'image/svg+xml');
 $('export-results').onclick=()=>download('wizlandia-results.csv',csv(resultRows([current])),'text/csv;charset=utf-8');
 $('export-history').onclick=()=>download('wizlandia-election-history.csv',csv(resultRows(history)),'text/csv;charset=utf-8');
 $('export-districts').onclick=()=>download('wizlandia-districts.csv',csv([['district_id','state','locality','population','legacy_id','type_id','district_type','economic_x','cultural_y','winner','runner_up','distance_gap'],...current.rows.map(d=>[d.id,d.state,d.locality,d.population,d.legacyId,d.type,d.name,d.x,d.y,current.parties[d.winner].code,current.parties[d.runner].code,d.distanceGap])]),'text/csv;charset=utf-8');
@@ -348,7 +368,7 @@ $('party-form').onsubmit=event=>{event.preventDefault();try{
   const parties=state.parties.map((p,i)=>({...p,x:Number($('party-x-'+i).value),y:Number($('party-y-'+i).value)}));E.validateParties(parties);
   const result=E.evaluate(state.economic,state.cultural,state.variance,state.spread,parties);restore(result);$('parties-dialog').close();notice('Party positions updated.');
 }catch(e){$('party-error').textContent=e.message;}};
-function applyTheme(dark){document.body.classList.toggle('dark',dark);$('theme').textContent=dark?'☀ Light':'◐ Dark';if(view==='district')renderCartogram();else renderParliament();if(activeTab==='compass')drawCompass();}
+function applyTheme(dark){document.body.classList.toggle('dark',dark);$('theme').textContent=dark?'☀ Light':'◐ Dark';if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else renderParliament();if(activeTab==='compass')drawCompass();}
 let initialDark=false;try{initialDark=localStorage.getItem('wizlandia-theme')==='dark';}catch(e){}
 $('theme').onclick=()=>{const dark=!document.body.classList.contains('dark');try{localStorage.setItem('wizlandia-theme',dark?'dark':'light');}catch(e){}applyTheme(dark);};
 for(const id of ['cartogram-state','district-state'])$(id).innerHTML='<option value="all">All states</option>'+H.states.map(s=>`<option value="${s.code}">${esc(s.name)} (${s.districts})</option>`).join('');

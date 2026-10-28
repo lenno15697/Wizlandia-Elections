@@ -51,7 +51,6 @@ button.party-line.is-muted:hover,button.party-line.is-muted:focus-visible{opacit
 .projection-meta small{font-size:9px}
 .assembly-content{display:grid;grid-template-columns:minmax(285px,.9fr) minmax(0,1.5fr);gap:22px;align-items:center;margin:20px 0 14px}
 .assembly-drawing{min-width:0}
-.parliament.is-pr .selection-summary{align-self:start}
 .selection-summary{--summary-color:var(--navy);border:1px solid var(--border);border-left:5px solid var(--summary-color);border-radius:9px;background:var(--surface);padding:20px 18px;box-shadow:0 2px 8px #20253505;min-width:0}
 .summary-header{display:grid;grid-template-columns:70px minmax(0,1fr);gap:14px;align-items:center}
 .summary-badge{width:70px;height:82px;background:var(--accent);padding:4px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
@@ -83,7 +82,7 @@ button.party-line.is-muted:hover,button.party-line.is-muted:focus-visible{opacit
 
 .filters{flex-wrap:wrap}.filters>input[type=search]{min-width:140px}.cartogram-detail .swatch{display:inline-block}
 
-.cartogram-scroll svg{min-width:0}.cartogram-scroll.is-focused svg{min-width:0;max-height:650px}.cartogram-detail{position:relative;padding-right:45px}.district-detail-close{position:absolute;right:12px;top:8px;font-size:22px}.district-type-name{font-weight:600;font-size:14px!important}.cartogram-tile[aria-pressed=true] polygon{stroke:#e1b63d;stroke-width:.17}
+.cartogram-scroll svg{min-width:0}.cartogram-scroll.is-focused svg{width:66.666667%;min-width:0;max-height:433.333333px;margin-inline:auto}.cartogram-detail{position:relative;padding-right:45px}.district-detail-close{position:absolute;right:12px;top:8px;font-size:22px}.district-type-name{font-weight:600;font-size:14px!important}.cartogram-tile[aria-pressed=true] polygon{stroke:#e1b63d;stroke-width:.17}
 
 .cartogram-state-results{margin:16px 0;padding:16px 18px;background:var(--soft);border:1px solid var(--border);border-radius:7px}.state-results-heading{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px}.state-results-heading>strong{font:20px Georgia,serif}.state-results-heading>span{font-size:11px;color:var(--muted)}.state-party-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px 24px}.state-party-result{display:flex;align-items:center;gap:8px;font-size:12px}.state-party-result>span:not(.swatch){flex:1}.state-party-result>strong{font:22px Georgia,serif}.state-party-result .swatch{background:var(--party)}#panel-cartogram>.filters{margin-top:12px}@media(max-width:480px){.state-party-results{grid-template-columns:1fr}.state-results-heading{align-items:center}}
 
@@ -97,3 +96,5 @@ button.party-line.is-muted:hover,button.party-line.is-muted:focus-visible{opacit
 .cartogram-layout.is-focused .state-party-result>strong{font-size:26px;min-width:30px;text-align:right}
 .cartogram-layout.is-focused .cartogram-scroll{min-width:0;margin:0;padding-left:12px;background:none;border:0;border-radius:0}
 @container(max-width:600px){.cartogram-layout.is-focused{grid-template-columns:1fr;gap:18px;padding:17px}.cartogram-layout.is-focused .state-results-heading{flex-direction:row;align-items:center;margin-bottom:15px}.cartogram-layout.is-focused .state-results-heading>strong{font-size:23px}.cartogram-layout.is-focused .state-party-results{gap:10px}.cartogram-layout.is-focused .cartogram-scroll{padding-left:0}}
+
+.vote-share-scroll{overflow-x:auto}#vote-share-chart svg{display:block;width:100%;min-width:560px;height:auto;max-height:460px}
