@@ -20,7 +20,7 @@ const document={body,activeElement:null,getElementById(id){assert.ok(nodes.has(i
  querySelectorAll(query){const key=query.slice(1,-1);return all.filter(n=>Object.hasOwn(n.attributes,key)||Object.hasOwn(n.dataset,key.replace(/^data-/,'')));},
  querySelector:()=>scroll,createElement:()=>node()};
 const generatedSeeds=[0x89abcdef,0xfedcba98];let generatedSeedCount=0;
-const context={window:{WizlandiaData:D,WizlandiaEngine:E,WizlandiaDiagrams:G,WizlandiaGeography:H,crypto:{getRandomValues(values){assert.equal(values.length,1);values[0]=generatedSeeds[generatedSeedCount++];return values;}}},document,
+const context={window:{WizlandiaData:D,WizlandiaEngine:E,WizlandiaSenate:require('../senate.js'),WizlandiaDiagrams:G,WizlandiaGeography:H,crypto:{getRandomValues(values){assert.equal(values.length,1);values[0]=generatedSeeds[generatedSeedCount++];return values;}}},document,
  getComputedStyle:()=>({getPropertyValue:key=>({'--text':'#202535','--muted':'#727581','--border':'#e1e1dc','--accent':'#9b7d37'}[key]||'#202535')}),localStorage:{getItem(){return null},setItem(){}},
  setTimeout:()=>1,clearTimeout(){},cancelAnimationFrame(){},requestAnimationFrame:f=>{f();return 1},
  URL:{createObjectURL(blob){lastBlob=blob;return 'blob:test'},revokeObjectURL(){}},Blob,console};
@@ -42,7 +42,7 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  const startupConfig=await checkRandomDraw(new E.Mulberry32(generatedSeeds[1]));
  assert.equal(startupConfig.seed,generatedSeeds[1]);assert.equal(generatedSeedCount,2,'Drawing must not silently replace the seed');
  get('baseline').onclick();
- assert.match(get('ticker').textContent,/Combined/);
+ assert.match(get('ticker').textContent,/Assembly/);
  assert.equal(get('runs').value,'20');assert.ok(!nodes.has('tab-cartogram'));assert.ok(!nodes.has('cartogram-legend'));
  assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);assert.equal(get('panel-votes').hidden,true);
  assert.ok(html.indexOf('id="tab-medians"')>html.indexOf('id="tab-history"'));assert.match(html,/id="panel-medians"[\s\S]*?<canvas id="compass"/);
@@ -79,6 +79,7 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  get('cartogram').onclick({target:{closest:()=>({dataset:{district:'AK-01'}})}});assert.match(get('cartogram-detail').innerHTML,/AK-01/);assert.equal(get('cartogram-detail').hidden,false);assert.ok(!/T[0-9]{2}\s*[·<]/.test(get('cartogram-detail').innerHTML));
  get('cartogram-detail').onclick({target:{closest:()=>({})}});assert.equal(get('cartogram-detail').hidden,true);
  get('cartogram-state').value='all';get('cartogram-state').listeners.change();assert.ok(!get('cartogram-layout').classList.contains('is-focused'));
+ get('run').onclick(); // Election 2 previews both chambers.
  get('economic').value='.30';get('economic').listeners.input();
  const expected=E.evaluate(.3,0,1),chunk=get('cartogram').innerHTML;
  for(const r of expected.rows){assert.ok(chunk.split(`data-district="${r.id}"`)[1].split('</g>')[0].includes(`fill="${D.parties[r.winner].color}"`));}

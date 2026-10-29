@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-const D=window.WizlandiaData,E=window.WizlandiaEngine,G=window.WizlandiaDiagrams,H=window.WizlandiaGeography,$=id=>document.getElementById(id);
+const D=window.WizlandiaData,E=window.WizlandiaEngine,G=window.WizlandiaDiagrams,H=window.WizlandiaGeography,S=window.WizlandiaSenate,$=id=>document.getElementById(id);
 const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const signed=(v,n=2)=>(v>=0?'+':'')+v.toFixed(n),pct=v=>(100*v).toFixed(1)+'%';
 const swatch=p=>`<span class="swatch" style="background:${p.color}"></span>`;
@@ -9,37 +9,58 @@ $('seed').value=String(initialSeed);
 let state={economic:0,cultural:0,variance:1,spread:D.spread,parties:D.parties.map(p=>({...p}))};
 let current=E.evaluate(),history=[],nextRun=1,selected=new Set(),mode='manual',activeTab='overview',rng=new E.Mulberry32(initialSeed),batchStats=null,busy=false;
 let noticeTimer,frame,compassDots=[],view='combined',inspectedDistrict=null;
+let timeline=S.create(current),live=current,senateYear=0,senateState=H.states[0].code;
+const stateOutlines=S.stateOutlines();
+const senateViews=['senate','senators','senate-election'];
 const displayOrder=D.displayOrder;
 const partyIdeologies={SWP:'Communism',UPL:'Democratic socialism',SDP:'Social democracy',GRN:'Green liberalism',CA:'Centrism',LDP:'National liberalism',CON:'Conservatism',LIB:'Libertarianism',NF:'National conservatism'};
 const largestPartiesFirst=(indices,seats)=>indices.slice().sort((a,b)=>seats[b]-seats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b));
-const shown=(result=current)=>E.component(result,view);
+const shown=(result=current)=>senateViews.includes(view)?S.component(timeline,view):E.component(result,view);
 function notice(message){$('notice').textContent=message;$('notice').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').hidden=true,4000);}
 function syncControls(){
   for(const k of ['economic','cultural','variance'])$(k).value=state[k];
   $('economic-value').textContent=signed(state.economic);$('cultural-value').textContent=signed(state.cultural);
   $('variance-value').textContent=state.variance.toFixed(2)+'×';
+  const locked=timeline.counter%2===1;
+  for(const k of ['economic','cultural','variance']){
+    const marker=$(k+'-assembly-marker'),min=k==='variance'?.5:-1,max=k==='variance'?2:1;
+    marker.hidden=!locked;marker.style.setProperty('--marker-position',((timeline.assembly[k]-min)/(max-min)*100)+'%');
+    marker.title=`Assembly ${k}: ${timeline.assembly[k].toFixed(2)}`;
+  }
+  $('election-counter').textContent=`Election ${timeline.counter}${timeline.counter===1?' · Baseline':''}`;
+  $('election-cycle').textContent=locked?'Senate only · Assembly held':'Assembly + Senate';
+  $('assembly-lock-note').textContent=locked?`Grey marks: Assembly election ${timeline.assemblyCounter}. Next: election ${timeline.counter+1}, both chambers.`:`Shared settings for both chambers. Next: election ${timeline.counter+1}, Senate only.`;
 }
-function addHistory(result,label){history.push({id:nextRun++,label,result});if(history.length>200)history.shift();}
+function addHistory(result,label){history.push({id:nextRun++,label,result,timeline:{...timeline,cohorts:timeline.cohorts.map(c=>({...c,winners:{...c.winners}}))},live});if(history.length>200)history.shift();}
+function updateCurrentHistory(){const h=history.find(h=>h.timeline&&h.timeline.counter===timeline.counter);if(h){h.result=current;h.timeline={...timeline,cohorts:timeline.cohorts.map(c=>({...c,winners:{...c.winners}}))};h.live=live;}}
 function render(){
   syncControls();
+  const isSenate=senateViews.includes(view);
   const v=shown(),seats=v.seats,ranked=seats.map((n,i)=>({n,i})).sort((a,b)=>b.n-a.n||a.i-b.i),lead=ranked[0],second=ranked[1];
   const p=current.parties[lead.i],majority=lead.n>=v.majority,isCombined=view==='combined';
   for(const element of document.querySelectorAll('[data-combined-only]'))element.hidden=!isCombined;
   if(!isCombined&&activeTab==='coalitions')showTab('overview');
   for(const button of document.querySelectorAll('[data-component]')){const active=button.dataset.component===view;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));}
   $('component-note').textContent=v.description;
-  $('ticker').textContent=isCombined?`${v.label} · ${p.code} ${lead.n} · ${current.parties[second.i].code} ${second.n} · ${majority?'Majority':'No overall majority'}`:`${v.label} · ${v.total} seats`;
-  $('party-list').innerHTML=displayOrder.map(i=>{const p=current.parties[i],muted=selected.size&&!selected.has(i);return`<button type="button" class="party-line${muted?' is-muted':''}" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" aria-label="${esc(p.name)}, ${seats[i]} ${v.noun} seats. Select party." title="${esc(p.name)}: ${esc(p.description)}">${swatch(p)}<strong>${p.code}</strong><span class="line-name">${esc(p.name)}</span><span class="line-vote">${pct(current.votes[i])}</span></button>`;}).join('');
-  $('party-cards').innerHTML=displayOrder.map(i=>{const p=current.parties[i],share=seats[i]/v.total*100;return`<button class="party-card${selected.size&&!selected.has(i)?' is-muted':''}" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" title="${esc(p.name)} · ${current.districtSeats[i]} district + ${current.prSeats[i]} PR = ${current.combinedSeats[i]} combined seats. Click to select." aria-label="${esc(p.name)}, ${seats[i]} ${v.noun} seats; ${current.districtSeats[i]} district plus ${current.prSeats[i]} PR equals ${current.combinedSeats[i]} combined. ${pct(current.votes[i])} votes. Select for coalition."><span class="code">${p.code}</span><span class="seat">${seats[i]}</span><span class="seat-share">${share.toFixed(1)}% seats</span><span class="vote">${pct(current.votes[i])} vote</span><span class="card-bar" aria-hidden="true"><span style="width:${share}%;background:${p.color}"></span></span></button>`;}).join('');
+  $('ticker').textContent=isSenate?`${v.label} · ${p.code} ${lead.n} · ${v.total} seats`:isCombined?`${v.label} · ${p.code} ${lead.n} · ${current.parties[second.i].code} ${second.n} · ${majority?'Majority':'No overall majority'}`:`${v.label} · ${v.total} seats`;
+  $('party-list').innerHTML=displayOrder.map(i=>{const p=current.parties[i],muted=selected.size&&!selected.has(i);return`<button type="button" class="party-line${muted?' is-muted':''}" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" aria-label="${esc(p.name)}, ${seats[i]} ${v.noun} seats. Select party." title="${esc(p.name)}: ${esc(p.description)}">${swatch(p)}<strong>${p.code}</strong><span class="line-name">${esc(p.name)}</span><span class="line-vote">${isSenate?seats[i]+' seats':pct(current.votes[i])}</span></button>`;}).join('');
+  $('party-cards').innerHTML=displayOrder.map(i=>{const p=current.parties[i],share=seats[i]/v.total*100,description=isSenate?`${p.name} · ${seats[i]} ${v.noun} seats`:`${p.name} · ${current.districtSeats[i]} district + ${current.prSeats[i]} PR = ${current.combinedSeats[i]} Assembly seats · ${pct(current.votes[i])} votes`;return`<button class="party-card${selected.size&&!selected.has(i)?' is-muted':''}" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" title="${esc(description)}. Click to select." aria-label="${esc(description)}. Select party."><span class="code">${p.code}</span><span class="seat">${seats[i]}</span><span class="seat-share">${share.toFixed(1)}% seats</span><span class="vote">${isSenate?(view==='senate-election'?'won this election':'serving senators'):pct(current.votes[i])+' vote'}</span><span class="card-bar" aria-hidden="true"><span style="width:${share}%;background:${p.color}"></span></span></button>`;}).join('');
   $('overview-body').innerHTML=displayOrder.map(i=>{
     const p=current.parties[i],share=seats[i]/v.total*100;
     return`<tr><td>${swatch(p)}<strong>${p.code}</strong><span class="party-name">${esc(p.name)}</span></td><td class="ideology">${esc(partyIdeologies[p.code])}</td><td class="${view==='combined'?'selected-column':''}">${current.combinedSeats[i]}</td><td class="${view==='district'?'selected-column':''}">${current.districtSeats[i]}</td><td class="${view==='pr'?'selected-column':''}">${current.prSeats[i]}</td><td>${pct(current.votes[i])}</td><td><span class="representation" aria-label="Vote ${pct(current.votes[i])}, ${v.label} seat share ${share.toFixed(1)} percent"><span class="votes" style="width:${current.votes[i]*100}%;background:${p.color}"></span><span class="seats" style="width:${share}%;background:${p.color}"></span></span></td></tr>`;
   }).join('');
+  $('assembly-overview').hidden=isSenate;$('senate-overview').hidden=!isSenate;
+  $('overview-explainer').hidden=isSenate;
+  if(isSenate){const total=S.seats(timeline),latest=S.seats(timeline,true);$('senate-overview-body').innerHTML=displayOrder.map(i=>`<tr><td>${swatch(current.parties[i])}<strong>${current.parties[i].code}</strong><span class="party-name">${esc(current.parties[i].name)}</span></td><td>${total[i]}</td><td>${latest[i]}</td><td>${pct(total[i]/120)}</td></tr>`).join('');}
   $('coalition-kicker').textContent=isCombined?`${v.label} · The road to ${v.majority}`:v.label;
   $('coalition-copy').textContent=isCombined?`Each combination reaches ${v.majority} of ${v.total} ${v.noun} seats and loses its majority if any member leaves. These are arithmetic possibilities, without political compatibility restrictions.`:'';
-  $('history-context').textContent=(isCombined?`Largest party and majority status use the Combined view (${v.total} seats; majority ${v.majority}).`:`Largest party uses the ${v.label} view (${v.total} seats).`)+` Most viable coalition uses each run’s Combined seats and the 401-seat majority. Select a run to restore it. History is kept in this tab until the page is closed or refreshed.`;
-  $('assembly-panel').hidden=view!=='combined';$('panel-cartogram').hidden=view!=='district';$('panel-votes').hidden=view!=='pr';
-  renderSummary();if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else renderParliament();renderHistory();
+  $('history-context').textContent=(isSenate?'This table shows Assembly results held at each election. Use Senate History for the ten serving cohorts. ':isCombined?`Largest party and majority status use the Assembly view (${v.total} seats; majority ${v.majority}).`:`Largest party uses the ${v.label} view (${v.total} seats).`)+` Most viable coalition uses each run’s Assembly seats and the 401-seat majority. Select a run to restore it. History is kept in this tab until the page is closed or refreshed. Senate cohorts are available in Senate History.`;
+  $('assembly-panel').hidden=!['combined','senate'].includes(view);$('panel-cartogram').hidden=view!=='district';$('panel-votes').hidden=view!=='pr';
+  $('panel-senators-map').hidden=view!=='senators';$('panel-senate-election-map').hidden=view!=='senate-election';
+  $('chamber-heading').textContent=view==='senate'?'The Senate':'The Assembly';
+  $('track-majority').hidden=!['combined','senate'].includes(view);
+  renderSummary();if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else if(['combined','senate'].includes(view))renderParliament();else renderSenateMaps();renderHistory();
+  if(activeTab==='senate-history')renderSenateHistory();
   if(activeTab==='districts')renderDistricts();if(activeTab==='compass')renderPartyCompass();if(activeTab==='medians')drawDistrictMedians();if(activeTab==='coalitions')renderCoalitions();
 }
 function coalitionTier(codes){
@@ -67,7 +88,7 @@ function rankedCoalitions(parties,seats,majority){
   return paths.sort((a,b)=>a.tier-b.tier||a.members.length-b.members.length||b.total-a.total);
 }
 function renderSummary(){
-  const v=shown(),seats=v.seats,isCombined=view==='combined';
+  const v=shown(),seats=v.seats,isCombined=view==='combined'||view==='senate';
   const ranked=largestPartiesFirst(displayOrder,seats),members=selected.size?largestPartiesFirst([...selected],seats):[ranked[0]],multi=members.length>1;
   const focus=current.parties[members[0]],total=members.reduce((n,i)=>n+seats[i],0),votes=members.reduce((n,i)=>n+current.votes[i],0),majority=total>=v.majority;
   const codes=members.map(i=>current.parties[i].code).join(' + '),name=multi?codes:focus.name;
@@ -75,7 +96,7 @@ function renderSummary(){
   $('verdict-kicker').textContent=`${v.label} · ${selected.size?(multi?'Selected coalition':'Selected party'):(isCombined?'Largest party':'Party results')}`;
   $('verdict-title').textContent=!isCombined?name:multi?`${codes} ${majority?'have a majority.':`are ${v.majority-total} seats short of a majority.`}`:majority?`${focus.name} wins a majority.`:selected.size?`${focus.name} is ${v.majority-total} seats short of a majority.`:`${focus.name} leads. ${v.majority-total} seats short.`;
   const detail=multi?`Together they hold ${total} of ${v.total} ${v.noun} seats on ${pct(votes)} of the vote.`:`${focus.code} takes ${total} of ${v.total} ${v.noun} seats on ${pct(votes)} of the vote.`;
-  $('verdict-detail').textContent=detail+(isCombined&&majority?` ${total-v.majority} seats above the majority threshold.`:'');
+  $('verdict-detail').textContent=(['senate','senators','senate-election'].includes(view)?`${multi?'Together they hold':focus.code+' holds'} ${total} of ${v.total} ${v.noun} seats.`:detail)+(isCombined&&majority?` ${total-v.majority} seats above the majority threshold.`:'');
   $('summary-badge-code').textContent=multi?total:focus.code;
   $('summary-badge-seats').textContent=multi?'seats':`${total} seats`;
   let offset=0;
@@ -92,8 +113,8 @@ function renderSummary(){
   $('summary-clear').hidden=!selected.size;
   $('summary-clear').textContent=members.length>1?'× Clear selection':'× Back to the largest party';
   $('summary-paths-label').textContent=`Ways to reach ${v.majority} (sorted by coalition viability)`;
-  $('summary-paths-section').hidden=!isCombined;
-  if(!isCombined){$('summary-paths').innerHTML='';$('summary-paths-empty').hidden=true;return;}
+  $('summary-paths-section').hidden=view!=='combined';
+  if(view!=='combined'){$('summary-paths').innerHTML='';$('summary-paths-empty').hidden=true;return;}
   // Majority options do not depend on the selected or largest party.
   const paths=rankedCoalitions(current.parties,seats,v.majority);
   $('summary-paths-empty').hidden=paths.length>0;
@@ -101,7 +122,7 @@ function renderSummary(){
 }
 
 function renderParliament(){
-  const v=shown(),seats=v.seats,isCombined=view==='combined',westminster=$('diagram-layout').value==='westminster';
+  const v=shown(),seats=v.seats,isCombined=view==='combined'||view==='senate',westminster=$('diagram-layout').value==='westminster';
   $('seat-order').hidden=westminster;$('seat-order-label').hidden=westminster;
   let order=displayOrder.slice();
   if(westminster||$('seat-order').value==='size')order=largestPartiesFirst(order,seats);
@@ -140,7 +161,7 @@ function renderParliament(){
     $('diagram-hint').textContent='Each dot represents one seat. Parties follow the selected seat order; select party cards to highlight a coalition.';
   }
   const layout=westminster?'Westminster':'Hemicycle';
-  $('hemicycle').innerHTML=`<svg id="parliament-svg" xmlns="http://www.w3.org/2000/svg" viewBox="${westminster?`0 0 ${geometry.width} ${geometry.height}`:`120 0 660 ${geometry.height}`}" role="img" aria-label="${v.label} ${layout} Assembly diagram with ${v.total} seats" aria-describedby="diagram-hint"><title>Wizlandia ${v.label} Assembly · ${layout} · ${order.map(i=>`${current.parties[i].code} ${seats[i]}`).join(', ')}</title>${artwork}</svg>`;
+  $('hemicycle').innerHTML=`<svg id="parliament-svg" xmlns="http://www.w3.org/2000/svg" viewBox="${westminster?`0 0 ${geometry.width} ${geometry.height}`:`120 0 660 ${geometry.height}`}" role="img" aria-label="${v.label} ${layout} diagram with ${v.total} seats" aria-describedby="diagram-hint"><title>Wizlandia ${v.label} · ${layout} · ${order.map(i=>`${current.parties[i].code} ${seats[i]}`).join(', ')}</title>${artwork}</svg>`;
 }
 function renderVoteShare(){
   const style=getComputedStyle(document.body),ink=style.getPropertyValue('--text').trim(),muted=style.getPropertyValue('--muted').trim(),border=style.getPropertyValue('--border').trim(),surface=style.getPropertyValue('--surface').trim();
@@ -215,25 +236,25 @@ function renderCoalitions(){
   $('coalition-options').innerHTML=combos.map(c=>`<button class="coalition-option" data-coalition="${c.members.join(',')}"><span>${c.members.map(i=>`${swatch(current.parties[i])} ${current.parties[i].code}`).join(' + ')}<span class="hint">${c.total-v.majority} above ${v.majority} · Select coalition</span></span><strong>${c.total}</strong></button>`).join('');
 }
 function renderHistory(){
-  const v=shown();
+  const historyView=['senate','senators','senate-election'].includes(view)?'combined':view,v=E.component(current,historyView),historyShown=r=>E.component(r,historyView); 
   $('history-count').textContent=history.length;
   $('history-body').innerHTML=history.slice().reverse().map(h=>{
-    const r=h.result,seats=shown(r).seats,i=seats.indexOf(Math.max(...seats));
+    const r=h.result,seats=historyShown(r).seats,i=seats.indexOf(Math.max(...seats));
     const top=rankedCoalitions(r.parties,r.combinedSeats,E.component(r,'combined').majority)[0];
     const coalition=top?`<span class="history-coalition-swatches" aria-hidden="true">${top.members.map(i=>swatch(r.parties[i])).join('')}</span>${esc(top.members.map(i=>r.parties[i].code).join(' + '))}`:'No viable coalition';
     const coalitionTotals=top?['districtSeats','prSeats','combinedSeats'].map(key=>top.members.reduce((total,j)=>total+r[key][j],0)):['—','—','—'];
     return`<tr><td><button class="history-link" data-history="${h.id}">${esc(h.label)}</button></td><td>${signed(r.economic)}</td><td>${signed(r.cultural)}</td><td>${r.variance.toFixed(3)}×</td><td>${swatch(r.parties[i])} ${r.parties[i].code}</td><td>${r.districtSeats[i]}</td><td>${r.prSeats[i]}</td><td>${r.combinedSeats[i]}</td>${view==='combined'?`<td>${seats[i]>=v.majority?'Majority':'No overall majority'}</td>`:''}<td>${coalition}</td>${coalitionTotals.map(n=>`<td>${n}</td>`).join('')}</tr>`;
   }).join('');
   if(!batchStats){$('batch-summary').innerHTML='';return;}
-  const runs=batchStats.results,n=runs.length,ldp=runs.filter(r=>shown(r).seats[0]>=v.majority).length,ca=runs.filter(r=>shown(r).seats[1]>=v.majority).length,hung=runs.filter(r=>Math.max(...shown(r).seats)<v.majority).length;
+  const runs=batchStats.results,n=runs.length,ldp=runs.filter(r=>historyShown(r).seats[0]>=v.majority).length,ca=runs.filter(r=>historyShown(r).seats[1]>=v.majority).length,hung=runs.filter(r=>Math.max(...historyShown(r).seats)<v.majority).length;
   const majorityCards=view==='combined'?`<div class="batch-cards"><div class="batch-card">LDP majorities<strong>${ldp} / ${n}</strong>${(ldp/n*100).toFixed(1)}% of draws</div><div class="batch-card">CA majorities<strong>${ca} / ${n}</strong>${(ca/n*100).toFixed(1)}% of draws</div><div class="batch-card">No overall majority<strong>${hung} / ${n}</strong>${(hung/n*100).toFixed(1)}% of draws</div></div>`:'';
-  $('batch-summary').innerHTML=`<p class="hint">Last batch · ${n} elections · seed ${batchStats.seed} · ${v.label} view</p>${majorityCards}<div class="batch-ranges">${displayOrder.map(i=>{const p=D.parties[i],a=runs.map(r=>shown(r).seats[i]);return`<span>${swatch(p)} ${p.code}: ${Math.min(...a)}–${Math.max(...a)} seats</span>`;}).join('')}</div>`;
+  $('batch-summary').innerHTML=`<p class="hint">Last batch · ${n} elections · seed ${batchStats.seed} · ${v.label} view</p>${majorityCards}<div class="batch-ranges">${displayOrder.map(i=>{const p=D.parties[i],a=runs.map(r=>historyShown(r).seats[i]);return`<span>${swatch(p)} ${p.code}: ${Math.min(...a)}–${Math.max(...a)} seats</span>`;}).join('')}</div>`;
 }
 function showTab(name){
   if(name==='coalitions'&&view!=='combined')name='overview';
   activeTab=name;
   for(const tab of document.querySelectorAll('[data-tab]')){const active=tab.dataset.tab===name;tab.setAttribute('aria-selected',active);tab.tabIndex=active?0:-1;$('panel-'+tab.dataset.tab).hidden=!active;}
-  if(name==='compass')renderPartyCompass();if(name==='medians')drawDistrictMedians();if(name==='districts')renderDistricts();if(name==='coalitions')renderCoalitions();
+  if(name==='senate-history')renderSenateHistory();if(name==='compass')renderPartyCompass();if(name==='medians')drawDistrictMedians();if(name==='districts')renderDistricts();if(name==='coalitions')renderCoalitions();
 }
 function renderPartyCompass(){
   const v=shown(),seats=v.seats,style=getComputedStyle(document.body),dark=document.body.classList.contains('dark');
@@ -254,7 +275,7 @@ function renderPartyCompass(){
   artwork+=`<text transform="translate(26 ${top+size/2}) rotate(-90)" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="${muted}">Cultural position</text>`;
   // Presentation-only coordinates: never pass these to the election model or median plot.
   const displayPositions={CA:{x:0,y:0},NF:{x:-1,y:8},SWP:{x:-9,y:-7.5},SDP:{x:-4,y:-1.5}};
-  const nodes=current.parties.map((party,i)=>{
+  const nodes=(['senate','senators','senate-election'].includes(view)?state.parties:current.parties).map((party,i)=>{
     const p={...party,...displayPositions[party.code]};
     return{p,i,x:px(p.x),y:py(p.y),r:6+60*Math.sqrt(seats[i]/v.total)};
   });
@@ -343,8 +364,47 @@ function drawDistrictMedians(){
   c.textAlign='center';c.font='12px sans-serif';c.fillText('Economy · Socialist ↔ Liberal',x0+w/2,y0+h+49);
   c.save();c.translate(20,y0+h/2);c.rotate(-Math.PI/2);c.fillText('Culture · Progressive ↔ Traditional',0,0);c.restore();
 }
-function recompute(){try{current=E.evaluate(state.economic,state.cultural,state.variance,state.spread,state.parties);render();}catch(error){notice(error.message);}}
-function restore(result){state={economic:result.economic,cultural:result.cultural,variance:result.variance,spread:D.spread,parties:result.parties.map(p=>({...p}))};current=result;render();}
+function renderSenateHistory(){
+  const c=timeline.cohorts[senateYear],year=S.years[senateYear],yearText=year===0?'0':String(year).replace('-','−');
+  $('senate-year-tabs').innerHTML=S.years.map((y,i)=>`<button id="senate-year-${i}" role="tab" aria-selected="${i===senateYear}" aria-controls="senate-year-panel" tabindex="${i===senateYear?0:-1}" data-senate-year="${i}">${y===0?'0':String(y).replace('-','−')}</button>`).join('');
+  $('senate-year-panel').setAttribute('aria-labelledby',`senate-year-${senateYear}`);
+  $('senate-year-note').textContent=`Year ${yearText} · ${c.source==='manual'?'Edited winners':c.source==='default'?'Illustrative past election':c.source==='baseline'?'Baseline election':'Simulated election'} · 12 senators elected`;
+  $('senate-history-head').innerHTML='<tr><th scope="col">Party</th>'+H.states.map(s=>`<th scope="col" title="${esc(s.name)}">${s.code}<span class="state-column-name">${esc(s.name)}</span></th>`).join('')+'</tr>';
+  $('senate-history-body').innerHTML=displayOrder.map(i=>{const p=D.parties[i];return`<tr><th scope="row">${swatch(p)} ${p.code}<span class="party-name">${esc(p.name)}</span></th>${H.states.map(s=>`<td><input type="radio" class="senate-check" name="senate-${senateYear}-${s.code}" data-senate-winner="${i}" data-senate-state="${s.code}" ${c.winners[s.code]===i?'checked':''} style="--party:${p.color}" aria-label="${esc(p.name)} wins ${esc(s.name)}, year ${yearText}"></td>`).join('')}</tr>`;}).join('');
+}
+function senateMapSVG(kind){
+  const newest=kind==='election',rows=H.districts;
+  const x0=Math.min(...rows.map(d=>d.tileX))-2,y0=Math.min(...rows.map(d=>d.tileY))-2,w=Math.max(...rows.map(d=>d.tileX))-x0+2,h=Math.max(...rows.map(d=>d.tileY))-y0+2;
+  let artwork='';
+  for(const s of H.states){
+    const outline=stateOutlines.find(o=>o.code===s.code),winner=timeline.cohorts[0].winners[s.code],p=D.parties[winner],fill=newest?p.color:s.color;
+    const description=newest?`${s.name}: ${p.name} elected this election`:`${s.name}: view all ten senators`;
+    artwork+=`<path class="senate-state" data-senate-state="${s.code}" role="button" tabindex="0" aria-label="${esc(description)}" aria-pressed="${senateState===s.code}" d="${outline.path}" fill="${fill}" fill-rule="evenodd" stroke="#000000" stroke-width="${senateState===s.code?.30:.19}" stroke-linejoin="round"><title>${esc(description)}</title></path>`;
+  }
+  for(const s of H.stateLabels)artwork+=`<text x="${s.x}" y="${s.y}" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size=".84" font-weight="700" fill="#111111" stroke="#ffffff" stroke-width=".20" paint-order="stroke" pointer-events="none">${s.code}</text>`;
+  return`<svg id="${newest?'senate-election':'senators'}-svg" xmlns="http://www.w3.org/2000/svg" viewBox="${x0} ${y0} ${w} ${h}" role="group" aria-label="${newest?'Senate election winners':'Senators by state'}"><title>Wizlandia states · ${newest?'This Senate election':'Current senators'}</title>${artwork}</svg>`;
+}
+function renderSenateMaps(){
+  const state=H.states.find(s=>s.code===senateState),newest=view==='senate-election',prefix=newest?'senate-election':'senators';
+  $(prefix+'-map').innerHTML=senateMapSVG(newest?'election':'senators');
+  $(prefix+'-state-buttons').innerHTML=H.states.map(s=>`<button data-senate-state="${s.code}" aria-pressed="${s.code===senateState}" title="${esc(s.name)}">${s.code}</button>`).join('');
+  if(newest){
+    const m=S.election(live).find(s=>s.code===state.code),winner=timeline.cohorts[0].winners[state.code],p=D.parties[winner];
+    $(prefix+'-detail').innerHTML=`<h3>${esc(state.name)}</h3><div class="senate-winner">${swatch(p)}<strong>${esc(p.name)}</strong></div><p class="hint">Elected in year 0 · 20-year term</p><dl class="state-median"><dt>Economic median</dt><dd>${signed(m.x,3)}</dd><dt>Cultural median</dt><dd>${signed(m.y,3)}</dd></dl><p class="hint">${timeline.cohorts[0].source==='manual'?'Winner edited in Senate History. Moving the sliders restores the median-based result.':'Winner determined by the state’s median district position in the election model.'}</p>`;
+  }else{
+    $(prefix+'-detail').innerHTML=`<h3>${esc(state.name)}</h3><p class="hint">10 serving senators · newest first</p><ol class="senator-list">${timeline.cohorts.map((c,i)=>{const p=D.parties[c.winners[state.code]],year=i===0?'0':'−'+2*i;return`<li><span class="senator-year">${year}</span>${swatch(p)}<strong>${p.code}</strong><span>${esc(p.name)}</span></li>`;}).join('')}</ol>`;
+  }
+}
+
+function recompute(){try{live=E.evaluate(state.economic,state.cultural,state.variance,state.spread,state.parties);timeline=S.preview(timeline,live);current=timeline.assembly;updateCurrentHistory();render();return true;}catch(error){notice(error.message);return false;}}
+function restore(result,savedTimeline){
+  cancelAnimationFrame(frame);frame=null;
+  if(savedTimeline){timeline={...savedTimeline,cohorts:savedTimeline.cohorts.map(c=>({...c,winners:{...c.winners}}))};live=result;current=timeline.assembly;}
+  else{live=result;timeline=S.preview(timeline,result);current=timeline.assembly;}
+  state={economic:result.economic,cultural:result.cultural,variance:result.variance,spread:D.spread,parties:result.parties.map(p=>({...p}))};render();
+}
+function advanceElection(result,label){timeline=S.advance(timeline,result);live=result;current=timeline.assembly;state={economic:result.economic,cultural:result.cultural,variance:result.variance,spread:D.spread,parties:result.parties.map(p=>({...p}))};history=history.filter(h=>!h.timeline||h.timeline.counter<timeline.counter);addHistory(current,label||`Election ${timeline.counter}`);}
+
 function createRandomSeed(){
   if(window.crypto&&typeof window.crypto.getRandomValues==='function'){
     const value=new Uint32Array(1);window.crypto.getRandomValues(value);return value[0];
@@ -352,32 +412,34 @@ function createRandomSeed(){
   return(Date.now()^Math.floor(Math.random()*4294967296))>>>0;
 }
 function getSeed(){const n=Number($('seed').value);if(!Number.isInteger(n)||n<0||n>4294967295)throw new Error('Enter an integer seed between 0 and 4294967295.');return n;}
-function setMode(value){mode=value;$('manual-mode').classList.toggle('active',value==='manual');$('random-mode').classList.toggle('active',value==='random');$('run').textContent=value==='manual'?'▶ Run election':'⚄ Draw election';$('mode-hint').textContent=value==='manual'?'Sliders update the preview. Run saves it to history.':'Draw a new seeded shock around the same baseline.';}
+function setMode(value){mode=value;$('manual-mode').classList.toggle('active',value==='manual');$('random-mode').classList.toggle('active',value==='random');$('run').textContent=value==='manual'?'▶ Next election (+2y)':'⚄ Draw next (+2y)';$('mode-hint').textContent=value==='manual'?'Sliders preview this election. Next advances two years using these shifts.':'Draw advances two years with a new seeded shock around baseline.';}
 function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.hidden=true;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);}
 function csv(rows){return rows.map(row=>row.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\r\n')+'\r\n';}
-function resultRows(results){return [['run','economic_shift','cultural_shift','variance_multiplier','district_spread',...D.parties.map(p=>p.code+'_district_seats'),...D.parties.map(p=>p.code+'_pr_seats'),...D.parties.map(p=>p.code+'_combined_seats'),...D.parties.map(p=>p.code+'_vote_percent')],...results.map((h,i)=>{const r=h.result||h;return[h.label||i+1,r.economic,r.cultural,r.variance,r.spread,...r.districtSeats,...r.prSeats,...r.combinedSeats,...r.votes.map(v=>v*100)];})];}
+function resultRows(results){return [['run','election_number','assembly_election_number','economic_shift','cultural_shift','variance_multiplier','assembly_economic_shift','assembly_cultural_shift','assembly_variance_multiplier',...D.parties.map(p=>p.code+'_district_seats'),...D.parties.map(p=>p.code+'_pr_seats'),...D.parties.map(p=>p.code+'_assembly_seats'),...D.parties.map(p=>p.code+'_vote_percent'),...D.parties.map(p=>p.code+'_senate_seats')],...results.map((h,i)=>{const r=h.result||h,t=h.timeline||timeline,l=h.live||live;return[h.label||i+1,t.counter,t.assemblyCounter,l.economic,l.cultural,l.variance,r.economic,r.cultural,r.variance,...r.districtSeats,...r.prSeats,...r.combinedSeats,...r.votes.map(v=>v*100),...S.seats(t)];})];}
+
 for(const button of document.querySelectorAll('[data-component]'))button.onclick=()=>{view=button.dataset.component;render();};
-for(const k of ['economic','cultural','variance'])$(k).addEventListener('input',()=>{state[k]=Number($(k).value);setMode('manual');cancelAnimationFrame(frame);frame=requestAnimationFrame(recompute);});
+for(const k of ['economic','cultural','variance'])$(k).addEventListener('input',()=>{state[k]=Number($(k).value);setMode('manual');cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{frame=null;recompute();});});
 $('manual-mode').onclick=()=>setMode('manual');$('random-mode').onclick=()=>setMode('random');
 $('run').onclick=()=>{
+  if(frame){cancelAnimationFrame(frame);frame=null;if(!recompute())return;}
   if(mode==='random'){try{getSeed();Object.assign(state,E.drawShocks(rng));}catch(e){notice(e.message);return;}}
-  recompute();addHistory(current,`Run ${nextRun}`);renderHistory();notice('Election saved to history.');
+  try{const r=E.evaluate(state.economic,state.cultural,state.variance,state.spread,state.parties);advanceElection(r);render();notice(`Election ${timeline.counter} · ${timeline.counter%2?'Senate only':'Assembly + Senate'}`);}catch(e){notice(e.message);}
 };
-$('baseline').onclick=()=>{setMode('manual');state={economic:0,cultural:0,variance:1,spread:D.spread,parties:D.parties.map(p=>({...p}))};selected.clear();recompute();};
+$('baseline').onclick=()=>{if(busy)return;cancelAnimationFrame(frame);setMode('manual');current=live=E.evaluate();timeline=S.create(current);state={economic:0,cultural:0,variance:1,spread:D.spread,parties:D.parties.map(p=>({...p}))};history=[];nextRun=1;batchStats=null;senateYear=0;selected.clear();addHistory(current,'Baseline');render();};
 $('seed').addEventListener('change',()=>{try{rng=new E.Mulberry32(getSeed());}catch(e){notice(e.message);}});
 $('runs').addEventListener('input',()=>$('batch').textContent=`Draw ${$('runs').value||'N'} elections`);
 $('batch').onclick=async()=>{
-  if(busy)return;let seed,n;
+  if(busy)return;if(frame){cancelAnimationFrame(frame);frame=null;if(!recompute())return;}let seed,n;
   try{seed=getSeed();n=Number($('runs').value);if(!Number.isInteger(n)||n<1||n>100)throw new Error('Choose between 1 and 100 elections.');}catch(e){notice(e.message);return;}
-  busy=true;$('batch').disabled=$('run').disabled=true;
+  busy=true;for(const id of ['batch','run','baseline','economic','cultural','variance','edit-parties','seed','runs','load-config-button'])$(id).disabled=true;
   const generator=new E.Mulberry32(seed),results=[],spread=state.spread,parties=state.parties.map(p=>({...p}));
   try{
     for(let i=0;i<n;i++){
-      const s=E.drawShocks(generator),r=E.evaluate(s.economic,s.cultural,s.variance,spread,parties);results.push(r);addHistory(r,`Batch ${i+1} · seed ${seed}`);
+      const s=E.drawShocks(generator),r=E.evaluate(s.economic,s.cultural,s.variance,spread,parties);advanceElection(r,`Election ${timeline.counter+1} · seed ${seed}`);results.push(current);
       if(i%5===0){$('batch').textContent=`Drawing ${i+1} / ${n}…`;await new Promise(resolve=>setTimeout(resolve,0));}
     }
-    batchStats={seed,results};restore(results.at(-1));showTab('history');notice(`${n} elections drawn. Select a run to inspect it.`);
-  }catch(e){notice(e.message);}finally{busy=false;$('batch').disabled=$('run').disabled=false;$('batch').textContent=`Draw ${n} elections`;}
+    rng=generator;batchStats={seed,results};render();showTab('history');notice(`${n} elections drawn. Select a run to inspect it.`);
+  }catch(e){notice(e.message);}finally{busy=false;for(const id of ['batch','run','baseline','economic','cultural','variance','edit-parties','seed','runs','load-config-button'])$(id).disabled=false;$('batch').textContent=`Draw ${n} elections`;}
 };
 function toggleParty(event){const card=event.target.closest('[data-party]');if(!card)return;const i=Number(card.dataset.party),source=event.currentTarget.id,restoreFocus=document.activeElement===card;selected.has(i)?selected.delete(i):selected.add(i);render();if(restoreFocus)$(source).querySelector(`[data-party="${i}"]`)?.focus({preventScroll:true});}
 $('party-cards').onclick=toggleParty;$('party-list').onclick=toggleParty;$('party-compass').onclick=toggleParty;
@@ -392,7 +454,17 @@ for(const id of ['district-search','district-party','district-sort','district-st
 $('district-party').innerHTML='<option value="all">All parties</option>'+displayOrder.map(i=>`<option value="${i}">${D.parties[i].code}</option>`).join('');
 function chooseCoalition(event){const b=event.target.closest('[data-coalition]');if(!b)return;selected=new Set(b.dataset.coalition.split(',').map(Number));render();}
 $('coalition-options').onclick=chooseCoalition;$('summary-paths').onclick=chooseCoalition;
-$('history-body').onclick=event=>{const b=event.target.closest('[data-history]');if(b){const h=history.find(h=>h.id===Number(b.dataset.history));if(h){setMode('manual');restore(h.result);notice(`${h.label} restored.`);}}};
+$('history-body').onclick=event=>{const b=event.target.closest('[data-history]');if(busy)return;if(b){const h=history.find(h=>h.id===Number(b.dataset.history));if(h){setMode('manual');batchStats=null;restore(h.live||h.result,h.timeline);notice(`${h.label} restored. The next draw continues from this election.`);}}};
+function chooseSenateState(event){const b=event.target.closest('[data-senate-state]');if(b){senateState=b.dataset.senateState;renderSenateMaps();}}
+for(const id of ['senators-map','senate-election-map','senators-state-buttons','senate-election-state-buttons']){
+  $(id).onclick=chooseSenateState;$(id).onkeydown=event=>{if(['Enter',' '].includes(event.key)&&event.target.closest('[data-senate-state]')){event.preventDefault();chooseSenateState(event);}};
+}
+$('senate-year-tabs').onclick=event=>{const b=event.target.closest('[data-senate-year]');if(b){senateYear=Number(b.dataset.senateYear);renderSenateHistory();$('senate-year-tabs').querySelector(`[data-senate-year="${senateYear}"]`)?.focus();}};
+$('senate-year-tabs').onkeydown=event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();senateYear=event.key==='Home'?0:event.key==='End'?9:(senateYear+(event.key==='ArrowRight'?1:-1)+10)%10;renderSenateHistory();$('senate-year-tabs').querySelector(`[data-senate-year="${senateYear}"]`)?.focus();};
+$('senate-history-body').onchange=event=>{const b=event.target.closest('[data-senate-winner]');if(!b)return;timeline=S.edit(timeline,senateYear,b.dataset.senateState,Number(b.dataset.senateWinner));updateCurrentHistory();render();$('senate-history-body').querySelector(`[data-senate-state="${b.dataset.senateState}"][data-senate-winner="${b.dataset.senateWinner}"]`)?.focus();};
+$('export-senate-history').onclick=()=>download('wizlandia-senate-history.csv',csv([['year',...H.states.map(s=>s.name)],...timeline.cohorts.map((c,i)=>[S.years[i],...H.states.map(s=>D.parties[c.winners[s.code]].code)])]),'text/csv;charset=utf-8');
+$('export-senators-map').onclick=()=>download('wizlandia-senators.svg',new XMLSerializer().serializeToString($('senators-svg')),'image/svg+xml');
+$('export-senate-election-map').onclick=()=>download('wizlandia-senate-election.svg',new XMLSerializer().serializeToString($('senate-election-svg')),'image/svg+xml');
 for(const id of ['show-density','show-districts'])$(id).onchange=drawDistrictMedians;
 $('compass').addEventListener('mousemove',event=>{
   const rect=$('compass').getBoundingClientRect(),x=(event.clientX-rect.left)*900/rect.width,y=(event.clientY-rect.top)*760/rect.height;
@@ -408,21 +480,23 @@ $('export-votes').onclick=()=>download('wizlandia-pr-vote-share.svg',new XMLSeri
 $('export-results').onclick=()=>download('wizlandia-results.csv',csv(resultRows([current])),'text/csv;charset=utf-8');
 $('export-history').onclick=()=>download('wizlandia-election-history.csv',csv(resultRows(history)),'text/csv;charset=utf-8');
 $('export-districts').onclick=()=>download('wizlandia-districts.csv',csv([['district_id','state','locality','population','legacy_id','type_id','district_type','economic_x','cultural_y','winner','runner_up','distance_gap'],...current.rows.map(d=>[d.id,d.state,d.locality,d.population,d.legacyId,d.type,d.name,d.x,d.y,current.parties[d.winner].code,current.parties[d.runner].code,d.distanceGap])]),'text/csv;charset=utf-8');
-$('save-config').onclick=()=>{try{download('wizlandia-config.json',JSON.stringify({version:1,view,diagramLayout:$('diagram-layout').value,seatOrder:$('seat-order').value,economic:state.economic,cultural:state.cultural,variance:state.variance,spread:state.spread,seed:getSeed(),runs:Number($('runs').value),parties:state.parties.map(({code,x,y})=>({code,x,y}))},null,2),'application/json');}catch(e){notice(e.message);}};
+$('save-config').onclick=()=>{try{download('wizlandia-config.json',JSON.stringify({version:2,calendar:S.serialize(timeline),randomState:rng.seed,view,diagramLayout:$('diagram-layout').value,seatOrder:$('seat-order').value,economic:state.economic,cultural:state.cultural,variance:state.variance,spread:state.spread,seed:getSeed(),runs:Number($('runs').value),parties:state.parties.map(({code,x,y})=>({code,x,y}))},null,2),'application/json');}catch(e){notice(e.message);}};
 $('load-config-button').onclick=()=>$('load-config').click();
 $('load-config').onchange=async event=>{
   const file=event.target.files[0];if(!file)return;
   try{
-    if(file.size>100000)throw new Error('Configuration file is too large.');
-    const c=JSON.parse(await file.text());if(c.version!==1||!Array.isArray(c.parties)||c.parties.length!==9)throw new Error('Unsupported Wizlandia configuration.');
+    if(file.size>1000000)throw new Error('Configuration file is too large.');
+    const c=JSON.parse(await file.text());if(![1,2].includes(c.version)||!Array.isArray(c.parties)||c.parties.length!==9)throw new Error('Unsupported Wizlandia configuration.');
     if(!Number.isInteger(c.seed)||c.seed<0||c.seed>4294967295||!Number.isInteger(c.runs)||c.runs<1||c.runs>100)throw new Error('Invalid seed or batch size.');
     const parties=D.parties.map((p,i)=>{const q=c.parties[i];if(q.code!==p.code)throw new Error('Party codes must match the Wizlandia model.');return{...p,x:q.x,y:q.y};});
-    if(c.view!==undefined&&!Object.hasOwn(E.components,c.view))throw new Error('Invalid seat view.');
+    if(c.view!==undefined&&!Object.hasOwn(E.components,c.view)&&!senateViews.includes(c.view))throw new Error('Invalid seat view.');
     if(c.diagramLayout!==undefined&&!['hemicycle','westminster'].includes(c.diagramLayout))throw new Error('Invalid diagram layout.');
     if(c.seatOrder!==undefined&&!['political','size'].includes(c.seatOrder))throw new Error('Invalid seat order.');
     const result=E.evaluate(c.economic,c.cultural,c.variance,D.spread,parties);
+    if(c.randomState!==undefined&&(!Number.isInteger(c.randomState)||c.randomState<0||c.randomState>4294967295))throw new Error('Invalid random generator state.');
+    const loadedTimeline=c.version===2?S.restore(c.calendar):S.create(result);
     $('diagram-layout').value=c.diagramLayout||'hemicycle';$('seat-order').value=c.seatOrder||'political';
-    $('seed').value=c.seed;$('runs').value=c.runs;$('batch').textContent=`Draw ${c.runs} elections`;rng=new E.Mulberry32(c.seed);view=c.view||'combined';setMode('manual');restore(result);notice('Configuration loaded.');
+    $('seed').value=c.seed;$('runs').value=c.runs;$('batch').textContent=`Draw ${c.runs} elections`;rng=new E.Mulberry32(c.randomState===undefined?c.seed:c.randomState);view=c.view||'combined';setMode('manual');history=[];nextRun=1;batchStats=null;restore(result,loadedTimeline);addHistory(current,`Election ${timeline.counter} · loaded`);renderHistory();notice('Configuration loaded.');
   }catch(e){notice('Could not load configuration: '+e.message);}finally{event.target.value='';}
 };
 $('guide').onclick=()=>$('guide-dialog').showModal();
@@ -432,9 +506,9 @@ $('edit-parties').onclick=()=>{fillPartyEditor(state.parties);$('parties-dialog'
 $('restore-parties').onclick=()=>fillPartyEditor(D.parties);
 $('party-form').onsubmit=event=>{event.preventDefault();try{
   const parties=state.parties.map((p,i)=>({...p,x:Number($('party-x-'+i).value),y:Number($('party-y-'+i).value)}));E.validateParties(parties);
-  const result=E.evaluate(state.economic,state.cultural,state.variance,state.spread,parties);restore(result);$('parties-dialog').close();notice('Party positions updated.');
+  const result=E.evaluate(state.economic,state.cultural,state.variance,state.spread,parties);restore(result);updateCurrentHistory();renderHistory();$('parties-dialog').close();notice('Party positions updated.');
 }catch(e){$('party-error').textContent=e.message;}};
-function applyTheme(dark){document.body.classList.toggle('dark',dark);$('theme').textContent=dark?'☀ Light':'◐ Dark';if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else renderParliament();if(activeTab==='compass')renderPartyCompass();if(activeTab==='medians')drawDistrictMedians();}
+function applyTheme(dark){document.body.classList.toggle('dark',dark);$('theme').textContent=dark?'☀ Light':'◐ Dark';if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else if(['combined','senate'].includes(view))renderParliament();else renderSenateMaps();if(activeTab==='senate-history')renderSenateHistory();if(activeTab==='compass')renderPartyCompass();if(activeTab==='medians')drawDistrictMedians();}
 let initialDark=false;try{initialDark=localStorage.getItem('wizlandia-theme')==='dark';}catch(e){}
 $('theme').onclick=()=>{const dark=!document.body.classList.contains('dark');try{localStorage.setItem('wizlandia-theme',dark?'dark':'light');}catch(e){}applyTheme(dark);};
 for(const id of ['cartogram-state','district-state'])$(id).innerHTML='<option value="all">All states</option>'+H.states.map(s=>`<option value="${s.code}">${esc(s.name)} (${s.districts})</option>`).join('');
@@ -444,5 +518,5 @@ $('cartogram').onclick=event=>{const tile=event.target.closest('[data-district]'
 $('cartogram-detail').onclick=event=>{if(event.target.closest('[data-close-district]')){inspectedDistrict=null;renderCartogram();}};
 $('cartogram').onkeydown=event=>{if(event.key==='Escape'){inspectedDistrict=null;renderCartogram();return;}if(['Enter',' '].includes(event.key)){event.preventDefault();inspectTile(event);}};
 $('export-cartogram').onclick=()=>download('wizlandia-district-cartogram.svg',new XMLSerializer().serializeToString($('cartogram-svg')),'image/svg+xml');
-addHistory(current,'Baseline');render();applyTheme(initialDark);
+addHistory(current,'Baseline');setMode('manual');render();applyTheme(initialDark);
 })();

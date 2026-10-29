@@ -2,6 +2,89 @@
 
 A standalone GitHub Pages election website inspired by the sidebar, parliament diagram, party cards and result tabs of [ThermidorElections](https://consuldelmar.github.io/ThermidorElections/). The interface and source here are a new implementation. No code or assets from the reference site are included.
 
+## Senate elections and calendar
+
+The former **Combined** upper tab is now **Assembly**. The upper tabs are
+Assembly → Electoral Districts → PR List → Senate → Senators by state → Senate election.
+The Assembly retains the same 800-seat model and PR calculations.
+
+**Deploy this update:** add **senate.js**, and replace **app.js**, **engine.js**,
+**index.html** and **styles.css**. Keep all other existing website assets.
+The HTML uses content-versioned URLs, including for the new Senate module.
+
+### Two-year steps
+
+The baseline is **election 1**. **Next election (+2y)** advances two years using
+the current shifts; **Draw next** advances with a fresh seeded shock.
+**Even counters (2, 4, …) elect Assembly and Senate. Odd counters (1, 3, …)
+elect only the Senate.** The initial baseline Assembly is held in election 1.
+
+The shared sliders preview the displayed election. On Senate-only steps, all
+Assembly results, district winners, national PR votes/seats and the Districts
+Median Position plot stay at the last Assembly election. Grey vertical marks
+on all three controls show those Assembly settings. Even party-position edits
+leave the stored Assembly unchanged on a Senate-only step.
+
+Each new election ages the Senate cohorts once. Slider adjustments preview the
+current year-0 cohort without aging or recalculating older cohorts. The current
+saved History entry tracks these previews. Selecting an earlier run restores
+both chambers and the controls; the next election branches from that point.
+Reset restores both chambers, the initial history and counter 1.
+
+Batch draws now generate consecutive two-year elections, applying the same
+alternation. Economic, cultural and variance shocks retain their original
+independent distributions. Saving/loading a configuration preserves both
+chambers, the counter, manual Senate edits and the random generator's position.
+Original format-1 configurations remain supported; format 2 adds the calendar.
+Export a configuration before refreshing to retain a Senate scenario.
+
+### Statewide election rule and terms
+
+For each state, take the **separate medians** of its districts' current economic
+and cultural positions. Every district has equal weight; population does not
+weight this calculation. With an even number of districts, average the two
+middle values on each axis. Elect the nearest model party, i.e. the party whose
+Voronoi region contains that position. Exact ties follow the fixed party display
+order. The state medians include existing permutations, district offsets,
+economic compression, current shifts and variance. Compass-only party display
+coordinates never enter this calculation.
+
+Each state elects one senator every two years for a **20-year term**. Its ten
+serving senators were elected in relative years **0, −2, …, −18**. Advancing
+moves each cohort back two years and drops −18, keeping **120 seats** in the
+Senate, ten per state, and a **61-seat majority**.
+
+### Senate views
+
+- **Senate:** uses the existing hemicycle/Westminster layouts, party cards,
+  selection and square-root seat-share compass sizing, with 120 serving seats.
+  The Overview distinguishes current Senate stock from the 12 latest winners;
+  no national Senate vote share is invented.
+- **Senators by state:** merges the existing hex geography into state shapes,
+  removes internal district hexes and retains black state boundaries. Select
+  any state (including either part of Kroana) to list its ten senators by party,
+  ordered newest first from 0 to −18. Abbreviation buttons support selection too.
+- **Senate election:** colours the same state shapes by the latest year-0 winners.
+  Select a state to inspect its winner and current median coordinates.
+- **Senate History**, after Districts Median Position: ten horizontal year tabs
+  each contain the requested party-by-state checkmark table. Choose exactly one
+  party per state/year; selecting a replacement clears the previous checkmark.
+  Edits immediately affect Senate totals and lists. Slider changes recalculate
+  year 0; older manual edits remain until that cohort expires.
+
+The initial year-0 result is **LDP 6, CA 5, CON 1**. Older default cohorts are
+illustrative elections calculated from fixed plausible national swings and each
+state's own median, retaining strongholds and allowing marginal states to switch.
+These are fictional defaults, not factual historical results. The initial
+120-seat Senate is **CA 63, LDP 47, CON 10**. All assignments are editable.
+
+Both state maps have SVG exports; Senate History exports a 10-cohort CSV.
+Result/history CSV exports include both chambers and distinguish the current
+shifts from the held Assembly settings. Run `node --test tests/*.test.js` for
+all 14 suites. Tests cover medians, tie handling, 25 cohort rollovers, fixed
+Assembly results, checkmarks, maps, configuration/RNG round trips, history
+branching and batches. All 58 existing model reference scenarios still pass.
+
 ## Current model and interface
 
 The Overview table shows Party, Ideology, Combined, Electoral Districts, PR List, Vote share and Representation, in that order. Party ideology labels are presentation only. Representation bars compare national vote share with seat share in the selected component.
@@ -10,7 +93,7 @@ The Overview table shows Party, Ideology, Combined, Electoral Districts, PR List
 The **Compass** tab is a party-bubble compass inspired by Thermidor's presentation.
 Party coordinates retain their Wizlandia economic and cultural meanings. Circle
 radius follows `6 + 60 × sqrt(party seats / total seats)` using the selected
-component: total seats is 800 for Combined and 400 for Electoral Districts or
+component: total seats is 800 for Assembly, 120 for Senate, 12 for the latest Senate cohort, and 400 for Electoral Districts or
 PR List. Equal seat shares therefore have equal dot sizes across views. The
 coefficient preserves the previous scale for the 400-seat component views.
 The zero-seat marker has radius 6; every party with seats adds a positive
@@ -34,13 +117,13 @@ party crosses, national median star, density/district controls and hover details
 
 Within-type variation is fixed at **0.20**. The variation slider is removed, and loading an older configuration cannot override this setting. The economic, cultural and variance-multiplier sliders remain available. The existing party-boundary caps still apply, so 0.20 is a maximum offset rather than the standard deviation of every type.
 
-The **Electoral Districts** view displays the 400-seat cartogram in place of the Assembly diagram. Combined retains its Assembly diagram. PR List instead shows a vertical chart of national vote shares, using the fixed left-to-right party order, original party colours and percentage labels on the y-axis. The chart updates with the election, supports dark mode and exports as SVG. The separate lower Cartogram tab has been removed. All states shows nationwide district seat totals for every party that won a seat. Selecting a state zooms the map and shows that state’s winning-party totals instead. Both summaries use the current election, ordered by seats won. In both the individual state results and the Nationwide cartogram summary, equal district-seat totals are ordered by nationwide Combined seats (district + PR); any remaining tie uses the fixed left-to-right party order. All other party lists retain their existing ordering. Each state’s results sit to the left of its map on wide screens, with the map shifted right; smaller screens stack the results above the map. Individual state cartograms render at two-thirds of their previous width and height. The nationwide cartogram remains its original size. District type family mode includes a labelled colour key for all five families, on both nationwide and individual state maps. Colour by current winner, type family or state; click a tile for its ID, locality and full type name.
+The **Electoral Districts** view displays the 400-seat cartogram in place of the Assembly diagram. Assembly retains its diagram. PR List instead shows a vertical chart of national vote shares, using the fixed left-to-right party order, original party colours and percentage labels on the y-axis. The chart updates with the election, supports dark mode and exports as SVG. The separate lower Cartogram tab has been removed. All states shows nationwide district seat totals for every party that won a seat. Selecting a state zooms the map and shows that state’s winning-party totals instead. Both summaries use the current election, ordered by seats won. In both the individual state results and the Nationwide cartogram summary, equal district-seat totals are ordered by nationwide Combined seats (district + PR); any remaining tie uses the fixed left-to-right party order. All other party lists retain their existing ordering. Each state’s results sit to the left of its map on wide screens, with the map shifted right; smaller screens stack the results above the map. Individual state cartograms render at two-thirds of their previous width and height. The nationwide cartogram remains its original size. District type family mode includes a labelled colour key for all five families, on both nationwide and individual state maps. Colour by current winner, type family or state; click a tile for its ID, locality and full type name.
 
 The Extary–Erewen border follows the ten marked tiles: five move into Extary's schematic territory and five into Erewen's. Their entitlements remain 30 and 60. Every one of the 49 named cities now has one connected group of tiles, including cities spanning two states. KR-22 is assigned to Davenport on its own island, rather than the capital across the strait. All 50 type counts, individual offsets, district populations and underlying geographic polygons are preserved.
 
 The sidebar heading is “Explore Wizlandia’s elections.” The two requested explanatory paragraphs are removed. Batch size defaults to **20** elections; saved configurations can still specify another batch size.
 
-Upload all top-level HTML, CSS, JS and SVG website files in this ZIP, including the new **district-geography.js**. The JSON and CSV contain the underlying mapping; tests and Python code are optional for hosting.
+Upload all top-level HTML, CSS, JS and SVG website files in this ZIP, including **district-geography.js** and **senate.js**. The JSON and CSV contain the underlying mapping; tests and Python code are optional for hosting.
 
 State apportionment uses the Hare quota and largest remainder on 212 million residents:
 
