@@ -29,7 +29,7 @@ function syncControls(){
     marker.title=`Assembly ${k}: ${timeline.assembly[k].toFixed(2)}`;
   }
   $('election-counter').textContent=`Election ${timeline.counter}${timeline.counter===1?' · Baseline':''}`;
-  $('election-cycle').textContent=locked?'Senate only · Assembly held':'Assembly + Senate';
+  $('election-cycle').textContent=locked?'Senate only':'Assembly + Senate';
   $('assembly-lock-note').textContent=locked?`Grey marks: Assembly election ${timeline.assemblyCounter}. Next: election ${timeline.counter+1}, both chambers.`:`Shared settings for both chambers. Next: election ${timeline.counter+1}, Senate only.`;
 }
 function addHistory(result,label){history.push({id:nextRun++,label,result,timeline:{...timeline,cohorts:timeline.cohorts.map(c=>({...c,winners:{...c.winners}}))},live});if(history.length>200)history.shift();}
