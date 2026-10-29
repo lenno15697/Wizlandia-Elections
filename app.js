@@ -11,6 +11,7 @@ let current=E.evaluate(),history=[],nextRun=1,selected=new Set(),mode='manual',a
 let noticeTimer,frame,compassDots=[],view='combined',inspectedDistrict=null;
 let timeline=S.create(current),live=current,senateYear=0,senateState=H.states[0].code;
 const stateOutlines=S.stateOutlines();
+const senateMapStateOrder=['EX','EW','NX','AX','ET','KR','QL','AK','LQ','IL','LX','WT'].map(code=>H.states.find(s=>s.code===code));
 const senateViews=['senate','senators','senate-election'];
 const displayOrder=D.displayOrder;
 const partyIdeologies={SWP:'Communism',UPL:'Democratic socialism',SDP:'Social democracy',GRN:'Green liberalism',CA:'Centrism',LDP:'National liberalism',CON:'Conservatism',LIB:'Libertarianism',NF:'National conservatism'};
@@ -58,6 +59,7 @@ function render(){
   $('assembly-panel').hidden=!['combined','senate'].includes(view);$('panel-cartogram').hidden=view!=='district';$('panel-votes').hidden=view!=='pr';
   $('panel-senators-map').hidden=view!=='senators';$('panel-senate-election-map').hidden=view!=='senate-election';
   $('chamber-heading').textContent=view==='senate'?'The Senate':'The Assembly';
+  $('assembly-panel').classList.toggle('senate-chamber',view==='senate');
   $('track-majority').hidden=!['combined','senate'].includes(view);
   renderSummary();if(view==='district')renderCartogram();else if(view==='pr')renderVoteShare();else if(['combined','senate'].includes(view))renderParliament();else renderSenateMaps();renderHistory();
   if(activeTab==='senate-history')renderSenateHistory();
@@ -153,15 +155,15 @@ function renderParliament(){
     const assignment=G.seatAssignments(geometry,order.map(i=>seats[i])).map(rank=>order[rank]);
     artwork+=geometry.dots.map((dot,i)=>circle(dot,assignment[i],geometry.radius)).join('');
     if(selected.size||isCombined){
-      artwork+=`<text x="450" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="46" fill="${ink}">${selected.size?coalition:v.majority}</text>`;
-      artwork+=text(450,298,selected.size?(selected.size===1?'PARTY SEATS':'COALITION SEATS'):'SEATS FOR A MAJORITY',11);
+      artwork+=`<text x="450" y="${view==='senate'?286:272}" text-anchor="middle" font-family="Georgia,serif" font-size="${view==='senate'?40:46}" fill="${ink}">${selected.size?coalition:v.majority}</text>`;
+      artwork+=text(450,view==='senate'?310:298,selected.size?(selected.size===1?'PARTY SEATS':'COALITION SEATS'):'SEATS FOR A MAJORITY',view==='senate'?10:11);
     }
     const caption=selected.size?(isCombined?(coalition>=v.majority?'Majority reached':'Majority not reached'):'Selected parties'):v.description;
-    artwork+=text(450,325,caption,10);
+    artwork+=text(450,view==='senate'?375:325,caption,10);
     $('diagram-hint').textContent='Each dot represents one seat. Parties follow the selected seat order; select party cards to highlight a coalition.';
   }
   const layout=westminster?'Westminster':'Hemicycle';
-  $('hemicycle').innerHTML=`<svg id="parliament-svg" xmlns="http://www.w3.org/2000/svg" viewBox="${westminster?`0 0 ${geometry.width} ${geometry.height}`:`120 0 660 ${geometry.height}`}" role="img" aria-label="${v.label} ${layout} diagram with ${v.total} seats" aria-describedby="diagram-hint"><title>Wizlandia ${v.label} · ${layout} · ${order.map(i=>`${current.parties[i].code} ${seats[i]}`).join(', ')}</title>${artwork}</svg>`;
+  $('hemicycle').innerHTML=`<svg id="parliament-svg" xmlns="http://www.w3.org/2000/svg" viewBox="${westminster?`0 0 ${geometry.width} ${geometry.height}`:geometry.viewBox||`120 0 660 ${geometry.height}`}" role="img" aria-label="${v.label} ${layout} diagram with ${v.total} seats" aria-describedby="diagram-hint"><title>Wizlandia ${v.label} · ${layout} · ${order.map(i=>`${current.parties[i].code} ${seats[i]}`).join(', ')}</title>${artwork}</svg>`;
 }
 function renderVoteShare(){
   const style=getComputedStyle(document.body),ink=style.getPropertyValue('--text').trim(),muted=style.getPropertyValue('--muted').trim(),border=style.getPropertyValue('--border').trim(),surface=style.getPropertyValue('--surface').trim();
@@ -370,7 +372,7 @@ function renderSenateHistory(){
   $('senate-year-panel').setAttribute('aria-labelledby',`senate-year-${senateYear}`);
   $('senate-year-note').textContent=`Year ${yearText} · ${c.source==='manual'?'Edited winners':c.source==='default'?'Illustrative past election':c.source==='baseline'?'Baseline election':'Simulated election'} · 12 senators elected`;
   $('senate-history-head').innerHTML='<tr><th scope="col">Party</th>'+H.states.map(s=>`<th scope="col" title="${esc(s.name)}">${s.code}<span class="state-column-name">${esc(s.name)}</span></th>`).join('')+'</tr>';
-  $('senate-history-body').innerHTML=displayOrder.map(i=>{const p=D.parties[i];return`<tr><th scope="row">${swatch(p)} ${p.code}<span class="party-name">${esc(p.name)}</span></th>${H.states.map(s=>`<td><input type="radio" class="senate-check" name="senate-${senateYear}-${s.code}" data-senate-winner="${i}" data-senate-state="${s.code}" ${c.winners[s.code]===i?'checked':''} style="--party:${p.color}" aria-label="${esc(p.name)} wins ${esc(s.name)}, year ${yearText}"></td>`).join('')}</tr>`;}).join('');
+  $('senate-history-body').innerHTML=displayOrder.map(i=>{const p=D.parties[i];return`<tr><th scope="row" aria-label="${esc(p.name)}"><span class="senate-history-party">${swatch(p)}<strong>${p.code}</strong><span class="party-name"> • ${esc(p.name)}</span></span></th>${H.states.map(s=>`<td><input type="radio" class="senate-check" name="senate-${senateYear}-${s.code}" data-senate-winner="${i}" data-senate-state="${s.code}" ${c.winners[s.code]===i?'checked':''} style="--party:${p.color}" aria-label="${esc(p.name)} wins ${esc(s.name)}, year ${yearText}"></td>`).join('')}</tr>`;}).join('');
 }
 function senateMapSVG(kind){
   const newest=kind==='election',rows=H.districts;
@@ -387,7 +389,7 @@ function senateMapSVG(kind){
 function renderSenateMaps(){
   const state=H.states.find(s=>s.code===senateState),newest=view==='senate-election',prefix=newest?'senate-election':'senators';
   $(prefix+'-map').innerHTML=senateMapSVG(newest?'election':'senators');
-  $(prefix+'-state-buttons').innerHTML=H.states.map(s=>`<button data-senate-state="${s.code}" aria-pressed="${s.code===senateState}" title="${esc(s.name)}">${s.code}</button>`).join('');
+  $(prefix+'-state-buttons').innerHTML=senateMapStateOrder.map(s=>`<button data-senate-state="${s.code}" aria-pressed="${s.code===senateState}" title="${esc(s.name)}">${s.code}</button>`).join('');
   if(newest){
     const m=S.election(live).find(s=>s.code===state.code),winner=timeline.cohorts[0].winners[state.code],p=D.parties[winner];
     $(prefix+'-detail').innerHTML=`<h3>${esc(state.name)}</h3><div class="senate-winner">${swatch(p)}<strong>${esc(p.name)}</strong></div><p class="hint">Elected in year 0 · 20-year term</p><dl class="state-median"><dt>Economic median</dt><dd>${signed(m.x,3)}</dd><dt>Cultural median</dt><dd>${signed(m.y,3)}</dd></dl><p class="hint">${timeline.cohorts[0].source==='manual'?'Winner edited in Senate History. Moving the sliders restores the median-based result.':'Winner determined by the state’s median district position in the election model.'}</p>`;

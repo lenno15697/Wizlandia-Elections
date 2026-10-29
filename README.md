@@ -2,6 +2,16 @@
 
 A standalone GitHub Pages election website inspired by the sidebar, parliament diagram, party cards and result tabs of [ThermidorElections](https://consuldelmar.github.io/ThermidorElections/). The interface and source here are a new implementation. No code or assets from the reference site are included.
 
+## Latest Senate permutations and History labels
+
+All three additional swaps are applied: **NX-43 ↔ AX-49**, **NX-95 ↔ ET-32**, and **QL-10 ↔ WT-10**. These compose with the earlier LQ-13/EW-24 swap and all prior changes. The district permutation audit is version 11.
+
+Senate History recalculates every default checkmark using the unchanged historical shock settings and the new map. Five checkmarks switch from CA to LDP, producing a starting Senate of **LDP 56, CA 54, CON 10**. Party row labels use **LDP • Liberal Democratic Party**, with normal capitalization and spacing. Narrow screens show the abbreviation and colour dot.
+
+Ten million election draws confirm long-run means of **LDP 60.32, CA 50.76, CON 8.92**. The fixed starting history is a particular historical scenario and differs from these random-election averages. See **analysis/senate_three_swaps_update.md**, the associated JSON/CSV results, and **tools/verify_three_senate_swaps.js**. Earlier Senate reports describe their recorded earlier map versions.
+
+If upgrading from the previous ZIP, replace **app.js**, **district-geography.js**, **styles.css**, and **index.html**. The JSON/CSV register and audits are also updated. The compact Senate hemicycle and east-to-west state selector order are retained.
+
 ## Senate elections and calendar
 
 The former **Combined** upper tab is now **Assembly**. The upper tabs are
@@ -54,6 +64,8 @@ serving senators were elected in relative years **0, −2, …, −18**. Advanci
 moves each cohort back two years and drops −18, keeping **120 seats** in the
 Senate, ten per state, and a **61-seat majority**.
 
+The Senate hemicycle uses six compact arcs and larger dots. Both Senate map views list state selectors in the requested order: EX, EW, NX, AX, ET, KR, QL, AK, LQ, IL, LX, WT. Assembly diagram geometry and other state lists retain their existing configuration.
+
 ### Senate views
 
 - **Senate:** uses the existing hemicycle/Westminster layouts, party cards,
@@ -76,7 +88,7 @@ The initial year-0 result is **LDP 6, CA 5, CON 1**. Older default cohorts are
 illustrative elections calculated from fixed plausible national swings and each
 state's own median, retaining strongholds and allowing marginal states to switch.
 These are fictional defaults, not factual historical results. The initial
-120-seat Senate is **CA 63, LDP 47, CON 10**. All assignments are editable.
+120-seat Senate is **LDP 56, CA 54, CON 10**. All assignments are editable.
 
 Both state maps have SVG exports; Senate History exports a 10-cohort CSV.
 Result/history CSV exports include both chambers and distinguish the current
@@ -216,7 +228,7 @@ permutations before this model update. See `analysis/university_shift_impact.md`
 for the detailed matched-election results and `tools/analyze_university_shift.js`
 to reproduce them.
 
-## District type and compass permutations (version 9)
+## District type and compass permutations (version 11)
 
 The requested district swaps change **type, full type name, type family, legacy
 model ID, compass coordinates and derived baseline winner together**. Each
@@ -258,7 +270,11 @@ Westhaven; Lorenvia now has two, and Westhaven has one.
 EW-58 and WT-14 then exchange their current district type and compass
 profiles, preserving both district identities and all earlier permutations.
 
-There are **38 affected districts** across the retained permutations. `district_permutation_changes.csv` lists
+LQ-13 and EW-24 then exchange their complete profiles: older, settled middle-class suburbs and established middle-income homeowner suburbs. All prior permutations remain intact.
+
+The latest three additional swaps exchange NX-43/AX-49, NX-95/ET-32 and QL-10/WT-10. AX-49 already participated in the earlier swaps, so its new assignment is composed into the effective permutation rather than undoing that history.
+
+There are **45 affected districts** across the retained permutations. `district_permutation_changes.csv` lists
 all old/new types and coordinates; `district_permutations.json` records the
 input swaps, the effective permutation and verification hashes. Earlier
 within-type permutation records are retained separately in

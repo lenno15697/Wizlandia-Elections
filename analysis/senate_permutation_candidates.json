@@ -1,0 +1,5553 @@
+{
+  "seed": 20261030,
+  "screenDraws": 20000,
+  "constraints": {
+    "maxCoordinateDistance": 1.1,
+    "maxCulturalDifference": 0.65,
+    "maxMetroShareDifference": 0.3,
+    "sameFamily": true,
+    "preserveBaselineStateWinners": true,
+    "appliedSwapUntouched": true,
+    "protectedTypesRequireSameType": true
+  },
+  "candidateCount": 89,
+  "candidates": [
+    {
+      "pairs": [
+        [
+          "QL-10",
+          "WT-10"
+        ]
+      ],
+      "coordinateDistance": 1.0175738030142532,
+      "sameType": false,
+      "sameBaselineDistrictWinner": true,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.0006300000000000194,
+      "profiles": [
+        {
+          "id": "QL-10",
+          "state": "QL",
+          "type": 15,
+          "name": "Mixed-income commuter suburbs",
+          "x": 1.024171667393177,
+          "y": -0.5210364931431309,
+          "locality": "Atlantis",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "WT-10",
+          "state": "WT",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.978196139716969,
+          "y": -0.8750050663077563,
+          "locality": "East Harbour",
+          "baselineWinner": "CA"
+        }
+      ],
+      "screenSenateDelta": [
+        4.16,
+        -4.16,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "QL",
+          "before": [
+            1.407937260365896,
+            -0.009856275016795757
+          ],
+          "after": [
+            1.9688095641951184,
+            -0.009856275016795757
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "QL-10",
+          "NX-09"
+        ]
+      ],
+      "coordinateDistance": 1.0280050273351573,
+      "sameType": false,
+      "sameBaselineDistrictWinner": true,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.0017300000000000093,
+      "profiles": [
+        {
+          "id": "QL-10",
+          "state": "QL",
+          "type": 15,
+          "name": "Mixed-income commuter suburbs",
+          "x": 1.024171667393177,
+          "y": -0.5210364931431309,
+          "locality": "Atlantis",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "NX-09",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9750271835832325,
+          "y": -0.9117641777999788,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        }
+      ],
+      "screenSenateDelta": [
+        4.16,
+        -4.16,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.1401888407337166,
+            -0.5801266632860791
+          ]
+        },
+        {
+          "state": "QL",
+          "before": [
+            1.407937260365896,
+            -0.009856275016795757
+          ],
+          "after": [
+            1.9688095641951184,
+            -0.009856275016795757
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "QL-10",
+          "WT-09"
+        ]
+      ],
+      "coordinateDistance": 1.0364148264674848,
+      "sameType": false,
+      "sameBaselineDistrictWinner": true,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.03237000000000001,
+      "profiles": [
+        {
+          "id": "QL-10",
+          "state": "QL",
+          "type": 15,
+          "name": "Mixed-income commuter suburbs",
+          "x": 1.024171667393177,
+          "y": -0.5210364931431309,
+          "locality": "Atlantis",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "WT-09",
+          "state": "WT",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9917142212074612,
+          "y": -0.8925430194386453,
+          "locality": "East Harbour",
+          "baselineWinner": "CA"
+        }
+      ],
+      "screenSenateDelta": [
+        4.16,
+        -4.16,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "QL",
+          "before": [
+            1.407937260365896,
+            -0.009856275016795757
+          ],
+          "after": [
+            1.9688095641951184,
+            -0.009856275016795757
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "QL-10",
+          "NX-38"
+        ]
+      ],
+      "coordinateDistance": 1.0189985666694212,
+      "sameType": false,
+      "sameBaselineDistrictWinner": true,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.12822,
+      "profiles": [
+        {
+          "id": "QL-10",
+          "state": "QL",
+          "type": 15,
+          "name": "Mixed-income commuter suburbs",
+          "x": 1.024171667393177,
+          "y": -0.5210364931431309,
+          "locality": "Atlantis",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "NX-38",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.961145547859321,
+          "y": -0.9215836516632624,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        }
+      ],
+      "screenSenateDelta": [
+        4.0785,
+        -4.0785,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.1401888407337166,
+            -0.5801266632860791
+          ]
+        },
+        {
+          "state": "QL",
+          "before": [
+            1.407937260365896,
+            -0.009856275016795757
+          ],
+          "after": [
+            1.961145547859321,
+            -0.009856275016795757
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "QL-10",
+          "NX-34"
+        ]
+      ],
+      "coordinateDistance": 0.9984152338617536,
+      "sameType": false,
+      "sameBaselineDistrictWinner": true,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.11699999999999999,
+      "profiles": [
+        {
+          "id": "QL-10",
+          "state": "QL",
+          "type": 15,
+          "name": "Mixed-income commuter suburbs",
+          "x": 1.024171667393177,
+          "y": -0.5210364931431309,
+          "locality": "Atlantis",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "NX-34",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.958854452140679,
+          "y": -0.8720365944306877,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        }
+      ],
+      "screenSenateDelta": [
+        4.05,
+        -4.05,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.1401888407337166,
+            -0.5801266632860791
+          ]
+        },
+        {
+          "state": "QL",
+          "before": [
+            1.407937260365896,
+            -0.009856275016795757
+          ],
+          "after": [
+            1.958854452140679,
+            -0.009856275016795757
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "QL-10",
+          "NX-10"
+        ]
+      ],
+      "coordinateDistance": 0.9889719520063233,
+      "sameType": false,
+      "sameBaselineDistrictWinner": true,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.0047000000000000375,
+      "profiles": [
+        {
+          "id": "QL-10",
+          "state": "QL",
+          "type": 15,
+          "name": "Mixed-income commuter suburbs",
+          "x": 1.024171667393177,
+          "y": -0.5210364931431309,
+          "locality": "Atlantis",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "NX-10",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9449728164167674,
+          "y": -0.8818560682939713,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        }
+      ],
+      "screenSenateDelta": [
+        3.8905,
+        -3.8905,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.1401888407337166,
+            -0.5801266632860791
+          ]
+        },
+        {
+          "state": "QL",
+          "before": [
+            1.407937260365896,
+            -0.009856275016795757
+          ],
+          "after": [
+            1.9449728164167674,
+            -0.009856275016795757
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "QL-10",
+          "AX-15"
+        ]
+      ],
+      "coordinateDistance": 1.0000588250201408,
+      "sameType": false,
+      "sameBaselineDistrictWinner": true,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.09559000000000006,
+      "profiles": [
+        {
+          "id": "QL-10",
+          "state": "QL",
+          "type": 15,
+          "name": "Mixed-income commuter suburbs",
+          "x": 1.024171667393177,
+          "y": -0.5210364931431309,
+          "locality": "Atlantis",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-15",
+          "state": "AX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.941803860283031,
+          "y": -0.9186151797861938,
+          "locality": "Lakeside",
+          "baselineWinner": "CA"
+        }
+      ],
+      "screenSenateDelta": [
+        3.851,
+        -3.851,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "QL",
+          "before": [
+            1.407937260365896,
+            -0.009856275016795757
+          ],
+          "after": [
+            1.941803860283031,
+            -0.009856275016795757
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "QL-10",
+          "IL-09"
+        ]
+      ],
+      "coordinateDistance": 0.98074119193594,
+      "sameType": false,
+      "sameBaselineDistrictWinner": true,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.031090000000000062,
+      "profiles": [
+        {
+          "id": "QL-10",
+          "state": "QL",
+          "type": 15,
+          "name": "Mixed-income commuter suburbs",
+          "x": 1.024171667393177,
+          "y": -0.5210364931431309,
+          "locality": "Atlantis",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "IL-09",
+          "state": "IL",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9282857787925387,
+          "y": -0.9010772266553048,
+          "locality": "Illixia",
+          "baselineWinner": "CA"
+        }
+      ],
+      "screenSenateDelta": [
+        3.6855,
+        -3.6855,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "QL",
+          "before": [
+            1.407937260365896,
+            -0.009856275016795757
+          ],
+          "after": [
+            1.9282857787925387,
+            -0.009856275016795757
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-45",
+          "ET-32"
+        ]
+      ],
+      "coordinateDistance": 0.5540561274863399,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.12178,
+      "profiles": [
+        {
+          "id": "NX-45",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9911904358048815,
+          "y": 0.6427271172996144,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-32",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5369871291049275,
+          "y": 0.547416247049181,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-57",
+          "ET-32"
+        ]
+      ],
+      "coordinateDistance": 0.5550624666260009,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.027529999999999943,
+      "profiles": [
+        {
+          "id": "NX-57",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9887894847373624,
+          "y": 0.6344431656824002,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-32",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5369871291049275,
+          "y": 0.547416247049181,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-11",
+          "ET-32"
+        ]
+      ],
+      "coordinateDistance": 0.5587697895690982,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.11546999999999996,
+      "profiles": [
+        {
+          "id": "NX-11",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9876464899545605,
+          "y": 0.6496343467818633,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-32",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5369871291049275,
+          "y": 0.547416247049181,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-95",
+          "ET-32"
+        ]
+      ],
+      "coordinateDistance": 0.5623967863856736,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.0012199999999999989,
+      "profiles": [
+        {
+          "id": "NX-95",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9806282036647889,
+          "y": 0.6296043935182868,
+          "locality": "West Cape",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-32",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5369871291049275,
+          "y": 0.547416247049181,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-81",
+          "ET-32"
+        ]
+      ],
+      "coordinateDistance": 0.5682378683351562,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.09383000000000008,
+      "profiles": [
+        {
+          "id": "NX-81",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.979371796335211,
+          "y": 0.6567753603877632,
+          "locality": "Sorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-32",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5369871291049275,
+          "y": 0.547416247049181,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-26",
+          "ET-32"
+        ]
+      ],
+      "coordinateDistance": 0.5716562101577495,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.10017999999999994,
+      "profiles": [
+        {
+          "id": "NX-26",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9723535100454395,
+          "y": 0.6367454071241867,
+          "locality": "Ravenna",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-32",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5369871291049275,
+          "y": 0.547416247049181,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-64",
+          "ET-32"
+        ]
+      ],
+      "coordinateDistance": 0.5753500486574022,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.11010999999999993,
+      "profiles": [
+        {
+          "id": "NX-64",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9712105152626376,
+          "y": 0.6519365882236497,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-32",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5369871291049275,
+          "y": 0.547416247049181,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-57",
+          "AX-31"
+        ]
+      ],
+      "coordinateDistance": 0.580145629015598,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.07879000000000003,
+      "profiles": [
+        {
+          "id": "NX-57",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9887894847373624,
+          "y": 0.6344431656824002,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-31",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5231376701320416,
+          "y": 0.4085206842173692,
+          "locality": "Southport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-45",
+          "AX-31"
+        ]
+      ],
+      "coordinateDistance": 0.5812232904877632,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.01546000000000003,
+      "profiles": [
+        {
+          "id": "NX-45",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9911904358048815,
+          "y": 0.6427271172996144,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-31",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5231376701320416,
+          "y": 0.4085206842173692,
+          "locality": "Southport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-95",
+          "AX-31"
+        ]
+      ],
+      "coordinateDistance": 0.5858280701066106,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.10753999999999997,
+      "profiles": [
+        {
+          "id": "NX-95",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9806282036647889,
+          "y": 0.6296043935182868,
+          "locality": "West Cape",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-31",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5231376701320416,
+          "y": 0.4085206842173692,
+          "locality": "Southport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-11",
+          "AX-31"
+        ]
+      ],
+      "coordinateDistance": 0.587270467777102,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.009149999999999991,
+      "profiles": [
+        {
+          "id": "NX-11",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9876464899545605,
+          "y": 0.6496343467818633,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-31",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5231376701320416,
+          "y": 0.4085206842173692,
+          "locality": "Southport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-26",
+          "AX-31"
+        ]
+      ],
+      "coordinateDistance": 0.596196037514673,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.006140000000000034,
+      "profiles": [
+        {
+          "id": "NX-26",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9723535100454395,
+          "y": 0.6367454071241867,
+          "locality": "Ravenna",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-31",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5231376701320416,
+          "y": 0.4085206842173692,
+          "locality": "Southport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-81",
+          "AX-31"
+        ]
+      ],
+      "coordinateDistance": 0.5977555601970572,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.20015000000000005,
+      "profiles": [
+        {
+          "id": "NX-81",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.979371796335211,
+          "y": 0.6567753603877632,
+          "locality": "Sorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-31",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5231376701320416,
+          "y": 0.4085206842173692,
+          "locality": "Southport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-64",
+          "AX-31"
+        ]
+      ],
+      "coordinateDistance": 0.6032204295325465,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.00378999999999996,
+      "profiles": [
+        {
+          "id": "NX-64",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9712105152626376,
+          "y": 0.6519365882236497,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-31",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5231376701320416,
+          "y": 0.4085206842173692,
+          "locality": "Southport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-34",
+          "EX-13"
+        ]
+      ],
+      "coordinateDistance": 0.6598741379316682,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.04974999999999996,
+      "profiles": [
+        {
+          "id": "NX-34",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.958854452140679,
+          "y": -0.8720365944306877,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-13",
+          "state": "EX",
+          "type": 14,
+          "name": "Established middle-income homeowner suburbs",
+          "x": 2.351547774196963,
+          "y": -0.3417292941570994,
+          "locality": "Extary Bay",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.5801266632860791
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-10",
+          "EX-13"
+        ]
+      ],
+      "coordinateDistance": 0.6760474306093259,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.07195000000000007,
+      "profiles": [
+        {
+          "id": "NX-10",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9449728164167674,
+          "y": -0.8818560682939713,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-13",
+          "state": "EX",
+          "type": 14,
+          "name": "Established middle-income homeowner suburbs",
+          "x": 2.351547774196963,
+          "y": -0.3417292941570994,
+          "locality": "Extary Bay",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.5801266632860791
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-09",
+          "EX-13"
+        ]
+      ],
+      "coordinateDistance": 0.6831599547147531,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.06898000000000004,
+      "profiles": [
+        {
+          "id": "NX-09",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9750271835832325,
+          "y": -0.9117641777999788,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-13",
+          "state": "EX",
+          "type": 14,
+          "name": "Established middle-income homeowner suburbs",
+          "x": 2.351547774196963,
+          "y": -0.3417292941570994,
+          "locality": "Extary Bay",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.5801266632860791
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-38",
+          "EX-13"
+        ]
+      ],
+      "coordinateDistance": 0.6990314544055029,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.06096999999999997,
+      "profiles": [
+        {
+          "id": "NX-38",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.961145547859321,
+          "y": -0.9215836516632624,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-13",
+          "state": "EX",
+          "type": 14,
+          "name": "Established middle-income homeowner suburbs",
+          "x": 2.351547774196963,
+          "y": -0.3417292941570994,
+          "locality": "Extary Bay",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.5801266632860791
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-45",
+          "EW-53"
+        ]
+      ],
+      "coordinateDistance": 0.7472193405281701,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.11011000000000004,
+      "profiles": [
+        {
+          "id": "NX-45",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9911904358048815,
+          "y": 0.6427271172996144,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-53",
+          "state": "EW",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7342204005760977,
+          "y": 0.5637131039131371,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-57",
+          "EW-53"
+        ]
+      ],
+      "coordinateDistance": 0.7487790007245526,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.015859999999999985,
+      "profiles": [
+        {
+          "id": "NX-57",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9887894847373624,
+          "y": 0.6344431656824002,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-53",
+          "state": "EW",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7342204005760977,
+          "y": 0.5637131039131371,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-11",
+          "EW-53"
+        ]
+      ],
+      "coordinateDistance": 0.7515018722510555,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.1038,
+      "profiles": [
+        {
+          "id": "NX-11",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9876464899545605,
+          "y": 0.6496343467818633,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-53",
+          "state": "EW",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7342204005760977,
+          "y": 0.5637131039131371,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-95",
+          "EW-53"
+        ]
+      ],
+      "coordinateDistance": 0.756467356395134,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.012889999999999957,
+      "profiles": [
+        {
+          "id": "NX-95",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9806282036647889,
+          "y": 0.6296043935182868,
+          "locality": "West Cape",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-53",
+          "state": "EW",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7342204005760977,
+          "y": 0.5637131039131371,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-81",
+          "EW-53"
+        ]
+      ],
+      "coordinateDistance": 0.7605636060873303,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.10550000000000004,
+      "profiles": [
+        {
+          "id": "NX-81",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.979371796335211,
+          "y": 0.6567753603877632,
+          "locality": "Sorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-53",
+          "state": "EW",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7342204005760977,
+          "y": 0.5637131039131371,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-26",
+          "EW-53"
+        ]
+      ],
+      "coordinateDistance": 0.765359311826259,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.08850999999999998,
+      "profiles": [
+        {
+          "id": "NX-26",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9723535100454395,
+          "y": 0.6367454071241867,
+          "locality": "Ravenna",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-53",
+          "state": "EW",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7342204005760977,
+          "y": 0.5637131039131371,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-64",
+          "EW-53"
+        ]
+      ],
+      "coordinateDistance": 0.7680933981424048,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.09843999999999997,
+      "profiles": [
+        {
+          "id": "NX-64",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9712105152626376,
+          "y": 0.6519365882236497,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-53",
+          "state": "EW",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7342204005760977,
+          "y": 0.5637131039131371,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-95",
+          "ET-34"
+        ]
+      ],
+      "coordinateDistance": 0.7911679506565311,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.12217999999999996,
+      "profiles": [
+        {
+          "id": "NX-95",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9806282036647889,
+          "y": 0.6296043935182868,
+          "locality": "West Cape",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-34",
+          "state": "ET",
+          "type": 14,
+          "name": "Established middle-income homeowner suburbs",
+          "x": 2.432967402138478,
+          "y": -0.019499585571531697,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "ET",
+          "before": [
+            1.0185698156300802,
+            -0.022382786801446924
+          ],
+          "after": [
+            1.0185698156300802,
+            0.00024987170377225795
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-45",
+          "AX-28"
+        ]
+      ],
+      "coordinateDistance": 0.8179482577534406,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.24983,
+      "profiles": [
+        {
+          "id": "NX-45",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9911904358048815,
+          "y": 0.6427271172996144,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-28",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7879734409790697,
+          "y": 0.45785906968868084,
+          "locality": "Avondale",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-57",
+          "AX-28"
+        ]
+      ],
+      "coordinateDistance": 0.8184601021870683,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.15557999999999994,
+      "profiles": [
+        {
+          "id": "NX-57",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9887894847373624,
+          "y": 0.6344431656824002,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-28",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7879734409790697,
+          "y": 0.45785906968868084,
+          "locality": "Avondale",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-11",
+          "AX-28"
+        ]
+      ],
+      "coordinateDistance": 0.8229829800429376,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.24351999999999996,
+      "profiles": [
+        {
+          "id": "NX-11",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9876464899545605,
+          "y": 0.6496343467818633,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-28",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7879734409790697,
+          "y": 0.45785906968868084,
+          "locality": "Avondale",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-95",
+          "AX-28"
+        ]
+      ],
+      "coordinateDistance": 0.8254106786754026,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.12683,
+      "profiles": [
+        {
+          "id": "NX-95",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9806282036647889,
+          "y": 0.6296043935182868,
+          "locality": "West Cape",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-28",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7879734409790697,
+          "y": 0.45785906968868084,
+          "locality": "Avondale",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-81",
+          "AX-28"
+        ]
+      ],
+      "coordinateDistance": 0.8327090190614216,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.03421999999999992,
+      "profiles": [
+        {
+          "id": "NX-81",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.979371796335211,
+          "y": 0.6567753603877632,
+          "locality": "Sorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-28",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7879734409790697,
+          "y": 0.45785906968868084,
+          "locality": "Avondale",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-26",
+          "AX-28"
+        ]
+      ],
+      "coordinateDistance": 0.8350067026421222,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.22822999999999993,
+      "profiles": [
+        {
+          "id": "NX-26",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9723535100454395,
+          "y": 0.6367454071241867,
+          "locality": "Ravenna",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-28",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7879734409790697,
+          "y": 0.45785906968868084,
+          "locality": "Avondale",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-64",
+          "AX-28"
+        ]
+      ],
+      "coordinateDistance": 0.8395044729038418,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.23815999999999993,
+      "profiles": [
+        {
+          "id": "NX-64",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9712105152626376,
+          "y": 0.6519365882236497,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-28",
+          "state": "AX",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7879734409790697,
+          "y": 0.45785906968868084,
+          "locality": "Avondale",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-57",
+          "ET-33"
+        ]
+      ],
+      "coordinateDistance": 0.846331901639744,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.04635999999999996,
+      "profiles": [
+        {
+          "id": "NX-57",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9887894847373624,
+          "y": 0.6344431656824002,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-33",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7741239820061834,
+          "y": 0.31896350685686903,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-45",
+          "ET-33"
+        ]
+      ],
+      "coordinateDistance": 0.8472353942171371,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.0478900000000001,
+      "profiles": [
+        {
+          "id": "NX-45",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9911904358048815,
+          "y": 0.6427271172996144,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-33",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7741239820061834,
+          "y": 0.31896350685686903,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-95",
+          "ET-33"
+        ]
+      ],
+      "coordinateDistance": 0.8521345613876996,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.0751099999999999,
+      "profiles": [
+        {
+          "id": "NX-95",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9806282036647889,
+          "y": 0.6296043935182868,
+          "locality": "West Cape",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-33",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7741239820061834,
+          "y": 0.31896350685686903,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-11",
+          "ET-33"
+        ]
+      ],
+      "coordinateDistance": 0.853164726111266,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.04158000000000006,
+      "profiles": [
+        {
+          "id": "NX-11",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9876464899545605,
+          "y": 0.6496343467818633,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-33",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7741239820061834,
+          "y": 0.31896350685686903,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-26",
+          "ET-33"
+        ]
+      ],
+      "coordinateDistance": 0.8624507092267136,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.026290000000000036,
+      "profiles": [
+        {
+          "id": "NX-26",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9723535100454395,
+          "y": 0.6367454071241867,
+          "locality": "Ravenna",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-33",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7741239820061834,
+          "y": 0.31896350685686903,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-81",
+          "ET-33"
+        ]
+      ],
+      "coordinateDistance": 0.8635669545638983,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.16771999999999998,
+      "profiles": [
+        {
+          "id": "NX-81",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.979371796335211,
+          "y": 0.6567753603877632,
+          "locality": "Sorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-33",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7741239820061834,
+          "y": 0.31896350685686903,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-64",
+          "ET-33"
+        ]
+      ],
+      "coordinateDistance": 0.8692186767396497,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.03622000000000003,
+      "profiles": [
+        {
+          "id": "NX-64",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9712105152626376,
+          "y": 0.6519365882236497,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-33",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.7741239820061834,
+          "y": 0.31896350685686903,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-09",
+          "WT-17"
+        ]
+      ],
+      "coordinateDistance": 0.9498146758379168,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.03705000000000003,
+      "profiles": [
+        {
+          "id": "NX-09",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9750271835832325,
+          "y": -0.9117641777999788,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "WT-17",
+          "state": "WT",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8847510720191494,
+          "y": -1.1848033054833982,
+          "locality": "Katherine",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-38",
+          "WT-17"
+        ]
+      ],
+      "coordinateDistance": 0.9603810443858956,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.09289999999999998,
+      "profiles": [
+        {
+          "id": "NX-38",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.961145547859321,
+          "y": -0.9215836516632624,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "WT-17",
+          "state": "WT",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8847510720191494,
+          "y": -1.1848033054833982,
+          "locality": "Katherine",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-34",
+          "WT-17"
+        ]
+      ],
+      "coordinateDistance": 0.9772960484137375,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.08167999999999997,
+      "profiles": [
+        {
+          "id": "NX-34",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.958854452140679,
+          "y": -0.8720365944306877,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "WT-17",
+          "state": "WT",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8847510720191494,
+          "y": -1.1848033054833982,
+          "locality": "Katherine",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-10",
+          "WT-17"
+        ]
+      ],
+      "coordinateDistance": 0.9874007282880456,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.040020000000000056,
+      "profiles": [
+        {
+          "id": "NX-10",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9449728164167674,
+          "y": -0.8818560682939713,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "WT-17",
+          "state": "WT",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8847510720191494,
+          "y": -1.1848033054833982,
+          "locality": "Katherine",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-09",
+          "AK-11"
+        ]
+      ],
+      "coordinateDistance": 1.019728045981349,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.03486,
+      "profiles": [
+        {
+          "id": "NX-09",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9750271835832325,
+          "y": -0.9117641777999788,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AK-11",
+          "state": "AK",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.973883457808614,
+          "y": -1.1170236019478839,
+          "locality": "Akropolis",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-38",
+          "AK-11"
+        ]
+      ],
+      "coordinateDistance": 1.0314236997547215,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.09509000000000001,
+      "profiles": [
+        {
+          "id": "NX-38",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.961145547859321,
+          "y": -0.9215836516632624,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AK-11",
+          "state": "AK",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.973883457808614,
+          "y": -1.1170236019478839,
+          "locality": "Akropolis",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-34",
+          "AK-11"
+        ]
+      ],
+      "coordinateDistance": 1.0441755198238787,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.08387,
+      "profiles": [
+        {
+          "id": "NX-34",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.958854452140679,
+          "y": -0.8720365944306877,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AK-11",
+          "state": "AK",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.973883457808614,
+          "y": -1.1170236019478839,
+          "locality": "Akropolis",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-09",
+          "AX-26"
+        ]
+      ],
+      "coordinateDistance": 1.0513901930309704,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.23526000000000002,
+      "profiles": [
+        {
+          "id": "NX-09",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9750271835832325,
+          "y": -0.9117641777999788,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-26",
+          "state": "AX",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.9943449565562092,
+          "y": -1.1694706303833635,
+          "locality": "Hayward",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-10",
+          "AK-11"
+        ]
+      ],
+      "coordinateDistance": 1.0554434503346188,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.03783000000000003,
+      "profiles": [
+        {
+          "id": "NX-10",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9449728164167674,
+          "y": -0.8818560682939713,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AK-11",
+          "state": "AK",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.973883457808614,
+          "y": -1.1170236019478839,
+          "locality": "Akropolis",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-38",
+          "AX-26"
+        ]
+      ],
+      "coordinateDistance": 1.0625201044453605,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.10531000000000001,
+      "profiles": [
+        {
+          "id": "NX-38",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.961145547859321,
+          "y": -0.9215836516632624,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-26",
+          "state": "AX",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.9943449565562092,
+          "y": -1.1694706303833635,
+          "locality": "Hayward",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-34",
+          "AX-26"
+        ]
+      ],
+      "coordinateDistance": 1.0773614019807034,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.11653000000000002,
+      "profiles": [
+        {
+          "id": "NX-34",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.958854452140679,
+          "y": -0.8720365944306877,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-26",
+          "state": "AX",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.9943449565562092,
+          "y": -1.1694706303833635,
+          "locality": "Hayward",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-10",
+          "AX-26"
+        ]
+      ],
+      "coordinateDistance": 1.088073538335854,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.23823000000000005,
+      "profiles": [
+        {
+          "id": "NX-10",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9449728164167674,
+          "y": -0.8818560682939713,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-26",
+          "state": "AX",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.9943449565562092,
+          "y": -1.1694706303833635,
+          "locality": "Hayward",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-80",
+          "ET-32"
+        ]
+      ],
+      "coordinateDistance": 1.0936679682506432,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.02747999999999995,
+      "profiles": [
+        {
+          "id": "NX-80",
+          "state": "NX",
+          "type": 20,
+          "name": "Older, settled middle-class suburbs",
+          "x": 1.5184818001646376,
+          "y": 0.9458588648722763,
+          "locality": "Sorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "ET-32",
+          "state": "ET",
+          "type": 17,
+          "name": "Rapid-growth outer suburbs",
+          "x": 2.5369871291049275,
+          "y": 0.547416247049181,
+          "locality": "East Cape",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.9915,
+        -0.9915,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-45",
+          "EW-54"
+        ]
+      ],
+      "coordinateDistance": 1.0104048182110263,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.28819000000000006,
+      "profiles": [
+        {
+          "id": "NX-45",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9911904358048815,
+          "y": 0.6427271172996144,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-54",
+          "state": "EW",
+          "type": 22,
+          "name": "Construction-led family exurbs",
+          "x": 2.976147308891144,
+          "y": 0.8680665386714413,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.914,
+        -0.914,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EW",
+          "before": [
+            2.8877520245500508,
+            -0.025915530698067527
+          ],
+          "after": [
+            2.771479147560649,
+            -0.025915530698067533
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-11",
+          "EW-54"
+        ]
+      ],
+      "coordinateDistance": 1.0123470212787615,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.28188,
+      "profiles": [
+        {
+          "id": "NX-11",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9876464899545605,
+          "y": 0.6496343467818633,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-54",
+          "state": "EW",
+          "type": 22,
+          "name": "Construction-led family exurbs",
+          "x": 2.976147308891144,
+          "y": 0.8680665386714413,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.914,
+        -0.914,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EW",
+          "before": [
+            2.8877520245500508,
+            -0.025915530698067527
+          ],
+          "after": [
+            2.771479147560649,
+            -0.025915530698067533
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-57",
+          "EW-54"
+        ]
+      ],
+      "coordinateDistance": 1.0146207928701572,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.19394,
+      "profiles": [
+        {
+          "id": "NX-57",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9887894847373624,
+          "y": 0.6344431656824002,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-54",
+          "state": "EW",
+          "type": 22,
+          "name": "Construction-led family exurbs",
+          "x": 2.976147308891144,
+          "y": 0.8680665386714413,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.914,
+        -0.914,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EW",
+          "before": [
+            2.8877520245500508,
+            -0.025915530698067527
+          ],
+          "after": [
+            2.771479147560649,
+            -0.025915530698067533
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-81",
+          "EW-54"
+        ]
+      ],
+      "coordinateDistance": 1.0189236401476058,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.07257999999999998,
+      "profiles": [
+        {
+          "id": "NX-81",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.979371796335211,
+          "y": 0.6567753603877632,
+          "locality": "Sorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-54",
+          "state": "EW",
+          "type": 22,
+          "name": "Construction-led family exurbs",
+          "x": 2.976147308891144,
+          "y": 0.8680665386714413,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.914,
+        -0.914,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EW",
+          "before": [
+            2.8877520245500508,
+            -0.025915530698067527
+          ],
+          "after": [
+            2.771479147560649,
+            -0.025915530698067533
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-95",
+          "EW-54"
+        ]
+      ],
+      "coordinateDistance": 1.0236808504322656,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.16519000000000006,
+      "profiles": [
+        {
+          "id": "NX-95",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9806282036647889,
+          "y": 0.6296043935182868,
+          "locality": "West Cape",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-54",
+          "state": "EW",
+          "type": 22,
+          "name": "Construction-led family exurbs",
+          "x": 2.976147308891144,
+          "y": 0.8680665386714413,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.914,
+        -0.914,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EW",
+          "before": [
+            2.8877520245500508,
+            -0.025915530698067527
+          ],
+          "after": [
+            2.771479147560649,
+            -0.025915530698067533
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-64",
+          "EW-54"
+        ]
+      ],
+      "coordinateDistance": 1.0279154219433173,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.27652,
+      "profiles": [
+        {
+          "id": "NX-64",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9712105152626376,
+          "y": 0.6519365882236497,
+          "locality": "Lorenvia",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-54",
+          "state": "EW",
+          "type": 22,
+          "name": "Construction-led family exurbs",
+          "x": 2.976147308891144,
+          "y": 0.8680665386714413,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.914,
+        -0.914,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EW",
+          "before": [
+            2.8877520245500508,
+            -0.025915530698067527
+          ],
+          "after": [
+            2.771479147560649,
+            -0.025915530698067533
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-26",
+          "EW-54"
+        ]
+      ],
+      "coordinateDistance": 1.030102643672655,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.26659,
+      "profiles": [
+        {
+          "id": "NX-26",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9723535100454395,
+          "y": 0.6367454071241867,
+          "locality": "Ravenna",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-54",
+          "state": "EW",
+          "type": 22,
+          "name": "Construction-led family exurbs",
+          "x": 2.976147308891144,
+          "y": 0.8680665386714413,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.914,
+        -0.914,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EW",
+          "before": [
+            2.8877520245500508,
+            -0.025915530698067527
+          ],
+          "after": [
+            2.771479147560649,
+            -0.025915530698067533
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-11",
+          "EW-50"
+        ]
+      ],
+      "coordinateDistance": 1.0979035021939332,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.29473000000000005,
+      "profiles": [
+        {
+          "id": "NX-11",
+          "state": "NX",
+          "type": 16,
+          "name": "Skilled-trade and contractor suburbs",
+          "x": 1.9876464899545605,
+          "y": 0.6496343467818633,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EW-50",
+          "state": "EW",
+          "type": 22,
+          "name": "Construction-led family exurbs",
+          "x": 3.0363349749436814,
+          "y": 0.9746644401285041,
+          "locality": "Erewenton",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.914,
+        -0.914,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EW",
+          "before": [
+            2.8877520245500508,
+            -0.025915530698067527
+          ],
+          "after": [
+            2.771479147560649,
+            -0.025915530698067533
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-34",
+          "AX-30"
+        ]
+      ],
+      "coordinateDistance": 0.7308313003168173,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.23708000000000007,
+      "profiles": [
+        {
+          "id": "NX-34",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.958854452140679,
+          "y": -0.8720365944306877,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "AX-30",
+          "state": "AX",
+          "type": 14,
+          "name": "Established middle-income homeowner suburbs",
+          "x": 2.2957344181607655,
+          "y": -0.2234795205990353,
+          "locality": "Southport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.85,
+        -0.85,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2258420136591948,
+            -0.5801266632860791
+          ]
+        },
+        {
+          "state": "AX",
+          "before": [
+            0.9550577016367703,
+            -0.2357138005311226
+          ],
+          "after": [
+            0.9550577016367703,
+            -0.24073757738335555
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-34",
+          "EX-09"
+        ]
+      ],
+      "coordinateDistance": 0.6957538622409084,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.05019000000000007,
+      "profiles": [
+        {
+          "id": "NX-34",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.958854452140679,
+          "y": -0.8720365944306877,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-09",
+          "state": "EX",
+          "type": 14,
+          "name": "Established middle-income homeowner suburbs",
+          "x": 2.444810375639299,
+          "y": -0.37412066052241827,
+          "locality": "Extary Bay",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.7875,
+        -0.7875,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.5801266632860791
+          ]
+        },
+        {
+          "state": "EX",
+          "before": [
+            2.4868313595155858,
+            -0.12262304620833304
+          ],
+          "after": [
+            2.4427204459353744,
+            -0.12262304620833304
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-10",
+          "EX-09"
+        ]
+      ],
+      "coordinateDistance": 0.7124835646627108,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.1718900000000001,
+      "profiles": [
+        {
+          "id": "NX-10",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9449728164167674,
+          "y": -0.8818560682939713,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-09",
+          "state": "EX",
+          "type": 14,
+          "name": "Established middle-income homeowner suburbs",
+          "x": 2.444810375639299,
+          "y": -0.37412066052241827,
+          "locality": "Extary Bay",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.7875,
+        -0.7875,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.5801266632860791
+          ]
+        },
+        {
+          "state": "EX",
+          "before": [
+            2.4868313595155858,
+            -0.12262304620833304
+          ],
+          "after": [
+            2.4427204459353744,
+            -0.12262304620833304
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-09",
+          "EX-09"
+        ]
+      ],
+      "coordinateDistance": 0.7139725479379258,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.16892000000000007,
+      "profiles": [
+        {
+          "id": "NX-09",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9750271835832325,
+          "y": -0.9117641777999788,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-09",
+          "state": "EX",
+          "type": 14,
+          "name": "Established middle-income homeowner suburbs",
+          "x": 2.444810375639299,
+          "y": -0.37412066052241827,
+          "locality": "Extary Bay",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.7875,
+        -0.7875,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.5801266632860791
+          ]
+        },
+        {
+          "state": "EX",
+          "before": [
+            2.4868313595155858,
+            -0.12262304620833304
+          ],
+          "after": [
+            2.4427204459353744,
+            -0.12262304620833304
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-38",
+          "EX-09"
+        ]
+      ],
+      "coordinateDistance": 0.7305117331708753,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.03897000000000006,
+      "profiles": [
+        {
+          "id": "NX-38",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.961145547859321,
+          "y": -0.9215836516632624,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-09",
+          "state": "EX",
+          "type": 14,
+          "name": "Established middle-income homeowner suburbs",
+          "x": 2.444810375639299,
+          "y": -0.37412066052241827,
+          "locality": "Extary Bay",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.7875,
+        -0.7875,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.5801266632860791
+          ]
+        },
+        {
+          "state": "EX",
+          "before": [
+            2.4868313595155858,
+            -0.12262304620833304
+          ],
+          "after": [
+            2.4427204459353744,
+            -0.12262304620833304
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-09",
+          "EX-23"
+        ]
+      ],
+      "coordinateDistance": 1.048290433869315,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.14072000000000007,
+      "profiles": [
+        {
+          "id": "NX-09",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9750271835832325,
+          "y": -0.9117641777999788,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-23",
+          "state": "EX",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8914071925138947,
+          "y": -1.4208422788553636,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.565,
+        -0.565,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EX",
+          "before": [
+            2.4868313595155858,
+            -0.12262304620833304
+          ],
+          "after": [
+            2.400699462059088,
+            -0.12262304620833304
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-38",
+          "EX-23"
+        ]
+      ],
+      "coordinateDistance": 1.0557679216291684,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.010770000000000057,
+      "profiles": [
+        {
+          "id": "NX-38",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.961145547859321,
+          "y": -0.9215836516632624,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-23",
+          "state": "EX",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8914071925138947,
+          "y": -1.4208422788553636,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.565,
+        -0.565,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EX",
+          "before": [
+            2.4868313595155858,
+            -0.12262304620833304
+          ],
+          "after": [
+            2.400699462059088,
+            -0.12262304620833304
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-34",
+          "EX-23"
+        ]
+      ],
+      "coordinateDistance": 1.0820546625907728,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.021990000000000065,
+      "profiles": [
+        {
+          "id": "NX-34",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.958854452140679,
+          "y": -0.8720365944306877,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-23",
+          "state": "EX",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8914071925138947,
+          "y": -1.4208422788553636,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.565,
+        -0.565,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EX",
+          "before": [
+            2.4868313595155858,
+            -0.12262304620833304
+          ],
+          "after": [
+            2.400699462059088,
+            -0.12262304620833304
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-10",
+          "EX-23"
+        ]
+      ],
+      "coordinateDistance": 1.0891483661254273,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.1436900000000001,
+      "profiles": [
+        {
+          "id": "NX-10",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9449728164167674,
+          "y": -0.8818560682939713,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "EX-23",
+          "state": "EX",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8914071925138947,
+          "y": -1.4208422788553636,
+          "locality": "Westport",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.565,
+        -0.565,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "EX",
+          "before": [
+            2.4868313595155858,
+            -0.12262304620833304
+          ],
+          "after": [
+            2.400699462059088,
+            -0.12262304620833304
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-09",
+          "KR-07"
+        ]
+      ],
+      "coordinateDistance": 0.9655377665469334,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.0021200000000000108,
+      "profiles": [
+        {
+          "id": "NX-09",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9750271835832325,
+          "y": -0.9117641777999788,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "KR-07",
+          "state": "KR",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8547900284400356,
+          "y": -1.3096090161954324,
+          "locality": "Kroana City",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.2695,
+        -0.2695,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "KR",
+          "before": [
+            2.5262300035808143,
+            -0.7475100899757603
+          ],
+          "after": [
+            2.377955277315102,
+            -0.7475100899757603
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-38",
+          "KR-07"
+        ]
+      ],
+      "coordinateDistance": 0.9742505536014329,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.12783,
+      "profiles": [
+        {
+          "id": "NX-38",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.961145547859321,
+          "y": -0.9215836516632624,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "KR-07",
+          "state": "KR",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8547900284400356,
+          "y": -1.3096090161954324,
+          "locality": "Kroana City",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.2695,
+        -0.2695,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "KR",
+          "before": [
+            2.5262300035808143,
+            -0.7475100899757603
+          ],
+          "after": [
+            2.377955277315102,
+            -0.7475100899757603
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-34",
+          "KR-07"
+        ]
+      ],
+      "coordinateDistance": 0.9970808298066531,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.11660999999999999,
+      "profiles": [
+        {
+          "id": "NX-34",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.958854452140679,
+          "y": -0.8720365944306877,
+          "locality": "Pelagore",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "KR-07",
+          "state": "KR",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8547900284400356,
+          "y": -1.3096090161954324,
+          "locality": "Kroana City",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.2695,
+        -0.2695,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "KR",
+          "before": [
+            2.5262300035808143,
+            -0.7475100899757603
+          ],
+          "after": [
+            2.377955277315102,
+            -0.7475100899757603
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-10",
+          "KR-07"
+        ]
+      ],
+      "coordinateDistance": 1.0053556304771871,
+      "sameType": false,
+      "sameBaselineDistrictWinner": false,
+      "family": "Suburban / exurban",
+      "metroDifference": 0.005090000000000039,
+      "profiles": [
+        {
+          "id": "NX-10",
+          "state": "NX",
+          "type": 18,
+          "name": "Diverse first-home buyer suburbs",
+          "x": 1.9449728164167674,
+          "y": -0.8818560682939713,
+          "locality": "Wizlandia City",
+          "baselineWinner": "CA"
+        },
+        {
+          "id": "KR-07",
+          "state": "KR",
+          "type": 13,
+          "name": "Educated professional family suburbs",
+          "x": 2.8547900284400356,
+          "y": -1.3096090161954324,
+          "locality": "Kroana City",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.2695,
+        -0.2695,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.2414948240559047,
+            -0.6841511202035302
+          ]
+        },
+        {
+          "state": "KR",
+          "before": [
+            2.5262300035808143,
+            -0.7475100899757603
+          ],
+          "after": [
+            2.377955277315102,
+            -0.7475100899757603
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-43",
+          "AX-49"
+        ]
+      ],
+      "coordinateDistance": 0.08278379508287055,
+      "sameType": true,
+      "sameBaselineDistrictWinner": true,
+      "family": "Urban core",
+      "metroDifference": 0.00810999999999995,
+      "profiles": [
+        {
+          "id": "NX-43",
+          "state": "NX",
+          "type": 7,
+          "name": "Capital-city public-employment districts",
+          "x": 2.124428072309809,
+          "y": -1.6897753562969764,
+          "locality": "Lorenvia",
+          "baselineWinner": "LDP"
+        },
+        {
+          "id": "AX-49",
+          "state": "AX",
+          "type": 7,
+          "name": "Capital-city public-employment districts",
+          "x": 2.1612872749063996,
+          "y": -1.7639006280486953,
+          "locality": "Avondale",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.1975,
+        -0.1975,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.158618442032012,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-44",
+          "AX-49"
+        ]
+      ],
+      "coordinateDistance": 0.13799711779115573,
+      "sameType": true,
+      "sameBaselineDistrictWinner": true,
+      "family": "Urban core",
+      "metroDifference": 0.007110000000000061,
+      "profiles": [
+        {
+          "id": "NX-44",
+          "state": "NX",
+          "type": 7,
+          "name": "Capital-city public-employment districts",
+          "x": 2.0343714655142158,
+          "y": -1.7097196180452543,
+          "locality": "Lorenvia",
+          "baselineWinner": "LDP"
+        },
+        {
+          "id": "AX-49",
+          "state": "AX",
+          "type": 7,
+          "name": "Capital-city public-employment districts",
+          "x": 2.1612872749063996,
+          "y": -1.7639006280486953,
+          "locality": "Avondale",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.1975,
+        -0.1975,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.158618442032012,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-43",
+          "EW-40"
+        ]
+      ],
+      "coordinateDistance": 0.11986893484594222,
+      "sameType": true,
+      "sameBaselineDistrictWinner": true,
+      "family": "Urban core",
+      "metroDifference": 0.07225999999999999,
+      "profiles": [
+        {
+          "id": "NX-43",
+          "state": "NX",
+          "type": 7,
+          "name": "Capital-city public-employment districts",
+          "x": 2.124428072309809,
+          "y": -1.6897753562969764,
+          "locality": "Lorenvia",
+          "baselineWinner": "LDP"
+        },
+        {
+          "id": "EW-40",
+          "state": "EW",
+          "type": 7,
+          "name": "Capital-city public-employment districts",
+          "x": 2.133907679603833,
+          "y": -1.809268864851424,
+          "locality": "Erewenton",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.059,
+        -0.059,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.1449286443807285,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-44",
+          "EW-40"
+        ]
+      ],
+      "coordinateDistance": 0.14077467973669763,
+      "sameType": true,
+      "sameBaselineDistrictWinner": true,
+      "family": "Urban core",
+      "metroDifference": 0.05703999999999998,
+      "profiles": [
+        {
+          "id": "NX-44",
+          "state": "NX",
+          "type": 7,
+          "name": "Capital-city public-employment districts",
+          "x": 2.0343714655142158,
+          "y": -1.7097196180452543,
+          "locality": "Lorenvia",
+          "baselineWinner": "LDP"
+        },
+        {
+          "id": "EW-40",
+          "state": "EW",
+          "type": 7,
+          "name": "Capital-city public-employment districts",
+          "x": 2.133907679603833,
+          "y": -1.809268864851424,
+          "locality": "Erewenton",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.059,
+        -0.059,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.1449286443807285,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "NX-28",
+          "AX-49"
+        ]
+      ],
+      "coordinateDistance": 0.048652583652532506,
+      "sameType": true,
+      "sameBaselineDistrictWinner": true,
+      "family": "Urban core",
+      "metroDifference": 0.020499999999999963,
+      "profiles": [
+        {
+          "id": "NX-28",
+          "state": "NX",
+          "type": 7,
+          "name": "Capital-city public-employment districts",
+          "x": 2.1559496091576245,
+          "y": -1.7155417279327805,
+          "locality": "Ravenna",
+          "baselineWinner": "LDP"
+        },
+        {
+          "id": "AX-49",
+          "state": "AX",
+          "type": 7,
+          "name": "Capital-city public-employment districts",
+          "x": 2.1612872749063996,
+          "y": -1.7639006280486953,
+          "locality": "Avondale",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.0355,
+        -0.0355,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "NX",
+          "before": [
+            2.1401888407337166,
+            -0.6841511202035302
+          ],
+          "after": [
+            2.142857673608104,
+            -0.6841511202035302
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "LQ-09",
+          "LX-11"
+        ]
+      ],
+      "coordinateDistance": 0.31970691413800495,
+      "sameType": true,
+      "sameBaselineDistrictWinner": true,
+      "family": "Rural / resource",
+      "metroDifference": 0.20363,
+      "profiles": [
+        {
+          "id": "LQ-09",
+          "state": "LQ",
+          "type": 33,
+          "name": "Productive commercial farming districts",
+          "x": 3.306154499585068,
+          "y": 1.3131918997600467,
+          "locality": "Luqur hinterland",
+          "baselineWinner": "LDP"
+        },
+        {
+          "id": "LX-11",
+          "state": "LX",
+          "type": 33,
+          "name": "Productive commercial farming districts",
+          "x": 3.3953268792487954,
+          "y": 1.620211113576957,
+          "locality": "Laxburg hinterland",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.013,
+        0.5285,
+        0,
+        -0.5415,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "LX",
+          "before": [
+            1.2306463717241565,
+            1.4647330203751014
+          ],
+          "after": [
+            1.2306463717241565,
+            1.3461686403290933
+          ]
+        }
+      ]
+    },
+    {
+      "pairs": [
+        [
+          "QL-07",
+          "LX-16"
+        ]
+      ],
+      "coordinateDistance": 0.33960556690079763,
+      "sameType": true,
+      "sameBaselineDistrictWinner": true,
+      "family": "Rural / resource",
+      "metroDifference": 0.10323,
+      "profiles": [
+        {
+          "id": "QL-07",
+          "state": "QL",
+          "type": 34,
+          "name": "Mixed farming and rural-service districts",
+          "x": 2.666838809220522,
+          "y": 1.2050588103325583,
+          "locality": "Quelor hinterland",
+          "baselineWinner": "LDP"
+        },
+        {
+          "id": "LX-16",
+          "state": "LX",
+          "type": 34,
+          "name": "Mixed farming and rural-service districts",
+          "x": 2.763263520858075,
+          "y": 1.5306877649045172,
+          "locality": "Laxburg hinterland",
+          "baselineWinner": "LDP"
+        }
+      ],
+      "screenSenateDelta": [
+        0.013,
+        0.5285,
+        0,
+        -0.5415,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "changedStateMedians": [
+        {
+          "state": "LX",
+          "before": [
+            1.2306463717241565,
+            1.4647330203751014
+          ],
+          "after": [
+            1.2306463717241565,
+            1.3461686403290933
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -5,8 +5,8 @@ function validateTotal(total){
 }
 function hemicycle(total){
   validateTotal(total);
-  const large=total>400,rows=Math.min(total,large?14:10);
-  const innerRadius=large?136:156,rowStep=large?14:18;
+  const senate=total===120,large=total>400,rows=Math.min(total,senate?6:large?14:10);
+  const innerRadius=senate?100:large?136:156,rowStep=senate?26:large?14:18;
   const radii=Array.from({length:rows},(_,row)=>innerRadius+row*rowStep);
   const sum=radii.reduce((a,b)=>a+b,0),quotas=radii.map(r=>total*r/sum),rowCounts=quotas.map(Math.floor);
   const remaining=total-rowCounts.reduce((a,b)=>a+b,0);
@@ -22,7 +22,7 @@ function hemicycle(total){
     }
   }
   dots.sort((a,b)=>a.angleKey-b.angleKey||a.row-b.row);
-  return{width:900,height:365,radius:large?4.6:6.1,rows,rowCounts,rowStep,dots};
+  return{width:900,height:senate?386:365,radius:senate?10.8:large?4.6:6.1,rows,rowCounts,rowStep,dots,...(senate?{viewBox:'200 92 500 294'}:{})};
 }
 function seatAssignments(layout,counts){
   if(counts.some(n=>!Number.isInteger(n)||n<0)||counts.reduce((a,b)=>a+b,0)!==layout.dots.length)throw new Error('Party seats must match the diagram total.');

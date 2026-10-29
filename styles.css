@@ -51,6 +51,8 @@ button.party-line.is-muted:hover,button.party-line.is-muted:focus-visible{opacit
 .projection-meta small{font-size:9px}
 .assembly-content{display:grid;grid-template-columns:minmax(285px,.9fr) minmax(0,1.5fr);gap:22px;align-items:center;margin:20px 0 14px}
 .assembly-drawing{min-width:0}
+.senate-chamber .assembly-drawing{width:100%;max-width:560px;justify-self:center}
+.senate-chamber #hemicycle svg{max-height:330px}
 .selection-summary{--summary-color:var(--navy);border:1px solid var(--border);border-left:5px solid var(--summary-color);border-radius:9px;background:var(--surface);padding:20px 18px;box-shadow:0 2px 8px #20253505;min-width:0}
 .summary-header{display:grid;grid-template-columns:70px minmax(0,1fr);gap:14px;align-items:center}
 .summary-badge{width:70px;height:82px;background:var(--accent);padding:4px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
@@ -109,6 +111,10 @@ button.party-line.is-muted:hover,button.party-line.is-muted:focus-visible{opacit
 #panel-overview .ideology{text-align:left}
 
 /* Senate calendar, state outlines and editable election cohorts. */
+.senate-history-table tbody th{font-size:12px;font-weight:400;color:var(--text);text-transform:none;letter-spacing:normal}
+.senate-history-party{display:inline-flex;align-items:center;gap:8px}
+.senate-history-party>strong{font-weight:700}
+.senate-history-table .senate-history-party .party-name{margin:0;font-size:11px;color:var(--muted);font-weight:400}
 .component-selector{display:block}.component-selector>.segmented{display:flex;overflow-x:auto;max-width:100%;min-width:0}.component-selector>.segmented button{flex:1 0 auto;white-space:nowrap}.component-selector>.hint{text-align:left;margin:9px 0 0}
 .election-clock{display:flex;flex-direction:column;gap:5px;padding:13px 14px;margin:8px 0 15px;background:var(--soft);border:1px solid var(--border);border-radius:7px;font-size:11px}.election-clock>strong{font-size:13px}.election-clock>.hint{font-size:10px;line-height:1.5}.election-clock>span:not(.hint){color:var(--navy);font-weight:600}
 .range-wrap{position:relative}.assembly-marker{position:absolute;left:8px;right:8px;top:50%;height:24px;transform:translateY(-50%);pointer-events:none;z-index:2}.assembly-marker:after{content:"";position:absolute;left:var(--marker-position);height:24px;width:3px;background:#8b9099;transform:translateX(-50%);box-shadow:0 0 0 1px var(--surface);border-radius:1px}.run-row>.primary{font-size:10px;white-space:normal}

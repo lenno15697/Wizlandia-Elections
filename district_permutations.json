@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 11,
   "orderedSwaps": [
     [
       "NX-59",
@@ -36,6 +36,22 @@
     [
       "KR-01",
       "KR-16"
+    ],
+    [
+      "LQ-13",
+      "EW-24"
+    ],
+    [
+      "NX-43",
+      "AX-49"
+    ],
+    [
+      "NX-95",
+      "ET-32"
+    ],
+    [
+      "QL-10",
+      "WT-10"
     ]
   ],
   "simultaneousReceives": {
@@ -51,6 +67,7 @@
     "NX-35": "NX-50",
     "NX-41": "NX-52",
     "NX-42": "NX-06",
+    "NX-43": "KR-14",
     "NX-44": "NX-51",
     "NX-50": "ET-23",
     "NX-51": "NX-53",
@@ -58,15 +75,18 @@
     "NX-53": "NX-44",
     "NX-59": "NX-42",
     "NX-77": "ET-21",
+    "NX-95": "ET-32",
     "EW-04": "EW-06",
     "EW-06": "KR-22",
+    "EW-24": "LQ-13",
     "EW-58": "WT-14",
     "AX-15": "AX-18",
     "AX-18": "ET-01",
-    "AX-49": "KR-14",
+    "AX-49": "NX-43",
     "ET-01": "AX-15",
     "ET-21": "NX-77",
     "ET-23": "EX-11",
+    "ET-32": "NX-95",
     "EX-11": "NX-41",
     "KR-01": "KR-16",
     "KR-12": "KR-13",
@@ -76,14 +96,17 @@
     "KR-18": "LX-21",
     "KR-22": "EW-04",
     "LX-21": "KR-18",
+    "LQ-13": "EW-24",
     "LQ-16": "WT-11",
     "WT-02": "WT-15",
     "WT-09": "WT-12",
+    "WT-10": "QL-10",
     "WT-11": "LQ-16",
     "WT-12": "WT-09",
     "WT-14": "EW-58",
     "WT-15": "WT-02",
     "QL-05": "QL-12",
+    "QL-10": "WT-10",
     "QL-12": "QL-05"
   },
   "politicalFields": [
@@ -121,7 +144,7 @@
     "coldNorthShare"
   ],
   "identityHash": "cabd9271bb3b2016407f85e4ff1c98a16b6ee1a8ffdb2c741fb8813eeb2ff4c5",
-  "unaffectedPoliticalHash": "0ca26ff543ff1aaf0aa9d19a8eb19f95912b0c9f399675a6bf01cfe39a28de32",
+  "unaffectedPoliticalHash": "dca18f1a3516b2c2d3994f301f28223f2550a5d1989ca2265ead10b8bdfbd8ba",
   "typeCountsBefore": {
     "1": 8,
     "2": 8,
@@ -221,7 +244,7 @@
     },
     {
       "district": "AX-49",
-      "receivesFrom": "KR-14",
+      "receivesFrom": "NX-43",
       "before": {
         "type": 6,
         "typeName": "Mixed urban service-worker districts",
@@ -235,9 +258,9 @@
         "type": 7,
         "typeName": "Capital-city public-employment districts",
         "family": "Urban core",
-        "legacyId": "07-06",
-        "x": 2.1612872749063996,
-        "y": -1.7639006280486953,
+        "legacyId": "07-02",
+        "x": 2.124428072309809,
+        "y": -1.6897753562969764,
         "baselineWinner": "LDP"
       }
     },
@@ -308,6 +331,28 @@
       }
     },
     {
+      "district": "ET-32",
+      "receivesFrom": "NX-95",
+      "before": {
+        "type": 17,
+        "typeName": "Rapid-growth outer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "17-11",
+        "x": 2.5369871291049275,
+        "y": 0.547416247049181,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 16,
+        "typeName": "Skilled-trade and contractor suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "16-08",
+        "x": 1.9806282036647889,
+        "y": 0.6296043935182868,
+        "baselineWinner": "CA"
+      }
+    },
+    {
       "district": "EW-04",
       "receivesFrom": "EW-06",
       "before": {
@@ -349,6 +394,28 @@
         "x": 3.5038716165622317,
         "y": 1.4379506978752241,
         "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "EW-24",
+      "receivesFrom": "LQ-13",
+      "before": {
+        "type": 14,
+        "typeName": "Established middle-income homeowner suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "14-09",
+        "x": 2.5239976428701807,
+        "y": -0.314079538268053,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 20,
+        "typeName": "Older, settled middle-class suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "20-06",
+        "x": 1.5141716673931773,
+        "y": 0.808963506856869,
+        "baselineWinner": "CA"
       }
     },
     {
@@ -550,6 +617,28 @@
       }
     },
     {
+      "district": "LQ-13",
+      "receivesFrom": "EW-24",
+      "before": {
+        "type": 20,
+        "typeName": "Older, settled middle-class suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "20-06",
+        "x": 1.5141716673931773,
+        "y": 0.808963506856869,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 14,
+        "typeName": "Established middle-income homeowner suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "14-09",
+        "x": 2.5239976428701807,
+        "y": -0.314079538268053,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
       "district": "LQ-16",
       "receivesFrom": "WT-11",
       "before": {
@@ -678,6 +767,28 @@
         "legacyId": "01-02",
         "x": 4.134450994027217,
         "y": -1.8263125870366268,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
+      "district": "NX-43",
+      "receivesFrom": "KR-14",
+      "before": {
+        "type": 7,
+        "typeName": "Capital-city public-employment districts",
+        "family": "Urban core",
+        "legacyId": "07-02",
+        "x": 2.124428072309809,
+        "y": -1.6897753562969764,
+        "baselineWinner": "LDP"
+      },
+      "after": {
+        "type": 7,
+        "typeName": "Capital-city public-employment districts",
+        "family": "Urban core",
+        "legacyId": "07-06",
+        "x": 2.1612872749063996,
+        "y": -1.7639006280486953,
         "baselineWinner": "LDP"
       }
     },
@@ -836,6 +947,28 @@
       }
     },
     {
+      "district": "NX-95",
+      "receivesFrom": "ET-32",
+      "before": {
+        "type": 16,
+        "typeName": "Skilled-trade and contractor suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "16-08",
+        "x": 1.9806282036647889,
+        "y": 0.6296043935182868,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 17,
+        "typeName": "Rapid-growth outer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "17-11",
+        "x": 2.5369871291049275,
+        "y": 0.547416247049181,
+        "baselineWinner": "LDP"
+      }
+    },
+    {
       "district": "QL-05",
       "receivesFrom": "QL-12",
       "before": {
@@ -854,6 +987,28 @@
         "legacyId": "06-10",
         "x": -0.27476919900958213,
         "y": -0.5756632685358523,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "QL-10",
+      "receivesFrom": "WT-10",
+      "before": {
+        "type": 15,
+        "typeName": "Mixed-income commuter suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "15-16",
+        "x": 1.024171667393177,
+        "y": -0.5210364931431309,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 18,
+        "typeName": "Diverse first-home buyer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "18-06",
+        "x": 1.978196139716969,
+        "y": -0.8750050663077563,
         "baselineWinner": "CA"
       }
     },
@@ -920,6 +1075,28 @@
         "legacyId": "18-07",
         "x": 1.9917142212074612,
         "y": -0.8925430194386453,
+        "baselineWinner": "CA"
+      }
+    },
+    {
+      "district": "WT-10",
+      "receivesFrom": "QL-10",
+      "before": {
+        "type": 18,
+        "typeName": "Diverse first-home buyer suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "18-06",
+        "x": 1.978196139716969,
+        "y": -0.8750050663077563,
+        "baselineWinner": "CA"
+      },
+      "after": {
+        "type": 15,
+        "typeName": "Mixed-income commuter suburbs",
+        "family": "Suburban / exurban",
+        "legacyId": "15-16",
+        "x": 1.024171667393177,
+        "y": -0.5210364931431309,
         "baselineWinner": "CA"
       }
     },
@@ -1025,59 +1202,159 @@
     ]
   },
   "latestPermutation": {
-    "version": 9,
+    "version": 11,
     "orderedSwaps": [
       [
-        "EW-58",
-        "WT-14"
+        "NX-43",
+        "AX-49"
+      ],
+      [
+        "NX-95",
+        "ET-32"
+      ],
+      [
+        "QL-10",
+        "WT-10"
       ]
     ],
     "simultaneousReceives": {
-      "EW-58": "WT-14",
-      "WT-14": "EW-58"
+      "NX-43": "AX-49",
+      "AX-49": "NX-43",
+      "NX-95": "ET-32",
+      "ET-32": "NX-95",
+      "QL-10": "WT-10",
+      "WT-10": "QL-10"
     },
     "changes": [
       {
-        "district": "EW-58",
-        "receivesFrom": "WT-14",
+        "district": "NX-43",
+        "receivesFrom": "AX-49",
         "before": {
-          "type": 23,
-          "typeName": "Diversified regional-city centres",
-          "family": "Regional city / town",
-          "legacyId": "23-09",
-          "x": 0.86581734508351,
-          "y": -0.4634489502949686,
+          "type": 7,
+          "typeName": "Capital-city public-employment districts",
+          "family": "Urban core",
+          "legacyId": "07-02",
+          "x": 2.124428072309809,
+          "y": -1.6897753562969764,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 7,
+          "typeName": "Capital-city public-employment districts",
+          "family": "Urban core",
+          "legacyId": "07-06",
+          "x": 2.1612872749063996,
+          "y": -1.7639006280486953,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "AX-49",
+        "receivesFrom": "NX-43",
+        "before": {
+          "type": 7,
+          "typeName": "Capital-city public-employment districts",
+          "family": "Urban core",
+          "legacyId": "07-06",
+          "x": 2.1612872749063996,
+          "y": -1.7639006280486953,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 7,
+          "typeName": "Capital-city public-employment districts",
+          "family": "Urban core",
+          "legacyId": "07-02",
+          "x": 2.124428072309809,
+          "y": -1.6897753562969764,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "NX-95",
+        "receivesFrom": "ET-32",
+        "before": {
+          "type": 16,
+          "typeName": "Skilled-trade and contractor suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "16-08",
+          "x": 1.9806282036647889,
+          "y": 0.6296043935182868,
           "baselineWinner": "CA"
         },
         "after": {
-          "type": 28,
-          "typeName": "Regional university and college towns",
-          "family": "Regional city / town",
-          "legacyId": "28-08",
-          "x": -0.1581675476715989,
-          "y": -2.2685847336709584,
+          "type": 17,
+          "typeName": "Rapid-growth outer suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "17-11",
+          "x": 2.5369871291049275,
+          "y": 0.547416247049181,
+          "baselineWinner": "LDP"
+        }
+      },
+      {
+        "district": "ET-32",
+        "receivesFrom": "NX-95",
+        "before": {
+          "type": 17,
+          "typeName": "Rapid-growth outer suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "17-11",
+          "x": 2.5369871291049275,
+          "y": 0.547416247049181,
+          "baselineWinner": "LDP"
+        },
+        "after": {
+          "type": 16,
+          "typeName": "Skilled-trade and contractor suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "16-08",
+          "x": 1.9806282036647889,
+          "y": 0.6296043935182868,
           "baselineWinner": "CA"
         }
       },
       {
-        "district": "WT-14",
-        "receivesFrom": "EW-58",
+        "district": "QL-10",
+        "receivesFrom": "WT-10",
         "before": {
-          "type": 28,
-          "typeName": "Regional university and college towns",
-          "family": "Regional city / town",
-          "legacyId": "28-08",
-          "x": -0.1581675476715989,
-          "y": -2.2685847336709584,
+          "type": 15,
+          "typeName": "Mixed-income commuter suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "15-16",
+          "x": 1.024171667393177,
+          "y": -0.5210364931431309,
           "baselineWinner": "CA"
         },
         "after": {
-          "type": 23,
-          "typeName": "Diversified regional-city centres",
-          "family": "Regional city / town",
-          "legacyId": "23-09",
-          "x": 0.86581734508351,
-          "y": -0.4634489502949686,
+          "type": 18,
+          "typeName": "Diverse first-home buyer suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "18-06",
+          "x": 1.978196139716969,
+          "y": -0.8750050663077563,
+          "baselineWinner": "CA"
+        }
+      },
+      {
+        "district": "WT-10",
+        "receivesFrom": "QL-10",
+        "before": {
+          "type": 18,
+          "typeName": "Diverse first-home buyer suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "18-06",
+          "x": 1.978196139716969,
+          "y": -0.8750050663077563,
+          "baselineWinner": "CA"
+        },
+        "after": {
+          "type": 15,
+          "typeName": "Mixed-income commuter suburbs",
+          "family": "Suburban / exurban",
+          "legacyId": "15-16",
+          "x": 1.024171667393177,
+          "y": -0.5210364931431309,
           "baselineWinner": "CA"
         }
       }
@@ -1638,6 +1915,224 @@
             "legacyId": "23-09",
             "x": 0.86581734508351,
             "y": -0.4634489502949686,
+            "baselineWinner": "CA"
+          }
+        }
+      ]
+    },
+    {
+      "version": 10,
+      "orderedSwaps": [
+        [
+          "LQ-13",
+          "EW-24"
+        ]
+      ],
+      "simultaneousReceives": {
+        "LQ-13": "EW-24",
+        "EW-24": "LQ-13"
+      },
+      "changes": [
+        {
+          "district": "LQ-13",
+          "receivesFrom": "EW-24",
+          "before": {
+            "type": 20,
+            "typeName": "Older, settled middle-class suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "20-06",
+            "x": 1.5141716673931773,
+            "y": 0.808963506856869,
+            "baselineWinner": "CA"
+          },
+          "after": {
+            "type": 14,
+            "typeName": "Established middle-income homeowner suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "14-09",
+            "x": 2.5239976428701807,
+            "y": -0.314079538268053,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "EW-24",
+          "receivesFrom": "LQ-13",
+          "before": {
+            "type": 14,
+            "typeName": "Established middle-income homeowner suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "14-09",
+            "x": 2.5239976428701807,
+            "y": -0.314079538268053,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 20,
+            "typeName": "Older, settled middle-class suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "20-06",
+            "x": 1.5141716673931773,
+            "y": 0.808963506856869,
+            "baselineWinner": "CA"
+          }
+        }
+      ]
+    },
+    {
+      "version": 11,
+      "orderedSwaps": [
+        [
+          "NX-43",
+          "AX-49"
+        ],
+        [
+          "NX-95",
+          "ET-32"
+        ],
+        [
+          "QL-10",
+          "WT-10"
+        ]
+      ],
+      "simultaneousReceives": {
+        "NX-43": "AX-49",
+        "AX-49": "NX-43",
+        "NX-95": "ET-32",
+        "ET-32": "NX-95",
+        "QL-10": "WT-10",
+        "WT-10": "QL-10"
+      },
+      "changes": [
+        {
+          "district": "NX-43",
+          "receivesFrom": "AX-49",
+          "before": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-02",
+            "x": 2.124428072309809,
+            "y": -1.6897753562969764,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-06",
+            "x": 2.1612872749063996,
+            "y": -1.7639006280486953,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "AX-49",
+          "receivesFrom": "NX-43",
+          "before": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-06",
+            "x": 2.1612872749063996,
+            "y": -1.7639006280486953,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 7,
+            "typeName": "Capital-city public-employment districts",
+            "family": "Urban core",
+            "legacyId": "07-02",
+            "x": 2.124428072309809,
+            "y": -1.6897753562969764,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "NX-95",
+          "receivesFrom": "ET-32",
+          "before": {
+            "type": 16,
+            "typeName": "Skilled-trade and contractor suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "16-08",
+            "x": 1.9806282036647889,
+            "y": 0.6296043935182868,
+            "baselineWinner": "CA"
+          },
+          "after": {
+            "type": 17,
+            "typeName": "Rapid-growth outer suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "17-11",
+            "x": 2.5369871291049275,
+            "y": 0.547416247049181,
+            "baselineWinner": "LDP"
+          }
+        },
+        {
+          "district": "ET-32",
+          "receivesFrom": "NX-95",
+          "before": {
+            "type": 17,
+            "typeName": "Rapid-growth outer suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "17-11",
+            "x": 2.5369871291049275,
+            "y": 0.547416247049181,
+            "baselineWinner": "LDP"
+          },
+          "after": {
+            "type": 16,
+            "typeName": "Skilled-trade and contractor suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "16-08",
+            "x": 1.9806282036647889,
+            "y": 0.6296043935182868,
+            "baselineWinner": "CA"
+          }
+        },
+        {
+          "district": "QL-10",
+          "receivesFrom": "WT-10",
+          "before": {
+            "type": 15,
+            "typeName": "Mixed-income commuter suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "15-16",
+            "x": 1.024171667393177,
+            "y": -0.5210364931431309,
+            "baselineWinner": "CA"
+          },
+          "after": {
+            "type": 18,
+            "typeName": "Diverse first-home buyer suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "18-06",
+            "x": 1.978196139716969,
+            "y": -0.8750050663077563,
+            "baselineWinner": "CA"
+          }
+        },
+        {
+          "district": "WT-10",
+          "receivesFrom": "QL-10",
+          "before": {
+            "type": 18,
+            "typeName": "Diverse first-home buyer suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "18-06",
+            "x": 1.978196139716969,
+            "y": -0.8750050663077563,
+            "baselineWinner": "CA"
+          },
+          "after": {
+            "type": 15,
+            "typeName": "Mixed-income commuter suburbs",
+            "family": "Suburban / exurban",
+            "legacyId": "15-16",
+            "x": 1.024171667393177,
+            "y": -0.5210364931431309,
             "baselineWinner": "CA"
           }
         }

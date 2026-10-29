@@ -2,6 +2,7 @@
 const assert=require('node:assert/strict'),crypto=require('node:crypto');
 const D=require('../data.js'),E=require('../engine.js'),H=require('../district-geography.js'),snapshot=require('../analysis/rural_type_shift_before.json');
 const deltas=new Map([[35,[0,.4]],[36,[0,.5]],[39,[-.7,0]],[49,[.5,0]]]);
+const priorGeography=require('./geography-before-senate');
 for(const [key,value] of Object.entries(snapshot.beforeData))if(key!=='types')assert.deepEqual(D[key],value,'Party positions, PR electorate, baseline and global spread must remain unchanged');
 const sourceTypes=D.sourceTypes||D.types,sourceRows=E.districts(D.spread,false);
 for(const t of sourceTypes){
@@ -22,9 +23,9 @@ function digest(rows,keys){
  }
  return hash.digest('hex');
 }
-assert.equal(digest(H.districts,snapshot.identityFields),snapshot.identityHash,'All 400 IDs, types, populations, locality assignments, geometry and baseline winners must remain unchanged');
-const sourceById=new Map(sourceRows.map(d=>[d.id,d]));
-const sourceGeography=H.districts.map(d=>({...d,x:sourceById.get(d.id).x,y:sourceById.get(d.id).y}));
+assert.equal(digest(priorGeography,snapshot.identityFields),snapshot.identityHash,'The earlier rural shift preserved identities before the later authorized profile swap');
+const sourceByLegacy=new Map(sourceRows.map(d=>[d.legacyId,d]));
+const sourceGeography=priorGeography.map(d=>({...d,x:sourceByLegacy.get(d.legacyId).x,y:sourceByLegacy.get(d.legacyId).y}));
 assert.equal(digest(sourceGeography.filter(d=>!deltas.has(d.type)),['id','x','y']),snapshot.untouchedPositionHash,'All 376 other source positions must retain the earlier model settings before the later economic compression');
 assert.equal(snapshot.oldDistricts.length,24);assert.equal(snapshot.newDistricts.length,24);
 assert.ok(snapshot.changes.find(t=>t.type===36).previousMaximumOffset<.05);

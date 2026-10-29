@@ -6,7 +6,12 @@ assert.equal(S.median([9,1,3]),3);assert.equal(S.median([10,-4,2,4]),3);
 assert.throws(()=>S.median([]));
 assert.deepEqual(S.election(base).map(s=>D.parties[s.winner].code),['LDP','LDP','CA','CA','LDP','LDP','CA','LDP','CA','LDP','CA','CON']);
 assert.equal(session.counter,1);assert.equal(session.cohorts.length,10);
-assert.deepEqual(S.seats(session),[47,63,0,10,0,0,0,0,0]);
+assert.deepEqual(S.seats(session),[56,54,0,10,0,0,0,0,0]);
+for(let i=0;i<session.cohorts.length;i++){
+ const c=session.cohorts[i],settings=c.settings;
+ const expected=Object.fromEntries(S.election(E.evaluate(settings.economic,settings.cultural,settings.variance)).map(s=>[s.code,s.winner]));
+ assert.deepEqual(c.winners,expected,'All historical checkmarks must reflect the current district map and original historical settings');
+}
 const random=new E.Mulberry32(20261029);
 for(let i=0;i<100;i++){
   const s=E.drawShocks(random),r=E.evaluate(s.economic,s.cultural,s.variance);

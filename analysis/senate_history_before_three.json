@@ -1,0 +1,872 @@
+{
+  "sourcePermutationVersion": 10,
+  "partyOrder": [
+    "LDP",
+    "CA",
+    "SDP",
+    "CON",
+    "GRN",
+    "NF",
+    "LIB",
+    "UPL",
+    "SWP"
+  ],
+  "defaultHistory": {
+    "counter": 1,
+    "assemblyCounter": 1,
+    "assembly": {
+      "economic": 0,
+      "cultural": 0,
+      "variance": 1,
+      "parties": [
+        {
+          "code": "LDP",
+          "x": 4,
+          "y": -0.5
+        },
+        {
+          "code": "CA",
+          "x": 0,
+          "y": -0.5
+        },
+        {
+          "code": "SDP",
+          "x": -3.5,
+          "y": -1.5
+        },
+        {
+          "code": "CON",
+          "x": 2,
+          "y": 4.5
+        },
+        {
+          "code": "GRN",
+          "x": 0,
+          "y": -5
+        },
+        {
+          "code": "NF",
+          "x": 0,
+          "y": 8
+        },
+        {
+          "code": "LIB",
+          "x": 8,
+          "y": -3
+        },
+        {
+          "code": "UPL",
+          "x": -7.5,
+          "y": -8
+        },
+        {
+          "code": "SWP",
+          "x": -9.5,
+          "y": -8
+        }
+      ]
+    },
+    "cohorts": [
+      {
+        "winners": {
+          "NX": 0,
+          "EW": 0,
+          "AX": 1,
+          "ET": 1,
+          "EX": 0,
+          "KR": 0,
+          "LX": 1,
+          "LQ": 0,
+          "WT": 1,
+          "AK": 0,
+          "QL": 1,
+          "IL": 3
+        },
+        "settings": {
+          "economic": 0,
+          "cultural": 0,
+          "variance": 1,
+          "parties": [
+            {
+              "code": "LDP",
+              "x": 4,
+              "y": -0.5
+            },
+            {
+              "code": "CA",
+              "x": 0,
+              "y": -0.5
+            },
+            {
+              "code": "SDP",
+              "x": -3.5,
+              "y": -1.5
+            },
+            {
+              "code": "CON",
+              "x": 2,
+              "y": 4.5
+            },
+            {
+              "code": "GRN",
+              "x": 0,
+              "y": -5
+            },
+            {
+              "code": "NF",
+              "x": 0,
+              "y": 8
+            },
+            {
+              "code": "LIB",
+              "x": 8,
+              "y": -3
+            },
+            {
+              "code": "UPL",
+              "x": -7.5,
+              "y": -8
+            },
+            {
+              "code": "SWP",
+              "x": -9.5,
+              "y": -8
+            }
+          ]
+        },
+        "source": "baseline"
+      },
+      {
+        "winners": {
+          "NX": 1,
+          "EW": 0,
+          "AX": 1,
+          "ET": 1,
+          "EX": 0,
+          "KR": 0,
+          "LX": 1,
+          "LQ": 0,
+          "WT": 1,
+          "AK": 0,
+          "QL": 1,
+          "IL": 3
+        },
+        "settings": {
+          "economic": -0.3,
+          "cultural": 0.1,
+          "variance": 1.08,
+          "parties": [
+            {
+              "code": "LDP",
+              "x": 4,
+              "y": -0.5
+            },
+            {
+              "code": "CA",
+              "x": 0,
+              "y": -0.5
+            },
+            {
+              "code": "SDP",
+              "x": -3.5,
+              "y": -1.5
+            },
+            {
+              "code": "CON",
+              "x": 2,
+              "y": 4.5
+            },
+            {
+              "code": "GRN",
+              "x": 0,
+              "y": -5
+            },
+            {
+              "code": "NF",
+              "x": 0,
+              "y": 8
+            },
+            {
+              "code": "LIB",
+              "x": 8,
+              "y": -3
+            },
+            {
+              "code": "UPL",
+              "x": -7.5,
+              "y": -8
+            },
+            {
+              "code": "SWP",
+              "x": -9.5,
+              "y": -8
+            }
+          ]
+        },
+        "source": "default"
+      },
+      {
+        "winners": {
+          "NX": 0,
+          "EW": 0,
+          "AX": 1,
+          "ET": 1,
+          "EX": 0,
+          "KR": 0,
+          "LX": 1,
+          "LQ": 0,
+          "WT": 1,
+          "AK": 0,
+          "QL": 1,
+          "IL": 3
+        },
+        "settings": {
+          "economic": 0.26,
+          "cultural": -0.12,
+          "variance": 0.94,
+          "parties": [
+            {
+              "code": "LDP",
+              "x": 4,
+              "y": -0.5
+            },
+            {
+              "code": "CA",
+              "x": 0,
+              "y": -0.5
+            },
+            {
+              "code": "SDP",
+              "x": -3.5,
+              "y": -1.5
+            },
+            {
+              "code": "CON",
+              "x": 2,
+              "y": 4.5
+            },
+            {
+              "code": "GRN",
+              "x": 0,
+              "y": -5
+            },
+            {
+              "code": "NF",
+              "x": 0,
+              "y": 8
+            },
+            {
+              "code": "LIB",
+              "x": 8,
+              "y": -3
+            },
+            {
+              "code": "UPL",
+              "x": -7.5,
+              "y": -8
+            },
+            {
+              "code": "SWP",
+              "x": -9.5,
+              "y": -8
+            }
+          ]
+        },
+        "source": "default"
+      },
+      {
+        "winners": {
+          "NX": 1,
+          "EW": 0,
+          "AX": 1,
+          "ET": 1,
+          "EX": 1,
+          "KR": 0,
+          "LX": 1,
+          "LQ": 0,
+          "WT": 1,
+          "AK": 0,
+          "QL": 1,
+          "IL": 3
+        },
+        "settings": {
+          "economic": -0.52,
+          "cultural": 0.16,
+          "variance": 1.14,
+          "parties": [
+            {
+              "code": "LDP",
+              "x": 4,
+              "y": -0.5
+            },
+            {
+              "code": "CA",
+              "x": 0,
+              "y": -0.5
+            },
+            {
+              "code": "SDP",
+              "x": -3.5,
+              "y": -1.5
+            },
+            {
+              "code": "CON",
+              "x": 2,
+              "y": 4.5
+            },
+            {
+              "code": "GRN",
+              "x": 0,
+              "y": -5
+            },
+            {
+              "code": "NF",
+              "x": 0,
+              "y": 8
+            },
+            {
+              "code": "LIB",
+              "x": 8,
+              "y": -3
+            },
+            {
+              "code": "UPL",
+              "x": -7.5,
+              "y": -8
+            },
+            {
+              "code": "SWP",
+              "x": -9.5,
+              "y": -8
+            }
+          ]
+        },
+        "source": "default"
+      },
+      {
+        "winners": {
+          "NX": 0,
+          "EW": 0,
+          "AX": 1,
+          "ET": 1,
+          "EX": 0,
+          "KR": 0,
+          "LX": 1,
+          "LQ": 0,
+          "WT": 1,
+          "AK": 0,
+          "QL": 1,
+          "IL": 3
+        },
+        "settings": {
+          "economic": 0.44,
+          "cultural": 0.05,
+          "variance": 1.02,
+          "parties": [
+            {
+              "code": "LDP",
+              "x": 4,
+              "y": -0.5
+            },
+            {
+              "code": "CA",
+              "x": 0,
+              "y": -0.5
+            },
+            {
+              "code": "SDP",
+              "x": -3.5,
+              "y": -1.5
+            },
+            {
+              "code": "CON",
+              "x": 2,
+              "y": 4.5
+            },
+            {
+              "code": "GRN",
+              "x": 0,
+              "y": -5
+            },
+            {
+              "code": "NF",
+              "x": 0,
+              "y": 8
+            },
+            {
+              "code": "LIB",
+              "x": 8,
+              "y": -3
+            },
+            {
+              "code": "UPL",
+              "x": -7.5,
+              "y": -8
+            },
+            {
+              "code": "SWP",
+              "x": -9.5,
+              "y": -8
+            }
+          ]
+        },
+        "source": "default"
+      },
+      {
+        "winners": {
+          "NX": 1,
+          "EW": 0,
+          "AX": 1,
+          "ET": 1,
+          "EX": 0,
+          "KR": 0,
+          "LX": 1,
+          "LQ": 0,
+          "WT": 1,
+          "AK": 0,
+          "QL": 1,
+          "IL": 1
+        },
+        "settings": {
+          "economic": -0.18,
+          "cultural": -0.22,
+          "variance": 0.9,
+          "parties": [
+            {
+              "code": "LDP",
+              "x": 4,
+              "y": -0.5
+            },
+            {
+              "code": "CA",
+              "x": 0,
+              "y": -0.5
+            },
+            {
+              "code": "SDP",
+              "x": -3.5,
+              "y": -1.5
+            },
+            {
+              "code": "CON",
+              "x": 2,
+              "y": 4.5
+            },
+            {
+              "code": "GRN",
+              "x": 0,
+              "y": -5
+            },
+            {
+              "code": "NF",
+              "x": 0,
+              "y": 8
+            },
+            {
+              "code": "LIB",
+              "x": 8,
+              "y": -3
+            },
+            {
+              "code": "UPL",
+              "x": -7.5,
+              "y": -8
+            },
+            {
+              "code": "SWP",
+              "x": -9.5,
+              "y": -8
+            }
+          ]
+        },
+        "source": "default"
+      },
+      {
+        "winners": {
+          "NX": 0,
+          "EW": 0,
+          "AX": 1,
+          "ET": 1,
+          "EX": 0,
+          "KR": 0,
+          "LX": 3,
+          "LQ": 0,
+          "WT": 1,
+          "AK": 0,
+          "QL": 1,
+          "IL": 3
+        },
+        "settings": {
+          "economic": 0.62,
+          "cultural": 0.23,
+          "variance": 1.18,
+          "parties": [
+            {
+              "code": "LDP",
+              "x": 4,
+              "y": -0.5
+            },
+            {
+              "code": "CA",
+              "x": 0,
+              "y": -0.5
+            },
+            {
+              "code": "SDP",
+              "x": -3.5,
+              "y": -1.5
+            },
+            {
+              "code": "CON",
+              "x": 2,
+              "y": 4.5
+            },
+            {
+              "code": "GRN",
+              "x": 0,
+              "y": -5
+            },
+            {
+              "code": "NF",
+              "x": 0,
+              "y": 8
+            },
+            {
+              "code": "LIB",
+              "x": 8,
+              "y": -3
+            },
+            {
+              "code": "UPL",
+              "x": -7.5,
+              "y": -8
+            },
+            {
+              "code": "SWP",
+              "x": -9.5,
+              "y": -8
+            }
+          ]
+        },
+        "source": "default"
+      },
+      {
+        "winners": {
+          "NX": 1,
+          "EW": 0,
+          "AX": 1,
+          "ET": 1,
+          "EX": 0,
+          "KR": 0,
+          "LX": 1,
+          "LQ": 0,
+          "WT": 1,
+          "AK": 0,
+          "QL": 1,
+          "IL": 3
+        },
+        "settings": {
+          "economic": -0.4,
+          "cultural": -0.08,
+          "variance": 1.04,
+          "parties": [
+            {
+              "code": "LDP",
+              "x": 4,
+              "y": -0.5
+            },
+            {
+              "code": "CA",
+              "x": 0,
+              "y": -0.5
+            },
+            {
+              "code": "SDP",
+              "x": -3.5,
+              "y": -1.5
+            },
+            {
+              "code": "CON",
+              "x": 2,
+              "y": 4.5
+            },
+            {
+              "code": "GRN",
+              "x": 0,
+              "y": -5
+            },
+            {
+              "code": "NF",
+              "x": 0,
+              "y": 8
+            },
+            {
+              "code": "LIB",
+              "x": 8,
+              "y": -3
+            },
+            {
+              "code": "UPL",
+              "x": -7.5,
+              "y": -8
+            },
+            {
+              "code": "SWP",
+              "x": -9.5,
+              "y": -8
+            }
+          ]
+        },
+        "source": "default"
+      },
+      {
+        "winners": {
+          "NX": 0,
+          "EW": 0,
+          "AX": 1,
+          "ET": 1,
+          "EX": 0,
+          "KR": 0,
+          "LX": 1,
+          "LQ": 0,
+          "WT": 1,
+          "AK": 0,
+          "QL": 1,
+          "IL": 3
+        },
+        "settings": {
+          "economic": 0.16,
+          "cultural": 0.28,
+          "variance": 0.96,
+          "parties": [
+            {
+              "code": "LDP",
+              "x": 4,
+              "y": -0.5
+            },
+            {
+              "code": "CA",
+              "x": 0,
+              "y": -0.5
+            },
+            {
+              "code": "SDP",
+              "x": -3.5,
+              "y": -1.5
+            },
+            {
+              "code": "CON",
+              "x": 2,
+              "y": 4.5
+            },
+            {
+              "code": "GRN",
+              "x": 0,
+              "y": -5
+            },
+            {
+              "code": "NF",
+              "x": 0,
+              "y": 8
+            },
+            {
+              "code": "LIB",
+              "x": 8,
+              "y": -3
+            },
+            {
+              "code": "UPL",
+              "x": -7.5,
+              "y": -8
+            },
+            {
+              "code": "SWP",
+              "x": -9.5,
+              "y": -8
+            }
+          ]
+        },
+        "source": "default"
+      },
+      {
+        "winners": {
+          "NX": 1,
+          "EW": 0,
+          "AX": 1,
+          "ET": 1,
+          "EX": 1,
+          "KR": 1,
+          "LX": 1,
+          "LQ": 1,
+          "WT": 1,
+          "AK": 0,
+          "QL": 1,
+          "IL": 3
+        },
+        "settings": {
+          "economic": -0.62,
+          "cultural": 0.12,
+          "variance": 1.1,
+          "parties": [
+            {
+              "code": "LDP",
+              "x": 4,
+              "y": -0.5
+            },
+            {
+              "code": "CA",
+              "x": 0,
+              "y": -0.5
+            },
+            {
+              "code": "SDP",
+              "x": -3.5,
+              "y": -1.5
+            },
+            {
+              "code": "CON",
+              "x": 2,
+              "y": 4.5
+            },
+            {
+              "code": "GRN",
+              "x": 0,
+              "y": -5
+            },
+            {
+              "code": "NF",
+              "x": 0,
+              "y": 8
+            },
+            {
+              "code": "LIB",
+              "x": 8,
+              "y": -3
+            },
+            {
+              "code": "UPL",
+              "x": -7.5,
+              "y": -8
+            },
+            {
+              "code": "SWP",
+              "x": -9.5,
+              "y": -8
+            }
+          ]
+        },
+        "source": "default"
+      }
+    ]
+  },
+  "nationalBaseline": {
+    "districtSeats": [
+      186,
+      170,
+      18,
+      20,
+      6,
+      0,
+      0,
+      0,
+      0
+    ],
+    "prSeats": [
+      124,
+      100,
+      44,
+      40,
+      32,
+      28,
+      16,
+      12,
+      4
+    ]
+  },
+  "stateMedians": [
+    {
+      "code": "NX",
+      "name": "Neolexia",
+      "x": 2.1401888407337166,
+      "y": -0.6841511202035302,
+      "winner": 0
+    },
+    {
+      "code": "EW",
+      "name": "Erewen",
+      "x": 2.8877520245500508,
+      "y": -0.025915530698067527,
+      "winner": 0
+    },
+    {
+      "code": "AX",
+      "name": "Avax",
+      "x": 0.9550577016367703,
+      "y": -0.2357138005311226,
+      "winner": 1
+    },
+    {
+      "code": "ET",
+      "name": "Ethuarica",
+      "x": 1.0185698156300802,
+      "y": -0.022382786801446924,
+      "winner": 1
+    },
+    {
+      "code": "EX",
+      "name": "Extary",
+      "x": 2.4868313595155858,
+      "y": -0.12262304620833304,
+      "winner": 0
+    },
+    {
+      "code": "KR",
+      "name": "Kroana",
+      "x": 2.5262300035808143,
+      "y": -0.7475100899757603,
+      "winner": 0
+    },
+    {
+      "code": "LX",
+      "name": "Laxburg",
+      "x": 1.2306463717241565,
+      "y": 1.4647330203751014,
+      "winner": 1
+    },
+    {
+      "code": "LQ",
+      "name": "Luqur",
+      "x": 2.5239976428701807,
+      "y": -0.2898562750167958,
+      "winner": 0
+    },
+    {
+      "code": "WT",
+      "name": "Wittaria",
+      "x": 0.86581734508351,
+      "y": -0.10778816106922146,
+      "winner": 1
+    },
+    {
+      "code": "AK",
+      "name": "Akro",
+      "x": 4.0874323998584945,
+      "y": -1.8178849977933076,
+      "winner": 0
+    },
+    {
+      "code": "QL",
+      "name": "Quelor",
+      "x": 1.407937260365896,
+      "y": -0.009856275016795757,
+      "winner": 1
+    },
+    {
+      "code": "IL",
+      "name": "Illixium",
+      "x": 0.3395727908696362,
+      "y": 2.503917164296164,
+      "winner": 3
+    }
+  ]
+}

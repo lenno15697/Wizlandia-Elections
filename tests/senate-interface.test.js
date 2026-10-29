@@ -9,10 +9,21 @@ const load=async c=>{get('load-config').files=[{size:JSON.stringify(c).length,te
   assert.equal((get('hemicycle').innerHTML.match(/<circle /g)||[]).length,800);
   get('tab-senate-history').onclick();assert.equal((get('senate-history-body').innerHTML.match(/ checked /g)||[]).length,12);
   assert.equal((get('senate-history-body').innerHTML.match(/type="radio"/g)||[]).length,108);
+  assert.ok(get('senate-history-body').innerHTML.includes('<strong>LDP</strong><span class="party-name"> • Liberal Democratic Party</span>'));
+  const initialSession=S.restore(c.calendar);
+  for(let year=0;year<10;year++){
+   get('senate-year-tabs').onclick(target({senateYear:String(year)}));
+   const checked=[...get('senate-history-body').innerHTML.matchAll(/data-senate-winner="(\d+)" data-senate-state="([A-Z]+)" checked/g)];
+   assert.equal(checked.length,12);for(const m of checked)assert.equal(Number(m[1]),initialSession.cohorts[year].winners[m[2]]);
+  }
   assert.equal((get('senate-year-tabs').innerHTML.match(/role="tab"/g)||[]).length,10);
   assert.ok(h.html.indexOf('id="tab-senate-history"')>h.html.indexOf('id="tab-medians"'));
   get('view-senate').onclick();assert.equal((get('hemicycle').innerHTML.match(/<circle /g)||[]).length,120);assert.equal(get('track-majority').textContent,'majority 61');
+  assert.ok(get('hemicycle').innerHTML.includes('viewBox="200 92 500 294"'));assert.ok(get('hemicycle').innerHTML.includes('r="10.80"'));assert.ok(get('assembly-panel').classList.contains('senate-chamber'));
   get('view-senators').onclick();assert.equal((get('senators-map').innerHTML.match(/class="senate-state"/g)||[]).length,12);assert.ok(!get('senators-map').innerHTML.includes('<polygon'));
+  const mapStateOrder=['EX','EW','NX','AX','ET','KR','QL','AK','LQ','IL','LX','WT'];
+  const stateButtonOrder=id=>[...get(id).innerHTML.matchAll(/data-senate-state="([A-Z]+)"/g)].map(m=>m[1]);
+  assert.deepEqual(stateButtonOrder('senators-state-buttons'),mapStateOrder);
   get('senators-state-buttons').onclick(target({senateState:'KR'}));assert.match(get('senators-detail').innerHTML,/Kroana/);assert.equal((get('senators-detail').innerHTML.match(/<li>/g)||[]).length,10);
   get('senate-year-tabs').onclick(target({senateYear:'9'}));get('senate-history-body').onchange(target({senateState:'KR',senateWinner:'8'}));
   assert.equal((await config()).calendar.cohorts[9].winners.KR,8);assert.match(get('senators-detail').innerHTML,/SWP/);
@@ -26,6 +37,7 @@ const load=async c=>{get('load-config').files=[{size:JSON.stringify(c).length,te
   get('view-district').onclick();for(const d of expected.rows)assert.ok(get('cartogram').innerHTML.split(`data-district="${d.id}"`)[1].split('</g>')[0].includes(`fill="${expected.parties[d.winner].color}"`));
   get('view-pr').onclick();assert.match(get('vote-share-chart').innerHTML,new RegExp(`data-share="${expected.votes[0]*100}"`));
   get('view-senate-election').onclick();assert.equal((get('senate-election-map').innerHTML.match(/class="senate-state"/g)||[]).length,12);
+  assert.deepEqual(stateButtonOrder('senate-election-state-buttons'),mapStateOrder);
   for(const state of S.election(E.evaluate(-.8,.4,.8)))assert.equal(c.calendar.cohorts[0].winners[state.code],state.winner);
   get('senate-year-tabs').onclick(target({senateYear:'4'}));get('senate-history-body').onchange(target({senateState:'NX',senateWinner:'2'}));
   const saved=await config();get('baseline').onclick();await load(saved);assert.deepEqual(await config(),saved,'Save/load must retain both chambers, all edits, settings and the random generator');

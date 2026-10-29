@@ -10,6 +10,15 @@ function connected(g,labels,party){
  return seen.size===group.length;
 }
 assert.deepEqual(G.hemicycle(800).rowCounts,[34,38,41,45,48,52,55,59,62,66,70,73,77,80]);
+const senate=G.hemicycle(120);
+assert.equal(senate.dots.length,120);assert.equal(senate.rows,6);assert.ok(senate.radius>G.hemicycle(400).radius);
+const [sx,sy,sw,sh]=senate.viewBox.split(' ').map(Number);
+for(const dot of senate.dots){assert.ok(dot.x-senate.radius>=sx&&dot.x+senate.radius<=sx+sw&&dot.y-senate.radius>=sy&&dot.y+senate.radius<=sy+sh);}
+for(let i=0;i<120;i++)for(let j=i+1;j<120;j++)assert.ok(Math.hypot(senate.dots[i].x-senate.dots[j].x,senate.dots[i].y-senate.dots[j].y)>2*senate.radius,'Large Senate dots must not overlap');
+for(const counts of [[59,51,10],[55,56,9],[0,0,1,2,3,4,5,6,99]]){
+ const labels=G.seatAssignments(senate,counts);counts.forEach((n,p)=>assert.equal(labels.filter(i=>i===p).length,n));
+ for(let row=0;row<senate.rows;row++){const ring=senate.dots.map((d,i)=>({...d,party:labels[i]})).filter(d=>d.row===row).sort((a,b)=>a.column-b.column);for(let i=1;i<ring.length;i++)assert.ok(ring[i-1].party<=ring[i].party);}
+}
 for(const total of [400,800]){
  const g=G.hemicycle(total);assert.equal(g.dots.length,total);assert.equal(g.rows,total===800?14:10);
  assert.equal(new Set(g.dots.map(d=>`${d.x.toFixed(8)},${d.y.toFixed(8)}`)).size,total);
