@@ -105,3 +105,5 @@ button.party-line.is-muted:hover,button.party-line.is-muted:focus-visible{opacit
 .party-compass{max-width:850px;margin:12px auto 0}.party-compass svg{display:block;width:100%;height:auto}.party-compass-node{cursor:pointer;outline:none}.party-compass-node:focus-visible .party-compass-dot{stroke:var(--accent);stroke-width:6}.party-compass-node:hover .party-compass-dot{filter:brightness(1.08)}.party-compass-node text{pointer-events:none}
 
 .cartogram-family-key{display:flex;align-items:center;flex-wrap:wrap;gap:10px 22px;margin:15px 0 18px;font-size:12px}.cartogram-family-key>strong{font-size:11px;color:var(--muted)}.cartogram-family-key>span{display:inline-flex;align-items:center;gap:7px}.family-key-swatch{display:inline-block;width:15px;height:16px;flex:none;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+
+#panel-overview .ideology{text-align:left}

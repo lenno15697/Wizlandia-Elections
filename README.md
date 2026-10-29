@@ -4,6 +4,8 @@ A standalone GitHub Pages election website inspired by the sidebar, parliament d
 
 ## Current model and interface
 
+The Overview table shows Party, Ideology, Combined, Electoral Districts, PR List, Vote share and Representation, in that order. Party ideology labels are presentation only. Representation bars compare national vote share with seat share in the selected component.
+
 
 The **Compass** tab is a party-bubble compass inspired by Thermidor's presentation.
 Party coordinates retain their Wizlandia economic and cultural meanings. Circle
