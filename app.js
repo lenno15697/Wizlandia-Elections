@@ -434,7 +434,7 @@ $('batch').onclick=async()=>{
   if(busy)return;if(frame){cancelAnimationFrame(frame);frame=null;if(!recompute())return;}let seed,n;
   try{seed=getSeed();n=Number($('runs').value);if(!Number.isInteger(n)||n<1||n>100)throw new Error('Choose between 1 and 100 elections.');}catch(e){notice(e.message);return;}
   busy=true;for(const id of ['batch','run','baseline','economic','cultural','variance','edit-parties','seed','runs','load-config-button'])$(id).disabled=true;
-  const generator=new E.Mulberry32(seed),results=[],spread=state.spread,parties=state.parties.map(p=>({...p}));
+  const generator=rng,results=[],spread=state.spread,parties=state.parties.map(p=>({...p}));
   try{
     for(let i=0;i<n;i++){
       const s=E.drawShocks(generator),r=E.evaluate(s.economic,s.cultural,s.variance,spread,parties);advanceElection(r,`Election ${timeline.counter+1} · seed ${seed}`);results.push(current);

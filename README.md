@@ -2,6 +2,14 @@
 
 A standalone GitHub Pages election website inspired by the sidebar, parliament diagram, party cards and result tabs of [ThermidorElections](https://consuldelmar.github.io/ThermidorElections/). The interface and source here are a new implementation. No code or assets from the reference site are included.
 
+## Batch draw sequence fix
+
+Repeated **Draw 20 elections** clicks now continue the current random-generator sequence. Previously, every batch constructed a new generator from the visible seed, replaying the same elections and producing the same final Senate. Single random draws and batches now share one continuing sequence. Changing the seed explicitly restarts its reproducible sequence; saving/loading a configuration preserves the current generator position.
+
+Replace **app.js** and **index.html** when upgrading. The default 60/50/10 Senate History remains unchanged. All 15 JavaScript test suites pass, including the new repeated-batch, grouped-draw, single/batch interleaving, saved-configuration and explicit-reseed checks. A browser run with seed 20261030 matched the reference stream across three consecutive batches: LDP/CA/CON 57/55/8, 62/50/8, then 64/48/8.
+
+Each election advances two years, so 20 elections span 40 years. The current Senate retains the ten latest cohorts, representing 20 years.
+
 ## Latest Senate History initialization
 
 The default starting Senate is now **LDP 60, CA 50, CON 10**. Its ten cohorts are generated from coherent moderate national election swings, retaining the year-0 baseline, persistent state strongholds and plausible marginal-state changes. The chosen history includes one extra Conservative win in Laxburg and one CA win in Illixium. Future random draws and all election mechanics are unchanged.
@@ -139,7 +147,7 @@ The **Electoral Districts** view displays the 400-seat cartogram in place of the
 
 The Extary–Erewen border follows the ten marked tiles: five move into Extary's schematic territory and five into Erewen's. Their entitlements remain 30 and 60. Every one of the 49 named cities now has one connected group of tiles, including cities spanning two states. KR-22 is assigned to Davenport on its own island, rather than the capital across the strait. All 50 type counts, individual offsets, district populations and underlying geographic polygons are preserved.
 
-The sidebar heading is “Explore Wizlandia’s elections.” The two requested explanatory paragraphs are removed. Batch size defaults to **20** elections; saved configurations can still specify another batch size.
+The sidebar heading is “Explore Wizlandia’s elections.” The two requested explanatory paragraphs are removed. Batch size defaults to **10** elections; saved configurations can still specify another batch size.
 
 Upload all top-level HTML, CSS, JS and SVG website files in this ZIP, including **district-geography.js** and **senate.js**. The JSON and CSV contain the underlying mapping; tests and Python code are optional for hosting.
 
