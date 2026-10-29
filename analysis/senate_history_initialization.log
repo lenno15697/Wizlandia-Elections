@@ -1,0 +1,185 @@
+{
+  "totals": {
+    "LDP": 60,
+    "CA": 50,
+    "SDP": 0,
+    "CON": 10,
+    "GRN": 0,
+    "NF": 0,
+    "LIB": 0,
+    "UPL": 0,
+    "SWP": 0
+  },
+  "elections": [
+    {
+      "year": 0,
+      "economic": 0,
+      "cultural": 0,
+      "variance": 1,
+      "seats": {
+        "LDP": 6,
+        "CA": 5,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      }
+    },
+    {
+      "year": -2,
+      "economic": -0.3,
+      "cultural": -0.05,
+      "variance": 0.96,
+      "seats": {
+        "LDP": 5,
+        "CA": 6,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      }
+    },
+    {
+      "year": -4,
+      "economic": -0.22,
+      "cultural": -0.08,
+      "variance": 0.98,
+      "seats": {
+        "LDP": 6,
+        "CA": 5,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      }
+    },
+    {
+      "year": -6,
+      "economic": 0.08,
+      "cultural": 0.08,
+      "variance": 1.02,
+      "seats": {
+        "LDP": 7,
+        "CA": 4,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      }
+    },
+    {
+      "year": -8,
+      "economic": 0.3,
+      "cultural": 0.25,
+      "variance": 1.18,
+      "seats": {
+        "LDP": 7,
+        "CA": 3,
+        "SDP": 0,
+        "CON": 2,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      }
+    },
+    {
+      "year": -10,
+      "economic": 0.12,
+      "cultural": 0.02,
+      "variance": 1.04,
+      "seats": {
+        "LDP": 7,
+        "CA": 4,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      }
+    },
+    {
+      "year": -12,
+      "economic": -0.1,
+      "cultural": -0.22,
+      "variance": 0.9,
+      "seats": {
+        "LDP": 6,
+        "CA": 6,
+        "SDP": 0,
+        "CON": 0,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      }
+    },
+    {
+      "year": -14,
+      "economic": -0.32,
+      "cultural": -0.08,
+      "variance": 0.98,
+      "seats": {
+        "LDP": 5,
+        "CA": 6,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      }
+    },
+    {
+      "year": -16,
+      "economic": -0.28,
+      "cultural": 0.08,
+      "variance": 1,
+      "seats": {
+        "LDP": 5,
+        "CA": 6,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      }
+    },
+    {
+      "year": -18,
+      "economic": -0.1,
+      "cultural": 0.08,
+      "variance": 1.04,
+      "seats": {
+        "LDP": 6,
+        "CA": 5,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      }
+    }
+  ]
+}

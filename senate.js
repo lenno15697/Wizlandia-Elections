@@ -17,8 +17,11 @@ function election(result){
 const settings=r=>({economic:r.economic,cultural:r.cultural,variance:r.variance,parties:r.parties.map(({code,x,y})=>({code,x,y}))});
 const cohort=(r,source)=>({winners:Object.fromEntries(election(r).map(s=>[s.code,s.winner])),settings:settings(r),source});
 const copyCohorts=cs=>cs.map(c=>({...c,winners:{...c.winners}}));
-// Fictional, common nationwide swings; persistent local leanings come from state medians.
-const pastShocks=[[-.30,.10,1.08],[.26,-.12,.94],[-.52,.16,1.14],[.44,.05,1.02],[-.18,-.22,.90],[.62,.23,1.18],[-.40,-.08,1.04],[.16,.28,.96],[-.62,.12,1.10]];
+// Fictional common nationwide swings, newest to oldest (years -2 to -18).
+// Modest multi-election waves retain state strongholds and produce a 60/50/10
+// starting Senate with the unchanged year-0 baseline. Future random draws
+// still use the independent shock distributions in engine.js.
+const pastShocks=[[-.30,-.05,.96],[-.22,-.08,.98],[.08,.08,1.02],[.30,.25,1.18],[.12,.02,1.04],[-.10,-.22,.90],[-.32,-.08,.98],[-.28,.08,1.00],[-.10,.08,1.04]];
 function create(result=E.evaluate()){
   return{counter:1,assemblyCounter:1,assembly:result,cohorts:[cohort(result,'baseline'),...pastShocks.map(s=>cohort(E.evaluate(...s),'default'))]};
 }

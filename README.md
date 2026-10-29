@@ -2,11 +2,17 @@
 
 A standalone GitHub Pages election website inspired by the sidebar, parliament diagram, party cards and result tabs of [ThermidorElections](https://consuldelmar.github.io/ThermidorElections/). The interface and source here are a new implementation. No code or assets from the reference site are included.
 
-## Latest Senate permutations and History labels
+## Latest Senate History initialization
+
+The default starting Senate is now **LDP 60, CA 50, CON 10**. Its ten cohorts are generated from coherent moderate national election swings, retaining the year-0 baseline, persistent state strongholds and plausible marginal-state changes. The chosen history includes one extra Conservative win in Laxburg and one CA win in Illixium. Future random draws and all election mechanics are unchanged.
+
+Replace **senate.js** and **index.html** when upgrading from the previous ZIP. Reload or Reset to use the new defaults. Details, all state-by-state checkmarks and reproducible checks are in **analysis/senate_history_initialization.md**, the adjacent CSV/JSON files, and **tools/verify_senate_history.js**. Saved configurations keep their recorded history.
+
+## Retained Senate permutations and History labels
 
 All three additional swaps are applied: **NX-43 ↔ AX-49**, **NX-95 ↔ ET-32**, and **QL-10 ↔ WT-10**. These compose with the earlier LQ-13/EW-24 swap and all prior changes. The district permutation audit is version 11.
 
-Senate History recalculates every default checkmark using the unchanged historical shock settings and the new map. Five checkmarks switch from CA to LDP, producing a starting Senate of **LDP 56, CA 54, CON 10**. Party row labels use **LDP • Liberal Democratic Party**, with normal capitalization and spacing. Narrow screens show the abbreviation and colour dot.
+Senate History recalculates every default checkmark using the unchanged historical shock settings and the new map. The geographic recalculation initially produced LDP 56, CA 54, CON 10. The separate latest History initialization above now sets the requested 60/50/10 composition. Party row labels use **LDP • Liberal Democratic Party**, with normal capitalization and spacing. Narrow screens show the abbreviation and colour dot.
 
 Ten million election draws confirm long-run means of **LDP 60.32, CA 50.76, CON 8.92**. The fixed starting history is a particular historical scenario and differs from these random-election averages. See **analysis/senate_three_swaps_update.md**, the associated JSON/CSV results, and **tools/verify_three_senate_swaps.js**. Earlier Senate reports describe their recorded earlier map versions.
 
@@ -88,7 +94,7 @@ The initial year-0 result is **LDP 6, CA 5, CON 1**. Older default cohorts are
 illustrative elections calculated from fixed plausible national swings and each
 state's own median, retaining strongholds and allowing marginal states to switch.
 These are fictional defaults, not factual historical results. The initial
-120-seat Senate is **LDP 56, CA 54, CON 10**. All assignments are editable.
+120-seat Senate is **LDP 60, CA 50, CON 10**. All assignments are editable.
 
 Both state maps have SVG exports; Senate History exports a 10-cohort CSV.
 Result/history CSV exports include both chambers and distinguish the current

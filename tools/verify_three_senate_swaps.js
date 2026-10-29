@@ -6,7 +6,9 @@ const D=require('../data'),E=require('../engine'),S=require('../senate'),H=requi
 const root=__dirname+'/../',N=Number(process.argv[2]||10000000),seed=314159265;
 assert.equal(H.compassPermutationVersion,11);assert.ok(Number.isSafeInteger(N)&&N>0&&N%10===0);
 const before=JSON.parse(fs.readFileSync(root+'analysis/senate_history_before_three.json','utf8'));
-const history=S.create(),changes=[];
+// Preserve the original settings for this historical geographic comparison;
+// the current starting history was subsequently rebalanced to 60/50/10.
+const history={...S.create(),cohorts:before.defaultHistory.cohorts.map(c=>({...c,winners:Object.fromEntries(S.election(E.evaluate(c.settings.economic,c.settings.cultural,c.settings.variance)).map(s=>[s.code,s.winner]))}))},changes=[];
 for(let i=0;i<10;i++){
  const c=history.cohorts[i],old=before.defaultHistory.cohorts[i];assert.deepEqual(c.settings,old.settings);
  const r=E.evaluate(c.settings.economic,c.settings.cultural,c.settings.variance);

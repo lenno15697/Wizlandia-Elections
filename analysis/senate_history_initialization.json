@@ -1,0 +1,340 @@
+{
+  "description": "Chosen fictional default history, calculated from coherent moderate national swings and current state medians.",
+  "defaultOnly": true,
+  "baselineUnchanged": true,
+  "futureShockDistributionUnchanged": true,
+  "partyOrder": [
+    "LDP",
+    "CA",
+    "SDP",
+    "CON",
+    "GRN",
+    "NF",
+    "LIB",
+    "UPL",
+    "SWP"
+  ],
+  "totals": {
+    "LDP": 60,
+    "CA": 50,
+    "SDP": 0,
+    "CON": 10,
+    "GRN": 0,
+    "NF": 0,
+    "LIB": 0,
+    "UPL": 0,
+    "SWP": 0
+  },
+  "elections": [
+    {
+      "year": 0,
+      "economic": 0,
+      "cultural": 0,
+      "variance": 1,
+      "seats": {
+        "LDP": 6,
+        "CA": 5,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      },
+      "winners": {
+        "NX": "LDP",
+        "EW": "LDP",
+        "AX": "CA",
+        "ET": "CA",
+        "EX": "LDP",
+        "KR": "LDP",
+        "LX": "CA",
+        "LQ": "LDP",
+        "WT": "CA",
+        "AK": "LDP",
+        "QL": "CA",
+        "IL": "CON"
+      }
+    },
+    {
+      "year": -2,
+      "economic": -0.3,
+      "cultural": -0.05,
+      "variance": 0.96,
+      "seats": {
+        "LDP": 5,
+        "CA": 6,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      },
+      "winners": {
+        "NX": "CA",
+        "EW": "LDP",
+        "AX": "CA",
+        "ET": "CA",
+        "EX": "LDP",
+        "KR": "LDP",
+        "LX": "CA",
+        "LQ": "LDP",
+        "WT": "CA",
+        "AK": "LDP",
+        "QL": "CA",
+        "IL": "CON"
+      }
+    },
+    {
+      "year": -4,
+      "economic": -0.22,
+      "cultural": -0.08,
+      "variance": 0.98,
+      "seats": {
+        "LDP": 6,
+        "CA": 5,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      },
+      "winners": {
+        "NX": "LDP",
+        "EW": "LDP",
+        "AX": "CA",
+        "ET": "CA",
+        "EX": "LDP",
+        "KR": "LDP",
+        "LX": "CA",
+        "LQ": "LDP",
+        "WT": "CA",
+        "AK": "LDP",
+        "QL": "CA",
+        "IL": "CON"
+      }
+    },
+    {
+      "year": -6,
+      "economic": 0.08,
+      "cultural": 0.08,
+      "variance": 1.02,
+      "seats": {
+        "LDP": 7,
+        "CA": 4,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      },
+      "winners": {
+        "NX": "LDP",
+        "EW": "LDP",
+        "AX": "CA",
+        "ET": "CA",
+        "EX": "LDP",
+        "KR": "LDP",
+        "LX": "CA",
+        "LQ": "LDP",
+        "WT": "CA",
+        "AK": "LDP",
+        "QL": "LDP",
+        "IL": "CON"
+      }
+    },
+    {
+      "year": -8,
+      "economic": 0.3,
+      "cultural": 0.25,
+      "variance": 1.18,
+      "seats": {
+        "LDP": 7,
+        "CA": 3,
+        "SDP": 0,
+        "CON": 2,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      },
+      "winners": {
+        "NX": "LDP",
+        "EW": "LDP",
+        "AX": "CA",
+        "ET": "CA",
+        "EX": "LDP",
+        "KR": "LDP",
+        "LX": "CON",
+        "LQ": "LDP",
+        "WT": "CA",
+        "AK": "LDP",
+        "QL": "LDP",
+        "IL": "CON"
+      }
+    },
+    {
+      "year": -10,
+      "economic": 0.12,
+      "cultural": 0.02,
+      "variance": 1.04,
+      "seats": {
+        "LDP": 7,
+        "CA": 4,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      },
+      "winners": {
+        "NX": "LDP",
+        "EW": "LDP",
+        "AX": "CA",
+        "ET": "CA",
+        "EX": "LDP",
+        "KR": "LDP",
+        "LX": "CA",
+        "LQ": "LDP",
+        "WT": "CA",
+        "AK": "LDP",
+        "QL": "LDP",
+        "IL": "CON"
+      }
+    },
+    {
+      "year": -12,
+      "economic": -0.1,
+      "cultural": -0.22,
+      "variance": 0.9,
+      "seats": {
+        "LDP": 6,
+        "CA": 6,
+        "SDP": 0,
+        "CON": 0,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      },
+      "winners": {
+        "NX": "LDP",
+        "EW": "LDP",
+        "AX": "CA",
+        "ET": "CA",
+        "EX": "LDP",
+        "KR": "LDP",
+        "LX": "CA",
+        "LQ": "LDP",
+        "WT": "CA",
+        "AK": "LDP",
+        "QL": "CA",
+        "IL": "CA"
+      }
+    },
+    {
+      "year": -14,
+      "economic": -0.32,
+      "cultural": -0.08,
+      "variance": 0.98,
+      "seats": {
+        "LDP": 5,
+        "CA": 6,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      },
+      "winners": {
+        "NX": "CA",
+        "EW": "LDP",
+        "AX": "CA",
+        "ET": "CA",
+        "EX": "LDP",
+        "KR": "LDP",
+        "LX": "CA",
+        "LQ": "LDP",
+        "WT": "CA",
+        "AK": "LDP",
+        "QL": "CA",
+        "IL": "CON"
+      }
+    },
+    {
+      "year": -16,
+      "economic": -0.28,
+      "cultural": 0.08,
+      "variance": 1,
+      "seats": {
+        "LDP": 5,
+        "CA": 6,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      },
+      "winners": {
+        "NX": "CA",
+        "EW": "LDP",
+        "AX": "CA",
+        "ET": "CA",
+        "EX": "LDP",
+        "KR": "LDP",
+        "LX": "CA",
+        "LQ": "LDP",
+        "WT": "CA",
+        "AK": "LDP",
+        "QL": "CA",
+        "IL": "CON"
+      }
+    },
+    {
+      "year": -18,
+      "economic": -0.1,
+      "cultural": 0.08,
+      "variance": 1.04,
+      "seats": {
+        "LDP": 6,
+        "CA": 5,
+        "SDP": 0,
+        "CON": 1,
+        "GRN": 0,
+        "NF": 0,
+        "LIB": 0,
+        "UPL": 0,
+        "SWP": 0
+      },
+      "winners": {
+        "NX": "LDP",
+        "EW": "LDP",
+        "AX": "CA",
+        "ET": "CA",
+        "EX": "LDP",
+        "KR": "LDP",
+        "LX": "CA",
+        "LQ": "LDP",
+        "WT": "CA",
+        "AK": "LDP",
+        "QL": "CA",
+        "IL": "CON"
+      }
+    }
+  ]
+}
