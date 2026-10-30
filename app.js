@@ -30,7 +30,8 @@ function syncControls(){
   }
   $('election-counter').textContent=`Election ${timeline.counter}${timeline.counter===1?' · Baseline':''}`;
   $('election-cycle').textContent=locked?'Senate only':'Assembly + Senate';
-  $('assembly-lock-note').textContent=locked?`Grey marks: Assembly election ${timeline.assemblyCounter}. Next: election ${timeline.counter+1}, both chambers.`:`Shared settings for both chambers. Next: election ${timeline.counter+1}, Senate only.`;
+  $('assembly-lock-note').textContent=locked?`Grey marks: Assembly election ${timeline.assemblyCounter}.`:'Shared settings for both chambers.';
+  $('next-election-note').textContent=`Next: election ${timeline.counter+1}, ${locked?'both chambers':'Senate only'}.`;
 }
 function addHistory(result,label){history.push({id:nextRun++,label,result,timeline:{...timeline,cohorts:timeline.cohorts.map(c=>({...c,winners:{...c.winners}}))},live});if(history.length>200)history.shift();}
 function updateCurrentHistory(){const h=history.find(h=>h.timeline&&h.timeline.counter===timeline.counter);if(h){h.result=current;h.timeline={...timeline,cohorts:timeline.cohorts.map(c=>({...c,winners:{...c.winners}}))};h.live=live;}}
@@ -52,7 +53,7 @@ function render(){
   }).join('');
   $('assembly-overview').hidden=isSenate;$('senate-overview').hidden=!isSenate;
   $('overview-explainer').hidden=isSenate;
-  if(isSenate){const total=S.seats(timeline),latest=S.seats(timeline,true);$('senate-overview-body').innerHTML=displayOrder.map(i=>`<tr><td>${swatch(current.parties[i])}<strong>${current.parties[i].code}</strong><span class="party-name">${esc(current.parties[i].name)}</span></td><td>${total[i]}</td><td>${latest[i]}</td><td>${pct(total[i]/120)}</td></tr>`).join('');}
+  if(isSenate){const total=S.seats(timeline),latest=S.seats(timeline,true),delta=S.changes(timeline);$('senate-overview-body').innerHTML=displayOrder.map(i=>`<tr><td>${swatch(current.parties[i])}<strong>${current.parties[i].code}</strong><span class="party-name">${esc(current.parties[i].name)}</span></td><td>${total[i]}</td><td>${latest[i]}</td><td title="${delta?'Incoming senators minus outgoing senators':'Available after advancing an election'}">${delta?(delta[i]>0?'+'+delta[i]:delta[i]<0?'−'+Math.abs(delta[i]):'0'):'—'}</td></tr>`).join('');$('senate-delta-total').textContent=delta?'0':'—';}
   $('coalition-kicker').textContent=isCombined?`${v.label} · The road to ${v.majority}`:v.label;
   $('coalition-copy').textContent=isCombined?`Each combination reaches ${v.majority} of ${v.total} ${v.noun} seats and loses its majority if any member leaves. These are arithmetic possibilities, without political compatibility restrictions.`:'';
   $('history-context').textContent=(isSenate?'This table shows Assembly results held at each election. Use Senate History for the ten serving cohorts. ':isCombined?`Largest party and majority status use the Assembly view (${v.total} seats; majority ${v.majority}).`:`Largest party uses the ${v.label} view (${v.total} seats).`)+` Most viable coalition uses each run’s Assembly seats and the 401-seat majority. Select a run to restore it. History is kept in this tab until the page is closed or refreshed. Senate cohorts are available in Senate History.`;
@@ -155,8 +156,8 @@ function renderParliament(){
     const assignment=G.seatAssignments(geometry,order.map(i=>seats[i])).map(rank=>order[rank]);
     artwork+=geometry.dots.map((dot,i)=>circle(dot,assignment[i],geometry.radius)).join('');
     if(selected.size||isCombined){
-      artwork+=`<text x="450" y="${view==='senate'?286:272}" text-anchor="middle" font-family="Georgia,serif" font-size="${view==='senate'?40:46}" fill="${ink}">${selected.size?coalition:v.majority}</text>`;
-      artwork+=text(450,view==='senate'?310:298,selected.size?(selected.size===1?'PARTY SEATS':'COALITION SEATS'):'SEATS FOR A MAJORITY',view==='senate'?10:11);
+      artwork+=`<text x="450" y="${view==='senate'?312:272}" text-anchor="middle" font-family="Georgia,serif" font-size="${view==='senate'?40:46}" fill="${ink}">${selected.size?coalition:v.majority}</text>`;
+      artwork+=text(450,view==='senate'?336:298,selected.size?(selected.size===1?'PARTY SEATS':'COALITION SEATS'):'SEATS FOR A MAJORITY',view==='senate'?10:11);
     }
     const caption=selected.size?(isCombined?(coalition>=v.majority?'Majority reached':'Majority not reached'):'Selected parties'):v.description;
     artwork+=text(450,view==='senate'?375:325,caption,10);
@@ -392,7 +393,7 @@ function renderSenateMaps(){
   $(prefix+'-state-buttons').innerHTML=senateMapStateOrder.map(s=>`<button data-senate-state="${s.code}" aria-pressed="${s.code===senateState}" title="${esc(s.name)}">${s.code}</button>`).join('');
   if(newest){
     const m=S.election(live).find(s=>s.code===state.code),winner=timeline.cohorts[0].winners[state.code],p=D.parties[winner];
-    $(prefix+'-detail').innerHTML=`<h3>${esc(state.name)}</h3><div class="senate-winner">${swatch(p)}<strong>${esc(p.name)}</strong></div><p class="hint">Elected in year 0 · 20-year term</p><dl class="state-median"><dt>Economic median</dt><dd>${signed(m.x,3)}</dd><dt>Cultural median</dt><dd>${signed(m.y,3)}</dd></dl><p class="hint">${timeline.cohorts[0].source==='manual'?'Winner edited in Senate History. Moving the sliders restores the median-based result.':'Winner determined by the state’s median district position in the election model.'}</p>`;
+    $(prefix+'-detail').innerHTML=`<h3>${esc(state.name)}</h3><div class="senate-winner">${swatch(p)}<strong>${esc(p.name)}</strong></div><p class="hint">Elected in year 0 · 20-year term</p><dl class="state-median"><dt>Economic median</dt><dd>${signed(m.x,3)}</dd><dt>Cultural median</dt><dd>${signed(m.y,3)}</dd></dl>${timeline.cohorts[0].source==='manual'?'<p class="hint">Winner edited in Senate History. Moving the sliders recalculates this election.</p>':''}`;
   }else{
     $(prefix+'-detail').innerHTML=`<h3>${esc(state.name)}</h3><p class="hint">10 serving senators · newest first</p><ol class="senator-list">${timeline.cohorts.map((c,i)=>{const p=D.parties[c.winners[state.code]],year=i===0?'0':'−'+2*i;return`<li><span class="senator-year">${year}</span>${swatch(p)}<strong>${p.code}</strong><span>${esc(p.name)}</span></li>`;}).join('')}</ol>`;
   }
@@ -414,7 +415,7 @@ function createRandomSeed(){
   return(Date.now()^Math.floor(Math.random()*4294967296))>>>0;
 }
 function getSeed(){const n=Number($('seed').value);if(!Number.isInteger(n)||n<0||n>4294967295)throw new Error('Enter an integer seed between 0 and 4294967295.');return n;}
-function setMode(value){mode=value;$('manual-mode').classList.toggle('active',value==='manual');$('random-mode').classList.toggle('active',value==='random');$('run').textContent=value==='manual'?'▶ Next election (+2y)':'⚄ Draw next (+2y)';$('mode-hint').textContent=value==='manual'?'Sliders preview this election. Next advances two years using these shifts.':'Draw advances two years with a new seeded shock around baseline.';}
+function setMode(value){mode=value;$('manual-mode').classList.toggle('active',value==='manual');$('random-mode').classList.toggle('active',value==='random');$('run').textContent=value==='manual'?'▶ Next election (+2y)':'⚄ Draw next (+2y)';$('run-assembly').textContent=value==='manual'?'Next Assembly election':'Draw next Assembly';$('mode-hint').textContent=value==='manual'?'Sliders preview this election. Next advances two years using these shifts. Next Assembly continues to the next election for both chambers.':'Draw advances two years with a new seeded shock around baseline. Draw next Assembly continues to the next election for both chambers.';}
 function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.hidden=true;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);}
 function csv(rows){return rows.map(row=>row.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\r\n')+'\r\n';}
 function resultRows(results){return [['run','election_number','assembly_election_number','economic_shift','cultural_shift','variance_multiplier','assembly_economic_shift','assembly_cultural_shift','assembly_variance_multiplier',...D.parties.map(p=>p.code+'_district_seats'),...D.parties.map(p=>p.code+'_pr_seats'),...D.parties.map(p=>p.code+'_assembly_seats'),...D.parties.map(p=>p.code+'_vote_percent'),...D.parties.map(p=>p.code+'_senate_seats')],...results.map((h,i)=>{const r=h.result||h,t=h.timeline||timeline,l=h.live||live;return[h.label||i+1,t.counter,t.assemblyCounter,l.economic,l.cultural,l.variance,r.economic,r.cultural,r.variance,...r.districtSeats,...r.prSeats,...r.combinedSeats,...r.votes.map(v=>v*100),...S.seats(t)];})];}
@@ -422,18 +423,28 @@ function resultRows(results){return [['run','election_number','assembly_election
 for(const button of document.querySelectorAll('[data-component]'))button.onclick=()=>{view=button.dataset.component;render();};
 for(const k of ['economic','cultural','variance'])$(k).addEventListener('input',()=>{state[k]=Number($(k).value);setMode('manual');cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{frame=null;recompute();});});
 $('manual-mode').onclick=()=>setMode('manual');$('random-mode').onclick=()=>setMode('random');
-$('run').onclick=()=>{
+function runElections(untilAssembly=false){
+  if(busy)return;
   if(frame){cancelAnimationFrame(frame);frame=null;if(!recompute())return;}
-  if(mode==='random'){try{getSeed();Object.assign(state,E.drawShocks(rng));}catch(e){notice(e.message);return;}}
-  try{const r=E.evaluate(state.economic,state.cultural,state.variance,state.spread,state.parties);advanceElection(r);render();notice(`Election ${timeline.counter} · ${timeline.counter%2?'Senate only':'Assembly + Senate'}`);}catch(e){notice(e.message);}
-};
+  try{
+    if(mode==='random')getSeed();
+    const n=untilAssembly?(timeline.counter%2?1:2):1;
+    for(let i=0;i<n;i++){
+      const shocks=mode==='random'?E.drawShocks(rng):state;
+      const r=E.evaluate(shocks.economic,shocks.cultural,shocks.variance,state.spread,state.parties);advanceElection(r);
+    }
+    render();notice(`Election ${timeline.counter} · ${timeline.counter%2?'Senate only':'Assembly + Senate'}`);
+  }catch(e){notice(e.message);}
+}
+$('run').onclick=()=>runElections();
+$('run-assembly').onclick=()=>runElections(true);
 $('baseline').onclick=()=>{if(busy)return;cancelAnimationFrame(frame);setMode('manual');current=live=E.evaluate();timeline=S.create(current);state={economic:0,cultural:0,variance:1,spread:D.spread,parties:D.parties.map(p=>({...p}))};history=[];nextRun=1;batchStats=null;senateYear=0;selected.clear();addHistory(current,'Baseline');render();};
 $('seed').addEventListener('change',()=>{try{rng=new E.Mulberry32(getSeed());}catch(e){notice(e.message);}});
 $('runs').addEventListener('input',()=>$('batch').textContent=`Draw ${$('runs').value||'N'} elections`);
 $('batch').onclick=async()=>{
   if(busy)return;if(frame){cancelAnimationFrame(frame);frame=null;if(!recompute())return;}let seed,n;
   try{seed=getSeed();n=Number($('runs').value);if(!Number.isInteger(n)||n<1||n>100)throw new Error('Choose between 1 and 100 elections.');}catch(e){notice(e.message);return;}
-  busy=true;for(const id of ['batch','run','baseline','economic','cultural','variance','edit-parties','seed','runs','load-config-button'])$(id).disabled=true;
+  busy=true;for(const id of ['batch','run','run-assembly','baseline','economic','cultural','variance','edit-parties','seed','runs','load-config-button'])$(id).disabled=true;
   const generator=rng,results=[],spread=state.spread,parties=state.parties.map(p=>({...p}));
   try{
     for(let i=0;i<n;i++){
@@ -441,7 +452,7 @@ $('batch').onclick=async()=>{
       if(i%5===0){$('batch').textContent=`Drawing ${i+1} / ${n}…`;await new Promise(resolve=>setTimeout(resolve,0));}
     }
     rng=generator;batchStats={seed,results};render();showTab('history');notice(`${n} elections drawn. Select a run to inspect it.`);
-  }catch(e){notice(e.message);}finally{busy=false;for(const id of ['batch','run','baseline','economic','cultural','variance','edit-parties','seed','runs','load-config-button'])$(id).disabled=false;$('batch').textContent=`Draw ${n} elections`;}
+  }catch(e){notice(e.message);}finally{busy=false;for(const id of ['batch','run','run-assembly','baseline','economic','cultural','variance','edit-parties','seed','runs','load-config-button'])$(id).disabled=false;$('batch').textContent=`Draw ${n} elections`;}
 };
 function toggleParty(event){const card=event.target.closest('[data-party]');if(!card)return;const i=Number(card.dataset.party),source=event.currentTarget.id,restoreFocus=document.activeElement===card;selected.has(i)?selected.delete(i):selected.add(i);render();if(restoreFocus)$(source).querySelector(`[data-party="${i}"]`)?.focus({preventScroll:true});}
 $('party-cards').onclick=toggleParty;$('party-list').onclick=toggleParty;$('party-compass').onclick=toggleParty;

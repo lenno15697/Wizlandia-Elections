@@ -7,6 +7,7 @@ assert.throws(()=>S.median([]));
 assert.deepEqual(S.election(base).map(s=>D.parties[s.winner].code),['LDP','LDP','CA','CA','LDP','LDP','CA','LDP','CA','LDP','CA','CON']);
 assert.equal(session.counter,1);assert.equal(session.cohorts.length,10);
 assert.deepEqual(S.seats(session),[60,50,0,10,0,0,0,0,0]);
+assert.equal(S.changes(session),null,'The baseline has no recorded outgoing cohort');
 for(let i=0;i<session.cohorts.length;i++){
  const c=session.cohorts[i],settings=c.settings;
  const expected=Object.fromEntries(S.election(E.evaluate(settings.economic,settings.cultural,settings.variance)).map(s=>[s.code,s.winner]));
@@ -35,11 +36,14 @@ const q=[...t.cohorts.map(c=>({...c.winners}))];
 for(let i=0;i<25;i++){
   const old=t,sh=E.drawShocks(random),r=E.evaluate(sh.economic,sh.cultural,sh.variance);
   t=S.advance(t,r);q.unshift(Object.fromEntries(S.election(r).map(s=>[s.code,s.winner])));q.length=10;
+  assert.deepEqual(t.outgoing,old.cohorts[9].winners,'Retain the cohort that actually expires, not the new oldest serving cohort');
+  assert.deepEqual(S.changes(t),S.seats(t).map((n,p)=>n-S.seats(old)[p]));
   assert.equal(t.counter,i+2);assert.deepEqual(t.cohorts.map(c=>c.winners),q);
   assert.equal(S.seats(t).reduce((a,b)=>a+b),120);assert.equal(S.seats(t,true).reduce((a,b)=>a+b),12);
   if(t.counter%2){assert.equal(t.assembly,old.assembly);assert.equal(t.assemblyCounter,old.assemblyCounter);}
   else{assert.equal(t.assembly,r);assert.equal(t.assemblyCounter,t.counter);}
   const p=S.preview(t,shock);
+  assert.deepEqual(p.outgoing,t.outgoing,'Live previews keep the actual departing cohort');
   assert.equal(p.assembly,t.counter%2?t.assembly:shock);
   for(let j=1;j<10;j++)assert.deepEqual(p.cohorts[j].winners,t.cohorts[j].winners);
   const saved=S.serialize(t),restored=S.restore(JSON.parse(JSON.stringify(saved)));
@@ -47,6 +51,8 @@ for(let i=0;i<25;i++){
 }
 for(const invalid of [null,{...S.serialize(t),counter:0},{...S.serialize(t),cohorts:[]},{...S.serialize(t),assemblyCounter:1}])assert.throws(()=>S.restore(invalid));
 const invalid=S.serialize(t);delete invalid.cohorts[0].winners.NX;assert.throws(()=>S.restore(invalid));
+const invalidOutgoing=S.serialize(t);invalidOutgoing.outgoing.NX=99;assert.throws(()=>S.restore(invalidOutgoing));
+const legacy=S.serialize(t);delete legacy.outgoing;assert.equal(S.changes(S.restore(legacy)),null,'Older configurations remain supported without inventing an outgoing cohort');
 // State fills follow exactly the original state boundary edges, including Kroana's island.
 const point=p=>p.join(','),edge=(a,b)=>[point(a),point(b)].sort().join('|');
 for(const shape of S.stateOutlines()){

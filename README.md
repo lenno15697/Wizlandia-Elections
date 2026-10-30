@@ -36,6 +36,14 @@ The Assembly retains the same 800-seat model and PR calculations.
 **index.html** and **styles.css**. Keep all other existing website assets.
 The HTML uses content-versioned URLs, including for the new Senate module.
 
+### Assembly shortcuts and Senate overview
+
+The controls include **Next Assembly election** in Set shifts mode and **Draw next Assembly** in Random election mode. They advance one election from an odd counter or two elections from an even counter, always finishing on an Assembly + Senate election. Intervening Senate-only elections are recorded in History and age the Senate cohorts normally. Random mode consumes a separate draw for each election and continues the existing seeded sequence.
+
+The Senate Overview’s **Δ** column is the latest incoming cohort minus the cohort it replaced. The outgoing winners are retained through previews, History navigation and configuration save/load. The baseline, and older configurations without an outgoing cohort, show a dash until the next election. The ten serving cohorts and the default 60/50/10 Senate remain unchanged. The Overview’s national total column is labelled **Assembly**.
+
+The “Next: election…” line is separate, larger and bold. The compact Senate hemicycle’s majority count and label sit lower in the central opening, in line with the Assembly’s proportions. The Senate election description uses Ranked Pairs terminology.
+
 ### Two-year steps
 
 The baseline is **election 1**. **Next election (+2y)** advances two years using
@@ -113,7 +121,7 @@ branching and batches. All 58 existing model reference scenarios still pass.
 
 ## Current model and interface
 
-The Overview table shows Party, Ideology, Combined, Electoral Districts, PR List, Vote share and Representation, in that order. Party ideology labels are presentation only. Representation bars compare national vote share with seat share in the selected component.
+The Overview table shows Party, Ideology, Assembly, Electoral Districts, PR List, Vote share and Representation, in that order. Party ideology labels are presentation only. Representation bars compare national vote share with seat share in the selected component.
 
 
 The **Compass** tab is a party-bubble compass inspired by Thermidor's presentation.

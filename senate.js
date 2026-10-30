@@ -23,7 +23,7 @@ const copyCohorts=cs=>cs.map(c=>({...c,winners:{...c.winners}}));
 // still use the independent shock distributions in engine.js.
 const pastShocks=[[-.30,-.05,.96],[-.22,-.08,.98],[.08,.08,1.02],[.30,.25,1.18],[.12,.02,1.04],[-.10,-.22,.90],[-.32,-.08,.98],[-.28,.08,1.00],[-.10,.08,1.04]];
 function create(result=E.evaluate()){
-  return{counter:1,assemblyCounter:1,assembly:result,cohorts:[cohort(result,'baseline'),...pastShocks.map(s=>cohort(E.evaluate(...s),'default'))]};
+  return{counter:1,assemblyCounter:1,assembly:result,outgoing:null,cohorts:[cohort(result,'baseline'),...pastShocks.map(s=>cohort(E.evaluate(...s),'default'))]};
 }
 function preview(session,result){
   const both=session.counter%2===0;
@@ -31,7 +31,7 @@ function preview(session,result){
 }
 function advance(session,result){
   const counter=session.counter+1,both=counter%2===0;
-  return{counter,assemblyCounter:both?counter:session.assemblyCounter,assembly:both?result:session.assembly,cohorts:[cohort(result,'simulated'),...copyCohorts(session.cohorts.slice(0,9))]};
+  return{counter,assemblyCounter:both?counter:session.assemblyCounter,assembly:both?result:session.assembly,outgoing:{...session.cohorts[9].winners},cohorts:[cohort(result,'simulated'),...copyCohorts(session.cohorts.slice(0,9))]};
 }
 function edit(session,index,code,winner){
   if(!Number.isInteger(index)||index<0||index>9||!H.states.some(s=>s.code===code)||!Number.isInteger(winner)||winner<0||winner>=D.parties.length)throw new Error('Invalid Senate history winner.');
@@ -46,7 +46,13 @@ function component(session,key='senate'){
   const latest=key==='senate-election';
   return{key,label:latest?'Senate election':key==='senators'?'Senators by state':'Senate',noun:latest?'new Senate':'Senate',total:latest?12:120,majority:latest?7:61,seats:seats(session,latest),description:latest?'12 statewide winners · one new senator per state':'120 senators · 10 per state · 20-year terms'};
 }
-function serialize(session){return{counter:session.counter,assemblyCounter:session.assemblyCounter,assembly:settings(session.assembly),cohorts:copyCohorts(session.cohorts)};}
+function changes(session){
+  if(!session.outgoing)return null;
+  const counts=seats(session,true);
+  for(const s of H.states)counts[session.outgoing[s.code]]--;
+  return counts;
+}
+function serialize(session){return{counter:session.counter,assemblyCounter:session.assemblyCounter,assembly:settings(session.assembly),outgoing:session.outgoing?{...session.outgoing}:null,cohorts:copyCohorts(session.cohorts)};}
 function restore(value){
   if(!value||!Number.isSafeInteger(value.counter)||value.counter<1||!Number.isInteger(value.assemblyCounter)||value.assemblyCounter!==(value.counter===1?1:value.counter-value.counter%2)||!Array.isArray(value.cohorts)||value.cohorts.length!==10)throw new Error('Invalid election calendar.');
   const a=value.assembly;
@@ -54,7 +60,8 @@ function restore(value){
   const parties=D.parties.map((p,i)=>({...p,x:a.parties[i].x,y:a.parties[i].y}));
   const assembly=E.evaluate(a.economic,a.cultural,a.variance,D.spread,parties);
   for(const c of value.cohorts)if(!c||!c.winners||H.states.some(s=>!Number.isInteger(c.winners[s.code])||c.winners[s.code]<0||c.winners[s.code]>=9))throw new Error('Every Senate year must have exactly one winner per state.');
-  return{counter:value.counter,assemblyCounter:value.assemblyCounter,assembly,cohorts:copyCohorts(value.cohorts)};
+  if(value.outgoing!=null&&H.states.some(s=>!Number.isInteger(value.outgoing[s.code])||value.outgoing[s.code]<0||value.outgoing[s.code]>=9))throw new Error('Invalid outgoing Senate cohort.');
+  return{counter:value.counter,assemblyCounter:value.assemblyCounter,assembly,outgoing:value.outgoing?{...value.outgoing}:null,cohorts:copyCohorts(value.cohorts)};
 }
 function stateOutlines(){
   return H.states.map(s=>{
@@ -70,6 +77,6 @@ function stateOutlines(){
     return{code:s.code,loops,path:loops.map(points=>'M'+points.map(p=>p.join(',')).join('L')+'Z').join('')};
   });
 }
-const API={years,median,election,create,preview,advance,edit,seats,component,serialize,restore,stateOutlines,pastShocks};
+const API={years,median,election,create,preview,advance,edit,seats,changes,component,serialize,restore,stateOutlines,pastShocks};
 if(local)module.exports=API;else root.WizlandiaSenate=API;
 })(typeof window!=='undefined'?window:globalThis);
