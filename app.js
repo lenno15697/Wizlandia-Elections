@@ -7,7 +7,7 @@ const swatch=p=>`<span class="swatch" style="background:${p.color}"></span>`;
 const initialSeed=createRandomSeed();
 $('seed').value=String(initialSeed);
 let state={economic:0,cultural:0,variance:1,spread:D.spread,parties:D.parties.map(p=>({...p}))};
-let current=E.evaluate(),history=[],nextRun=1,selected=new Set(),mode='manual',activeTab='overview',rng=new E.Mulberry32(initialSeed),batchStats=null,busy=false;
+let current=E.evaluate(),history=[],nextRun=1,selected=new Set(),mode='random',activeTab='overview',rng=new E.Mulberry32(initialSeed),batchStats=null,busy=false;
 let noticeTimer,frame,compassDots=[],view='combined',inspectedDistrict=null;
 let timeline=S.create(current),live=current,senateYear=0,senateState=H.states[0].code;
 const stateOutlines=S.stateOutlines();
@@ -438,7 +438,7 @@ function runElections(untilAssembly=false){
 }
 $('run').onclick=()=>runElections();
 $('run-assembly').onclick=()=>runElections(true);
-$('baseline').onclick=()=>{if(busy)return;cancelAnimationFrame(frame);setMode('manual');current=live=E.evaluate();timeline=S.create(current);state={economic:0,cultural:0,variance:1,spread:D.spread,parties:D.parties.map(p=>({...p}))};history=[];nextRun=1;batchStats=null;senateYear=0;selected.clear();addHistory(current,'Baseline');render();};
+$('baseline').onclick=()=>{if(busy)return;cancelAnimationFrame(frame);setMode('random');current=live=E.evaluate();timeline=S.create(current);state={economic:0,cultural:0,variance:1,spread:D.spread,parties:D.parties.map(p=>({...p}))};history=[];nextRun=1;batchStats=null;senateYear=0;selected.clear();addHistory(current,'Baseline');render();};
 $('seed').addEventListener('change',()=>{try{rng=new E.Mulberry32(getSeed());}catch(e){notice(e.message);}});
 $('runs').addEventListener('input',()=>$('batch').textContent=`Draw ${$('runs').value||'N'} elections`);
 $('batch').onclick=async()=>{
@@ -531,5 +531,5 @@ $('cartogram').onclick=event=>{const tile=event.target.closest('[data-district]'
 $('cartogram-detail').onclick=event=>{if(event.target.closest('[data-close-district]')){inspectedDistrict=null;renderCartogram();}};
 $('cartogram').onkeydown=event=>{if(event.key==='Escape'){inspectedDistrict=null;renderCartogram();return;}if(['Enter',' '].includes(event.key)){event.preventDefault();inspectTile(event);}};
 $('export-cartogram').onclick=()=>download('wizlandia-district-cartogram.svg',new XMLSerializer().serializeToString($('cartogram-svg')),'image/svg+xml');
-addHistory(current,'Baseline');setMode('manual');render();applyTheme(initialDark);
+addHistory(current,'Baseline');setMode('random');render();applyTheme(initialDark);
 })();

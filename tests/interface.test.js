@@ -32,6 +32,9 @@ assert.equal(Number(nodes.get('seed').value),generatedSeeds[1],'A new page initi
 if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREVIEW_SVG,nodes.get('hemicycle').innerHTML);
 (async()=>{
  const get=id=>nodes.get(id);
+ assert.ok(html.indexOf('id="random-mode"')<html.indexOf('id="manual-mode"'),'Random election is the left tab');
+ assert.ok(get('random-mode').classList.contains('active'));assert.ok(!get('manual-mode').classList.contains('active'));
+ assert.equal(get('run').textContent,'⚄ Draw next (+2y)');assert.equal(get('run-assembly').textContent,'Draw next Assembly');
  const readConfig=async()=>{get('save-config').onclick();return JSON.parse(await lastBlob.text());};
  const checkRandomDraw=async generator=>{
    const expected=E.drawShocks(generator);get('random-mode').onclick();get('run').onclick();
@@ -42,6 +45,7 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  const startupConfig=await checkRandomDraw(new E.Mulberry32(generatedSeeds[1]));
  assert.equal(startupConfig.seed,generatedSeeds[1]);assert.equal(generatedSeedCount,2,'Drawing must not silently replace the seed');
  get('baseline').onclick();
+ assert.ok(get('random-mode').classList.contains('active'),'Reset restores the default random mode');
  assert.match(get('ticker').textContent,/Assembly/);
  assert.equal(get('runs').value,'10');assert.ok(!nodes.has('tab-cartogram'));assert.ok(!nodes.has('cartogram-legend'));
  assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);assert.equal(get('panel-votes').hidden,true);
@@ -79,7 +83,7 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  get('cartogram').onclick({target:{closest:()=>({dataset:{district:'AK-01'}})}});assert.match(get('cartogram-detail').innerHTML,/AK-01/);assert.equal(get('cartogram-detail').hidden,false);assert.ok(!/T[0-9]{2}\s*[·<]/.test(get('cartogram-detail').innerHTML));
  get('cartogram-detail').onclick({target:{closest:()=>({})}});assert.equal(get('cartogram-detail').hidden,true);
  get('cartogram-state').value='all';get('cartogram-state').listeners.change();assert.ok(!get('cartogram-layout').classList.contains('is-focused'));
- get('run').onclick(); // Election 2 previews both chambers.
+ get('manual-mode').onclick();get('run').onclick(); // Election 2 previews both chambers with the chosen baseline settings.
  get('economic').value='.30';get('economic').listeners.input();
  const expected=E.evaluate(.3,0,1),chunk=get('cartogram').innerHTML;
  for(const r of expected.rows){assert.ok(chunk.split(`data-district="${r.id}"`)[1].split('</g>')[0].includes(`fill="${D.parties[r.winner].color}"`));}

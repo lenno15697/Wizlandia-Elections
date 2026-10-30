@@ -38,6 +38,8 @@ The HTML uses content-versioned URLs, including for the new Senate module.
 
 ### Assembly shortcuts and Senate overview
 
+**Random election** is the left mode tab and is selected on startup and Reset. **Set shifts** remains available on the right; moving a slider switches to that mode.
+
 The controls include **Next Assembly election** in Set shifts mode and **Draw next Assembly** in Random election mode. They advance one election from an odd counter or two elections from an even counter, always finishing on an Assembly + Senate election. Intervening Senate-only elections are recorded in History and age the Senate cohorts normally. Random mode consumes a separate draw for each election and continues the existing seeded sequence.
 
 The Senate Overview’s **Δ** column is the latest incoming cohort minus the cohort it replaced. The outgoing winners are retained through previews, History navigation and configuration save/load. The baseline, and older configurations without an outgoing cohort, show a dash until the next election. The ten serving cohorts and the default 60/50/10 Senate remain unchanged. The Overview’s national total column is labelled **Assembly**.

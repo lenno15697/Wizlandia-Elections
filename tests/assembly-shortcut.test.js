@@ -10,7 +10,7 @@ function expectDelta(h,expected){
  assert.equal(h.get('senate-delta-total').textContent,expected?'0':'—');
 }
 (async()=>{
- const h=harness(),get=h.get;get('view-senate').onclick();expectDelta(h,null);
+ const h=harness(),get=h.get;get('manual-mode').onclick();get('view-senate').onclick();expectDelta(h,null);
  assert.equal(get('run-assembly').textContent,'Next Assembly election');
  assert.match(get('next-election-note').textContent,/Next: election 2, both chambers/);
  assert.ok(!get('assembly-lock-note').textContent.includes('Next:'));
