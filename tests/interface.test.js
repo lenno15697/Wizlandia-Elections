@@ -34,7 +34,7 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  const get=id=>nodes.get(id);
  assert.ok(html.indexOf('id="random-mode"')<html.indexOf('id="manual-mode"'),'Random election is the left tab');
  assert.ok(get('random-mode').classList.contains('active'));assert.ok(!get('manual-mode').classList.contains('active'));
- assert.equal(get('run').textContent,'⚄ Draw next (+2y)');assert.equal(get('run-assembly').textContent,'Draw next Assembly');
+ assert.equal(get('run').textContent,'⚄ Draw next (+2y)');assert.equal(get('run-assembly').textContent,'Draw next Assembly (+2y)');
  const readConfig=async()=>{get('save-config').onclick();return JSON.parse(await lastBlob.text());};
  const checkRandomDraw=async generator=>{
    const expected=E.drawShocks(generator);get('random-mode').onclick();get('run').onclick();
@@ -46,10 +46,10 @@ if(process.env.WIZLANDIA_PREVIEW_SVG)fs.writeFileSync(process.env.WIZLANDIA_PREV
  assert.equal(startupConfig.seed,generatedSeeds[1]);assert.equal(generatedSeedCount,2,'Drawing must not silently replace the seed');
  get('baseline').onclick();
  assert.ok(get('random-mode').classList.contains('active'),'Reset restores the default random mode');
- assert.match(get('ticker').textContent,/Assembly/);
+ assert.ok(!nodes.has('ticker'),'The topbar result ticker is removed');
  assert.equal(get('runs').value,'10');assert.ok(!nodes.has('tab-cartogram'));assert.ok(!nodes.has('cartogram-legend'));
  assert.equal(get('assembly-panel').hidden,false);assert.equal(get('panel-cartogram').hidden,true);assert.equal(get('panel-votes').hidden,true);
- assert.ok(html.indexOf('id="tab-medians"')>html.indexOf('id="tab-history"'));assert.match(html,/id="panel-medians"[\s\S]*?<canvas id="compass"/);
+ assert.ok(html.indexOf('id="tab-medians"')<html.indexOf('id="tab-history"'));assert.match(html,/id="panel-medians"[\s\S]*?<canvas id="compass"/);
  const checkCompass=seats=>{const svg=get('party-compass').innerHTML,bubbles=[...svg.matchAll(/data-party="(\d+)" data-compass-code="([^"]+)" data-seats="(\d+)" data-radius="([^"]+)"/g)];assert.equal(bubbles.length,9);for(const [,index,code,count,radius] of bubbles){const i=Number(index),n=Number(count),r=Number(radius);assert.equal(code,D.parties[i].code);assert.equal(n,seats[i]);if(n){assert.ok(r>6,'Every positive-seat party must be larger than the zero-seat marker');assert.ok(Math.abs((r-6)**2-3600*n/seats.reduce((a,b)=>a+b,0))<1e-9,'The radius contribution must follow square-root seat-share scaling for the selected component');}else assert.equal(r,6);}return svg;};
  get('tab-compass').onclick();const compass=checkCompass(E.evaluate().combinedSeats);assert.ok(compass.includes('>10</text>')&&compass.includes('>-10</text>'));assert.ok(!compass.includes('>12</text>')&&!compass.includes('>-12</text>'));
  for(const [code,x,y] of [['CA',0,0],['NF',-1,8],['SWP',-9,-7.5],['SDP',-4,-1.5]]){

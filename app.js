@@ -15,7 +15,7 @@ const senateMapStateOrder=['EX','EW','NX','AX','ET','KR','QL','AK','LQ','IL','LX
 const senateViews=['senate','senators','senate-election'];
 const displayOrder=D.displayOrder;
 const partyIdeologies={SWP:'Communism',UPL:'Democratic socialism',SDP:'Social democracy',GRN:'Green liberalism',CA:'Centrism',LDP:'National liberalism',CON:'Conservatism',LIB:'Libertarianism',NF:'National conservatism'};
-const largestPartiesFirst=(indices,seats)=>indices.slice().sort((a,b)=>seats[b]-seats[a]||displayOrder.indexOf(a)-displayOrder.indexOf(b));
+const largestPartiesFirst=(indices,seats,tieSeats)=>indices.slice().sort((a,b)=>seats[b]-seats[a]||(tieSeats?tieSeats[b]-tieSeats[a]:0)||displayOrder.indexOf(a)-displayOrder.indexOf(b));
 const shown=(result=current)=>senateViews.includes(view)?S.component(timeline,view):E.component(result,view);
 function notice(message){$('notice').textContent=message;$('notice').hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>$('notice').hidden=true,4000);}
 function syncControls(){
@@ -32,28 +32,27 @@ function syncControls(){
   $('election-cycle').textContent=locked?'Senate only':'Assembly + Senate';
   $('assembly-lock-note').textContent=locked?`Grey marks: Assembly election ${timeline.assemblyCounter}.`:'Shared settings for both chambers.';
   $('next-election-note').textContent=`Next: election ${timeline.counter+1}, ${locked?'both chambers':'Senate only'}.`;
+  syncAssemblyButton();
 }
+function syncAssemblyButton(){$('run-assembly').textContent=`${mode==='manual'?'Next Assembly election':'Draw next Assembly'} (+${timeline.counter%2?2:4}y)`;}
 function addHistory(result,label){history.push({id:nextRun++,label,result,timeline:{...timeline,cohorts:timeline.cohorts.map(c=>({...c,winners:{...c.winners}}))},live});if(history.length>200)history.shift();}
 function updateCurrentHistory(){const h=history.find(h=>h.timeline&&h.timeline.counter===timeline.counter);if(h){h.result=current;h.timeline={...timeline,cohorts:timeline.cohorts.map(c=>({...c,winners:{...c.winners}}))};h.live=live;}}
 function render(){
   syncControls();
   const isSenate=senateViews.includes(view);
-  const v=shown(),seats=v.seats,ranked=seats.map((n,i)=>({n,i})).sort((a,b)=>b.n-a.n||a.i-b.i),lead=ranked[0],second=ranked[1];
-  const p=current.parties[lead.i],majority=lead.n>=v.majority,isCombined=view==='combined';
+  const v=shown(),seats=v.seats,isCombined=view==='combined';
   for(const element of document.querySelectorAll('[data-combined-only]'))element.hidden=!isCombined;
   if(!isCombined&&activeTab==='coalitions')showTab('overview');
   for(const button of document.querySelectorAll('[data-component]')){const active=button.dataset.component===view;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));}
   $('component-note').textContent=v.description;
-  $('ticker').textContent=isSenate?`${v.label} · ${p.code} ${lead.n} · ${v.total} seats`:isCombined?`${v.label} · ${p.code} ${lead.n} · ${current.parties[second.i].code} ${second.n} · ${majority?'Majority':'No overall majority'}`:`${v.label} · ${v.total} seats`;
   $('party-list').innerHTML=displayOrder.map(i=>{const p=current.parties[i],muted=selected.size&&!selected.has(i);return`<button type="button" class="party-line${muted?' is-muted':''}" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" aria-label="${esc(p.name)}, ${seats[i]} ${v.noun} seats. Select party." title="${esc(p.name)}: ${esc(p.description)}">${swatch(p)}<strong>${p.code}</strong><span class="line-name">${esc(p.name)}</span><span class="line-vote">${isSenate?seats[i]+' seats':pct(current.votes[i])}</span></button>`;}).join('');
   $('party-cards').innerHTML=displayOrder.map(i=>{const p=current.parties[i],share=seats[i]/v.total*100,description=isSenate?`${p.name} · ${seats[i]} ${v.noun} seats`:`${p.name} · ${current.districtSeats[i]} district + ${current.prSeats[i]} PR = ${current.combinedSeats[i]} Assembly seats · ${pct(current.votes[i])} votes`;return`<button class="party-card${selected.size&&!selected.has(i)?' is-muted':''}" style="--party:${p.color}" data-party="${i}" aria-pressed="${selected.has(i)}" title="${esc(description)}. Click to select." aria-label="${esc(description)}. Select party."><span class="code">${p.code}</span><span class="seat">${seats[i]}</span><span class="seat-share">${share.toFixed(1)}% seats</span><span class="vote">${isSenate?(view==='senate-election'?'won this election':'serving senators'):pct(current.votes[i])+' vote'}</span><span class="card-bar" aria-hidden="true"><span style="width:${share}%;background:${p.color}"></span></span></button>`;}).join('');
+  const overviewComponent=E.component(current,isSenate?'combined':view),senateTotal=S.seats(timeline),senateLatest=S.seats(timeline,true),senateDelta=S.changes(timeline);
   $('overview-body').innerHTML=displayOrder.map(i=>{
-    const p=current.parties[i],share=seats[i]/v.total*100;
-    return`<tr><td>${swatch(p)}<strong>${p.code}</strong><span class="party-name">${esc(p.name)}</span></td><td class="ideology">${esc(partyIdeologies[p.code])}</td><td class="${view==='combined'?'selected-column':''}">${current.combinedSeats[i]}</td><td class="${view==='district'?'selected-column':''}">${current.districtSeats[i]}</td><td class="${view==='pr'?'selected-column':''}">${current.prSeats[i]}</td><td>${pct(current.votes[i])}</td><td><span class="representation" aria-label="Vote ${pct(current.votes[i])}, ${v.label} seat share ${share.toFixed(1)} percent"><span class="votes" style="width:${current.votes[i]*100}%;background:${p.color}"></span><span class="seats" style="width:${share}%;background:${p.color}"></span></span></td></tr>`;
+    const p=current.parties[i],share=overviewComponent.seats[i]/overviewComponent.total*100;
+    return`<tr><td>${swatch(p)}<strong>${p.code}</strong><span class="party-name">${esc(p.name)}</span></td><td class="ideology">${esc(partyIdeologies[p.code])}</td><td class="${isCombined||isSenate?'selected-column':''}">${current.combinedSeats[i]}</td><td class="${view==='district'?'selected-column':''}">${current.districtSeats[i]}</td><td class="${view==='pr'?'selected-column':''}">${current.prSeats[i]}</td><td>${pct(current.votes[i])}</td><td><span class="representation" aria-label="Vote ${pct(current.votes[i])}, ${overviewComponent.label} seat share ${share.toFixed(1)} percent"><span class="votes" style="width:${current.votes[i]*100}%;background:${p.color}"></span><span class="seats" style="width:${share}%;background:${p.color}"></span></span></td><td>${senateTotal[i]}</td><td>${senateLatest[i]}</td><td title="${senateDelta?'Incoming senators minus outgoing senators':'Available after advancing an election'}">${senateDelta?(senateDelta[i]>0?'+'+senateDelta[i]:senateDelta[i]<0?'−'+Math.abs(senateDelta[i]):'0'):'—'}</td></tr>`;
   }).join('');
-  $('assembly-overview').hidden=isSenate;$('senate-overview').hidden=!isSenate;
-  $('overview-explainer').hidden=isSenate;
-  if(isSenate){const total=S.seats(timeline),latest=S.seats(timeline,true),delta=S.changes(timeline);$('senate-overview-body').innerHTML=displayOrder.map(i=>`<tr><td>${swatch(current.parties[i])}<strong>${current.parties[i].code}</strong><span class="party-name">${esc(current.parties[i].name)}</span></td><td>${total[i]}</td><td>${latest[i]}</td><td title="${delta?'Incoming senators minus outgoing senators':'Available after advancing an election'}">${delta?(delta[i]>0?'+'+delta[i]:delta[i]<0?'−'+Math.abs(delta[i]):'0'):'—'}</td></tr>`).join('');$('senate-delta-total').textContent=delta?'0':'—';}
+  $('senate-delta-total').textContent=senateDelta?'0':'—';
   $('coalition-kicker').textContent=isCombined?`${v.label} · The road to ${v.majority}`:v.label;
   $('coalition-copy').textContent=isCombined?`Each combination reaches ${v.majority} of ${v.total} ${v.noun} seats and loses its majority if any member leaves. These are arithmetic possibilities, without political compatibility restrictions.`:'';
   $('history-context').textContent=(isSenate?'This table shows Assembly results held at each election. Use Senate History for the ten serving cohorts. ':isCombined?`Largest party and majority status use the Assembly view (${v.total} seats; majority ${v.majority}).`:`Largest party uses the ${v.label} view (${v.total} seats).`)+` Most viable coalition uses each run’s Assembly seats and the 401-seat majority. Select a run to restore it. History is kept in this tab until the page is closed or refreshed. Senate cohorts are available in Senate History.`;
@@ -92,7 +91,8 @@ function rankedCoalitions(parties,seats,majority){
 }
 function renderSummary(){
   const v=shown(),seats=v.seats,isCombined=view==='combined'||view==='senate';
-  const ranked=largestPartiesFirst(displayOrder,seats),members=selected.size?largestPartiesFirst([...selected],seats):[ranked[0]],multi=members.length>1;
+  const tieSeats=['senate','senators','senate-election'].includes(view)?current.combinedSeats:undefined;
+  const ranked=largestPartiesFirst(displayOrder,seats,tieSeats),members=selected.size?largestPartiesFirst([...selected],seats,tieSeats):[ranked[0]],multi=members.length>1;
   const focus=current.parties[members[0]],total=members.reduce((n,i)=>n+seats[i],0),votes=members.reduce((n,i)=>n+current.votes[i],0),majority=total>=v.majority;
   const codes=members.map(i=>current.parties[i].code).join(' + '),name=multi?codes:focus.name;
   $('selection-summary').style.setProperty('--summary-color',focus.color);
@@ -128,8 +128,9 @@ function renderParliament(){
   const v=shown(),seats=v.seats,isCombined=view==='combined'||view==='senate',westminster=$('diagram-layout').value==='westminster';
   $('seat-order').hidden=westminster;$('seat-order-label').hidden=westminster;
   let order=displayOrder.slice();
-  if(westminster||$('seat-order').value==='size')order=largestPartiesFirst(order,seats);
-  const selectedMembers=largestPartiesFirst(displayOrder.filter(i=>selected.has(i)),seats),coalition=selectedMembers.reduce((s,i)=>s+seats[i],0);
+  const tieSeats=senateViews.includes(view)?current.combinedSeats:undefined;
+  if(westminster||$('seat-order').value==='size')order=largestPartiesFirst(order,seats,tieSeats);
+  const selectedMembers=largestPartiesFirst(displayOrder.filter(i=>selected.has(i)),seats,tieSeats),coalition=selectedMembers.reduce((s,i)=>s+seats[i],0);
   $('coalition-label').textContent=selected.size?`${selectedMembers.map(i=>current.parties[i].code).join(' + ')} · ${coalition} ${v.noun} seats${isCombined?` · ${coalition>=v.majority?`${coalition-v.majority} above the majority threshold`:`${v.majority-coalition} short of a majority`}`:''}`:'Select parties below to build a coalition.';
   $('clear-coalition').hidden=!selected.size;
   const style=getComputedStyle(document.body),ink=style.getPropertyValue('--text').trim(),muted=style.getPropertyValue('--muted').trim(),border=style.getPropertyValue('--border').trim(),accent=style.getPropertyValue('--accent').trim();
@@ -393,7 +394,7 @@ function renderSenateMaps(){
   $(prefix+'-state-buttons').innerHTML=senateMapStateOrder.map(s=>`<button data-senate-state="${s.code}" aria-pressed="${s.code===senateState}" title="${esc(s.name)}">${s.code}</button>`).join('');
   if(newest){
     const m=S.election(live).find(s=>s.code===state.code),winner=timeline.cohorts[0].winners[state.code],p=D.parties[winner];
-    $(prefix+'-detail').innerHTML=`<h3>${esc(state.name)}</h3><div class="senate-winner">${swatch(p)}<strong>${esc(p.name)}</strong></div><p class="hint">Elected in year 0 · 20-year term</p><dl class="state-median"><dt>Economic median</dt><dd>${signed(m.x,3)}</dd><dt>Cultural median</dt><dd>${signed(m.y,3)}</dd></dl>${timeline.cohorts[0].source==='manual'?'<p class="hint">Winner edited in Senate History. Moving the sliders recalculates this election.</p>':''}`;
+    $(prefix+'-detail').innerHTML=`<h3>${esc(state.name)}</h3><div class="senate-winner">${swatch(p)}<strong>${esc(p.name)}</strong></div><p class="hint">20-year term</p><dl class="state-median"><dt>Economic median</dt><dd>${signed(m.x,3)}</dd><dt>Cultural median</dt><dd>${signed(m.y,3)}</dd></dl>${timeline.cohorts[0].source==='manual'?'<p class="hint">Winner edited in Senate History. Moving the sliders recalculates this election.</p>':''}`;
   }else{
     $(prefix+'-detail').innerHTML=`<h3>${esc(state.name)}</h3><p class="hint">10 serving senators · newest first</p><ol class="senator-list">${timeline.cohorts.map((c,i)=>{const p=D.parties[c.winners[state.code]],year=i===0?'0':'−'+2*i;return`<li><span class="senator-year">${year}</span>${swatch(p)}<strong>${p.code}</strong><span>${esc(p.name)}</span></li>`;}).join('')}</ol>`;
   }
@@ -415,7 +416,7 @@ function createRandomSeed(){
   return(Date.now()^Math.floor(Math.random()*4294967296))>>>0;
 }
 function getSeed(){const n=Number($('seed').value);if(!Number.isInteger(n)||n<0||n>4294967295)throw new Error('Enter an integer seed between 0 and 4294967295.');return n;}
-function setMode(value){mode=value;$('manual-mode').classList.toggle('active',value==='manual');$('random-mode').classList.toggle('active',value==='random');$('run').textContent=value==='manual'?'▶ Next election (+2y)':'⚄ Draw next (+2y)';$('run-assembly').textContent=value==='manual'?'Next Assembly election':'Draw next Assembly';$('mode-hint').textContent=value==='manual'?'Sliders preview this election. Next advances two years using these shifts. Next Assembly continues to the next election for both chambers.':'Draw advances two years with a new seeded shock around baseline. Draw next Assembly continues to the next election for both chambers.';}
+function setMode(value){mode=value;$('manual-mode').classList.toggle('active',value==='manual');$('random-mode').classList.toggle('active',value==='random');$('run').textContent=value==='manual'?'▶ Next election (+2y)':'⚄ Draw next (+2y)';syncAssemblyButton();$('mode-hint').textContent=value==='manual'?'Sliders preview this election. Next advances two years using these shifts. Next Assembly continues to the next election for both chambers.':'Draw advances two years with a new seeded shock around baseline. Draw next Assembly continues to the next election for both chambers.';}
 function download(name,content,type){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.hidden=true;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);}
 function csv(rows){return rows.map(row=>row.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\r\n')+'\r\n';}
 function resultRows(results){return [['run','election_number','assembly_election_number','economic_shift','cultural_shift','variance_multiplier','assembly_economic_shift','assembly_cultural_shift','assembly_variance_multiplier',...D.parties.map(p=>p.code+'_district_seats'),...D.parties.map(p=>p.code+'_pr_seats'),...D.parties.map(p=>p.code+'_assembly_seats'),...D.parties.map(p=>p.code+'_vote_percent'),...D.parties.map(p=>p.code+'_senate_seats')],...results.map((h,i)=>{const r=h.result||h,t=h.timeline||timeline,l=h.live||live;return[h.label||i+1,t.counter,t.assemblyCounter,l.economic,l.cultural,l.variance,r.economic,r.cultural,r.variance,...r.districtSeats,...r.prSeats,...r.combinedSeats,...r.votes.map(v=>v*100),...S.seats(t)];})];}

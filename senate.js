@@ -44,7 +44,7 @@ function seats(session,latestOnly=false){
 }
 function component(session,key='senate'){
   const latest=key==='senate-election';
-  return{key,label:latest?'Senate election':key==='senators'?'Senators by state':'Senate',noun:latest?'new Senate':'Senate',total:latest?12:120,majority:latest?7:61,seats:seats(session,latest),description:latest?'12 statewide winners · one new senator per state':'120 senators · 10 per state · 20-year terms'};
+  return{key,label:latest?'Senate Election':key==='senators'?'Senators by State':'Senate',noun:latest?'new Senate':'Senate',total:latest?12:120,majority:latest?7:61,seats:seats(session,latest),description:latest?'12 statewide winners · one new senator per state':'120 senators · 10 per state · 20-year terms'};
 }
 function changes(session){
   if(!session.outgoing)return null;

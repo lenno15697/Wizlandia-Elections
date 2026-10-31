@@ -49,5 +49,26 @@ const load=async c=>{get('load-config').files=[{size:JSON.stringify(c).length,te
   assert.equal(c.economic,last.economic);assert.equal(c.calendar.assembly.economic,assemblyDraw.economic);assert.equal(c.randomState,generator.seed);
   const current=await config();get('export-senate-history').onclick();const lines=(await h.blob().text()).trim().split('\n');assert.equal(lines.length,11);assert.equal(lines[0].split(',').length,H.states.length+1);
   await load(current);get('random-mode').onclick();get('run').onclick();const next=E.drawShocks(generator);assert.equal((await config()).economic,next.economic);
+  // One Overview contains both chambers, and switching Assembly/Senate does not
+  // replace held Assembly vote/seat values with Senate percentages.
+  get('view-combined').onclick();const unified=get('overview-body').innerHTML;
+  get('view-senate').onclick();assert.equal(get('overview-body').innerHTML,unified);
+  assert.ok(!h.html.includes('id="senate-overview"'));
+  assert.ok(h.html.includes('Senate seats won this election')&&h.html.includes('Change in Senate seats'));
+  for(const row of unified.matchAll(/<tr>([\s\S]*?)<\/tr>/g))assert.equal((row[1].match(/<td\b/g)||[]).length,10);
+  assert.ok(h.html.indexOf('id="tab-medians"')<h.html.indexOf('id="tab-history"'));
+  // Resolve a 60/60 Senate tie in both directions using the stored Assembly.
+  const tied=await config();tied.view='senate';
+  for(const cohort of tied.calendar.cohorts)for(let i=0;i<H.states.length;i++)cohort.winners[H.states[i].code]=i<6?0:1;
+  for(const [economic,winner] of [[.5,0],[-.5,1]]){
+    const assembly=E.evaluate(economic,0,1);assert.ok(assembly.combinedSeats[winner]>assembly.combinedSeats[1-winner]);
+    tied.calendar.assembly={economic,cultural:0,variance:1,parties:tied.parties};
+    await load(tied);assert.equal(get('summary-badge-code').textContent,assembly.parties[winner].code);
+    assert.deepEqual(S.seats(S.restore((await config()).calendar)).slice(0,2),[60,60]);
+  }
+  // A strictly larger Senate party still takes precedence over Assembly seats.
+  tied.calendar.assembly.economic=.5;tied.calendar.cohorts[0].winners[H.states[0].code]=1;
+  await load(tied);assert.equal(get('summary-badge-code').textContent,'CA');
+  get('view-senate-election').onclick();assert.ok(!get('senate-election-detail').innerHTML.includes('Elected in year 0'));
   console.log('Senate interface checks passed: tabs and maps, 120-seat diagram, editable years, cohort expiry, both-chamber and Senate-only controls, frozen district/PR views, grey markers, configuration and RNG round trips, history branching, CSV and sequential batch elections.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

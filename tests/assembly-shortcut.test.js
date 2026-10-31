@@ -4,20 +4,20 @@ const plain=x=>JSON.parse(JSON.stringify(x));
 const target=dataset=>({target:{closest:()=>({dataset})}});
 const load=async(h,c)=>{h.get('load-config').files=[{size:JSON.stringify(c).length,text:async()=>JSON.stringify(c)}];await h.get('load-config').onchange({target:h.get('load-config')});assert.equal(h.get('notice').textContent,'Configuration loaded.');};
 function expectDelta(h,expected){
- const rows=[...h.get('senate-overview-body').innerHTML.matchAll(/<tr>[\s\S]*?<strong>([A-Z]+)<\/strong>[\s\S]*?<\/td><td>\d+<\/td><td>\d+<\/td><td[^>]*>([^<]+)<\/td><\/tr>/g)];
+ const rows=[...h.get('overview-body').innerHTML.matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map(([,row])=>{const cells=[...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)];assert.equal(cells.length,10);return[row.match(/<strong>([A-Z]+)<\/strong>/)[1],cells.at(-1)[1]];});
  assert.equal(rows.length,9);
- for(const [,code,label] of rows){const n=expected?.[D.parties.findIndex(p=>p.code===code)];assert.equal(label,expected?(n>0?'+'+n:n<0?'−'+Math.abs(n):'0'):'—');}
+ for(const [code,label] of rows){const n=expected?.[D.parties.findIndex(p=>p.code===code)];assert.equal(label,expected?(n>0?'+'+n:n<0?'−'+Math.abs(n):'0'):'—');}
  assert.equal(h.get('senate-delta-total').textContent,expected?'0':'—');
 }
 (async()=>{
  const h=harness(),get=h.get;get('manual-mode').onclick();get('view-senate').onclick();expectDelta(h,null);
- assert.equal(get('run-assembly').textContent,'Next Assembly election');
+ assert.equal(get('run-assembly').textContent,'Next Assembly election (+2y)');
  assert.match(get('next-election-note').textContent,/Next: election 2, both chambers/);
  assert.ok(!get('assembly-lock-note').textContent.includes('Next:'));
  // Manual shortcuts preserve the chosen settings and save every intervening election.
  get('economic').value='.7';get('economic').listeners.input();
  let before=await h.config();get('run-assembly').onclick();let c=await h.config();
- assert.equal(c.calendar.counter,2);assert.equal(c.calendar.assemblyCounter,2);assert.equal(c.economic,.7);
+ assert.equal(c.calendar.counter,2);assert.equal(c.calendar.assemblyCounter,2);assert.equal(c.economic,.7);assert.equal(get('run-assembly').textContent,'Next Assembly election (+4y)');
  assert.equal(c.randomState,before.randomState,'Manual shortcuts do not consume random draws');
  assert.deepEqual(c.calendar.outgoing,before.calendar.cohorts[9].winners);
  expectDelta(h,S.changes(S.restore(c.calendar)));
@@ -31,16 +31,16 @@ function expectDelta(h,expected){
  get('history-body').onclick(target({history:ids[2]}));c=await h.config();assert.equal(c.calendar.counter,2);expectDelta(h,S.changes(S.restore(c.calendar)));
  // Random shortcuts match two separate draws, including the Senate-only one.
  const random=harness(),g=random.get;g('seed').value='20261030';g('seed').listeners.change();g('random-mode').onclick();
- assert.equal(g('run-assembly').textContent,'Draw next Assembly');
+ assert.equal(g('run-assembly').textContent,'Draw next Assembly (+2y)');
  const rng=new E.Mulberry32(20261030);let expected=S.create();
  for(const n of [1,2,2]){
   for(let i=0;i<n;i++){const a=E.drawShocks(rng);expected=S.advance(expected,E.evaluate(a.economic,a.cultural,a.variance));}
   g('run-assembly').onclick();c=await random.config();
   assert.deepEqual(c.calendar,plain(S.serialize(expected)));assert.equal(c.randomState,rng.seed);
-  assert.equal(c.calendar.counter%2,0);assert.equal(c.calendar.counter,c.calendar.assemblyCounter);
+  assert.equal(c.calendar.counter%2,0);assert.equal(c.calendar.counter,c.calendar.assemblyCounter);assert.equal(g('run-assembly').textContent,'Draw next Assembly (+4y)');
  }
  // From an odd Senate-only year, the next Assembly requires only one draw.
- g('run').onclick();let a=E.drawShocks(rng);expected=S.advance(expected,E.evaluate(a.economic,a.cultural,a.variance));
+ g('run').onclick();assert.equal(g('run-assembly').textContent,'Draw next Assembly (+2y)');let a=E.drawShocks(rng);expected=S.advance(expected,E.evaluate(a.economic,a.cultural,a.variance));
  a=E.drawShocks(rng);expected=S.advance(expected,E.evaluate(a.economic,a.cultural,a.variance));g('run-assembly').onclick();c=await random.config();
  assert.deepEqual(c.calendar,plain(S.serialize(expected)));assert.equal(c.randomState,rng.seed);
  g('view-senate').onclick();expectDelta(random,S.changes(expected));

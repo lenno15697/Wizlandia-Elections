@@ -26,6 +26,14 @@ Ten million election draws confirm long-run means of **LDP 60.32, CA 50.76, CON 
 
 If upgrading from the previous ZIP, replace **app.js**, **district-geography.js**, **styles.css**, and **index.html**. The JSON/CSV register and audits are also updated. The compact Senate hemicycle and east-to-west state selector order are retained.
 
+## Unified Overview and display updates
+
+The Overview now uses one table for Assembly and Senate, retaining the Assembly columns and appending **Current Senate**, **Senate seats won this election**, and **Change in Senate seats**. Assembly and Senate show identical Overview data; Assembly vote and representation values remain tied to the held Assembly on Senate-only years.
+
+Tied Senate leaders are ordered by their current Assembly seats, with the existing political display order retained if those totals are also tied. The Assembly shortcut labels show **(+2y)** or **(+4y)** based on the number of years needed to reach the next Assembly election, and update after advancing, restoring History, loading a configuration and switching modes.
+
+The state/election tabs are labelled **Senators by State** and **Senate Election**. Districts Median Position appears immediately before History. The result ticker, requested map/status sentences and footer wording are removed, and the district headings use Electoral Districts / 400 Electoral Districts.
+
 ## Senate elections and calendar
 
 The former **Combined** upper tab is now **Assembly**. The upper tabs are
@@ -42,7 +50,7 @@ The HTML uses content-versioned URLs, including for the new Senate module.
 
 The controls include **Next Assembly election** in Set shifts mode and **Draw next Assembly** in Random election mode. They advance one election from an odd counter or two elections from an even counter, always finishing on an Assembly + Senate election. Intervening Senate-only elections are recorded in History and age the Senate cohorts normally. Random mode consumes a separate draw for each election and continues the existing seeded sequence.
 
-The Senate Overview’s **Δ** column is the latest incoming cohort minus the cohort it replaced. The outgoing winners are retained through previews, History navigation and configuration save/load. The baseline, and older configurations without an outgoing cohort, show a dash until the next election. The ten serving cohorts and the default 60/50/10 Senate remain unchanged. The Overview’s national total column is labelled **Assembly**.
+The Overview’s **Change in Senate seats** column is the latest incoming cohort minus the cohort it replaced. The outgoing winners are retained through previews, History navigation and configuration save/load. The baseline, and older configurations without an outgoing cohort, show a dash until the next election. The ten serving cohorts and the default 60/50/10 Senate remain unchanged. The Overview’s national total column is labelled **Assembly**.
 
 The “Next: election…” line is separate, larger and bold. The compact Senate hemicycle’s majority count and label sit lower in the central opening, in line with the Assembly’s proportions. The Senate election description uses Ranked Pairs terminology.
 
@@ -123,7 +131,7 @@ branching and batches. All 58 existing model reference scenarios still pass.
 
 ## Current model and interface
 
-The Overview table shows Party, Ideology, Assembly, Electoral Districts, PR List, Vote share and Representation, in that order. Party ideology labels are presentation only. Representation bars compare national vote share with seat share in the selected component.
+The Overview table shows Party, Ideology, Assembly, Electoral Districts, PR List, Vote share, Representation, Current Senate, Senate seats won this election and Change in Senate seats, in that order. Party ideology labels are presentation only. Representation bars compare national vote share with seat share in the selected component.
 
 
 The **Compass** tab is a party-bubble compass inspired by Thermidor's presentation.
